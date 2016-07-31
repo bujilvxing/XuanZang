@@ -136,6 +136,34 @@ GET /app/search?query=北京&page=2&pageSize=50
 >删除接口时，无需真正删除，只需更新资源状态即可，例如删除帖子，实际上是将帖子状态标记为删除状态。
 
 ###发送验证码
+- Path:/app/validationcodes
+- Request Method:POST
+- Request Headers:无
+- Query String:空
+- Request Body
+
+		{
+			"account":"13811111111",   //account可能是手机号，也可能是邮箱号
+			"action":1
+		}
+
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"code":"324512"
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+100101|手机号格式不正确|输入了错误的手机号
+100102|邮箱格式不正确|输入了错误的邮箱号
+100103|用户已存在|注册用户时，手机号已经注册了或者邮箱号已经注册过了
+100104|请求次数过多|请求验证码的次数过多
 
 ###注册
 
