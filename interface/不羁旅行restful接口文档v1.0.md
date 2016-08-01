@@ -143,7 +143,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 
 		{
-			"account":"13811111111",   //account可能是手机号，也可能是邮箱号
+			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
+			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
 			"action":1
 		}
 
@@ -154,7 +155,11 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-				"code":"324512"
+				"tel": {
+					"number":"13811111111",
+					"dialCode":86
+				}
+				"validationCode":"324512"
 			}
 		}
 
@@ -165,17 +170,83 @@ GET /app/search?query=北京&page=2&pageSize=50
 100103|用户已存在|注册用户时，手机号已经注册了或者邮箱号已经注册过了
 100104|请求次数过多|请求验证码的次数过多
 
-###注册
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+###检验验证码
+- Path:/app/tokens
+- Request Method:POST
+- Request Headers:无
+- Query String:空
 - Request Body
+
+		{
+			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
+			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
+			"action":1,
+			"validationCode":"022321"
+		}
+
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"tel":{
+					"number":"13811111111",
+					"dialCode":86
+				},
+				"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
+			}
+		}
 
 错误码|描述|原因
 --|--|--
+100201|手机号格式不正确|输入了错误的手机号
+100202|邮箱格式不正确|输入了错误的邮箱号
+100203|校验失败|验证码错误
 
+###注册
+- Path:/app/users
+- Request Method:POST
+- Request Headers:无
+- Query String:无
+- Request Body
+
+		{
+			"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa",
+			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
+			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
+			"password":"312315"
+		}
+
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"id":"",
+				"userId":10001,
+				"nickName":"不羁客10001",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"tel":{
+					"number":"13811111111",
+					"dialCode":86
+				}
+				"email":"",
+				"level":1,
+				"soundNotify":true,
+				"vibrateNotify":true
+			}
+		}
+错误码|描述|原因
+--|--|--
+100301|XXX|XXX
 ###登录
 - Path:/app/
 - Request Method:
