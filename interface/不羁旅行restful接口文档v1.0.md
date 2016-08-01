@@ -166,226 +166,1234 @@ GET /app/search?query=北京&page=2&pageSize=50
 100104|请求次数过多|请求验证码的次数过多
 
 ###注册
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###登录
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###第三方登录
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###重置密码
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改密码
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得用户信息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改用户信息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###退出登录
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###绑定手机号
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###申请商家
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###用户反馈
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###用户定制
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得专栏
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###特产搜索
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得特产详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得攻略详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###查询客栈
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得客栈详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得目的地列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得目的地详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得景点列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得景点详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得餐厅列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得餐厅详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得商场列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得商场详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布活动
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得活动列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得活动详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###搜索全部
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###查询游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###查看朋友圈
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###删除用户足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得足迹列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得足迹详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###复制行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得行程规划列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得行程规划详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###删除行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得游记详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###删除游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布问题
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###搜索问题
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得问题详情
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###添加回答
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###关注用户
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消关注用户
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###是否好友关系
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###用户的好友列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###获取好友详细信息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改好友备注
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###将用户加入/移除黑名单
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###用户的关注列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发送消息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###拉取消息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改会话属性
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得会话属性
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###创建群组
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###修改群组信息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得群组信息
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得群组成员信息列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###操作群成员
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得用户群组列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###发布帖子
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得群帖子列表
 按照最新评论时间倒序
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏帖子
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏帖子
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏帖子列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏足迹列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏行程规划列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏问答
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏问答
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏问答列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏美食
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏美食
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏美食列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏客栈
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏客栈
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏客栈列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###收藏游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消收藏游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得收藏游记列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###点赞帖子
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消点赞帖子
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得帖子点赞列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###点赞行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消点赞行程规划
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得行程规划点赞列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###点赞足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消点赞足迹
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得足迹点赞列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###点赞活动
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消点赞活动
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得活动点赞列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###点赞游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取消点赞游记
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得游记点赞列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###投票问题
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###投票回答
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###添加新评论
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###删除评论
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
 
 ###取得评论列表
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+错误码|描述|原因
+--|--|--
