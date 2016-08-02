@@ -143,8 +143,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 
 		{
-			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
-			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
+			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
 			"action":1
 		}
 
@@ -158,7 +157,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 				"tel": {
 					"number":"13811111111",
 					"dialCode":86
-				}
+				}, // 该字段有可能是邮箱号，email
 				"validationCode":"324512"
 			}
 		}
@@ -178,8 +177,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 
 		{
-			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
-			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
+			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
 			"action":1,
 			"validationCode":"022321"
 		}
@@ -194,7 +192,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 				"tel":{
 					"number":"13811111111",
 					"dialCode":86
-				},
+				},// 该字段有可能是邮箱号，email
 				"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
 			}
 		}
@@ -214,8 +212,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 
 		{
 			"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa",
-			"tel":"13811111111",   // 可选，如果有tel，那么没有email字段
-			"email":"381364134@qq.com", //可选，如果有email，那么没有tel字段
+			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
 			"password":"312315"
 		}
 
@@ -248,45 +245,163 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 100301|XXX|XXX
 ###登录
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/login
+- Request Method:POST
+- Request Headers:无
+- Query String:无
 - Request Body
+
+		{
+			"loginName":"13811111111",   // 可以是手机号，也可以是邮箱号
+			"password":"ABCabc123"
+		}
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"tel":{
+					"number":"13811111111",
+					"dialCode":86
+				},
+				"email":"",
+				"promotionCode":"N2A2MV",
+				"roles":[1, 2],
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"oauthInfoList":[
+					{
+						"provider":"qq",
+						"oauthId":"231da3213da",
+						"nickName":"小呆",
+						"avatar":"http://1.jpg",
+						"token":""
+					}
+				],
+				"level":1,
+				"zodiac":1,
+				"soundNotify":true,
+				"vibrateNotify":true,
+				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+			}
+		}
 错误码|描述|原因
 --|--|--
 
 ###第三方登录
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/oauthlogin
+- Request Method:POST
+- Request Headers:无
+- Query String:无
 - Request Body
+
+		{
+			"provider":"qq",
+			"oauthId":"231da3213da",
+			"nickName":"小呆",
+			"avatar":"http://1.jpg",
+			"token":""
+		}
+
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"tel":{},
+				"email":"",
+				"promotionCode":"N2A2MV",
+				"roles":[1, 2],
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"oauthInfoList":[
+					{
+						"provider":"qq",
+						"oauthId":"231da3213da",
+						"nickName":"小呆",
+						"avatar":"http://1.jpg",
+						"token":""
+					}
+				],
+				"level":1,
+				"zodiac":1,
+				"soundNotify":true,
+				"vibrateNotify":true,
+				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+			}
+		}
 
 错误码|描述|原因
 --|--|--
 
 ###重置密码
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/password
+- Request Method:PUT
+- Request Headers:无
+- Query String:无
 - Request Body
+
+		{
+			"loginName":"13811111111",
+			"newPassword":"123343",
+			"token":"bjlx::token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		}
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
 
 ###修改密码
-- Path:/app/
-- Request Method:
+- Path:/app/users/10001/password
+- Request Method:PUT
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"oldPassword":"das123",
+			"newPassword":"123344"
+		}
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -299,6 +414,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -309,6 +433,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -321,6 +454,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -331,6 +473,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -343,6 +494,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -353,6 +513,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -365,6 +534,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -375,6 +553,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -387,6 +574,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -397,6 +593,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -409,6 +614,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -419,6 +633,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -431,6 +654,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -441,6 +673,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -453,6 +694,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -463,6 +713,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -475,6 +734,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -485,6 +753,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -497,6 +774,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -507,6 +793,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -519,6 +814,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -529,6 +833,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -541,6 +854,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -551,6 +873,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -563,6 +894,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -573,6 +913,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -585,6 +934,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -595,6 +953,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -607,6 +974,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -617,6 +993,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -629,6 +1014,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -639,6 +1033,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -651,6 +1054,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -661,6 +1073,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -673,6 +1094,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -683,6 +1113,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -695,6 +1134,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -705,6 +1153,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -717,6 +1174,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -727,6 +1193,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -739,6 +1214,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -749,6 +1233,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -761,6 +1254,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -771,6 +1273,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -783,6 +1294,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -793,6 +1313,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -805,6 +1334,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -815,6 +1353,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -827,6 +1374,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -837,6 +1393,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -849,6 +1414,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -859,6 +1433,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -871,6 +1454,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -881,6 +1473,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -893,6 +1494,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -903,6 +1513,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -915,6 +1534,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -925,6 +1553,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -937,6 +1574,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -947,6 +1593,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -959,6 +1614,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -969,6 +1633,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -981,6 +1654,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -992,6 +1674,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1002,6 +1693,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1015,6 +1715,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1025,6 +1734,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1037,6 +1755,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1047,6 +1774,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1059,6 +1795,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1069,6 +1814,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1081,6 +1835,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1091,6 +1854,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1103,6 +1875,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1113,6 +1894,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1125,6 +1915,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1135,6 +1934,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1147,6 +1955,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1157,6 +1974,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1169,8 +1995,26 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 ###取得收藏美食列表
 - Path:/app/
@@ -1179,6 +2023,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1191,6 +2044,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1201,6 +2063,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1213,6 +2084,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1223,6 +2103,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1235,6 +2124,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1245,6 +2143,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1257,6 +2164,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1267,6 +2183,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1279,6 +2204,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1289,6 +2223,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1301,6 +2244,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1311,6 +2263,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1323,6 +2284,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1333,6 +2303,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1345,6 +2324,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1355,6 +2343,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1367,6 +2364,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1377,6 +2383,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1389,6 +2404,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1399,6 +2423,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1411,6 +2444,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1421,6 +2463,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1433,6 +2484,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1443,6 +2503,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
@@ -1455,6 +2524,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 - Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
 错误码|描述|原因
 --|--|--
 
@@ -1465,6 +2543,15 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
 
 错误码|描述|原因
 --|--|--
