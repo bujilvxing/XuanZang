@@ -407,11 +407,14 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得用户信息
-- Path:/app/
-- Request Method:
+- Path:/app/users/10001
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -419,7 +422,36 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"tel":{},
+				"email":"",
+				"promotionCode":"N2A2MV",
+				"roles":[1, 2],
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"oauthInfoList":[
+					{
+						"provider":"qq",
+						"oauthId":"231da3213da",
+						"nickName":"小呆",
+						"avatar":"http://1.jpg",
+						"token":""
+					}
+				],
+				"level":1,
+				"zodiac":1,
+				"soundNotify":true,
+				"vibrateNotify":true,
+				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 			}
 		}
 
