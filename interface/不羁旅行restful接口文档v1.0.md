@@ -459,11 +459,31 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###修改用户信息
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/10001
+- Request Method:PATCH
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"nickName":"魔法师",
+			"gender":2,
+			"birthday":"1990-06-01",
+			"signature":"前世的乡愁",
+			"residence":"北京市海淀区闵庄路15号",
+			"backGround": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"avatar": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		}
 - Response
 
 		{
@@ -471,7 +491,36 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"tel":{},
+				"email":"",
+				"promotionCode":"N2A2MV",
+				"roles":[1, 2],
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"oauthInfoList":[
+					{
+						"provider":"qq",
+						"oauthId":"231da3213da",
+						"nickName":"小呆",
+						"avatar":"http://1.jpg",
+						"token":""
+					}
+				],
+				"level":1,
+				"zodiac":1,
+				"soundNotify":true,
+				"vibrateNotify":true,
+				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 			}
 		}
 
@@ -479,80 +528,89 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###退出登录
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/users/logout
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###绑定手机号
-- Path:/app/
-- Request Method:
+- Path:/app/users/10001/tel
+- Request Method:PUT
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"tel":"13811111111",
+			"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
+		}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###申请商家
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/misc/sellers
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"tel":"13811111111"
+		}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###用户反馈
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/misc/feedback
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"content":""
+		}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
