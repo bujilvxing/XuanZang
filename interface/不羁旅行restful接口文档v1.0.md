@@ -133,8 +133,14 @@ GET /app/search?query=北京&page=2&pageSize=50
 
 #接口详细说明
 
+删除资源
 >删除接口时，无需真正删除，只需更新资源状态即可，例如删除帖子，实际上是将帖子状态标记为删除状态。
 
+路径
+>路径中的{}表示一个变量，例如：/app/users/{userId}，其中userId是用户id，假设用户id为10001，那么路径即为/app/users/10001
+
+***
+#登录注册模块
 ###发送验证码
 - Path:/app/validationcodes
 - Request Method:POST
@@ -358,6 +364,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#用户模块
 ###重置密码
 - Path:/app/users/password
 - Request Method:PUT
@@ -382,7 +390,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###修改密码
-- Path:/app/users/10001/password
+- Path:/app/users/{userId}/password
 - Request Method:PUT
 - Request Headers:
 
@@ -407,7 +415,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得用户信息
-- Path:/app/users/10001
+- Path:/app/users/{userId}
 - Request Method:GET
 - Request Headers:
 
@@ -570,6 +578,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#其他模块
 ###申请商家
 - Path:/app/misc/sellers
 - Request Method:POST
@@ -616,31 +626,13 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
-###用户定制
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
+***
+#首页运营模块
 ###取得专栏
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/misc/columns
+- Request Method:GET
+- Request Headers:无
+- Query String:无
 - Request Body
 - Response
 
@@ -648,19 +640,29 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[{
+				"itemId":"546f2da8b8ce0440eddb287e",
+				"itemType":"hotel",
+				"title":"如家豪华酒店",
+				"linkType":"app",
+				"linkUrl":"http://XXX",
+				"desc":"超大双人床",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			}]
 		}
 
 错误码|描述|原因
 --|--|--
 
-###特产搜索
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+###取得首页
+- Path:/app/misc/columns
+- Request Method:GET
+- Request Headers:无
+- Query String:无
 - Request Body
 - Response
 
@@ -668,20 +670,30 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[{
+				"itemId":"546f2da8b8ce0440eddb287e",
+				"itemType":"hotel",
+				"title":"如家豪华酒店",
+				"linkType":"app",
+				"linkUrl":"http://XXX",
+				"desc":"超大双人床",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			}]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得特产详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/marketplace/commodities/{commodityId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -689,7 +701,60 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"546f2da8b8ce0440eddb287e",
+				"category":["specialty"],
+				"title":"煌上煌烤鸭",
+				"locality": {
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				},
+				"desc":"太好吃了",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}],
+				"price":33.3,
+				"marketPrice":56.4,
+				"status":1,
+				"plans":[{
+					"planId":"646f2da8b8ce0440eddb287f",
+					"title":"买3只送1只",
+					"desc":"",
+					"pricing":[],
+					"marketPrice":56.4,
+					"price":33.3,
+					"stockInfo":[{
+						"status":"plenty",
+						"quantity":100,
+						"timeRange":[]##  ##
+					}],
+					"timeRequired":false
+				}],
+				"salesVolume":100,
+				"createTime":1450000000000,
+				"updateTime":1450000000000,
+				"rating":0.98,
+				"commodityType":"食品",
+				"version":1
 			}
 		}
 
@@ -716,6 +781,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#POI模块
 ###查询客栈
 - Path:/app/
 - Request Method:
@@ -916,6 +983,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#活动模块
 ###发布活动
 - Path:/app/
 - Request Method:
@@ -1016,6 +1085,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#时间线模块
 ###查看朋友圈
 - Path:/app/
 - Request Method:
@@ -1036,6 +1107,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#足迹模块
 ###发布足迹
 - Path:/app/
 - Request Method:
@@ -1136,6 +1209,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+***
+#形成规划模块
 ###发布行程规划
 - Path:/app/
 - Request Method:
@@ -2645,3 +2720,33 @@ GET /app/search?query=北京&page=2&pageSize=50
 
 错误码|描述|原因
 --|--|--
+
+
+***
+#搜索
+###特产搜索
+- Path:/app/marketplace/commodities
+- Request Method:GET
+- Request Headers:无
+- Query String:?query=烤鸭&sortby=price&sort=asc
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+###用户搜索
+
+###活动搜索
+
+###全站搜索
+
