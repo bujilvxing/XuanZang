@@ -761,8 +761,69 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
+###添加攻略
+- Path:/app/guides
+- Request Method:POST
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+###修改攻略
+- Path:/app/guides/{guideId}
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+###删除攻略
+- Path:/app/guides/{guideId}
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+
 ###取得攻略详情
-- Path:/app/
+- Path:/app/guides/{guideId}
 - Request Method:
 - Request Headers:
 - Query String:
