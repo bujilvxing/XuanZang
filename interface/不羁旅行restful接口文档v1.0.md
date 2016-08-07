@@ -2752,4 +2752,3 @@ GET /app/search?query=北京&page=2&pageSize=50
 ###活动搜索
 
 ###全站搜索
-
