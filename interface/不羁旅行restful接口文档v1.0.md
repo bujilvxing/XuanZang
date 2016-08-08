@@ -922,7 +922,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 						"discount":0.65
 					}
 				],
-				"activity": [
+				"activities": [
 					{
 						"id":"646f2da8b8ce0440eddb287f",
 						"title":"亲子游活动",
@@ -1214,14 +1214,14 @@ GET /app/search?query=北京&page=2&pageSize=50
 						"city":"南昌市",
 						"district":"东湖区",
 						"detail":"XXX",
-    					"zipCode":"100071";
+    					"zipCode":"100071"
 					},
 					"returnAddr":{
 						"province":"江西省",
 						"city":"南昌市",
 						"district":"东湖区",
 						"detail":"XXX",
-    					"zipCode":"100071";
+    					"zipCode":"100071"
 					},
 					"contact":{
 						"phoneList":["010-86752341","010-86752342"],
@@ -1340,7 +1340,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得目的地详情
-- Path:/app/localities/localityId
+- Path:/app/localities/{localityId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -1352,7 +1352,177 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"lat":115.27,
+				"lng":28.09,
+				"rank":1,
+				"remoteTraffic":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"localTraffic":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"shoppingIntro":"",
+				"diningIntro":"",
+				"cuisines":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"activities":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"亲子游活动",
+						"maxNum":200,
+						"joinNum" : 106,
+						"favorCnt":100001,
+						"viewCnt":88888,
+						"poster":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"tips":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"geoHistory":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"specials":[
+					{
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"images":[
+							{
+								"width":400,
+								"height":400,
+								"url":"http://1.jpg"
+							}
+						],
+						"title":"",
+						"desc":""
+					}
+				],
+				"alias":[],
+				"visitCnt":19822,
+				"commentCnt":2312,
+				"favorCnt":3131,
+				"hotness":0.97,
+				"rating":0.97,
+				"superAdm":{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				},
+				"tags":["红色摇篮"],
+				"desc":"",
+				"travelMonth":"4月中旬到10月下旬",
+				"timeCostDesc":"3到4天",
+				"timeCost":4
 			}
 		}
 
@@ -1360,31 +1530,52 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得景点列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/viewspots
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得景点详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/viewspots/{viewspotId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -1392,7 +1583,76 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"priceDesc":"",
+				"tags":["",""],
+				"openTime":"9:00~21:00",
+				"description":{
+					"desc":"XXX",
+					"details":"XXX",
+					"tips":"XXX",
+					"traffic":"XXX"
+				},
+				"alias":["",""],
+				"targets":["",""],
+				"locList":[
+					{
+						"id": "646f2da8b8ce0440eddb287f",
+						"zhName":"南昌",
+						"enName":"NanChang",
+						"alias":[],
+						"hotness":0.97,
+						"rating":0.97,
+						"tags":["红色摇篮"],
+						"desc":"",
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"lat":115.27,
+						"lng":28.09
+					}
+				],
+				"locality":{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				}
 			}
 		}
 
@@ -1400,31 +1660,52 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得餐厅列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/restaurants
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=1&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得餐厅详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/restaurants/{restaurantId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -1432,7 +1713,84 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				],
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"contact":{
+					"phoneList":["010-86752341","010-86752342"],
+					"cellphoneList":["13811111111", "13811111112"],
+					"qq":"13231235432",
+					"weixin":"pisa",
+					"sina":"a123123",
+					"fax":"010-23131231",
+					"email":"bujilvxing@163.com",
+					"website":"www.baidu.com"
+				},
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"priceDesc":"",
+				"price":180.3,
+				"tags":["",""],
+				"description":{
+					"desc":"XXX",
+					"details":"XXX",
+					"tips":"XXX",
+					"traffic":"XXX"
+				},
+				"alias":["",""],
+				"targets":["",""],
+				"locList":[
+					{
+						"id": "646f2da8b8ce0440eddb287f",
+						"zhName":"南昌",
+						"enName":"NanChang",
+						"alias":[],
+						"hotness":0.97,
+						"rating":0.97,
+						"tags":["红色摇篮"],
+						"desc":"",
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"lat":115.27,
+						"lng":28.09
+					}
+				],
+				"locality":{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				},
+				"openTime":"9:00~21:00"
+				"saleVolume":100
 			}
 		}
 
@@ -1440,31 +1798,50 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得商场列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/shoppings
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=1&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得商场详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/shoppings/{shoppingId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -1472,7 +1849,83 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				],
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"contact":{
+					"phoneList":["010-86752341","010-86752342"],
+					"cellphoneList":["13811111111", "13811111112"],
+					"qq":"13231235432",
+					"weixin":"pisa",
+					"sina":"a123123",
+					"fax":"010-23131231",
+					"email":"bujilvxing@163.com",
+					"website":"www.baidu.com"
+				},
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"priceDesc":"",
+				"price":180.3,
+				"tags":["",""],
+				"description":{
+					"desc":"XXX",
+					"details":"XXX",
+					"tips":"XXX",
+					"traffic":"XXX"
+				},
+				"alias":["",""],
+				"targets":["",""],
+				"locList":[
+					{
+						"id": "646f2da8b8ce0440eddb287f",
+						"zhName":"南昌",
+						"enName":"NanChang",
+						"alias":[],
+						"hotness":0.97,
+						"rating":0.97,
+						"tags":["红色摇篮"],
+						"desc":"",
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"lat":115.27,
+						"lng":28.09
+					}
+				],
+				"locality":{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				},
+				"openTime":"9:00~21:00"
 			}
 		}
 
@@ -1482,40 +1935,129 @@ GET /app/search?query=北京&page=2&pageSize=50
 ***
 #活动模块
 ###发布活动
-- Path:/app/
-- Request Method:
+- Path:/app/activities
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+	{
+		"title":"北京冰雪嘉年华",
+		"maxNum":200,
+		"joinNum":100,
+		"startTime":14500000000,
+		"endTime":14500000000,
+		"address":{
+			"province":"江西省",
+			"city":"南昌市",
+			"district":"东湖区",
+			"detail":"XXX",
+			"zipCode":"100071"
+		},
+		"posters":[
+			{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		],
+		"theme":"音乐",
+		"category":"摇滚",
+		"tags":["",""],
+		"visiable":1,
+		"desc":"",
+		"tickets":[
+			{
+				"price":100.1,
+				"free":false;
+				"refundWay":1,
+				"refundDesc":"",
+				"desc":"",
+				"maxNum":100
+			}
+		]
+	}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得活动列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/activities
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=1&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"北京冰雪嘉年华",
+					"maxNum":200,
+					"joinNum":100,
+					"startTime":14500000000,
+					"endTime":14500000000,
+					"address":{
+						"province":"江西省",
+						"city":"南昌市",
+						"district":"东湖区",
+						"detail":"XXX",
+						"zipCode":"100071"
+					},
+					"favorCnt":1000,
+					"commentCnt":3123,
+					"viewCnt":31231,
+					"shareCnt":312,
+					"posters":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"theme":"音乐",
+					"category":"摇滚",
+					"tags":["",""],
+					"visiable":1,
+					"desc":"",
+					"applicantInfos":[
+						{
+							"phoneList":["010-86752341","010-86752342"],
+							"cellphoneList":["13811111111", "13811111112"],
+							"qq":"13231235432",
+							"weixin":"pisa",
+							"sina":"a123123",
+							"fax":"010-23131231",
+							"email":"bujilvxing@163.com",
+							"website":"www.baidu.com"
+						}
+					],
+					"tickets":[
+						{
+							"id":"",
+							"price":100.1,
+							"free":false;
+							"refundWay":1,
+							"refundDesc":"",
+							"desc":"",
+							"maxNum":100
+				
+						}
+					]
+				}
+			]
 		}
 
 错误码|描述|原因
@@ -1534,7 +2076,53 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+{
+	"title":"北京冰雪嘉年华",
+	"maxNum":200,
+	"joinNum":100,
+	"startTime":14500000000,
+	"endTime":14500000000,
+	"address":{
+		"province":"江西省",
+		"city":"南昌市",
+		"district":"东湖区",
+		"detail":"XXX",
+		"zipCode":"100071"
+	},
+	"favorCnt":1000,
+	"commentCnt":3123,
+	"viewCnt":31231,
+	"shareCnt":312,
+	"posters":[
+		{
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		}
+	],
+	"theme":"音乐",
+	"category":"摇滚",
+	"tags":["",""],
+	"visiable":1,
+	"desc":"",
+	"applicantInfos":[
+		{
+			"phoneList":["010-86752341","010-86752342"],
+			"cellphoneList":["13811111111", "13811111112"],
+			"qq":"13231235432",
+			"weixin":"pisa",
+			"sina":"a123123",
+			"fax":"010-23131231",
+			"email":"bujilvxing@163.com",
+			"website":"www.baidu.com"
+		}
+	],
+	"tickets":[
+		{
+			"id":""
+		}
+	]
+}
 			}
 		}
 
