@@ -2017,6 +2017,61 @@ GET /app/search?query=北京&page=2&pageSize=50
 						"zipCode":"100071"
 					},
 					"favorCnt":1000,
+					"viewCnt":31231,
+					"posters":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"tags":["",""],
+					"tickets":[
+						{
+							"id":"646f2da8b8ce0440eddb287f",
+							"price":100.1,
+							"free":false;
+							"refundWay":1,
+							"refundDesc":"",
+							"desc":"",
+							"maxNum":100
+				
+						}
+					]
+				}
+			]
+		}
+
+错误码|描述|原因
+--|--|--
+
+###取得活动详情
+- Path:/app/activities/{activityId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"北京冰雪嘉年华",
+					"maxNum":200,
+					"joinNum":100,
+					"startTime":14500000000,
+					"endTime":14500000000,
+					"address":{
+						"province":"江西省",
+						"city":"南昌市",
+						"district":"东湖区",
+						"detail":"XXX",
+						"zipCode":"100071"
+					},
+					"favorCnt":1000,
 					"commentCnt":3123,
 					"viewCnt":31231,
 					"shareCnt":312,
@@ -2046,7 +2101,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 					],
 					"tickets":[
 						{
-							"id":"",
+							"id":"646f2da8b8ce0440eddb287f",
 							"price":100.1,
 							"free":false;
 							"refundWay":1,
@@ -2057,74 +2112,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 						}
 					]
 				}
-			]
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得活动详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-{
-	"title":"北京冰雪嘉年华",
-	"maxNum":200,
-	"joinNum":100,
-	"startTime":14500000000,
-	"endTime":14500000000,
-	"address":{
-		"province":"江西省",
-		"city":"南昌市",
-		"district":"东湖区",
-		"detail":"XXX",
-		"zipCode":"100071"
-	},
-	"favorCnt":1000,
-	"commentCnt":3123,
-	"viewCnt":31231,
-	"shareCnt":312,
-	"posters":[
-		{
-			"width":400,
-			"height":400,
-			"url":"http://1.jpg"
-		}
-	],
-	"theme":"音乐",
-	"category":"摇滚",
-	"tags":["",""],
-	"visiable":1,
-	"desc":"",
-	"applicantInfos":[
-		{
-			"phoneList":["010-86752341","010-86752342"],
-			"cellphoneList":["13811111111", "13811111112"],
-			"qq":"13231235432",
-			"weixin":"pisa",
-			"sina":"a123123",
-			"fax":"010-23131231",
-			"email":"bujilvxing@163.com",
-			"website":"www.baidu.com"
-		}
-	],
-	"tickets":[
-		{
-			"id":""
-		}
-	]
-}
 			}
-		}
 
 错误码|描述|原因
 --|--|--
