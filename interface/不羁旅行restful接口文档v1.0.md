@@ -688,7 +688,38 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
-###取得特产详情
+###取得商品列表(特产等)
+- Path:/app/marketplace/commodities
+- Request Method:GET
+- Request Headers:无
+- Query String:category=speciality&offset=0&limit=100
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"id":"546f2da8b8ce0440eddb287e",
+					"category":["specialty"],
+					"title":"煌上煌烤鸭",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"price":33.3,
+					"marketPrice":56.4,
+					"status":1,
+					"salesVolume":100,
+					"rating":0.98
+				}
+			]
+		}
+
+###取得商品详情(特产等)
 - Path:/app/marketplace/commodities/{commodityId}
 - Request Method:GET
 - Request Headers:无
@@ -762,14 +793,39 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得攻略列表
+- Path:/app/guides
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
 
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[{
+				"id":"646f2da8b8ce0440eddb287f",
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"title":"南昌文化",
+				"summary":"革命根据地，风景如画...",
+				"viewCnt":1000000
+			}]
+		}
+
+错误码|描述|原因
+--|--|--
 
 ###取得攻略详情
 - Path:/app/guides/{guideId}
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -777,7 +833,254 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"updateTime":1425225600000,
+				"title":"南昌文化",
+				"desc":"南昌是一个...",
+				"bestTripTime":"5月1日~10月20日",
+				"tips":"",
+				"hotels":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"如家快捷酒店",
+						"enName":"RuJia",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"shoppings":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"优衣库",
+						"enName":"Uniqlo",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"restaurants":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"煌上煌烤鸭店",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"activity": [
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"亲子游活动",
+						"maxNum":200,
+						"joinNum" : 106,
+						"favorCnt":100001,
+						"viewCnt":88888,
+						"poster":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"viewspots":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"八一广场",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"tripPlans":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"userId":10001,
+						"nickName":"魔法屋",
+						"avatar": {"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"tripItems": [
+							{
+								"tripTime":1450000000000,
+								"createTime":1450000000000,
+								"desc":"",
+								"restaurant":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"煌上煌烤鸭店",
+									"enName":"",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"hotels":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"如家快捷酒店",
+									"enName":"RuJia",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"viewspot":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"八一广场",
+									"enName":"",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"activity": {
+									"id":"646f2da8b8ce0440eddb287f",
+									"title":"亲子游活动",
+									"maxNum":200,
+									"joinNum" : 106,
+									"favorCnt":100001,
+									"viewCnt":88888,
+									"poster":{
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									}
+								},
+								"shoppings": {
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"优衣库",
+									"enName":"Uniqlo",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								}
+							}
+						]
+					}
+				]
+				"summary":"革命根据地，风景如画...",
+				"viewCnt":1000000
 			}
 		}
 
@@ -786,32 +1089,52 @@ GET /app/search?query=北京&page=2&pageSize=50
 
 ***
 #POI模块
-###查询客栈
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+###取得客栈列表
+- Path:/app/poi/hotels
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得客栈详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/poi/hotels/{hotelId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -819,7 +1142,161 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"contact": {
+					"phoneList":["010-86752341","010-86752342"],
+					"cellphoneList":["13811111111", "13811111112"],
+					"qq":"13231235432",
+					"weixin":"pisa",
+					"sina":"a123123",
+					"fax":"010-23131231",
+					"email":"bujilvxing@163.com",
+					"website":"www.baidu.com"
+				},
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"priceDesc":"",
+				"description":{
+					"desc":"XXX",
+					"details":"XXX",
+					"tips":"XXX",
+					"traffic":"XXX"
+				},
+				"tags":["",""],
+				"alias":["",""],
+				"targets":["",""],
+				"address":"XXX",
+				"locList":[
+					{
+						"id": "646f2da8b8ce0440eddb287f",
+						"zhName":"南昌",
+						"enName":"NanChang",
+						"alias":[],
+						"hotness":0.97,
+						"rating":0.97,
+						"tags":["红色摇篮"],
+						"desc":"",
+						"cover": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"lat":115.27,
+						"lng":28.09
+					}
+				],
+				"saleVolume":100,
+				"discount":0.65,
+				"rentCar": {
+					"price":180,
+					"pickupAddr":{
+						"province":"江西省",
+						"city":"南昌市",
+						"district":"东湖区",
+						"detail":"XXX",
+    					"zipCode":"100071";
+					},
+					"returnAddr":{
+						"province":"江西省",
+						"city":"南昌市",
+						"district":"东湖区",
+						"detail":"XXX",
+    					"zipCode":"100071";
+					},
+					"contact":{
+						"phoneList":["010-86752341","010-86752342"],
+						"cellphoneList":["13811111111", "13811111112"],
+						"qq":"13231235432",
+						"weixin":"pisa",
+						"sina":"a123123",
+						"fax":"010-23131231",
+						"email":"bujilvxing@163.com",
+						"website":"www.baidu.com"
+					},
+					"minRentDay":1,
+					"car":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"carId":"赣N7023",
+						"transmission":1,
+						"vehicleType":"豪华型",
+						"brand":"丰田",
+						"carOwner":{
+							"surname":"王",
+							"givenName":"力宏",
+							"gender":1,
+							"birthday":"1982-12-03",
+							"identities":[
+								{
+									"idType":"身份证",
+									"number":"137771198212037145"
+								}
+							],
+							"tel":{
+								"dialCode":86,
+								"number":"13811111111"
+							}
+						},
+						"displacement":3.0,
+						"seatNum":5,
+						"name":"丰田霸道",
+						"fuelType":"汽油",
+						"gasolineType":"93#"
+						"actuationType":"前后驱动",
+						"dormer":true,
+						"gps":true,
+						"seatType":"织物座椅",
+						"airbagNum":3,
+						"gearboxType":"AT",
+						"airConditioner":true
+					},
+					"autoInsurance":true,
+					"autoInsurancePrice":50,
+					"pickup":true
+				},
+				"locality": {
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				},
+				"availableDays":[
+					{
+						"bookTime":"2016-08-01",
+						"available":true,
+						"price":392.1
+					}
+				]
 			}
 		}
 
@@ -827,31 +1304,47 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###取得目的地列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/localities
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得目的地详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/localities/localityId
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
