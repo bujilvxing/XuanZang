@@ -2395,7 +2395,17 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"timestamp":1425225600000,
 			"result":[
 				{
-					
+					"id":"646f2da8b8ce0440eddb287f",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rating":0.97,
+					"hotness":0.98,
+					"title":"",
+					"viewCnt":100,
+					"summary":""
 				}
 			]
 		}
@@ -2408,20 +2418,41 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Method:POST
 - Request Headers
 
-
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
-{
-}
+
+		{
+			"id":"646f2da8b8ce0440eddb287f",
+			"cover": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"title":"",
+			"travelTime":14500000000,
+			"contents":[
+				{
+					"day1":"XXX",
+					"day2":"XXX"
+				}
+			],
+			"summary":""
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
@@ -2432,20 +2463,40 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Method:PUT
 - Request Headers
 
-
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
-{
-}
+		{
+			"id":"646f2da8b8ce0440eddb287f",
+			"cover": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"title":"",
+			"travelTime":14500000000,
+			"contents":[
+				{
+					"day1":"XXX",
+					"day2":"XXX"
+				}
+			],
+			"summary":""
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
@@ -2464,7 +2515,37 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"rating":0.98,
+				"hotness":0.98,
+				"title":"",
+				"publishTime":14500000000,
+				"favorCnt":100,
+				"commentCnt":10002,
+				"viewCnt":1231,
+				"shareCnt":123,
+				"travelTime":14500000000,
+				"contents":[
+					{
+						"day1":"XXX",
+						"day2":"XXX"
+					}
+				],
+				"summary":"",
+				"source":"baidu",
+				"essence":true
 			}
 		}
 
@@ -2476,7 +2557,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Method:DELETE
 - Request Headers
 
-
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -2493,42 +2574,142 @@ GET /app/search?query=北京&page=2&pageSize=50
 ***
 #时间线模块
 ###查看朋友圈
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/moments
+- Request Method:GET
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:offset=1&limit=100
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"publishTime":14500000000,
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"originId":"646f2da8b8ce0440eddb287f",
+					"originUserId":10002,
+					"originNickName":"魔法屋",
+					"originAvatar":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+    				"text":"南昌如此之美",
+    				"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"comment":"自己评论",
+					"card":	{
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"",
+						"summary":"",
+						"cover":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"thumb":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"detailUrl":"http://xxx.html"
+					}
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
-***
-#足迹模块
-###发布足迹
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+###发布朋友圈
+- Path:/app/traces
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":10002,
+			"originNickName":"魔法屋",
+			"originAvatar":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"text":"南昌如此之美",
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"comment":"自己评论",
+			"card":	{
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"",
+				"summary":"",
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"thumb":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"detailUrl":"http://xxx.html"
+			}
+		}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
+			"timestamp":1425225600000
+		}
 
-			}
+***
+#足迹模块
+###发布足迹
+- Path:/app/traces
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body
+
+		{
+			
+		}
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
