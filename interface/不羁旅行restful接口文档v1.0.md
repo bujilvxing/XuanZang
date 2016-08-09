@@ -966,7 +966,8 @@ GET /app/search?query=北京&page=2&pageSize=50
 						"id":"646f2da8b8ce0440eddb287f",
 						"userId":10001,
 						"nickName":"魔法屋",
-						"avatar": {"width":400,
+						"avatar": {
+							"width":400,
 							"height":400,
 							"url":"http://1.jpg"
 						},
@@ -997,7 +998,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 									"saleVolume":100,
 									"discount":0.65
 								},
-								"hotels":{
+								"hotel":{
 									"id":"646f2da8b8ce0440eddb287f",
 									"lat":180.1,
 									"lng":180.1,
@@ -1053,7 +1054,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 										"url":"http://1.jpg"
 									}
 								},
-								"shoppings": {
+								"shopping": {
 									"id":"646f2da8b8ce0440eddb287f",
 									"lat":180.1,
 									"lng":180.1,
@@ -1078,7 +1079,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 							}
 						]
 					}
-				]
+				],
 				"summary":"革命根据地，风景如画...",
 				"viewCnt":1000000
 			}
@@ -2108,7 +2109,6 @@ GET /app/search?query=北京&page=2&pageSize=50
 							"refundDesc":"",
 							"desc":"",
 							"maxNum":100
-				
 						}
 					]
 				}
@@ -2117,12 +2117,302 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
-###搜索全部
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+***
+#搜索模块
+###搜索全部以及按分类搜索
+包含：用户，形成规划，足迹，游记，美食，客栈，景点，购物，特产，婚纱摄影
+
+- Path:/app/search
+- Request Method:GET
+- Request Headers:无
+- Query String:user=false&tripplan=false
+
+	没有参数的，表示搜索所有的分类。设置为false的表示不需要搜索该分类
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+				"userInfos":[
+					{
+						"userId":10001,
+						"nickName":"魔法师",
+						"avatar": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"gender":1
+					}
+				],
+				"tripPlans":[
+					{
+						"id":"",
+						"userId":"",
+						"nickName":"",
+						"avatar":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"tripItems":[
+							"id":"646f2da8b8ce0440eddb287f",
+						"userId":10001,
+						"nickName":"魔法屋",
+						"avatar": {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"tripItems": [
+							{
+								"tripTime":1450000000000,
+								"createTime":1450000000000,
+								"desc":"",
+								"restaurant":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"煌上煌烤鸭店",
+									"enName":"",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"hotel":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"如家快捷酒店",
+									"enName":"RuJia",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"viewspot":{
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"八一广场",
+									"enName":"",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								},
+								"activity": {
+									"id":"646f2da8b8ce0440eddb287f",
+									"title":"亲子游活动",
+									"maxNum":200,
+									"joinNum" : 106,
+									"favorCnt":100001,
+									"viewCnt":88888,
+									"poster":{
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									}
+								},
+								"shopping": {
+									"id":"646f2da8b8ce0440eddb287f",
+									"lat":180.1,
+									"lng":180.1,
+									"cover" : {
+										"width":400,
+										"height":400,
+										"url":"http://1.jpg"
+									},
+									"rank":3,
+									"hotness":0.97,
+									"rating":0.98,
+									"zhName":"优衣库",
+									"enName":"Uniqlo",
+									"url":"http://XXX",
+									"marketPrice":280.6,
+									"price":180.3,
+									"tags":["",""],
+									"openTime":"9:00~21:00"
+									"saleVolume":100,
+									"discount":0.65
+								}
+							}
+						]
+					}
+				],
+				"traces":[],
+				"restaurants":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"煌上煌烤鸭店",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"hotels":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"如家快捷酒店",
+						"enName":"RuJia",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"viewspots":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"八一广场",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				],
+				"shoppings":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"优衣库",
+						"enName":"Uniqlo",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00",
+						"discount":0.65
+					}
+				],
+				"specialities":[],
+				"photographies":[]
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+***
+#游记模块
+###取得游记列表
+- Path:/app/travelnotes
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=1&limit=100
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					
+				}
+			]
+		}
+
+错误码|描述|原因
+--|--|--
+
+###发布游记
+- Path:/app/travelnotes
+- Request Method:POST
+- Request Headers
+
+
+- Query String:无
 - Request Body
+{
+}
 - Response
 
 		{
@@ -2137,12 +2427,16 @@ GET /app/search?query=北京&page=2&pageSize=50
 错误码|描述|原因
 --|--|--
 
-###查询游记
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+###修改游记
+- Path:/app/travelnotes/{travelnoteId}
+- Request Method:PUT
+- Request Headers
+
+
+- Query String:无
 - Request Body
+{
+}
 - Response
 
 		{
@@ -2152,6 +2446,45 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"result":{
 
 			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+###取得游记详情
+- Path:/app/travelnotes/{travelnoteId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
+
+###删除游记
+- Path:/app/travelnotes/{travelnoteId}
+- Request Method:DELETE
+- Request Headers
+
+
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
@@ -2384,86 +2717,6 @@ GET /app/search?query=北京&page=2&pageSize=50
 --|--|--
 
 ###删除行程规划
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###发布游记
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###修改游记
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得游记详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###删除游记
 - Path:/app/
 - Request Method:
 - Request Headers:
