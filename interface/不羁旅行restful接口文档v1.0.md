@@ -147,6 +147,13 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Headers:无
 - Query String:空
 - Request Body
+> 参数说明
+
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+account|String|是|无|可以是手机号，也可以是邮箱号
+action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3表示用户找回密码
+> 示例
 
 		{
 			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
@@ -154,6 +161,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 		}
 
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -189,6 +202,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 		}
 
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -223,6 +242,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 		}
 
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -262,6 +287,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"password":"ABCabc123"
 		}
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -322,6 +353,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 		}
 
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -379,6 +416,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 			"token":"bjlx::token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 		}
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -424,6 +467,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -493,6 +542,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 			}
 		}
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -635,6 +690,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -665,6 +726,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -695,6 +762,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:category=speciality&offset=0&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -726,6 +799,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -799,6 +878,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -827,6 +912,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1097,6 +1188,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=0&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1137,6 +1234,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1311,6 +1414,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=0&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1347,6 +1456,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1537,6 +1652,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=0&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1578,6 +1699,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1667,6 +1794,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1708,6 +1841,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1805,6 +1944,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1844,6 +1989,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -1997,6 +2148,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2053,6 +2210,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2130,6 +2293,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 	没有参数的，表示搜索所有的分类。设置为false的表示不需要搜索该分类
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2388,6 +2557,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2509,6 +2684,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:无
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2582,6 +2763,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2683,6 +2870,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 			}
 		}
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2702,6 +2895,126 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Request Body
 
 		{
+			"traceTime":1425225600000,
+			"cover":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"audio":{
+				"length":15,
+				"fileName":"123as3212c",
+				"url":"http://a.mp3",
+				"key":"sa2313dasdq1"
+			},
+			"status":1,
+			"restaurant":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"hotel":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"viewspot":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"activity": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"亲子游活动",
+				"maxNum":200,
+				"joinNum" : 106,
+				"favorCnt":100001,
+				"viewCnt":88888,
+				"poster":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			},
+			"shopping": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"优衣库",
+				"enName":"Uniqlo",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
 			
 		}
 - Response
@@ -2722,6 +3035,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
@@ -2742,6 +3061,12 @@ GET /app/search?query=北京&page=2&pageSize=50
 - Query String:
 - Request Body
 - Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
 
 		{
 			"code":0,
