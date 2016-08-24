@@ -2885,8 +2885,8 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #足迹模块
-###发布足迹
-- Path:/app/traces
+###发布用户足迹
+- Path:/app/users/{userId}/traces/traces
 - Request Method:POST
 - Request Headers
 
@@ -2915,6 +2915,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 				"key":"sa2313dasdq1"
 			},
 			"status":1,
+			"desc":"XXX",
 			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
 				"lat":180.1,
@@ -3015,25 +3016,297 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 				"saleVolume":100,
 				"discount":0.65
 			},
-			
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":"http://1.jpg",
+			"lat":78.23,
+			"lng":97.42
 		}
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000
+			"timestamp":1425225600000,
+			"result": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"userId":1002,
+				"nickName":"魔法师的小黑屋",
+				"avatar":"htpp://2.jpg",
+				"createTime":1425225600000,
+				"updateTime":1425225600000,
+				"traceTime":1425225600000,
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"desc":"XXX",
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"audio":{
+					"length":15,
+					"fileName":"123as3212c",
+					"url":"http://a.mp3",
+					"key":"sa2313dasdq1"
+				},
+				"status":1,
+				"restaurant":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"hotel":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"viewspot":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"activity": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				},
+				"shopping": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":1001,
+				"originNickName":"魔法师",
+				"originAvatar":"http://1.jpg",
+				"lat":78.23,
+				"lng":97.42
+			}
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###修改足迹
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/{userId}/traces/{traceId}
+- Request Method:PUT
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+		{
+			"traceTime":1425225600000,
+			"cover":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"audio":{
+				"length":15,
+				"fileName":"123as3212c",
+				"url":"http://a.mp3",
+				"key":"sa2313dasdq1"
+			},
+			"status":1,
+			"desc":"XXX",
+			"restaurant":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"hotel":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"viewspot":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"activity": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"亲子游活动",
+				"maxNum":200,
+				"joinNum" : 106,
+				"favorCnt":100001,
+				"viewCnt":88888,
+				"poster":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			},
+			"shopping": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"优衣库",
+				"enName":"Uniqlo",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":"http://1.jpg",
+			"lat":78.23,
+			"lng":97.42
+		}
 - Response
 > 返回字段说明
 
@@ -3046,8 +3319,140 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
+			"result": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"userId":1002,
+				"nickName":"魔法师的小黑屋",
+				"avatar":"htpp://2.jpg",
+				"createTime":1425225600000,
+				"updateTime":1425225600000,
+				"traceTime":1425225600000,
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"desc":"XXX",
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"audio":{
+					"length":15,
+					"fileName":"123as3212c",
+					"url":"http://a.mp3",
+					"key":"sa2313dasdq1"
+				},
+				"status":1,
+				"restaurant":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"hotel":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"viewspot":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"activity": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				},
+				"shopping": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":1001,
+				"originNickName":"魔法师",
+				"originAvatar":"http://1.jpg",
+				"lat":78.23,
+				"lng":97.42
 			}
 		}
 
@@ -3055,11 +3460,13 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###删除用户足迹
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/users/{userId}/traces/{traceId}
+- Request Method:DELETE
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body:无
 - Response
 > 返回字段说明
 
@@ -3072,8 +3479,140 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
+			"result": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"userId":1002,
+				"nickName":"魔法师的小黑屋",
+				"avatar":"htpp://2.jpg",
+				"createTime":1425225600000,
+				"updateTime":1425225600000,
+				"traceTime":1425225600000,
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"desc":"XXX",
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"audio":{
+					"length":15,
+					"fileName":"123as3212c",
+					"url":"http://a.mp3",
+					"key":"sa2313dasdq1"
+				},
+				"status":1,
+				"restaurant":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"hotel":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"viewspot":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"activity": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				},
+				"shopping": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":1001,
+				"originNickName":"魔法师",
+				"originAvatar":"http://1.jpg",
+				"lat":78.23,
+				"lng":97.42
 			}
 		}
 
@@ -3081,10 +3620,14 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###取得足迹列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/users/{userId}/traces
+- Request Method:GET
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String
+
+
 - Request Body
 - Response
 
@@ -3092,28 +3635,181 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"userId":1002,
+					"nickName":"魔法师的小黑屋",
+					"avatar":"htpp://2.jpg",
+					"createTime":1425225600000,
+					"updateTime":1425225600000,
+					"traceTime":1425225600000,
+					"cover":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"desc":"XXX",
+					"status":1,
+					"originId":"646f2da8b8ce0440eddb287f",
+					"originUserId":1001,
+					"originNickName":"魔法师",
+					"originAvatar":"http://1.jpg",
+					"lat":78.23,
+					"lng":97.42
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得足迹详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/users/{userId}/traces/{traceId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body：无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
+			"result": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"userId":1002,
+				"nickName":"魔法师的小黑屋",
+				"avatar":"htpp://2.jpg",
+				"createTime":1425225600000,
+				"updateTime":1425225600000,
+				"traceTime":1425225600000,
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"desc":"XXX",
+				"images":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"audio":{
+					"length":15,
+					"fileName":"123as3212c",
+					"url":"http://a.mp3",
+					"key":"sa2313dasdq1"
+				},
+				"status":1,
+				"restaurant":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"hotel":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"viewspot":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"activity": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				},
+				"shopping": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":1001,
+				"originNickName":"魔法师",
+				"originAvatar":"http://1.jpg",
+				"lat":78.23,
+				"lng":97.42
 			}
 		}
 
