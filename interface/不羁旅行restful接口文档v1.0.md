@@ -4894,12 +4894,24 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###发布问题
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+---
+#问题
+###用户发布问题
+- Path:/app/users/{userId}/quoras
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
 - Request Body
+
+	{
+		"source":"baidu",
+		"topics":["湖边","摄影","婚纱"],
+		"tags":["旅拍","XXX"],
+		"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+		"contents":"如题"
+	}
 - Response
 
 		{
@@ -4907,27 +4919,25 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###搜索问题
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"source":"baidu",
+				"topics":["湖边","摄影","婚纱"],
+				"tags":["旅拍","XXX"],
+				"viewCnt":100,
+				"answerCnt":10,
+				"maxVoteCnt":10000,
+				"publishTime":145000000000,
+				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+				"contents":"如题",
+				"author": {
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"url":"http://1.jpg",
+						"width":800,
+						"height":600
+					}
+				}
 			}
 		}
 
@@ -6232,3 +6242,23 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 ###活动搜索
 
 ###全站搜索
+
+###问题搜索
+- Path:/app/
+- Request Method:
+- Request Headers:
+- Query String:
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":{
+
+			}
+		}
+
+错误码|描述|原因
+--|--|--
