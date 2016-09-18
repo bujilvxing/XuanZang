@@ -4945,11 +4945,11 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###取得问题详情
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
+- Path:/app/quoras/{quoraId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -4957,19 +4957,153 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"source":"baidu",
+				"topics":["湖边","摄影","婚纱"],
+				"tags":["旅拍","XXX"],
+				"viewCnt":100,
+				"answerCnt":10,
+				"maxVoteCnt":10000,
+				"publishTime":145000000000,
+				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+				"contents":"如题",
+				"author": {
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"url":"http://1.jpg",
+						"width":800,
+						"height":600
+					}
+				},
+				"answers":[
+					{
+						"voteCnt":100,
+						"accepted":true,
+						"author":{
+							"userId":10001,
+							"nickName":"雷锋",
+							"avatar":{
+								"width":600,
+								"height":600,
+								"url":"http://1.jpg"
+							}
+						},
+						"publishTime":1450000000000,
+						"title":"",
+						"contents":"XXX"
+					}
+				]
 			}
 		}
 
 错误码|描述|原因
 --|--|--
 
+###取得用户问题列表
+- Path:/app/users/{userId}/quoras
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"source":"baidu",
+					"topics":["湖边","摄影","婚纱"],
+					"tags":["旅拍","XXX"],
+					"viewCnt":100,
+					"answerCnt":10,
+					"maxVoteCnt":10000,
+					"publishTime":145000000000,
+					"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+					"contents":"如题",
+					"author": {
+						"userId":10001,
+						"nickName":"魔法师",
+						"avatar": {
+							"url":"http://1.jpg",
+							"width":800,
+							"height":600
+						}
+					}
+				}
+			]
+		}
+
+错误码|描述|原因
+--|--|--
+
+###取得问题列表
+- Path:/app/quoras
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"source":"baidu",
+					"topics":["湖边","摄影","婚纱"],
+					"tags":["旅拍","XXX"],
+					"viewCnt":100,
+					"answerCnt":10,
+					"maxVoteCnt":10000,
+					"publishTime":145000000000,
+					"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+					"contents":"如题",
+					"author": {
+						"userId":10001,
+						"nickName":"魔法师",
+						"avatar": {
+							"url":"http://1.jpg",
+							"width":800,
+							"height":600
+						}
+					}
+				}
+			]
+		}
+
+错误码|描述|原因
+--|--|--
+
 ###添加回答
-- Path:/app/
-- Request Method:
+- Path:/app/quoras/{quoraId}/answers
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"author":{
+				"userId":10001,
+				"nickName":"雷锋",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				}
+			},
+			"title":"",
+			"contents":"XXX"
+		}
+
 - Response
 
 		{
@@ -4977,7 +5111,43 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"646f2da8b8ce0440eddb287f",
+				"source":"baidu",
+				"topics":["湖边","摄影","婚纱"],
+				"tags":["旅拍","XXX"],
+				"viewCnt":100,
+				"answerCnt":10,
+				"maxVoteCnt":10000,
+				"publishTime":145000000000,
+				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+				"contents":"如题",
+				"author": {
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"url":"http://1.jpg",
+						"width":800,
+						"height":600
+					}
+				},
+				"answers":[
+					{
+						"voteCnt":100,
+						"accepted":true,
+						"author":{
+							"userId":10001,
+							"nickName":"雷锋",
+							"avatar":{
+								"width":600,
+								"height":600,
+								"url":"http://1.jpg"
+							}
+						},
+						"publishTime":1450000000000,
+						"title":"",
+						"contents":"XXX"
+					}
+				]
 			}
 		}
 
@@ -4985,91 +5155,96 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###关注用户
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/follows
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"concernedId":10001
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消关注用户
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/follows
+- Request Method:DELETE
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
-- Response
 
 		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"concernedId":10001
 		}
 
-错误码|描述|原因
---|--|--
-
-###是否好友关系
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###用户的好友列表
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/contacts
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"memo":"备注信息"
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###获取好友详细信息
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/contacts/{contactId}
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -5077,7 +5252,21 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"level":1,
+				"zodiac":1,
+				"memo":"备注信息"
 			}
 		}
 
@@ -5085,11 +5274,19 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###修改好友备注
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/contacts/{contactId}/memos
+- Request Method:PUT
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"memo":"备注"
+		}
+
 - Response
 
 		{
@@ -5097,59 +5294,167 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"557049120c2022abe1acf0a1",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"gender":1, // 1表示未选择，2表示男，3表示女
+				"signature":"前世的乡愁",
+				"residence":"北京市海淀区闵庄路15号",
+				"birthday":"1990-06-01",
+				"level":1,
+				"zodiac":1,
+				"memo":"备注信息"
 			}
 		}
 
 错误码|描述|原因
 --|--|--
 
-###将用户加入/移除黑名单
-- Path:/app/
-- Request Method:
+###将用户加入黑名单
+- Path:/app/users/{userId}/blacklist
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+	{
+		"blockId":10001
+	}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
+			"timestamp":1425225600000
+		}
 
-			}
+错误码|描述|原因
+--|--|--
+
+###将用户移除黑名单
+- Path:/app/users/{userId}/blacklist/{blockId}
+- Request Method:DELETE
+- Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###用户的关注列表
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/followings
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String
+
+		offset:0
+		limit:100
+
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
+			"result":[
+				{
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
+		}
 
-			}
+错误码|描述|原因
+--|--|--
+
+###用户的粉丝列表
+- Path:/app/users/{userId}/followers
+- Request Method:GET
+- Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String
+
+		offset:0
+		limit:100
+
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###发送消息
-- Path:/app/
-- Request Method:
+- Path:/app/messages
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"senderId":10001,
+			"senderNickName":"魔法师",
+			"senderAvatar":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"receiverId":10002,
+			"contents":"您好！",
+			"msgType":1,
+			"chatType":1,
+			"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+		}
+
 - Response
 
 		{
@@ -5157,7 +5462,20 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"msgId":10,
+				"senderId":10001,
+				"senderNickName":"魔法师",
+				"senderAvatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"receiverId":10002,
+				"contents":"您好！",
+				"msgType":1,
+				"chatType":1,
+				"timestamp":145000000000,
+				"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 			}
 		}
 
@@ -5165,51 +5483,87 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###拉取消息
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/messages
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"purgeBefore":145000000000
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"msgId":10,
+					"senderId":10001,
+					"senderNickName":"魔法师",
+					"senderAvatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"receiverId":10002,
+					"contents":"您好！",
+					"msgType":1,
+					"chatType":1,
+					"timestamp":145000000000,
+					"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###修改会话属性
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/conversations/{conversationId}
+- Request Method:PATCH
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+	{
+		"mute":1
+	}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得会话属性
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/conversations/{conversationId}
+- Request Method:GET
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+{
+
+}
+
 - Response
 
 		{
