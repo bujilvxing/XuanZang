@@ -5508,9 +5508,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 					"senderId":10001,
 					"senderNickName":"魔法师",
 					"senderAvatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
+						c
 					},
 					"receiverId":10002,
 					"contents":"您好！",
@@ -5558,12 +5556,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
-- Request Body
-
-{
-
-}
-
+- Request Body:无
 - Response
 
 		{
@@ -5571,7 +5564,10 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"muted":1,
+				"pinned":1,
+				"targetId":10001
 			}
 		}
 
@@ -5579,11 +5575,30 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###创建群组
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/chatgroups
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"name":"旅拍大咖",
+			"groupDesc":"旅行摄影群组，欢迎各位参与",
+			"avatar": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"tags":["旅拍","影楼","摄影工作室"],
+			"creator":1001,
+			"participants":[1002,1003,1004],
+			"maxUsers":50,
+			"visible":true
+		}
+
 - Response
 
 		{
@@ -5591,7 +5606,20 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"chatGroupId":100001,
+				"name":"旅拍大咖",
+				"groupDesc":"旅行摄影群组，欢迎各位参与",
+				"avatar": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"tags":["旅拍","影楼","摄影工作室"],
+				"creator":1001,
+				"participants":[1002,1003,1004],
+				"maxUsers":50,
+				"visible":true
 			}
 		}
 
