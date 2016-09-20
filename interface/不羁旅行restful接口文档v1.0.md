@@ -5987,391 +5987,325 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
-- Request Body
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得收藏帖子列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏足迹
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/traces
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"desc":"我在天安门广场,升旗仪式很威武"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏足迹
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/traces/{traceId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得收藏足迹列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏行程规划
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/tripplans
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"title":"我在天安门广场",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"desc":"升旗仪式很威武"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏行程规划
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/tripplans/{tripplanId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得收藏行程规划列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏问答
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/quoras
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"title":"现在的南昌冷吗？",
+			"contents":"需要带什么衣服过去穿？"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏问答
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/quoras/{quoraId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得收藏问答列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏美食
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/restaurants
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"zhName":"煌上煌烤鸭店",
+			"openTime":"8：00~21：00",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏美食
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/restaurants/{restaurantId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-###取得收藏美食列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏客栈
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/hotels
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"zhName":"不羁客栈",
+			"openTime":"8：00~23：00",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏客栈
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/hotels/hotelId
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得收藏客栈列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏游记
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/travelnotes
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"title":"井冈山一日游",
+			"summary":"灰常漂亮"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏游记
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/travelnotes/{travelnoteId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
-###取得收藏游记列表
+###取得用户收藏列表
 - Path:/app/
 - Request Method:
 - Request Headers:
