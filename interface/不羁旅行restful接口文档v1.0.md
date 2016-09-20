@@ -5627,11 +5627,28 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###修改群组信息
-- Path:/app/
-- Request Method:
+- Path:/app/chatgroups/{chatgroupId}
+- Request Method:PUT
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"name":"旅拍大咖",
+			"groupDesc":"旅行摄影群组，欢迎各位参与",
+			"avatar": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"tags":["旅拍","影楼","摄影工作室"],
+			"maxUsers":50,
+			"visible":true
+		}
+
 - Response
 
 		{
@@ -5639,7 +5656,20 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"chatGroupId":100001,
+				"name":"旅拍大咖",
+				"groupDesc":"旅行摄影群组，欢迎各位参与",
+				"avatar": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"tags":["旅拍","影楼","摄影工作室"],
+				"creator":1001,
+				"participants":[1002,1003,1004],
+				"maxUsers":50,
+				"visible":true
 			}
 		}
 
@@ -5647,11 +5677,14 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###取得群组信息
-- Path:/app/
-- Request Method:
+- Path:/app/chatgroups/{chatgroupId}
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -5659,7 +5692,20 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"chatGroupId":100001,
+				"name":"旅拍大咖",
+				"groupDesc":"旅行摄影群组，欢迎各位参与",
+				"avatar": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"tags":["旅拍","影楼","摄影工作室"],
+				"creator":1001,
+				"participants":[1002,1003,1004],
+				"maxUsers":50,
+				"visible":true
 			}
 		}
 
@@ -5667,71 +5713,151 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###取得群组成员信息列表
-- Path:/app/
-- Request Method:
+- Path:/app/chatgroups/{chatgroupId}/members
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
-###操作群成员
-- Path:/app/
-- Request Method:
+###添加群成员
+- Path:/app/chatgroups/{chatgroupId}/members
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"memberId":10002
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
+			"timestamp":1425225600000
+		}
 
-			}
+###删除群成员
+- Path:/app/chatgroups/{chatgroupId}/members/{memberId}
+- Request Method:DETELE
+- Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得用户群组列表
-- Path:/app/
-- Request Method:
+- Path:/app/user/{userId}/chatgroups
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"chatGroupId":100001,
+					"name":"旅拍大咖",
+					"groupDesc":"旅行摄影群组，欢迎各位参与",
+					"avatar": {
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"tags":["旅拍","影楼","摄影工作室"],
+					"creator":1001,
+					"participants":[1002,1003,1004],
+					"maxUsers":50,
+					"visible":true
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###发布帖子
-- Path:/app/
-- Request Method:
+- Path:/app/posts
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"title":"周游20国姑娘被亿万富豪持枪逼婚",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				}
+			],
+			"summary":"还有这种事，求逼婚",
+			"content":"还有这种事，求逼婚",
+			"authorId":1001, // 非必须
+			"authorNickName":"魔法师", // 非必须
+			"authorAvatar":{ // 非必须
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		}
+
 - Response
 
 		{
@@ -5739,7 +5865,37 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"title":"周游20国姑娘被亿万富豪持枪逼婚",
+				"cover":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"images":[
+					{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				],
+				"publishTime":1450000000000,
+				"updateTime":1450000000000,
+				"favorCnt":0,
+				"commentCnt":0,
+				"viewCnt":0,
+				"shareCnt":0,
+				"summary":"还有这种事，求逼婚",
+				"content":"还有这种事，求逼婚",
+				"rank":100,
+				"hotness":0.96,
+				"rating":0.98,
+				"authorId":1001, // 非必须
+				"authorNickName":"魔法师", // 非必须
+				"authorAvatar":{ // 非必须
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				}
 			}
 		}
 
@@ -5748,50 +5904,89 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ###取得群帖子列表
 按照最新评论时间倒序
-- Path:/app/
-- Request Method:
+- Path:/app/chatgroups/{chatgroupId}/posts
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"title":"周游20国姑娘被亿万富豪持枪逼婚",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"publishTime":1450000000000,
+					"updateTime":1450000000000,
+					"favorCnt":0,
+					"commentCnt":0,
+					"viewCnt":0,
+					"shareCnt":0,
+					"summary":"还有这种事，求逼婚",
+					"authorId":1001, // 非必须
+					"authorNickName":"魔法师", // 非必须
+					"authorAvatar":{ // 非必须
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###收藏帖子
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/posts
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"title":"周游20国姑娘被亿万富豪持枪逼婚",
+			"cover":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"summary":"还有这种事，求逼婚"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消收藏帖子
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites/posts/{postId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
 - Response
 
