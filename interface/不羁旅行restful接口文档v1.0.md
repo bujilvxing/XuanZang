@@ -5999,6 +5999,58 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
+###收藏活动
+- Path:/app/users/{userId}/favorites/activities
+- Request Method:POST
+- Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body
+
+		{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"title":"潜水沙龙",
+			"poster":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"desc":"潜水交流"
+		}
+
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
+		}
+
+错误码|描述|原因
+--|--|--
+
+###取消收藏活动
+- Path:/app/users/{userId}/favorites/activities/{activityId}
+- Request Method:DELETE
+- Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
+		}
+
+错误码|描述|原因
+--|--|--
+
 ###收藏足迹
 - Path:/app/users/{userId}/favorites/traces
 - Request Method:POST
@@ -6306,11 +6358,14 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###取得用户收藏列表
-- Path:/app/
-- Request Method:
+- Path:/app/users/{userId}/favorites
+- Request Method:GET
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
@@ -6318,308 +6373,183 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"",
+				"userId":1001,
+				"posts":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"周游20国姑娘被亿万富豪持枪逼婚",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"summary":"还有这种事，求逼婚"
+					}
+				],
+				"traces":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"我在天安门广场,升旗仪式很威武"
+					}
+				],
+				"tripPlans":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"我在天安门广场",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"升旗仪式很威武"
+					}
+				],
+				"activities":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"潜水沙龙",
+						"poster":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"潜水交流"
+					}
+				],
+				"quoras":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"现在的南昌冷吗？",
+						"contents":"需要带什么衣服过去穿？"
+					}
+				],
+				"restaurants":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"zhName":"煌上煌烤鸭店",
+						"openTime":"8：00~21：00",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"hotels":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"zhName":"不羁客栈",
+						"openTime":"8：00~23：00",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"travelNotes":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"title":"井冈山一日游",
+						"summary":"灰常漂亮"
+					}
+				]
 			}
 		}
 
 错误码|描述|原因
 --|--|--
 
-###点赞帖子
-- Path:/app/
-- Request Method:
+###点赞
+- Path:/app/votes
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"voteType":1,
+			"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
-###取消点赞帖子
-- Path:/app/
-- Request Method:
+###取消点赞
+- Path:/app/votes/{targetId}
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"voteType":1
+		}
+
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
-###取得帖子点赞列表
-- Path:/app/
-- Request Method:
+###取得点赞列表
+- Path:/app/votes
+- Request Method:GET
 - Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
 - Query String:
-- Request Body
+
+		voteType=1
+		targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
+
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###点赞行程规划
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消点赞行程规划
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得行程规划点赞列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###点赞足迹
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消点赞足迹
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得足迹点赞列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###点赞活动
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消点赞活动
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得活动点赞列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###点赞游记
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消点赞游记
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得游记点赞列表
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
+					"userId":10001,
+					"voteType":1,
+					"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+					"voteTime":145000000000000
+				}
+			]
 		}
 
 错误码|描述|原因
