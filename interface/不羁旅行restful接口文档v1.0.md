@@ -6491,26 +6491,28 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000
+			"timestamp":1425225600000,
+			"result": {
+				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
+				"userId":10001,
+				"voteType":1,
+				"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+				"voteTime":145000000000000
+			}
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取消点赞
-- Path:/app/votes/{targetId}
-- Request Method:POST
+- Path:/app/votes/{voteId}
+- Request Method:DELETE
 - Request Headers:
 
 	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
-- Request Body
-
-		{
-			"voteType":1
-		}
-
+- Request Body:无
 - Response
 
 		{
@@ -6555,52 +6557,30 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###投票问题
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###投票回答
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
 ###添加新评论
-- Path:/app/
-- Request Method:
+- Path:/app/comments
+- Request Method:POST
 - Request Headers:
-- Query String:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
 - Request Body
+
+		{
+			"rating":0.96,
+			"contents":"评论内容",
+			"commentType":1,
+			"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"images":[
+				{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				}
+			]
+		}
+
 - Response
 
 		{
@@ -6608,7 +6588,26 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
+				"rating":0.96,
+				"userId":10001,
+				"name":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"contents":"评论内容",
+				"commentType":1,
+				"publishTime":145000000000,
+				"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"images":[
+					{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				]
 			}
 		}
 
@@ -6616,40 +6615,68 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 --|--|--
 
 ###删除评论
-- Path:/app/
-- Request Method:
+- Path:/app/comments/{commentId}
+- Request Method:DELETE
 - Request Headers:
-- Query String:
-- Request Body
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
 
 ###取得评论列表
-- Path:/app/
-- Request Method:
+- Path:/app/comments
+- Request Method:GET
 - Request Headers:
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
 - Query String:
-- Request Body
+
+		commentType=1
+		itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
+
+- Request Body:无
 - Response
 
 		{
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":{
-
-			}
+			"result":[
+				{
+					"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
+					"rating":0.96,
+					"userId":10001,
+					"name":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"contents":"评论内容",
+					"commentType":1,
+					"publishTime":145000000000,
+					"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"images":[
+						{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					]
+				}
+			]
 		}
 
 错误码|描述|原因
