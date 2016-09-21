@@ -6685,37 +6685,62 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #搜索
-###特产搜索
-- Path:/app/marketplace/commodities
-- Request Method:GET
-- Request Headers:无
-- Query String:?query=烤鸭&sortby=price&sort=asc
-- Request Body
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-
-			}
-		}
-
-错误码|描述|原因
---|--|--
 
 ###用户搜索
+- Path:/app/users
+- Request Method:GET
+- Request Headers:无
+- Query String:?query=13811111111
+- Request Body
+- Response
 
-###活动搜索
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"userId":1001,
+					"nickName":"魔法师",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
+		}
+
+###群组搜索
+- Path:/app/chatgroups
+- Request Method:GET
+- Request Headers:无
+- Query String:?query=10001
+- Request Body
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000,
+			"result":[
+				{
+					"chatgroupId":1001,
+					"name":"魔法师群",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+				}
+			]
+		}
 
 ###全站搜索
-
-###问题搜索
-- Path:/app/
-- Request Method:
-- Request Headers:
-- Query String:
+- Path:/app/search
+- Request Method:GET
+- Request Headers:无
+- Query String:?query=青春下一站&viewspot=true&trace=true&tripplan=true&quora=true&activity=true&user=ture&post=true&travelNote=true&restaurant=true&hotel=true&sortby=publishTime&sort=asc
 - Request Body
 - Response
 
@@ -6724,9 +6749,119 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-
+				"viewspots":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"zhName":"不羁客栈",
+						"openTime":"8：00~23：00",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				
+				"users":[
+					{
+						"userId":1001,
+						"nickName:"",
+						"avatar":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"posts":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"周游20国姑娘被亿万富豪持枪逼婚",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"summary":"还有这种事，求逼婚"
+					}
+				],
+				"traces":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"我在天安门广场,升旗仪式很威武"
+					}
+				],
+				"tripPlans":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"我在天安门广场",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"升旗仪式很威武"
+					}
+				],
+				"activities":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"潜水沙龙",
+						"poster":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"desc":"潜水交流"
+					}
+				],
+				"quoras":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"title":"现在的南昌冷吗？",
+						"contents":"需要带什么衣服过去穿？"
+					}
+				],
+				"restaurants":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"zhName":"煌上煌烤鸭店",
+						"openTime":"8：00~21：00",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"hotels":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"zhName":"不羁客栈",
+						"openTime":"8：00~23：00",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+				],
+				"travelNotes":[
+					{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"title":"井冈山一日游",
+						"summary":"灰常漂亮"
+					}
+				]
 			}
 		}
-
-错误码|描述|原因
---|--|--
