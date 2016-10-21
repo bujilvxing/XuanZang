@@ -173,10 +173,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"msg":"success",
 			"timestamp":1425225600000,
 			"result":{
-				"tel": {
-					"number":"13811111111",
-					"dialCode":86
-				}, // 该字段有可能是邮箱号，email
+				"account": "13811111111",
 				"validationCode":"324512"
 			}
 		}
