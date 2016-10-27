@@ -141,7 +141,7 @@ GET /app/search?query=北京&page=2&pageSize=50
 
 ***
 #登录注册模块
-###发送验证码
+###发送验证码1001
 - Path:/app/validationcodes
 - Request Method:POST
 - Request Headers:无
@@ -188,7 +188,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 100103|用户已存在|注册用户时，手机号已经注册了或者邮箱号已经注册过了
 100104|请求次数过多|请求验证码的次数过多
 
-###检验验证码
+###检验验证码1002
 - Path:/app/tokens
 - Request Method:POST
 - Request Headers:无
@@ -228,7 +228,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 100202|邮箱格式不正确|输入了错误的邮箱号
 100203|校验失败|验证码错误
 
-###注册
+###注册1003
 - Path:/app/users
 - Request Method:POST
 - Request Headers:无
@@ -275,7 +275,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 100301|XXX|XXX
-###登录
+###登录1004
 - Path:/app/users/login
 - Request Method:POST
 - Request Headers:无
@@ -337,7 +337,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###第三方登录
+###第三方登录1005
 - Path:/app/users/oauthlogin
 - Request Method:POST
 - Request Headers:无
@@ -403,7 +403,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #用户模块
-###重置密码
+###重置密码1006
 - Path:/app/users/password
 - Request Method:PUT
 - Request Headers:无
@@ -432,7 +432,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改密码
+###修改密码1007
 - Path:/app/users/{userId}/password
 - Request Method:PUT
 - Request Headers:
@@ -457,7 +457,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得用户信息
+###取得用户信息1008
 - Path:/app/users/{userId}
 - Request Method:GET
 - Request Headers:
@@ -515,7 +515,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改用户信息
+###修改用户信息1009
 - Path:/app/users/10001
 - Request Method:PATCH
 - Request Headers
@@ -590,7 +590,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###退出登录
+###退出登录1010
 - Path:/app/users/logout
 - Request Method:POST
 - Request Headers
@@ -609,7 +609,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###绑定手机号
+###绑定手机号1011
 - Path:/app/users/10001/tel
 - Request Method:PUT
 - Request Headers:
@@ -635,7 +635,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #其他模块
-###申请商家
+###申请商家1012
 - Path:/app/misc/sellers
 - Request Method:POST
 - Request Headers
@@ -658,7 +658,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###用户反馈
+###用户反馈1013
 - Path:/app/misc/feedback
 - Request Method:POST
 - Request Headers
@@ -683,7 +683,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #首页运营模块
-###取得专栏
+###取得专栏1014
 - Path:/app/misc/columns
 - Request Method:GET
 - Request Headers:无
@@ -719,7 +719,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得首页
+###取得首页1015
 - Path:/app/misc/columns
 - Request Method:GET
 - Request Headers:无
@@ -755,7 +755,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得商品列表(特产等)
+###取得商品列表(特产等)1016
 - Path:/app/marketplace/commodities
 - Request Method:GET
 - Request Headers:无
@@ -792,7 +792,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			]
 		}
 
-###取得商品详情(特产等)
+###取得商品详情(特产等)1017
 - Path:/app/marketplace/commodities/{commodityId}
 - Request Method:GET
 - Request Headers:无
@@ -871,7 +871,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得攻略列表
+###取得攻略列表1018
 - Path:/app/guides
 - Request Method:GET
 - Request Headers:无
@@ -905,7 +905,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得攻略详情
+###取得攻略详情1019
 - Path:/app/guides/{guideId}
 - Request Method:GET
 - Request Headers:无
@@ -1181,7 +1181,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #POI模块
-###取得客栈列表
+###取得客栈列表1020
 - Path:/app/poi/hotels
 - Request Method:GET
 - Request Headers:无
@@ -1227,7 +1227,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得客栈详情
+###取得客栈详情1021
 - Path:/app/poi/hotels/{hotelId}
 - Request Method:GET
 - Request Headers:无
@@ -1407,7 +1407,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得目的地列表
+###取得目的地列表1022
 - Path:/app/localities
 - Request Method:GET
 - Request Headers:无
@@ -1449,7 +1449,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得目的地详情
+###取得目的地详情1023
 - Path:/app/localities/{localityId}
 - Request Method:GET
 - Request Headers:无
@@ -1645,7 +1645,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得景点列表
+###取得景点列表1024
 - Path:/app/poi/viewspots
 - Request Method:GET
 - Request Headers:无
@@ -1692,7 +1692,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得景点详情
+###取得景点详情1025
 - Path:/app/poi/viewspots/{viewspotId}
 - Request Method:GET
 - Request Headers:无
@@ -1787,7 +1787,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得餐厅列表
+###取得餐厅列表1026
 - Path:/app/poi/restaurants
 - Request Method:GET
 - Request Headers:无
@@ -1834,7 +1834,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得餐厅详情
+###取得餐厅详情1027
 - Path:/app/poi/restaurants/{restaurantId}
 - Request Method:GET
 - Request Headers:无
@@ -1937,7 +1937,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得商场列表
+###取得商场列表1028
 - Path:/app/poi/shoppings
 - Request Method:GET
 - Request Headers:无
@@ -1982,7 +1982,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得商场详情
+###取得商场详情1029
 - Path:/app/poi/shoppings/{shoppingId}
 - Request Method:GET
 - Request Headers:无
@@ -2086,7 +2086,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #活动模块
-###发布活动
+###发布活动1030
 - Path:/app/activities
 - Request Method:POST
 - Request Headers:
@@ -2141,7 +2141,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得活动列表
+###取得活动列表1031
 - Path:/app/activities
 - Request Method:GET
 - Request Headers:无
@@ -2203,7 +2203,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得活动详情
+###取得活动详情1032
 - Path:/app/activities/{activityId}
 - Request Method:GET
 - Request Headers:无
@@ -2282,7 +2282,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #搜索模块
-###搜索全部以及按分类搜索
+###搜索全部以及按分类搜索1032
 包含：用户，形成规划，足迹，游记，美食，客栈，景点，购物，特产，婚纱摄影
 
 - Path:/app/search
@@ -2550,7 +2550,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #游记模块
-###取得游记列表
+###取得游记列表1033
 - Path:/app/travelnotes
 - Request Method:GET
 - Request Headers:无
@@ -2588,7 +2588,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###发布游记
+###发布游记1034
 - Path:/app/travelnotes
 - Request Method:POST
 - Request Headers
@@ -2633,7 +2633,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改游记
+###修改游记1035
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:PUT
 - Request Headers
@@ -2677,7 +2677,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得游记详情
+###取得游记详情1036
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:GET
 - Request Headers:无
@@ -2733,7 +2733,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###删除游记
+###删除游记1037
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:DELETE
 - Request Headers
@@ -2754,7 +2754,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #时间线模块
-###查看朋友圈
+###查看朋友圈1038
 - Path:/app/moments
 - Request Method:GET
 - Request Headers
@@ -2825,7 +2825,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###发布朋友圈
+###发布朋友圈1039
 - Path:/app/traces
 - Request Method:POST
 - Request Headers
@@ -2885,7 +2885,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #足迹模块
-###发布用户足迹
+###发布用户足迹1040
 - Path:/app/users/{userId}/traces/traces
 - Request Method:POST
 - Request Headers
@@ -3181,7 +3181,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改足迹
+###修改足迹1041
 - Path:/app/users/{userId}/traces/{traceId}
 - Request Method:PUT
 - Request Headers
@@ -3483,7 +3483,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###删除用户足迹
+###删除用户足迹1042
 - Path:/app/users/{userId}/traces/{traceId}
 - Request Method:DELETE
 - Request Headers
@@ -3651,7 +3651,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得足迹列表
+###取得足迹列表1043
 - Path:/app/users/{userId}/traces
 - Request Method:GET
 - Request Headers
@@ -3700,7 +3700,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得足迹详情
+###取得足迹详情1044
 - Path:/app/users/{userId}/traces/{traceId}
 - Request Method:GET
 - Request Headers:无
@@ -3862,7 +3862,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ***
 #形成规划模块
-###发布行程规划
+###发布行程规划1045
 - Path:/app/users/{userId}/tripplans
 - Request Method:POST
 - Request Headers
@@ -4130,7 +4130,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###复制行程规划
+###复制行程规划1046
 - Path:/app/users/{userId}/tripplans/{tripPlanId}/copy
 - Request Method:POST
 - Request Headers
@@ -4280,7 +4280,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得行程规划列表
+###取得行程规划列表1047
 - Path:/app/users/{userId}/tripplans
 - Request Method:GET
 - Request Headers:
@@ -4326,7 +4326,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改行程规划
+###修改行程规划1048
 - Path:/app/users/{userId}/tripplans/{tripPlanId}
 - Request Method:PUT
 - Request Headers:
@@ -4594,7 +4594,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得行程规划详情
+###取得行程规划详情1049
 - Path:/app/users/{userId}/tripplans/{tripPlanId}
 - Request Method:GET
 - Request Headers:
@@ -4744,7 +4744,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###删除行程规划
+###删除行程规划1050
 - Path:/app/users/{userId}/tripplans/{tripPlanId}
 - Request Method:DELETE
 - Request Headers
@@ -4896,7 +4896,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 
 ---
 #问题
-###用户发布问题
+###用户发布问题1051
 - Path:/app/users/{userId}/quoras
 - Request Method:POST
 - Request Headers
@@ -4944,7 +4944,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得问题详情
+###取得问题详情1052
 - Path:/app/quoras/{quoraId}
 - Request Method:GET
 - Request Headers:无
@@ -5000,7 +5000,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得用户问题列表
+###取得用户问题列表1052
 - Path:/app/users/{userId}/quoras
 - Request Method:GET
 - Request Headers:无
@@ -5040,7 +5040,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得问题列表
+###取得问题列表1053
 - Path:/app/quoras
 - Request Method:GET
 - Request Headers:无
@@ -5080,7 +5080,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###添加回答
+###添加回答1054
 - Path:/app/quoras/{quoraId}/answers
 - Request Method:POST
 - Request Headers:
@@ -5154,7 +5154,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###关注用户
+###关注用户1055
 - Path:/app/users/{userId}/follows
 - Request Method:POST
 - Request Headers:
@@ -5179,7 +5179,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消关注用户
+###取消关注用户1056
 - Path:/app/users/{userId}/follows
 - Request Method:DELETE
 - Request Headers:
@@ -5204,7 +5204,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###用户的好友列表
+###用户的好友列表1057
 - Path:/app/users/{userId}/contacts
 - Request Method:GET
 - Request Headers:
@@ -5236,7 +5236,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###获取好友详细信息
+###获取好友详细信息1058
 - Path:/app/users/{userId}/contacts/{contactId}
 - Request Method:GET
 - Request Headers:
@@ -5273,7 +5273,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改好友备注
+###修改好友备注1059
 - Path:/app/users/{userId}/contacts/{contactId}/memos
 - Request Method:PUT
 - Request Headers:
@@ -5315,7 +5315,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###将用户加入黑名单
+###将用户加入黑名单1060
 - Path:/app/users/{userId}/blacklist
 - Request Method:POST
 - Request Headers:
@@ -5340,7 +5340,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###将用户移除黑名单
+###将用户移除黑名单1061
 - Path:/app/users/{userId}/blacklist/{blockId}
 - Request Method:DELETE
 - Request Headers:
@@ -5360,7 +5360,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###用户的关注列表
+###用户的关注列表1062
 - Path:/app/users/{userId}/followings
 - Request Method:GET
 - Request Headers:
@@ -5395,7 +5395,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###用户的粉丝列表
+###用户的粉丝列表1063
 - Path:/app/users/{userId}/followers
 - Request Method:GET
 - Request Headers:
@@ -5430,7 +5430,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###发送消息
+###发送消息1064
 - Path:/app/messages
 - Request Method:POST
 - Request Headers:
@@ -5482,7 +5482,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###拉取消息
+###拉取消息1065
 - Path:/app/users/{userId}/messages
 - Request Method:POST
 - Request Headers:
@@ -5523,7 +5523,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改会话属性
+###修改会话属性1066
 - Path:/app/users/{userId}/conversations/{conversationId}
 - Request Method:PATCH
 - Request Headers:
@@ -5548,7 +5548,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得会话属性
+###取得会话属性1067
 - Path:/app/users/{userId}/conversations/{conversationId}
 - Request Method:GET
 - Request Headers:
@@ -5574,7 +5574,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###创建群组
+###创建群组1068
 - Path:/app/chatgroups
 - Request Method:POST
 - Request Headers
@@ -5626,7 +5626,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###修改群组信息
+###修改群组信息1069
 - Path:/app/chatgroups/{chatgroupId}
 - Request Method:PUT
 - Request Headers:
@@ -5676,7 +5676,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得群组信息
+###取得群组信息1070
 - Path:/app/chatgroups/{chatgroupId}
 - Request Method:GET
 - Request Headers:
@@ -5712,7 +5712,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得群组成员信息列表
+###取得群组成员信息列表1071
 - Path:/app/chatgroups/{chatgroupId}/members
 - Request Method:GET
 - Request Headers:
@@ -5743,7 +5743,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###添加群成员
+###添加群成员1072
 - Path:/app/chatgroups/{chatgroupId}/members
 - Request Method:POST
 - Request Headers:
@@ -5765,7 +5765,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			"timestamp":1425225600000
 		}
 
-###删除群成员
+###删除群成员1073
 - Path:/app/chatgroups/{chatgroupId}/members/{memberId}
 - Request Method:DETELE
 - Request Headers:
@@ -5785,7 +5785,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得用户群组列表
+###取得用户群组列表1074
 - Path:/app/user/{userId}/chatgroups
 - Request Method:GET
 - Request Headers:
@@ -5823,7 +5823,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###发布帖子
+###发布帖子1075
 - Path:/app/posts
 - Request Method:POST
 - Request Headers:
@@ -5902,7 +5902,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得群帖子列表
+###取得群帖子列表1076
 按照最新评论时间倒序
 - Path:/app/chatgroups/{chatgroupId}/posts
 - Request Method:GET
@@ -5947,7 +5947,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏帖子
+###收藏帖子1077
 - Path:/app/users/{userId}/favorites/posts
 - Request Method:POST
 - Request Headers:
@@ -5979,7 +5979,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏帖子
+###取消收藏帖子1078
 - Path:/app/users/{userId}/favorites/posts/{postId}
 - Request Method:DELETE
 - Request Headers:
@@ -5999,7 +5999,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏活动
+###收藏活动1079
 - Path:/app/users/{userId}/favorites/activities
 - Request Method:POST
 - Request Headers:
@@ -6031,7 +6031,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏活动
+###取消收藏活动1080
 - Path:/app/users/{userId}/favorites/activities/{activityId}
 - Request Method:DELETE
 - Request Headers:
@@ -6051,7 +6051,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏足迹
+###收藏足迹1081
 - Path:/app/users/{userId}/favorites/traces
 - Request Method:POST
 - Request Headers:
@@ -6082,7 +6082,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏足迹
+###取消收藏足迹1082
 - Path:/app/users/{userId}/favorites/traces/{traceId}
 - Request Method:DELETE
 - Request Headers:
@@ -6102,7 +6102,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏行程规划
+###收藏行程规划1083
 - Path:/app/users/{userId}/favorites/tripplans
 - Request Method:POST
 - Request Headers:
@@ -6134,7 +6134,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏行程规划
+###取消收藏行程规划1084
 - Path:/app/users/{userId}/favorites/tripplans/{tripplanId}
 - Request Method:DELETE
 - Request Headers:
@@ -6154,7 +6154,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏问答
+###收藏问答1085
 - Path:/app/users/{userId}/favorites/quoras
 - Request Method:POST
 - Request Headers:
@@ -6181,7 +6181,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏问答
+###取消收藏问答1086
 - Path:/app/users/{userId}/favorites/quoras/{quoraId}
 - Request Method:DELETE
 - Request Headers:
@@ -6201,7 +6201,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏美食
+###收藏美食1087
 - Path:/app/users/{userId}/favorites/restaurants
 - Request Method:POST
 - Request Headers:
@@ -6233,7 +6233,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏美食
+###取消收藏美食1088
 - Path:/app/users/{userId}/favorites/restaurants/{restaurantId}
 - Request Method:DELETE
 - Request Headers:
@@ -6253,7 +6253,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏客栈
+###收藏客栈1089
 - Path:/app/users/{userId}/favorites/hotels
 - Request Method:POST
 - Request Headers:
@@ -6285,7 +6285,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏客栈
+###取消收藏客栈1090
 - Path:/app/users/{userId}/favorites/hotels/hotelId
 - Request Method:DELETE
 - Request Headers:
@@ -6305,7 +6305,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###收藏游记
+###收藏游记1091
 - Path:/app/users/{userId}/favorites/travelnotes
 - Request Method:POST
 - Request Headers:
@@ -6337,7 +6337,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消收藏游记
+###取消收藏游记1092
 - Path:/app/users/{userId}/favorites/travelnotes/{travelnoteId}
 - Request Method:DELETE
 - Request Headers:
@@ -6357,7 +6357,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得用户收藏列表
+###取得用户收藏列表1093
 - Path:/app/users/{userId}/favorites
 - Request Method:GET
 - Request Headers:
@@ -6471,7 +6471,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###点赞
+###点赞1094
 - Path:/app/votes
 - Request Method:POST
 - Request Headers:
@@ -6504,7 +6504,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取消点赞
+###取消点赞1095
 - Path:/app/votes/{voteId}
 - Request Method:DELETE
 - Request Headers:
@@ -6524,7 +6524,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得点赞列表
+###取得点赞列表1096
 - Path:/app/votes
 - Request Method:GET
 - Request Headers:
@@ -6557,7 +6557,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###添加新评论
+###添加新评论1097
 - Path:/app/comments
 - Request Method:POST
 - Request Headers:
@@ -6614,7 +6614,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###删除评论
+###删除评论1098
 - Path:/app/comments/{commentId}
 - Request Method:DELETE
 - Request Headers:
@@ -6634,7 +6634,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 错误码|描述|原因
 --|--|--
 
-###取得评论列表
+###取得评论列表1099
 - Path:/app/comments
 - Request Method:GET
 - Request Headers:
@@ -6686,7 +6686,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 ***
 #搜索
 
-###用户搜索
+###用户搜索1100
 - Path:/app/users
 - Request Method:GET
 - Request Headers:无
@@ -6711,7 +6711,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			]
 		}
 
-###群组搜索
+###群组搜索1101
 - Path:/app/chatgroups
 - Request Method:GET
 - Request Headers:无
@@ -6736,7 +6736,7 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 			]
 		}
 
-###全站搜索
+###全站搜索1102
 - Path:/app/search
 - Request Method:GET
 - Request Headers:无
