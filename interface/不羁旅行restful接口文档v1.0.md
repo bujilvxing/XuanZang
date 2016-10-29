@@ -218,6 +218,11 @@ resendTime|Long|是|无|下一次允许发送验证码时间
 - Query String:空
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+account|String|是|无|可以是手机号，也可以是邮箱号
+code|String|是|无|验证码
+
 		{
 			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
 			"code":"022321"
@@ -255,10 +260,18 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+account|String|是|无|可以是手机号，也可以是邮箱号
+token|String|是|无|令牌
+password|String|是|无|密码
+promotionCodeSize|Integer|否|6|邀请码长度
+
 		{
-			"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa",
+			"token":"token::eddf6dce4dbd41b29893d0d3a5b7bcfa",
 			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-			"password":"312315"
+			"password":"312315",
+			"promotionCodeSize":4
 		}
 
 - Response
@@ -294,7 +307,13 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 		}
 错误码|描述|原因
 --|--|--
-100301|XXX|XXX
+100301|参数账户为空|没有传account参数
+100302|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
+100303|密码为空|没有传password参数
+100304|令牌为空|没有传token参数
+100305|用户已存在|账号已经注册过了，需要更换账号
+100306|令牌不合法|token不合法
+
 ###登录1004
 - Path:/app/users/login
 - Request Method:POST
@@ -5174,6 +5193,8 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 错误码|描述|原因
 --|--|--
 
+---
+#消息和社交
 ###关注用户1055
 - Path:/app/users/{userId}/follows
 - Request Method:POST
@@ -5568,6 +5589,8 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 错误码|描述|原因
 --|--|--
 
+---
+#群组
 ###取得会话属性1067
 - Path:/app/users/{userId}/conversations/{conversationId}
 - Request Method:GET
@@ -5967,6 +5990,8 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 错误码|描述|原因
 --|--|--
 
+---
+#收藏
 ###收藏帖子1077
 - Path:/app/users/{userId}/favorites/posts
 - Request Method:POST
@@ -6491,6 +6516,8 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 错误码|描述|原因
 --|--|--
 
+---
+#点赞
 ###点赞1094
 - Path:/app/votes
 - Request Method:POST
