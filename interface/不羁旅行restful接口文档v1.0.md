@@ -279,32 +279,65 @@ promotionCodeSize|Integer|否|6|邀请码长度
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒        vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"",
-				"userId":10001,
-				"nickName":"不羁客10001",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"tel":{
-					"number":"13811111111",
-					"dialCode":86
-				}
-				"email":"",
-				"level":1,
-				"soundNotify":true,
-				"vibrateNotify":true
-			}
-		}
+	{
+	    "timestamp": 1478098984477,
+	    "code": 0,
+	    "result": {
+	        "id": "581a0028d903d71bb874d1df",
+	        "email": "381364134@qq.com",
+	        "userId": 2,
+	        "nickName": "不羁2",
+	        "avatar": {
+	            "id": "5819fff1d903d71bb874d1d8",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "56B992",
+	        "loginStatus": false,
+	        "loginTime": 0,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "id": "5819fff1d903d71bb874d1d9",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 错误码|描述|原因
 --|--|--
 100301|参数账户为空|没有传account参数
@@ -321,60 +354,87 @@ promotionCodeSize|Integer|否|6|邀请码长度
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+account|String|是|无|可以是手机号，也可以是邮箱号
+password|String|是|无|密码
+
 		{
-			"loginName":"13811111111",   // 可以是手机号，也可以是邮箱号
+			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
 			"password":"ABCabc123"
 		}
+
 - Response
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒        vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"tel":{
-					"number":"13811111111",
-					"dialCode":86
-				},
-				"email":"",
-				"promotionCode":"N2A2MV",
-				"roles":[1, 2],
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"oauthInfoList":[
-					{
-						"provider":"qq",
-						"oauthId":"231da3213da",
-						"nickName":"小呆",
-						"avatar":"http://1.jpg",
-						"token":""
-					}
-				],
-				"level":1,
-				"zodiac":1,
-				"soundNotify":true,
-				"vibrateNotify":true,
-				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-			}
-		}
+	{
+	    "timestamp": 1478098984477,
+	    "code": 0,
+	    "result": {
+	        "id": "581a0028d903d71bb874d1df",
+	        "email": "381364134@qq.com",
+	        "userId": 2,
+	        "nickName": "不羁2",
+	        "avatar": {
+	            "id": "5819fff1d903d71bb874d1d8",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "56B992",
+	        "loginStatus": false,
+	        "loginTime": 0,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "id": "5819fff1d903d71bb874d1d9",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 错误码|描述|原因
 --|--|--
+100401|参数账户为空|没有传account参数
+100402|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
+100403|密码为空|没有传password参数
+100404|用户不存在|账户不合法
+100405|密码错误|密码错误
 
 ###第三方登录1005
 - Path:/app/users/oauthlogin
