@@ -249,7 +249,7 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 --|--|--
 100201|参数账户为空|没有传account参数
 100202|账户格式不正确|输入了错误的邮箱号或者手机号
-100203|验证码为空|没有传code参数
+100203|参数验证码为空|没有传code参数
 100204|验证码不合法|验证码不是6位的数字
 100205|验证失败|1、验证码错误；2、验证码过期；3、验证码使用过；4、验证码验证错误次数超过10次
 
@@ -342,13 +342,13 @@ updateTime|Long|是|0|用户更新时间
 --|--|--
 100301|参数账户为空|没有传account参数
 100302|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
-100303|密码为空|没有传password参数
-100304|令牌为空|没有传token参数
+100303|参数密码为空|没有传password参数
+100304|参数令牌为空|没有传token参数
 100305|用户已存在|账号已经注册过了，需要更换账号
 100306|令牌不合法|token不合法
 
 ###登录1004
-- Path:/app/users/login
+- Path:/app/login
 - Request Method:POST
 - Request Headers:无
 - Query String:无
@@ -358,10 +358,12 @@ updateTime|Long|是|0|用户更新时间
 --|--|--|--|--
 account|String|是|无|可以是手机号，也可以是邮箱号
 password|String|是|无|密码
+clientId|String|是|无|个推的clientId，消息推送时使用
 
 		{
-			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-			"password":"ABCabc123"
+			"account":"13811111111",
+			"password":"ABCabc123",
+			"clientId":"da12a231ce4278678234ca3243b432"
 		}
 
 - Response
@@ -385,32 +387,34 @@ logoutTime|Long|否|0|登出时间
 version|Integer|否|0|登录设备版本
 roles|Array[Integer]|是|[]|角色
 level|Integer|是|1|用户等级
-soundNotify|Boolean|是|true|是否声音提醒        vibrateNotify|Boolean|是|true|是否振动提醒
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
 backGround|Object|是||用户背景图片
 createTime|Long|是|0|用户创建时间
 updateTime|Long|是|0|用户更新时间
+key|String|是|无|授权码
 
 > 示例
 
 	{
-	    "timestamp": 1478098984477,
+	    "timestamp": 1478251455371,
 	    "code": 0,
 	    "result": {
-	        "id": "581a0028d903d71bb874d1df",
+	        "id": "581c52918edd1f0f94b5b1b9",
 	        "email": "381364134@qq.com",
-	        "userId": 2,
-	        "nickName": "不羁2",
+	        "userId": 1,
+	        "nickName": "不羁1",
 	        "avatar": {
-	            "id": "5819fff1d903d71bb874d1d8",
+	            "id": "581c51c88edd1f0f94b5b1b1",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 100,
 	            "height": 100,
 	            "fmt": "jpg"
 	        },
 	        "gender": 1,
-	        "promotionCode": "56B992",
-	        "loginStatus": false,
-	        "loginTime": 0,
+	        "promotionCode": "UG4LV8V9",
+	        "loginStatus": true,
+	        "loginTime": 1478251168995,
 	        "logoutTime": 0,
 	        "version": 0,
 	        "roles": [],
@@ -418,23 +422,25 @@ updateTime|Long|是|0|用户更新时间
 	        "soundNotify": true,
 	        "vibrateNotify": true,
 	        "backGround": {
-	            "id": "5819fff1d903d71bb874d1d9",
+	            "id": "581c51c88edd1f0f94b5b1b2",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
 	            "width": 400,
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
 	        "createTime": 0,
-	        "updateTime": 0
+	        "updateTime": 0,
+	        "key": "75dd5365bfb3fd94620458bbff79cb27f139a3d39c95e9dfce2f912d26c7ff1e"
 	    }
 	}
 错误码|描述|原因
 --|--|--
 100401|参数账户为空|没有传account参数
-100402|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
-100403|密码为空|没有传password参数
-100404|用户不存在|账户不合法
-100405|密码错误|密码错误
+100402|参数密码为空|没有传password参数
+100403|参数clientId为空|没有传clientId参数
+100404|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
+100405|密码不正确|密码输入有误
+100406|用户不存在|账户不合法
 
 ###第三方登录1005
 - Path:/app/users/oauthlogin
