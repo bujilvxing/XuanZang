@@ -600,7 +600,7 @@ newPassword|String|是|无|新密码
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"13075ef09a8eff96af43b879fdc4c3151ba79ea36b22a8218625952b781fd0d8"
 
 - Query String:无
 - Request Body:无
@@ -609,46 +609,45 @@ newPassword|String|是|无|新密码
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
-
+id|
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"tel":{},
-				"email":"",
-				"promotionCode":"N2A2MV",
-				"roles":[1, 2],
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"oauthInfoList":[
-					{
-						"provider":"qq",
-						"oauthId":"231da3213da",
-						"nickName":"小呆",
-						"avatar":"http://1.jpg",
-						"token":""
-					}
-				],
-				"level":1,
-				"zodiac":1,
-				"soundNotify":true,
-				"vibrateNotify":true,
-				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-			}
-		}
+	{
+	    "timestamp": 1478513549001,
+	    "code": 0,
+	    "result": {
+	        "id": "581c52918edd1f0f94b5b1b9",
+	        "email": "381364134@qq.com",
+	        "userId": 1,
+	        "nickName": "不羁1",
+	        "avatar": {
+	            "id": "581c51c88edd1f0f94b5b1b1",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "UG4LV8V9",
+	        "loginStatus": true,
+	        "loginTime": 1478510849981,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "id": "581c51c88edd1f0f94b5b1b2",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 
 错误码|描述|原因
 --|--|--
