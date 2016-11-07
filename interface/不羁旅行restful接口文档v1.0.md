@@ -155,10 +155,10 @@ account|String|是|无|可以是手机号，也可以是邮箱号
 action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3表示用户找回密码；4表示用户绑定邮箱
 > 示例
 
-		{
-			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-			"action":1
-		}
+	{
+		"account":"13811111111",   // 可以是手机号，也可以是邮箱号
+		"action":1
+	}
 
 - Response
 > 返回字段说明
@@ -223,10 +223,10 @@ resendTime|Long|是|无|下一次允许发送验证码时间
 account|String|是|无|可以是手机号，也可以是邮箱号
 code|String|是|无|验证码
 
-		{
-			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-			"code":"022321"
-		}
+	{
+		"account":"13811111111",   // 可以是手机号，也可以是邮箱号
+		"code":"022321"
+	}
 
 - Response
 > 返回字段说明
@@ -267,12 +267,12 @@ token|String|是|无|令牌
 password|String|是|无|密码
 promotionCodeSize|Integer|否|6|邀请码长度
 
-		{
-			"token":"token::eddf6dce4dbd41b29893d0d3a5b7bcfa",
-			"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-			"password":"312315",
-			"promotionCodeSize":4
-		}
+	{
+		"token":"token::eddf6dce4dbd41b29893d0d3a5b7bcfa",
+		"account":"13811111111",   // 可以是手机号，也可以是邮箱号
+		"password":"312315",
+		"promotionCodeSize":8
+	}
 
 - Response
 > 返回字段说明
@@ -360,11 +360,11 @@ account|String|是|无|可以是手机号，也可以是邮箱号
 password|String|是|无|密码
 clientId|String|是|无|个推的clientId，消息推送时使用
 
-		{
-			"account":"13811111111",
-			"password":"ABCabc123",
-			"clientId":"da12a231ce4278678234ca3243b432"
-		}
+	{
+		"account":"13811111111",
+		"password":"ABCabc123",
+		"clientId":"da12a231ce4278678234ca3243b432"
+	}
 
 - Response
 > 返回字段说明
@@ -443,19 +443,29 @@ key|String|是|无|授权码
 100406|用户不存在|账户不合法
 
 ###第三方登录1005
-- Path:/app/users/oauthlogin
+- Path:/app/oauthlogin
 - Request Method:POST
 - Request Headers:无
 - Query String:无
 - Request Body
 
-		{
-			"provider":"qq",
-			"oauthId":"231da3213da",
-			"nickName":"小呆",
-			"avatar":"http://1.jpg",
-			"token":""
-		}
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+provider|String|是|无|第三方平台名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|是|无|第三方平台的用户昵称
+avatar|String|是|无|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+clientId|String|是|无|个推的clientId，消息推送时使用
+
+	{
+		"provider":"qq",
+		"oauthId":"231da3213da",
+		"nickName":"小呆",
+		"avatar":"http://1.jpg",
+		"token":"a23ca21354cad2321c231c",
+		"clientId":"ad312c3123b323e32b2332a"
+	}
 
 - Response
 > 返回字段说明
@@ -465,42 +475,61 @@ key|String|是|无|授权码
 
 > 示例
 
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"557049120c2022abe1acf0a1",
+			"userId":10001,
+			"nickName":"魔法师",
+			"avatar":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"gender":1, // 1表示未选择，2表示男，3表示女
+			"signature":"前世的乡愁",
+			"tel":{},
+			"email":"",
+			"promotionCode":"N2A2MV",
+			"roles":[1, 2],
+			"residence":"北京市海淀区闵庄路15号",
+			"birthday":"1990-06-01",
+			"oauthInfoList":[
+				{
+					"provider":"qq",
+					"oauthId":"231da3213da",
+					"nickName":"小呆",
+					"avatar":"http://1.jpg",
+					"token":""
+				}
+			],
+			"level":1,
+			"zodiac":1,
+			"soundNotify":true,
+			"vibrateNotify":true,
+			"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###退出登录1006
+- Path:/app/logout
+- Request Method:POST
+- Request Headers
+
+	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body:无
+- Response
+
 		{
 			"code":0,
 			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"tel":{},
-				"email":"",
-				"promotionCode":"N2A2MV",
-				"roles":[1, 2],
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"oauthInfoList":[
-					{
-						"provider":"qq",
-						"oauthId":"231da3213da",
-						"nickName":"小呆",
-						"avatar":"http://1.jpg",
-						"token":""
-					}
-				],
-				"level":1,
-				"zodiac":1,
-				"soundNotify":true,
-				"vibrateNotify":true,
-				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-			}
+			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
