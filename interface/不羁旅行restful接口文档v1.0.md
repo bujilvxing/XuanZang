@@ -509,7 +509,7 @@ clientId|String|是|无|个推的clientId，消息推送时使用
 			"zodiac":1,
 			"soundNotify":true,
 			"vibrateNotify":true,
-			"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+			"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 		}
 	}
 
@@ -521,7 +521,10 @@ clientId|String|是|无|个推的clientId，消息推送时使用
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+	"userId":1001
+
 - Query String:无
 - Request Body:无
 - Response
@@ -534,6 +537,7 @@ clientId|String|是|无|个推的clientId，消息推送时使用
 
 错误码|描述|原因
 --|--|--
+100601|用户未登录|没有传key或者userId参数；或者key、userId有误
 
 ###退出登录1006
 - Path:/app/users/logout
