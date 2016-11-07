@@ -5,7 +5,7 @@ HTTP请求需要设置以下Header:
 
 - Accept:application/vnd.bjlx.v1+json。随着系统的开发，接口可能出现不同的版本，因此在这个header中携带接口版本信息，v1表示第一个版本。
 - Accept-Encoding:gzip。可支持gzip压缩格式，减小数据传输。
-- bjlxToken:不羁旅行自定义Header。若用户登录，则需要指定该Header，用于获取用户的信息以及部分接口的登录权限验证。
+- key:不羁旅行自定义Header。若用户登录，则需要指定该Header，用于获取用户的信息以及部分接口的登录权限验证。
 
 ###数据格式
 所有发送和接收的数据都是通过json来表达，接口域名为api.bujilvxing.com。
@@ -499,32 +499,55 @@ key|String|是|无|授权码
 				"zodiac":1,
 				"soundNotify":true,
 				"vibrateNotify":true,
-				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 			}
 		}
 
 错误码|描述|原因
 --|--|--
 
+###退出登录1006
+- Path:/app/users/logout
+- Request Method:POST
+- Request Headers
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+			"code":0,
+			"msg":"success",
+			"timestamp":1425225600000
+		}
+
+错误码|描述|原因
+--|--|--
+
+
 ***
 #用户模块
-###重置密码1006
+###重置密码1007
 - Path:/app/users/password
 - Request Method:PUT
 - Request Headers:无
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+account|String|是|无|可以是手机号，也可以是邮箱号
+newPassword|String|是|无|新密码
+token|String|是|无|令牌
+
 		{
-			"loginName":"13811111111",
+			"account":"13811111111",
 			"newPassword":"123343",
-			"token":"bjlx::token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+			"token":"token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 		}
 - Response
 > 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
 
 > 示例
 
@@ -537,37 +560,47 @@ key|String|是|无|授权码
 错误码|描述|原因
 --|--|--
 
-###修改密码1007
+###修改密码1008
 - Path:/app/users/{userId}/password
 - Request Method:PUT
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
 
-		{
-			"oldPassword":"das123",
-			"newPassword":"123344"
-		}
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+oldPassword|String|是|无|旧密码
+newPassword|String|是|无|新密码
+
+	{
+		"oldPassword":"das123",
+		"newPassword":"123344"
+	}
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+	{
+	    "timestamp": 1478501466144,
+	    "code": 0
+	}
 
 错误码|描述|原因
 --|--|--
+100801|参数旧密码为空|没有传旧密码字段
+100802|参数新密码为空|没有传新密码字段
+100803|参数userId为空|路径参数没有添加用户id
+100804|用户未登录|1、用户未登录，2、用户在其他设备登录了
+100805|旧密码不正确|旧密码输入有误
+100806|用户不存在|用户不存在
 
-###取得用户信息1008
+###取得用户信息1009
 - Path:/app/users/{userId}
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -613,19 +646,19 @@ key|String|是|无|授权码
 				"zodiac":1,
 				"soundNotify":true,
 				"vibrateNotify":true,
-				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 			}
 		}
 
 错误码|描述|原因
 --|--|--
 
-###修改用户信息1009
+###修改用户信息1010
 - Path:/app/users/10001
 - Request Method:PATCH
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -688,27 +721,8 @@ key|String|是|无|授权码
 				"zodiac":1,
 				"soundNotify":true,
 				"vibrateNotify":true,
-				"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###退出登录1010
-- Path:/app/users/logout
-- Request Method:POST
-- Request Headers
-
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
@@ -719,7 +733,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -745,7 +759,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -768,7 +782,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -802,11 +816,12 @@ key|String|是|无|授权码
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
 				"itemId":"546f2da8b8ce0440eddb287e",
 				"itemType":"hotel",
 				"title":"如家豪华酒店",
@@ -818,14 +833,15 @@ key|String|是|无|授权码
 					"height":400,
 					"url":"http://1.jpg"
 				}
-			}]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
 
 ###取得首页1015
-- Path:/app/misc/columns
+- Path:/app/misc/banners
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -842,19 +858,21 @@ key|String|是|无|授权码
 			"code":0,
 			"msg":"success",
 			"timestamp":1425225600000,
-			"result":[{
-				"itemId":"546f2da8b8ce0440eddb287e",
-				"itemType":"hotel",
-				"title":"如家豪华酒店",
-				"linkType":"app",
-				"linkUrl":"http://XXX",
-				"desc":"超大双人床",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
+			"result":[
+				{
+					"itemId":"546f2da8b8ce0440eddb287e",
+					"itemType":"hotel",
+					"title":"如家豪华酒店",
+					"linkType":"app",
+					"linkUrl":"http://XXX",
+					"desc":"超大双人床",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
 				}
-			}]
+			]
 		}
 
 错误码|描述|原因
@@ -2196,7 +2214,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 	{
@@ -2698,7 +2716,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -2743,7 +2761,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 		{
@@ -2843,7 +2861,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -2864,7 +2882,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
@@ -2935,7 +2953,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -2995,7 +3013,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -3291,7 +3309,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -3593,7 +3611,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -3761,7 +3779,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String
 
 
@@ -3972,7 +3990,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -4240,7 +4258,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -4390,7 +4408,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -4436,7 +4454,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -4704,7 +4722,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -4854,7 +4872,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body:无
 - Response
@@ -5006,7 +5024,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
 
@@ -5190,7 +5208,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5266,7 +5284,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5291,7 +5309,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5316,7 +5334,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5348,7 +5366,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5385,7 +5403,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5427,7 +5445,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5452,7 +5470,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5472,7 +5490,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String
 
@@ -5507,7 +5525,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String
 
@@ -5542,7 +5560,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5594,7 +5612,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5635,7 +5653,7 @@ key|String|是|无|授权码
 - Request Method:PATCH
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5662,7 +5680,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5688,7 +5706,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5740,7 +5758,7 @@ key|String|是|无|授权码
 - Request Method:PUT
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5790,7 +5808,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5826,7 +5844,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5857,7 +5875,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -5879,7 +5897,7 @@ key|String|是|无|授权码
 - Request Method:DETELE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5899,7 +5917,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -5937,7 +5955,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6017,7 +6035,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6063,7 +6081,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6095,7 +6113,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6115,7 +6133,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6147,7 +6165,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6167,7 +6185,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6198,7 +6216,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6218,7 +6236,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6250,7 +6268,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6270,7 +6288,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6297,7 +6315,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6317,7 +6335,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6349,7 +6367,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6369,7 +6387,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6401,7 +6419,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6421,7 +6439,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6453,7 +6471,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6473,7 +6491,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6589,7 +6607,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6622,7 +6640,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6642,7 +6660,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:
 
@@ -6675,7 +6693,7 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body
@@ -6732,7 +6750,7 @@ key|String|是|无|授权码
 - Request Method:DELETE
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:无
 - Request Body:无
@@ -6752,7 +6770,7 @@ key|String|是|无|授权码
 - Request Method:GET
 - Request Headers:
 
-	"bjlxToken":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
 - Query String:
 
