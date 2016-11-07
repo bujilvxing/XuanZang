@@ -472,50 +472,88 @@ clientId|String|是|无|个推的clientId，消息推送时使用
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+qq|Object|是|{}|第三方平台的信息
+provider|String|是|无|第三方平台的名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|否|不羁+userId|第三方平台的用户昵称
+avatar|String|否|默认用户头像|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
+key|String|是|无|授权码
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"557049120c2022abe1acf0a1",
-			"userId":10001,
-			"nickName":"魔法师",
-			"avatar":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"gender":1, // 1表示未选择，2表示男，3表示女
-			"signature":"前世的乡愁",
-			"tel":{},
-			"email":"",
-			"promotionCode":"N2A2MV",
-			"roles":[1, 2],
-			"residence":"北京市海淀区闵庄路15号",
-			"birthday":"1990-06-01",
-			"oauthInfoList":[
-				{
-					"provider":"qq",
-					"oauthId":"231da3213da",
-					"nickName":"小呆",
-					"avatar":"http://1.jpg",
-					"token":""
-				}
-			],
-			"level":1,
-			"zodiac":1,
-			"soundNotify":true,
-			"vibrateNotify":true,
-			"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-		}
+	    "timestamp": 1478533884105,
+	    "code": 0,
+	    "result": {
+	        "id": "58209febd903d70e107cab77",
+	        "userId": 4,
+	        "nickName": "小呆",
+	        "avatar": {
+	            "id": "",
+	            "url": "http://1.jpg",
+	            "width": 0,
+	            "height": 0,
+	            "fmt": ""
+	        },
+	        "gender": 1,
+	        "promotionCode": "9SXVI8WX",
+	        "loginStatus": false,
+	        "loginTime": 0,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "qq": {
+	            "provider": "qq",
+	            "oauthId": "231da3213da",
+	            "nickName": "小呆",
+	            "avatar": "http://1.jpg",
+	            "token": "a23ca21354cad2321c231c"
+	        },
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "id": "58209febd903d70e107cab74",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 1478533099579,
+	        "updateTime": 1478533099579,
+	        "key": "279e601b0fb6ee63b5dd1acdc3e20b21c9bf0296193a1ae426067b5aebea37c3"
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
-
+100501|参数provider为空|没有传provider参数
+100502|参数oauthId为空|没有传oauthId参数
+100503|参数token为空|没有传token参数
+100504|参数clientId为空|没有传clientId参数
+100505|参数provider不合法|provider取值只能是"qq","weixin","sina"
 ###退出登录1006
 - Path:/app/logout
 - Request Method:POST
@@ -538,26 +576,6 @@ clientId|String|是|无|个推的clientId，消息推送时使用
 错误码|描述|原因
 --|--|--
 100601|用户未登录|没有传key或者userId参数；或者key、userId有误
-
-###退出登录1006
-- Path:/app/users/logout
-- Request Method:POST
-- Request Headers
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
 
 ***
 #用户模块
