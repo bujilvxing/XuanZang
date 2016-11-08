@@ -5452,7 +5452,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 ---
 #消息和社交
 ###关注用户1055
-- Path:/app/users/{userId}/follows
+- Path:/app/users/{userId}/followings
 - Request Method:POST
 - Request Headers:
 
@@ -5461,23 +5461,28 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+followingId|Long|是|无|待关注用户id
+
 		{
-			"concernedId":10001
+			"followingId":10001
 		}
 
 - Response
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+105501|参数followingId不可为空|没有传followingId参数
+105502|用户未登录|用户未登录
 
 ###取消关注用户1056
-- Path:/app/users/{userId}/follows
+- Path:/app/users/{userId}/followings
 - Request Method:DELETE
 - Request Headers:
 
@@ -5486,20 +5491,25 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+followingId|Long|是|无|待取消关注用户id
+
 		{
-			"concernedId":10001
+			"followingId":10001
 		}
 
 - Response
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+105601|参数followingId不可为空|没有传followingId参数
+105602|用户未登录|用户未登录
 
 ###用户的好友列表1057
 - Path:/app/users/{userId}/contacts
