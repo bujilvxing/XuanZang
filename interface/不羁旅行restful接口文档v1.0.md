@@ -660,7 +660,35 @@ newPassword|String|是|无|新密码
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
-id|
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+qq|Object|是|{}|第三方平台的信息
+provider|String|是|无|第三方平台的名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|否|不羁+userId|第三方平台的用户昵称
+avatar|String|否|默认用户头像|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
+key|String|是|无|授权码
+
 > 示例
 
 	{
@@ -704,7 +732,7 @@ id|
 --|--|--
 
 ###修改用户信息1010
-- Path:/app/users/10001
+- Path:/app/users/{userId}
 - Request Method:PATCH
 - Request Headers
 
@@ -712,71 +740,133 @@ id|
 - Query String:无
 - Request Body
 
-		{
-			"nickName":"魔法师",
-			"gender":2,
-			"birthday":"1990-06-01",
-			"signature":"前世的乡愁",
-			"residence":"北京市海淀区闵庄路15号",
-			"backGround": {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"avatar": {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			}
-		}
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+nickName|String|否|无|用户昵称
+avatar|Object|否|无|用户头像
+key|String|是|无|上传的图片的key, 如果有图片则必需此字段
+bucket|String|是|无|上传的图片的七牛空间名称, 如果有图片则必需此字段
+url|String|是|无|上传的图片的链接, 如果有图片则必需此字段
+width|Integer|是|无|上传的图片的宽度, 如果有图片则必需此字段
+height|Integer|是|无|上传的图片的高度, 如果有图片则必需此字段
+fmt|String|是|无|上传的图片的格式, 如果有图片则必需此字段
+hash|String|是|无|上传的图片的七牛返回哈希值, 如果有图片则必需此字段
+size|String|是|无|上传的图片的大小, 如果有图片则必需此字段
+gender|Integer|否|无|性别。1表示未选择，2表示男，3表示女
+signature|String|否|无|用户签名
+residence|String|否|无|用户的居住地
+birthday|Long|否|无|用户的生日
+level|Integer|否|无|用户等级
+zodiac|Integer|否|无|星座。1 水瓶 2 双鱼 3 白羊 4 金牛 5 双子 6 巨蟹 7 狮子 8 处女 9 天秤 10 天蝎 11 射手 12 魔杰
+soundNotify|Boolean|否|无|设置声音提醒。true为提醒，false不提醒
+vibrateNotify|Boolean|否|无|设置振动提醒。true为提醒，false不提醒
+backGround|Object|否|无|背景图片
+
+	{
+		"nickName":"魔法师",
+		"gender":2,
+		"birthday":145000000000,
+		"signature":"前世的乡愁",
+		"residence":"北京市海淀区闵庄路15号",
+		"backGround": {
+			"key":"xljb_1001_14500000000.jpg",
+			"bucket":"bujilvxing-bucket",
+			"fmt":"jpg",
+			"hash":"a12231231231dfg3123ff",
+			"size":3242424,
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"avatar": {
+			"key":"xljb_1001_14500000000.jpg",
+			"bucket":"bujilvxing-bucket",
+			"fmt":"jpg",
+			"hash":"a12231231231dfg3123ff",
+			"size":3242424,
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"zodiac":1,
+		"level":1,
+		"soundNotify":true,
+		"vibrateNotify":true
+	}
 - Response
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+qq|Object|是|{}|第三方平台的信息
+provider|String|是|无|第三方平台的名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|否|不羁+userId|第三方平台的用户昵称
+avatar|String|否|默认用户头像|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"tel":{},
-				"email":"",
-				"promotionCode":"N2A2MV",
-				"roles":[1, 2],
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"oauthInfoList":[
-					{
-						"provider":"qq",
-						"oauthId":"231da3213da",
-						"nickName":"小呆",
-						"avatar":"http://1.jpg",
-						"token":""
-					}
-				],
-				"level":1,
-				"zodiac":1,
-				"soundNotify":true,
-				"vibrateNotify":true,
-				"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-			}
-		}
+	{
+	    "timestamp": 1478584187234,
+	    "code": 0,
+	    "result": {
+	        "id": "581c52918edd1f0f94b5b1b9",
+	        "email": "381364134@qq.com",
+	        "userId": 1,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "UG4LV8V9",
+	        "loginStatus": true,
+	        "loginTime": 1478583857333,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 
 错误码|描述|原因
 --|--|--
+101001|用户未登录|用户未登录
+101002|性别不合法|性别参数的传的值不是1、2、3
 
 ###绑定手机号1011
 - Path:/app/users/10001/tel
