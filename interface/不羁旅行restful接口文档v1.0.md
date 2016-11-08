@@ -866,10 +866,11 @@ updateTime|Long|是|0|用户更新时间
 错误码|描述|原因
 --|--|--
 101001|用户未登录|用户未登录
-101002|性别不合法|性别参数的传的值不是1、2、3
+101002|性别不合法|性别参数的传的值不是1~3
+101003|星座不合法|星座参数的传的值不是1~12
 
 ###绑定手机号1011
-- Path:/app/users/10001/tel
+- Path:/app/users/{userId}/tel
 - Request Method:PUT
 - Request Headers:
 
@@ -877,20 +878,31 @@ updateTime|Long|是|0|用户更新时间
 - Query String:无
 - Request Body
 
-		{
-			"tel":"13811111111",
-			"token":"bjlx::token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
-		}
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+tel|String|是|无|用户手机号
+token|Object|是|无|令牌
+
+	{
+		"tel":"13811111111",
+		"token":"token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
+	}
+
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
+101101|参数tel为空|没有传tel字段
+101102|参数token为空|没有传token字段
+101103|手机号格式不正确|手机号输入有误
+101104|用户未登录|用户未登录
+101105|手机号已存在|手机号已注册其他账号或者绑定其他账号
+101106|令牌不合法|令牌不合法
 
 ***
 #其他模块
@@ -900,8 +912,15 @@ updateTime|Long|是|0|用户更新时间
 - Request Headers
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+	"userId":1001
+
 - Query String:无
 - Request Body
+
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+tel|String|是|无|手机号
 
 		{
 			"tel":"13811111111"
@@ -910,12 +929,14 @@ updateTime|Long|是|0|用户更新时间
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+101201|参数tel为空|没有传tel参数
+101202|手机号格式不正确|手机号输入有误
+101203|用户未登录|用户未登录
 
 ###用户反馈1013
 - Path:/app/misc/feedback
@@ -923,22 +944,33 @@ updateTime|Long|是|0|用户更新时间
 - Request Headers
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+	"userId":1001
+
 - Query String:无
 - Request Body
 
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+content|String|是|无|反馈内容
+origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
+
 		{
-			"content":""
+			"content":"app做的真烂，能不能上点心",
+			"origin":"app"
 		}
+
 - Response
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+101301|参数content为空|没有传content参数
+101302|用户未登录|用户未登录
 
 ***
 #首页运营模块
@@ -7136,3 +7168,38 @@ updateTime|Long|是|0|用户更新时间
 				]
 			}
 		}
+
+###绑定邮箱1103
+- Path:/app/users/{userId}/email
+- Request Method:PUT
+- Request Headers:
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body
+
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+email|String|是|无|邮箱号
+token|Object|是|无|令牌
+
+	{
+		"email":"381364134@qq.com",
+		"token":"token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
+	}
+
+- Response
+
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
+
+错误码|描述|原因
+--|--|--
+110301|参数email为空|没有传email字段
+110302|参数token为空|没有传token字段
+110303|邮箱号格式不正确|邮箱号输入有误
+110304|用户未登录|用户未登录
+110305|邮箱号已存在|邮箱号已注册其他账号或者绑定其他账号
+110306|令牌不合法|令牌不合法
