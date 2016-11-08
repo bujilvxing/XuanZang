@@ -5518,30 +5518,38 @@ followingId|Long|是|无|待取消关注用户id
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 
-- Query String:无
+- Query String:?offset=0&limit=100
+
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+offset|Integer|否|无|从第offset个文档开始取
+limit|Integer|否|无|取limit个文档
+
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"memo":"备注信息"
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"ca121da221313131cbd",
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"memo":"备注信息"
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
+105701|用户未登录|用户未登录
 
 ###获取好友详细信息1058
 - Path:/app/users/{userId}/contacts/{contactId}
