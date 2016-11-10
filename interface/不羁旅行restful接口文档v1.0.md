@@ -295,7 +295,8 @@ logoutTime|Long|否|0|登出时间
 version|Integer|否|0|登录设备版本
 roles|Array[Integer]|是|[]|角色
 level|Integer|是|1|用户等级
-soundNotify|Boolean|是|true|是否声音提醒        vibrateNotify|Boolean|是|true|是否振动提醒
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
 backGround|Object|是||用户背景图片
 createTime|Long|是|0|用户创建时间
 updateTime|Long|是|0|用户更新时间
@@ -923,15 +924,15 @@ token|Object|是|无|令牌
 --|--|--|--|--
 tel|String|是|无|手机号
 
-		{
-			"tel":"13811111111"
-		}
+	{
+		"tel":"13811111111"
+	}
 - Response
 
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -956,17 +957,17 @@ tel|String|是|无|手机号
 content|String|是|无|反馈内容
 origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
-		{
-			"content":"app做的真烂，能不能上点心",
-			"origin":"app"
-		}
+	{
+		"content":"app做的真烂，能不能上点心",
+		"origin":"app"
+	}
 
 - Response
 
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -1027,26 +1028,26 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"itemId":"546f2da8b8ce0440eddb287e",
-					"itemType":"hotel",
-					"title":"如家豪华酒店",
-					"linkType":"app",
-					"linkUrl":"http://XXX",
-					"desc":"超大双人床",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"itemId":"546f2da8b8ce0440eddb287e",
+				"itemType":"hotel",
+				"title":"如家豪华酒店",
+				"linkType":"app",
+				"linkUrl":"http://XXX",
+				"desc":"超大双人床",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -1065,28 +1066,28 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"546f2da8b8ce0440eddb287e",
-					"category":["specialty"],
-					"title":"煌上煌烤鸭",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"price":33.3,
-					"marketPrice":56.4,
-					"status":1,
-					"salesVolume":100,
-					"rating":0.98
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"546f2da8b8ce0440eddb287e",
+				"category":["specialty"],
+				"title":"煌上煌烤鸭",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"price":33.3,
+				"marketPrice":56.4,
+				"status":1,
+				"salesVolume":100,
+				"rating":0.98
+			}
+		]
+	}
 
 ###取得商品详情(特产等)1017
 - Path:/app/marketplace/commodities/{commodityId}
@@ -1102,67 +1103,67 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"546f2da8b8ce0440eddb287e",
-				"category":["specialty"],
-				"title":"煌上煌烤鸭",
-				"locality": {
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				},
-				"desc":"太好吃了",
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"546f2da8b8ce0440eddb287e",
+			"category":["specialty"],
+			"title":"煌上煌烤鸭",
+			"locality": {
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
 				"cover": {
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
 				},
-				"images":[{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}],
-				"price":33.3,
+				"lat":115.27,
+				"lng":28.09
+			},
+			"desc":"太好吃了",
+			"cover": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}],
+			"price":33.3,
+			"marketPrice":56.4,
+			"status":1,
+			"plans":[{
+				"planId":"646f2da8b8ce0440eddb287f",
+				"title":"买3只送1只",
+				"desc":"",
+				"pricing":[],
 				"marketPrice":56.4,
-				"status":1,
-				"plans":[{
-					"planId":"646f2da8b8ce0440eddb287f",
-					"title":"买3只送1只",
-					"desc":"",
-					"pricing":[],
-					"marketPrice":56.4,
-					"price":33.3,
-					"stockInfo":[{
-						"status":"plenty",
-						"quantity":100,
-						"timeRange":[]##  ##
-					}],
-					"timeRequired":false
+				"price":33.3,
+				"stockInfo":[{
+					"status":"plenty",
+					"quantity":100,
+					"timeRange":[]##  ##
 				}],
-				"salesVolume":100,
-				"createTime":1450000000000,
-				"updateTime":1450000000000,
-				"rating":0.98,
-				"commodityType":"食品",
-				"version":1
-			}
+				"timeRequired":false
+			}],
+			"salesVolume":100,
+			"createTime":1450000000000,
+			"updateTime":1450000000000,
+			"rating":0.98,
+			"commodityType":"食品",
+			"version":1
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -1181,22 +1182,22 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[{
-				"id":"646f2da8b8ce0440eddb287f",
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"title":"南昌文化",
-				"summary":"革命根据地，风景如画...",
-				"viewCnt":1000000
-			}]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[{
+			"id":"646f2da8b8ce0440eddb287f",
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"title":"南昌文化",
+			"summary":"革命根据地，风景如画...",
+			"viewCnt":1000000
+		}]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -1215,287 +1216,30 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"cover" : {
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"updateTime":1425225600000,
-				"title":"南昌文化",
-				"desc":"南昌是一个...",
-				"bestTripTime":"5月1日~10月20日",
-				"tips":"",
-				"hotels":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"如家快捷酒店",
-						"enName":"RuJia",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"shoppings":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"优衣库",
-						"enName":"Uniqlo",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00"
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"restaurants":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"煌上煌烤鸭店",
-						"enName":"",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00"
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"activities": [
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"title":"亲子游活动",
-						"maxNum":200,
-						"joinNum" : 106,
-						"favorCnt":100001,
-						"viewCnt":88888,
-						"poster":{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"viewspots":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"八一广场",
-						"enName":"",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00"
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"tripPlans":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"userId":10001,
-						"nickName":"魔法屋",
-						"avatar": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"tripItems": [
-							{
-								"tripTime":1450000000000,
-								"createTime":1450000000000,
-								"desc":"",
-								"restaurant":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"煌上煌烤鸭店",
-									"enName":"",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
-								},
-								"hotel":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"如家快捷酒店",
-									"enName":"RuJia",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"saleVolume":100,
-									"discount":0.65
-								},
-								"viewspot":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"八一广场",
-									"enName":"",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
-								},
-								"activity": {
-									"id":"646f2da8b8ce0440eddb287f",
-									"title":"亲子游活动",
-									"maxNum":200,
-									"joinNum" : 106,
-									"favorCnt":100001,
-									"viewCnt":88888,
-									"poster":{
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									}
-								},
-								"shopping": {
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"优衣库",
-									"enName":"Uniqlo",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
-								}
-							}
-						]
-					}
-				],
-				"summary":"革命根据地，风景如画...",
-				"viewCnt":1000000
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-***
-#POI模块
-###取得客栈列表1020
-- Path:/app/poi/hotels
-- Request Method:GET
-- Request Headers:无
-- Query String:offset=0&limit=100
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
+				}
+			],
+			"updateTime":1425225600000,
+			"title":"南昌文化",
+			"desc":"南昌是一个...",
+			"bestTripTime":"5月1日~10月20日",
+			"tips":"",
+			"hotels":[
 				{
 					"id":"646f2da8b8ce0440eddb287f",
 					"lat":180.1,
@@ -1517,449 +1261,8 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					"saleVolume":100,
 					"discount":0.65
 				}
-			]
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得客栈详情1021
-- Path:/app/poi/hotels/{hotelId}
-- Request Method:GET
-- Request Headers:无
-- Query String:无
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"contact": {
-					"phoneList":["010-86752341","010-86752342"],
-					"cellphoneList":["13811111111", "13811111112"],
-					"qq":"13231235432",
-					"weixin":"pisa",
-					"sina":"a123123",
-					"fax":"010-23131231",
-					"email":"bujilvxing@163.com",
-					"website":"www.baidu.com"
-				},
-				"zhName":"如家快捷酒店",
-				"enName":"RuJia",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"priceDesc":"",
-				"description":{
-					"desc":"XXX",
-					"details":"XXX",
-					"tips":"XXX",
-					"traffic":"XXX"
-				},
-				"tags":["",""],
-				"alias":["",""],
-				"targets":["",""],
-				"address":"XXX",
-				"locList":[
-					{
-						"id": "646f2da8b8ce0440eddb287f",
-						"zhName":"南昌",
-						"enName":"NanChang",
-						"alias":[],
-						"hotness":0.97,
-						"rating":0.97,
-						"tags":["红色摇篮"],
-						"desc":"",
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"lat":115.27,
-						"lng":28.09
-					}
-				],
-				"saleVolume":100,
-				"discount":0.65,
-				"rentCar": {
-					"price":180,
-					"pickupAddr":{
-						"province":"江西省",
-						"city":"南昌市",
-						"district":"东湖区",
-						"detail":"XXX",
-    					"zipCode":"100071"
-					},
-					"returnAddr":{
-						"province":"江西省",
-						"city":"南昌市",
-						"district":"东湖区",
-						"detail":"XXX",
-    					"zipCode":"100071"
-					},
-					"contact":{
-						"phoneList":["010-86752341","010-86752342"],
-						"cellphoneList":["13811111111", "13811111112"],
-						"qq":"13231235432",
-						"weixin":"pisa",
-						"sina":"a123123",
-						"fax":"010-23131231",
-						"email":"bujilvxing@163.com",
-						"website":"www.baidu.com"
-					},
-					"minRentDay":1,
-					"car":{
-						"id":"646f2da8b8ce0440eddb287f",
-						"carId":"赣N7023",
-						"transmission":1,
-						"vehicleType":"豪华型",
-						"brand":"丰田",
-						"carOwner":{
-							"surname":"王",
-							"givenName":"力宏",
-							"gender":1,
-							"birthday":"1982-12-03",
-							"identities":[
-								{
-									"idType":"身份证",
-									"number":"137771198212037145"
-								}
-							],
-							"tel":{
-								"dialCode":86,
-								"number":"13811111111"
-							}
-						},
-						"displacement":3.0,
-						"seatNum":5,
-						"name":"丰田霸道",
-						"fuelType":"汽油",
-						"gasolineType":"93#"
-						"actuationType":"前后驱动",
-						"dormer":true,
-						"gps":true,
-						"seatType":"织物座椅",
-						"airbagNum":3,
-						"gearboxType":"AT",
-						"airConditioner":true
-					},
-					"autoInsurance":true,
-					"autoInsurancePrice":50,
-					"pickup":true
-				},
-				"locality": {
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				},
-				"availableDays":[
-					{
-						"bookTime":"2016-08-01",
-						"available":true,
-						"price":392.1
-					}
-				]
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得目的地列表1022
-- Path:/app/localities
-- Request Method:GET
-- Request Headers:无
-- Query String:offset=0&limit=100
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			]
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得目的地详情1023
-- Path:/app/localities/{localityId}
-- Request Method:GET
-- Request Headers:无
-- Query String:无
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"lat":115.27,
-				"lng":28.09,
-				"rank":1,
-				"remoteTraffic":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"localTraffic":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"shoppingIntro":"",
-				"diningIntro":"",
-				"cuisines":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"activities":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"title":"亲子游活动",
-						"maxNum":200,
-						"joinNum" : 106,
-						"favorCnt":100001,
-						"viewCnt":88888,
-						"poster":{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"tips":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"geoHistory":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"specials":[
-					{
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"images":[
-							{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						],
-						"title":"",
-						"desc":""
-					}
-				],
-				"alias":[],
-				"visitCnt":19822,
-				"commentCnt":2312,
-				"favorCnt":3131,
-				"hotness":0.97,
-				"rating":0.97,
-				"superAdm":{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				},
-				"tags":["红色摇篮"],
-				"desc":"",
-				"travelMonth":"4月中旬到10月下旬",
-				"timeCostDesc":"3到4天",
-				"timeCost":4
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得景点列表1024
-- Path:/app/poi/viewspots
-- Request Method:GET
-- Request Headers:无
-- Query String:offset=0&limit=100
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
+			],
+			"shoppings":[
 				{
 					"id":"646f2da8b8ce0440eddb287f",
 					"lat":180.1,
@@ -1972,8 +1275,8 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					"rank":3,
 					"hotness":0.97,
 					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
 					"url":"http://XXX",
 					"marketPrice":280.6,
 					"price":180.3,
@@ -1982,126 +1285,8 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					"saleVolume":100,
 					"discount":0.65
 				}
-			]
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得景点详情1025
-- Path:/app/poi/viewspots/{viewspotId}
-- Request Method:GET
-- Request Headers:无
-- Query String:无
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"八一广场",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"priceDesc":"",
-				"tags":["",""],
-				"openTime":"9:00~21:00",
-				"description":{
-					"desc":"XXX",
-					"details":"XXX",
-					"tips":"XXX",
-					"traffic":"XXX"
-				},
-				"alias":["",""],
-				"targets":["",""],
-				"locList":[
-					{
-						"id": "646f2da8b8ce0440eddb287f",
-						"zhName":"南昌",
-						"enName":"NanChang",
-						"alias":[],
-						"hotness":0.97,
-						"rating":0.97,
-						"tags":["红色摇篮"],
-						"desc":"",
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"lat":115.27,
-						"lng":28.09
-					}
-				],
-				"locality":{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得餐厅列表1026
-- Path:/app/poi/restaurants
-- Request Method:GET
-- Request Headers:无
-- Query String:offset=1&limit=100
-- Request Body:无
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
+			],
+			"restaurants":[
 				{
 					"id":"646f2da8b8ce0440eddb287f",
 					"lat":180.1,
@@ -2124,8 +1309,824 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					"saleVolume":100,
 					"discount":0.65
 				}
+			],
+			"activities": [
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				}
+			],
+			"viewspots":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			],
+			"tripPlans":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"userId":10001,
+					"nickName":"魔法屋",
+					"avatar": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"tripItems": [
+						{
+							"tripTime":1450000000000,
+							"createTime":1450000000000,
+							"desc":"",
+							"restaurant":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								},
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"煌上煌烤鸭店",
+								"enName":"",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"hotel":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								},
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"如家快捷酒店",
+								"enName":"RuJia",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"viewspot":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								},
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"八一广场",
+								"enName":"",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"activity": {
+								"id":"646f2da8b8ce0440eddb287f",
+								"title":"亲子游活动",
+								"maxNum":200,
+								"joinNum" : 106,
+								"favorCnt":100001,
+								"viewCnt":88888,
+								"poster":{
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								}
+							},
+							"shopping": {
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								},
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"优衣库",
+								"enName":"Uniqlo",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
+							}
+						}
+					]
+				}
+			],
+			"summary":"革命根据地，风景如画...",
+			"viewCnt":1000000
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+***
+#POI模块
+###取得客栈列表1020
+- Path:/app/poi/hotels
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"saleVolume":100,
+				"discount":0.65
+			}
+		]
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得客栈详情1021
+- Path:/app/poi/hotels/{hotelId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"contact": {
+				"phoneList":["010-86752341","010-86752342"],
+				"cellphoneList":["13811111111", "13811111112"],
+				"qq":"13231235432",
+				"weixin":"pisa",
+				"sina":"a123123",
+				"fax":"010-23131231",
+				"email":"bujilvxing@163.com",
+				"website":"www.baidu.com"
+			},
+			"zhName":"如家快捷酒店",
+			"enName":"RuJia",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"priceDesc":"",
+			"description":{
+				"desc":"XXX",
+				"details":"XXX",
+				"tips":"XXX",
+				"traffic":"XXX"
+			},
+			"tags":["",""],
+			"alias":["",""],
+			"targets":["",""],
+			"address":"XXX",
+			"locList":[
+				{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				}
+			],
+			"saleVolume":100,
+			"discount":0.65,
+			"rentCar": {
+				"price":180,
+				"pickupAddr":{
+					"province":"江西省",
+					"city":"南昌市",
+					"district":"东湖区",
+					"detail":"XXX",
+					"zipCode":"100071"
+				},
+				"returnAddr":{
+					"province":"江西省",
+					"city":"南昌市",
+					"district":"东湖区",
+					"detail":"XXX",
+					"zipCode":"100071"
+				},
+				"contact":{
+					"phoneList":["010-86752341","010-86752342"],
+					"cellphoneList":["13811111111", "13811111112"],
+					"qq":"13231235432",
+					"weixin":"pisa",
+					"sina":"a123123",
+					"fax":"010-23131231",
+					"email":"bujilvxing@163.com",
+					"website":"www.baidu.com"
+				},
+				"minRentDay":1,
+				"car":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"carId":"赣N7023",
+					"transmission":1,
+					"vehicleType":"豪华型",
+					"brand":"丰田",
+					"carOwner":{
+						"surname":"王",
+						"givenName":"力宏",
+						"gender":1,
+						"birthday":"1982-12-03",
+						"identities":[
+							{
+								"idType":"身份证",
+								"number":"137771198212037145"
+							}
+						],
+						"tel":{
+							"dialCode":86,
+							"number":"13811111111"
+						}
+					},
+					"displacement":3.0,
+					"seatNum":5,
+					"name":"丰田霸道",
+					"fuelType":"汽油",
+					"gasolineType":"93#"
+					"actuationType":"前后驱动",
+					"dormer":true,
+					"gps":true,
+					"seatType":"织物座椅",
+					"airbagNum":3,
+					"gearboxType":"AT",
+					"airConditioner":true
+				},
+				"autoInsurance":true,
+				"autoInsurancePrice":50,
+				"pickup":true
+			},
+			"locality": {
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"lat":115.27,
+				"lng":28.09
+			},
+			"availableDays":[
+				{
+					"bookTime":"2016-08-01",
+					"available":true,
+					"price":392.1
+				}
 			]
 		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得目的地列表1022
+- Path:/app/localities
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"lat":115.27,
+				"lng":28.09
+			}
+		]
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得目的地详情1023
+- Path:/app/localities/{localityId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id": "646f2da8b8ce0440eddb287f",
+			"zhName":"南昌",
+			"enName":"NanChang",
+			"cover": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"lat":115.27,
+			"lng":28.09,
+			"rank":1,
+			"remoteTraffic":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"localTraffic":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"shoppingIntro":"",
+			"diningIntro":"",
+			"cuisines":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"activities":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				}
+			],
+			"tips":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"geoHistory":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"specials":[
+				{
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"images":[
+						{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					],
+					"title":"",
+					"desc":""
+				}
+			],
+			"alias":[],
+			"visitCnt":19822,
+			"commentCnt":2312,
+			"favorCnt":3131,
+			"hotness":0.97,
+			"rating":0.97,
+			"superAdm":{
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"lat":115.27,
+				"lng":28.09
+			},
+			"tags":["红色摇篮"],
+			"desc":"",
+			"travelMonth":"4月中旬到10月下旬",
+			"timeCostDesc":"3到4天",
+			"timeCost":4
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得景点列表1024
+- Path:/app/poi/viewspots
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=0&limit=100
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			}
+		]
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得景点详情1025
+- Path:/app/poi/viewspots/{viewspotId}
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"八一广场",
+			"enName":"",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"priceDesc":"",
+			"tags":["",""],
+			"openTime":"9:00~21:00",
+			"description":{
+				"desc":"XXX",
+				"details":"XXX",
+				"tips":"XXX",
+				"traffic":"XXX"
+			},
+			"alias":["",""],
+			"targets":["",""],
+			"locList":[
+				{
+					"id": "646f2da8b8ce0440eddb287f",
+					"zhName":"南昌",
+					"enName":"NanChang",
+					"alias":[],
+					"hotness":0.97,
+					"rating":0.97,
+					"tags":["红色摇篮"],
+					"desc":"",
+					"cover": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"lat":115.27,
+					"lng":28.09
+				}
+			],
+			"locality":{
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"lat":115.27,
+				"lng":28.09
+			}
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得餐厅列表1026
+- Path:/app/poi/restaurants
+- Request Method:GET
+- Request Headers:无
+- Query String:offset=1&limit=100
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2144,71 +2145,53 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				],
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"contact":{
-					"phoneList":["010-86752341","010-86752342"],
-					"cellphoneList":["13811111111", "13811111112"],
-					"qq":"13231235432",
-					"weixin":"pisa",
-					"sina":"a123123",
-					"fax":"010-23131231",
-					"email":"bujilvxing@163.com",
-					"website":"www.baidu.com"
-				},
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"priceDesc":"",
-				"price":180.3,
-				"tags":["",""],
-				"description":{
-					"desc":"XXX",
-					"details":"XXX",
-					"tips":"XXX",
-					"traffic":"XXX"
-				},
-				"alias":["",""],
-				"targets":["",""],
-				"locList":[
-					{
-						"id": "646f2da8b8ce0440eddb287f",
-						"zhName":"南昌",
-						"enName":"NanChang",
-						"alias":[],
-						"hotness":0.97,
-						"rating":0.97,
-						"tags":["红色摇篮"],
-						"desc":"",
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"lat":115.27,
-						"lng":28.09
-					}
-				],
-				"locality":{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			],
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"contact":{
+				"phoneList":["010-86752341","010-86752342"],
+				"cellphoneList":["13811111111", "13811111112"],
+				"qq":"13231235432",
+				"weixin":"pisa",
+				"sina":"a123123",
+				"fax":"010-23131231",
+				"email":"bujilvxing@163.com",
+				"website":"www.baidu.com"
+			},
+			"zhName":"煌上煌烤鸭店",
+			"enName":"",
+			"url":"http://XXX",
+			"priceDesc":"",
+			"price":180.3,
+			"tags":["",""],
+			"description":{
+				"desc":"XXX",
+				"details":"XXX",
+				"tips":"XXX",
+				"traffic":"XXX"
+			},
+			"alias":["",""],
+			"targets":["",""],
+			"locList":[
+				{
 					"id": "646f2da8b8ce0440eddb287f",
 					"zhName":"南昌",
 					"enName":"NanChang",
@@ -2224,11 +2207,29 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					},
 					"lat":115.27,
 					"lng":28.09
+				}
+			],
+			"locality":{
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"openTime":"9:00~21:00"
-				"saleVolume":100
-			}
+				"lat":115.27,
+				"lng":28.09
+			},
+			"openTime":"9:00~21:00"
+			"saleVolume":100
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2247,33 +2248,33 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"优衣库",
+				"enName":"Uniqlo",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2292,71 +2293,53 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				],
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"contact":{
-					"phoneList":["010-86752341","010-86752342"],
-					"cellphoneList":["13811111111", "13811111112"],
-					"qq":"13231235432",
-					"weixin":"pisa",
-					"sina":"a123123",
-					"fax":"010-23131231",
-					"email":"bujilvxing@163.com",
-					"website":"www.baidu.com"
-				},
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"priceDesc":"",
-				"price":180.3,
-				"tags":["",""],
-				"description":{
-					"desc":"XXX",
-					"details":"XXX",
-					"tips":"XXX",
-					"traffic":"XXX"
-				},
-				"alias":["",""],
-				"targets":["",""],
-				"locList":[
-					{
-						"id": "646f2da8b8ce0440eddb287f",
-						"zhName":"南昌",
-						"enName":"NanChang",
-						"alias":[],
-						"hotness":0.97,
-						"rating":0.97,
-						"tags":["红色摇篮"],
-						"desc":"",
-						"cover": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"lat":115.27,
-						"lng":28.09
-					}
-				],
-				"locality":{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			],
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"contact":{
+				"phoneList":["010-86752341","010-86752342"],
+				"cellphoneList":["13811111111", "13811111112"],
+				"qq":"13231235432",
+				"weixin":"pisa",
+				"sina":"a123123",
+				"fax":"010-23131231",
+				"email":"bujilvxing@163.com",
+				"website":"www.baidu.com"
+			},
+			"zhName":"煌上煌烤鸭店",
+			"enName":"",
+			"url":"http://XXX",
+			"priceDesc":"",
+			"price":180.3,
+			"tags":["",""],
+			"description":{
+				"desc":"XXX",
+				"details":"XXX",
+				"tips":"XXX",
+				"traffic":"XXX"
+			},
+			"alias":["",""],
+			"targets":["",""],
+			"locList":[
+				{
 					"id": "646f2da8b8ce0440eddb287f",
 					"zhName":"南昌",
 					"enName":"NanChang",
@@ -2372,10 +2355,28 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					},
 					"lat":115.27,
 					"lng":28.09
+				}
+			],
+			"locality":{
+				"id": "646f2da8b8ce0440eddb287f",
+				"zhName":"南昌",
+				"enName":"NanChang",
+				"alias":[],
+				"hotness":0.97,
+				"rating":0.97,
+				"tags":["红色摇篮"],
+				"desc":"",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"openTime":"9:00~21:00"
-			}
+				"lat":115.27,
+				"lng":28.09
+			},
+			"openTime":"9:00~21:00"
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2390,6 +2391,10 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
 	{
 		"title":"北京冰雪嘉年华",
 		"maxNum":200,
@@ -2426,13 +2431,17 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 			}
 		]
 	}
+
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2451,50 +2460,50 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"北京冰雪嘉年华",
-					"maxNum":200,
-					"joinNum":100,
-					"startTime":14500000000,
-					"endTime":14500000000,
-					"address":{
-						"province":"江西省",
-						"city":"南昌市",
-						"district":"东湖区",
-						"detail":"XXX",
-						"zipCode":"100071"
-					},
-					"favorCnt":1000,
-					"viewCnt":31231,
-					"posters":[
-						{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						}
-					],
-					"tags":["",""],
-					"tickets":[
-						{
-							"id":"646f2da8b8ce0440eddb287f",
-							"price":100.1,
-							"free":false;
-							"refundWay":1,
-							"refundDesc":"",
-							"desc":"",
-							"maxNum":100
-				
-						}
-					]
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"北京冰雪嘉年华",
+				"maxNum":200,
+				"joinNum":100,
+				"startTime":14500000000,
+				"endTime":14500000000,
+				"address":{
+					"province":"江西省",
+					"city":"南昌市",
+					"district":"东湖区",
+					"detail":"XXX",
+					"zipCode":"100071"
+				},
+				"favorCnt":1000,
+				"viewCnt":31231,
+				"posters":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"tags":["",""],
+				"tickets":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"price":100.1,
+						"free":false;
+						"refundWay":1,
+						"refundDesc":"",
+						"desc":"",
+						"maxNum":100
+			
+					}
+				]
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2513,65 +2522,66 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"北京冰雪嘉年华",
-					"maxNum":200,
-					"joinNum":100,
-					"startTime":14500000000,
-					"endTime":14500000000,
-					"address":{
-						"province":"江西省",
-						"city":"南昌市",
-						"district":"东湖区",
-						"detail":"XXX",
-						"zipCode":"100071"
-					},
-					"favorCnt":1000,
-					"commentCnt":3123,
-					"viewCnt":31231,
-					"shareCnt":312,
-					"posters":[
-						{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						}
-					],
-					"theme":"音乐",
-					"category":"摇滚",
-					"tags":["",""],
-					"visiable":1,
-					"desc":"",
-					"applicantInfos":[
-						{
-							"phoneList":["010-86752341","010-86752342"],
-							"cellphoneList":["13811111111", "13811111112"],
-							"qq":"13231235432",
-							"weixin":"pisa",
-							"sina":"a123123",
-							"fax":"010-23131231",
-							"email":"bujilvxing@163.com",
-							"website":"www.baidu.com"
-						}
-					],
-					"tickets":[
-						{
-							"id":"646f2da8b8ce0440eddb287f",
-							"price":100.1,
-							"free":false;
-							"refundWay":1,
-							"refundDesc":"",
-							"desc":"",
-							"maxNum":100
-						}
-					]
-				}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"北京冰雪嘉年华",
+				"maxNum":200,
+				"joinNum":100,
+				"startTime":14500000000,
+				"endTime":14500000000,
+				"address":{
+					"province":"江西省",
+					"city":"南昌市",
+					"district":"东湖区",
+					"detail":"XXX",
+					"zipCode":"100071"
+				},
+				"favorCnt":1000,
+				"commentCnt":3123,
+				"viewCnt":31231,
+				"shareCnt":312,
+				"posters":[
+					{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				],
+				"theme":"音乐",
+				"category":"摇滚",
+				"tags":["",""],
+				"visiable":1,
+				"desc":"",
+				"applicantInfos":[
+					{
+						"phoneList":["010-86752341","010-86752342"],
+						"cellphoneList":["13811111111", "13811111112"],
+						"qq":"13231235432",
+						"weixin":"pisa",
+						"sina":"a123123",
+						"fax":"010-23131231",
+						"email":"bujilvxing@163.com",
+						"website":"www.baidu.com"
+					}
+				],
+				"tickets":[
+					{
+						"id":"646f2da8b8ce0440eddb287f",
+						"price":100.1,
+						"free":false;
+						"refundWay":1,
+						"refundDesc":"",
+						"desc":"",
+						"maxNum":100
+					}
+				]
 			}
+		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2596,250 +2606,250 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"userInfos":[
-					{
-						"userId":10001,
-						"nickName":"魔法师",
-						"avatar": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"gender":1
-					}
-				],
-				"tripPlans":[
-					{
-						"id":"",
-						"userId":"",
-						"nickName":"",
-						"avatar":{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"tripItems":[
-							"id":"646f2da8b8ce0440eddb287f",
-						"userId":10001,
-						"nickName":"魔法屋",
-						"avatar": {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"tripItems": [
-							{
-								"tripTime":1450000000000,
-								"createTime":1450000000000,
-								"desc":"",
-								"restaurant":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"煌上煌烤鸭店",
-									"enName":"",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"userInfos":[
+				{
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"gender":1
+				}
+			],
+			"tripPlans":[
+				{
+					"id":"",
+					"userId":"",
+					"nickName":"",
+					"avatar":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"tripItems":[
+						"id":"646f2da8b8ce0440eddb287f",
+					"userId":10001,
+					"nickName":"魔法屋",
+					"avatar": {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"tripItems": [
+						{
+							"tripTime":1450000000000,
+							"createTime":1450000000000,
+							"desc":"",
+							"restaurant":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
 								},
-								"hotel":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"如家快捷酒店",
-									"enName":"RuJia",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"saleVolume":100,
-									"discount":0.65
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"煌上煌烤鸭店",
+								"enName":"",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"hotel":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
 								},
-								"viewspot":{
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"八一广场",
-									"enName":"",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"如家快捷酒店",
+								"enName":"RuJia",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"viewspot":{
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
 								},
-								"activity": {
-									"id":"646f2da8b8ce0440eddb287f",
-									"title":"亲子游活动",
-									"maxNum":200,
-									"joinNum" : 106,
-									"favorCnt":100001,
-									"viewCnt":88888,
-									"poster":{
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									}
-								},
-								"shopping": {
-									"id":"646f2da8b8ce0440eddb287f",
-									"lat":180.1,
-									"lng":180.1,
-									"cover" : {
-										"width":400,
-										"height":400,
-										"url":"http://1.jpg"
-									},
-									"rank":3,
-									"hotness":0.97,
-									"rating":0.98,
-									"zhName":"优衣库",
-									"enName":"Uniqlo",
-									"url":"http://XXX",
-									"marketPrice":280.6,
-									"price":180.3,
-									"tags":["",""],
-									"openTime":"9:00~21:00"
-									"saleVolume":100,
-									"discount":0.65
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"八一广场",
+								"enName":"",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
+							},
+							"activity": {
+								"id":"646f2da8b8ce0440eddb287f",
+								"title":"亲子游活动",
+								"maxNum":200,
+								"joinNum" : 106,
+								"favorCnt":100001,
+								"viewCnt":88888,
+								"poster":{
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
 								}
+							},
+							"shopping": {
+								"id":"646f2da8b8ce0440eddb287f",
+								"lat":180.1,
+								"lng":180.1,
+								"cover" : {
+									"width":400,
+									"height":400,
+									"url":"http://1.jpg"
+								},
+								"rank":3,
+								"hotness":0.97,
+								"rating":0.98,
+								"zhName":"优衣库",
+								"enName":"Uniqlo",
+								"url":"http://XXX",
+								"marketPrice":280.6,
+								"price":180.3,
+								"tags":["",""],
+								"openTime":"9:00~21:00"
+								"saleVolume":100,
+								"discount":0.65
 							}
-						]
-					}
-				],
-				"traces":[],
-				"restaurants":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"煌上煌烤鸭店",
-						"enName":"",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00"
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"hotels":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"如家快捷酒店",
-						"enName":"RuJia",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"viewspots":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"八一广场",
-						"enName":"",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00"
-						"saleVolume":100,
-						"discount":0.65
-					}
-				],
-				"shoppings":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"lat":180.1,
-						"lng":180.1,
-						"cover" : {
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"rank":3,
-						"hotness":0.97,
-						"rating":0.98,
-						"zhName":"优衣库",
-						"enName":"Uniqlo",
-						"url":"http://XXX",
-						"marketPrice":280.6,
-						"price":180.3,
-						"tags":["",""],
-						"openTime":"9:00~21:00",
-						"discount":0.65
-					}
-				],
-				"specialities":[],
-				"photographies":[]
-			}
+						}
+					]
+				}
+			],
+			"traces":[],
+			"restaurants":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			],
+			"hotels":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				}
+			],
+			"viewspots":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			],
+			"shoppings":[
+				{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00",
+					"discount":0.65
+				}
+			],
+			"specialities":[],
+			"photographies":[]
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2860,26 +2870,26 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rating":0.97,
-					"hotness":0.98,
-					"title":"",
-					"viewCnt":100,
-					"summary":""
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"cover": {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rating":0.97,
+				"hotness":0.98,
+				"title":"",
+				"viewCnt":100,
+				"summary":""
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2893,38 +2903,39 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
-		{
-			"id":"646f2da8b8ce0440eddb287f",
-			"cover": {
+
+	{
+		"id":"646f2da8b8ce0440eddb287f",
+		"cover": {
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"images":[
+			{
 				"width":400,
 				"height":400,
 				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"title":"",
-			"travelTime":14500000000,
-			"contents":[
-				{
-					"day1":"XXX",
-					"day2":"XXX"
-				}
-			],
-			"summary":""
-		}
+			}
+		],
+		"title":"",
+		"travelTime":14500000000,
+		"contents":[
+			{
+				"day1":"XXX",
+				"day2":"XXX"
+			}
+		],
+		"summary":""
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2937,38 +2948,49 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 - Query String:无
 - Request Body
-		{
-			"id":"646f2da8b8ce0440eddb287f",
-			"cover": {
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"id":"646f2da8b8ce0440eddb287f",
+		"cover": {
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"images":[
+			{
 				"width":400,
 				"height":400,
 				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"title":"",
-			"travelTime":14500000000,
-			"contents":[
-				{
-					"day1":"XXX",
-					"day2":"XXX"
-				}
-			],
-			"summary":""
-		}
+			}
+		],
+		"title":"",
+		"travelTime":14500000000,
+		"contents":[
+			{
+				"day1":"XXX",
+				"day2":"XXX"
+			}
+		],
+		"summary":""
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -2987,44 +3009,44 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"cover": {
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"cover": {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"images":[
+				{
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"rating":0.98,
-				"hotness":0.98,
-				"title":"",
-				"publishTime":14500000000,
-				"favorCnt":100,
-				"commentCnt":10002,
-				"viewCnt":1231,
-				"shareCnt":123,
-				"travelTime":14500000000,
-				"contents":[
-					{
-						"day1":"XXX",
-						"day2":"XXX"
-					}
-				],
-				"summary":"",
-				"source":"baidu",
-				"essence":true
-			}
+				}
+			],
+			"rating":0.98,
+			"hotness":0.98,
+			"title":"",
+			"publishTime":14500000000,
+			"favorCnt":100,
+			"commentCnt":10002,
+			"viewCnt":1231,
+			"shareCnt":123,
+			"travelTime":14500000000,
+			"contents":[
+				{
+					"day1":"XXX",
+					"day2":"XXX"
+				}
+			],
+			"summary":"",
+			"source":"baidu",
+			"essence":true
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3039,11 +3061,16 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3066,57 +3093,57 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"publishTime":14500000000,
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar":{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"publishTime":14500000000,
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":10002,
+				"originNickName":"魔法屋",
+				"originAvatar":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"text":"南昌如此之美",
+				"images":[
+					{
 						"width":400,
 						"height":400,
 						"url":"http://1.jpg"
-					},
-					"originId":"646f2da8b8ce0440eddb287f",
-					"originUserId":10002,
-					"originNickName":"魔法屋",
-					"originAvatar":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-    				"text":"南昌如此之美",
-    				"images":[
-						{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						}
-					],
-					"comment":"自己评论",
-					"card":	{
-						"id":"646f2da8b8ce0440eddb287f",
-						"title":"",
-						"summary":"",
-						"cover":{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"thumb":{
-							"width":400,
-							"height":400,
-							"url":"http://1.jpg"
-						},
-						"detailUrl":"http://xxx.html"
 					}
+				],
+				"comment":"自己评论",
+				"card":	{
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"",
+					"summary":"",
+					"cover":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"thumb":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"detailUrl":"http://xxx.html"
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3130,41 +3157,46 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
-		{
-			"originId":"646f2da8b8ce0440eddb287f",
-			"originUserId":10002,
-			"originNickName":"魔法屋",
-			"originAvatar":{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"originId":"646f2da8b8ce0440eddb287f",
+		"originUserId":10002,
+		"originNickName":"魔法屋",
+		"originAvatar":{
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"text":"南昌如此之美",
+		"images":[
+			{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		],
+		"comment":"自己评论",
+		"card":	{
+			"id":"646f2da8b8ce0440eddb287f",
+			"title":"",
+			"summary":"",
+			"cover":{
 				"width":400,
 				"height":400,
 				"url":"http://1.jpg"
 			},
-			"text":"南昌如此之美",
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"comment":"自己评论",
-			"card":	{
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"",
-				"summary":"",
-				"cover":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"thumb":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"detailUrl":"http://xxx.html"
-			}
+			"thumb":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"detailUrl":"http://xxx.html"
 		}
+	}
 - Response
 > 返回字段说明
 
@@ -3173,11 +3205,11 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 ***
 #足迹模块
@@ -3190,13 +3222,174 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"traceTime":1425225600000,
+		"cover":{
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"images":[
+			{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		],
+		"audio":{
+			"length":15,
+			"fileName":"123as3212c",
+			"url":"http://a.mp3",
+			"key":"sa2313dasdq1"
+		},
+		"status":1,
+		"desc":"XXX",
+		"restaurant":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"煌上煌烤鸭店",
+			"enName":"",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"hotel":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"如家快捷酒店",
+			"enName":"RuJia",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"viewspot":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"八一广场",
+			"enName":"",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"activity": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"title":"亲子游活动",
+			"maxNum":200,
+			"joinNum" : 106,
+			"favorCnt":100001,
+			"viewCnt":88888,
+			"poster":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		},
+		"shopping": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"优衣库",
+			"enName":"Uniqlo",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"originId":"646f2da8b8ce0440eddb287f",
+		"originUserId":1001,
+		"originNickName":"魔法师",
+		"originAvatar":{
+			"url":"http://1.jpg",
+			"width":800,
+			"height":600
+		},
+		"lat":78.23,
+		"lng":97.42
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1002,
+			"nickName":"魔法师的小黑屋",
+			"avatar":"htpp://2.jpg",
+			"createTime":1425225600000,
+			"updateTime":1425225600000,
 			"traceTime":1425225600000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
 			"cover":{
 				"width":400,
 				"height":400,
 				"url":"http://1.jpg"
 			},
+			"desc":"XXX",
 			"images":[
 				{
 					"width":400,
@@ -3211,7 +3404,6 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 				"key":"sa2313dasdq1"
 			},
 			"status":1,
-			"desc":"XXX",
 			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
 				"lat":180.1,
@@ -3323,156 +3515,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 			"lat":78.23,
 			"lng":97.42
 		}
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1002,
-				"nickName":"魔法师的小黑屋",
-				"avatar":"htpp://2.jpg",
-				"createTime":1425225600000,
-				"updateTime":1425225600000,
-				"traceTime":1425225600000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"cover":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"desc":"XXX",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"audio":{
-					"length":15,
-					"fileName":"123as3212c",
-					"url":"http://a.mp3",
-					"key":"sa2313dasdq1"
-				},
-				"status":1,
-				"restaurant":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"煌上煌烤鸭店",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"hotel":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"如家快捷酒店",
-					"enName":"RuJia",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"viewspot":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"activity": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"亲子游活动",
-					"maxNum":200,
-					"joinNum" : 106,
-					"favorCnt":100001,
-					"viewCnt":88888,
-					"poster":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				},
-				"shopping": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"lat":78.23,
-				"lng":97.42
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3486,13 +3529,174 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"traceTime":1425225600000,
+		"cover":{
+			"width":400,
+			"height":400,
+			"url":"http://1.jpg"
+		},
+		"images":[
+			{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		],
+		"audio":{
+			"length":15,
+			"fileName":"123as3212c",
+			"url":"http://a.mp3",
+			"key":"sa2313dasdq1"
+		},
+		"status":1,
+		"desc":"XXX",
+		"restaurant":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"煌上煌烤鸭店",
+			"enName":"",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"hotel":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"如家快捷酒店",
+			"enName":"RuJia",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"viewspot":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"八一广场",
+			"enName":"",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"activity": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"title":"亲子游活动",
+			"maxNum":200,
+			"joinNum" : 106,
+			"favorCnt":100001,
+			"viewCnt":88888,
+			"poster":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			}
+		},
+		"shopping": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"lat":180.1,
+			"lng":180.1,
+			"cover" : {
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"rank":3,
+			"hotness":0.97,
+			"rating":0.98,
+			"zhName":"优衣库",
+			"enName":"Uniqlo",
+			"url":"http://XXX",
+			"marketPrice":280.6,
+			"price":180.3,
+			"tags":["",""],
+			"openTime":"9:00~21:00"
+			"saleVolume":100,
+			"discount":0.65
+		},
+		"originId":"646f2da8b8ce0440eddb287f",
+		"originUserId":1001,
+		"originNickName":"魔法师",
+		"originAvatar":{
+			"url":"http://1.jpg",
+			"width":800,
+			"height":600
+		},
+		"lat":78.23,
+		"lng":97.42
+	}
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1002,
+			"nickName":"魔法师的小黑屋",
+			"avatar":"htpp://2.jpg",
+			"createTime":1425225600000,
+			"updateTime":1425225600000,
 			"traceTime":1425225600000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
 			"cover":{
 				"width":400,
 				"height":400,
 				"url":"http://1.jpg"
 			},
+			"desc":"XXX",
 			"images":[
 				{
 					"width":400,
@@ -3507,7 +3711,6 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 				"key":"sa2313dasdq1"
 			},
 			"status":1,
-			"desc":"XXX",
 			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
 				"lat":180.1,
@@ -3619,162 +3822,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 			"lat":78.23,
 			"lng":97.42
 		}
-- Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-> 示例
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1002,
-				"nickName":"魔法师的小黑屋",
-				"avatar":"htpp://2.jpg",
-				"createTime":1425225600000,
-				"updateTime":1425225600000,
-				"traceTime":1425225600000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"cover":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"desc":"XXX",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"audio":{
-					"length":15,
-					"fileName":"123as3212c",
-					"url":"http://a.mp3",
-					"key":"sa2313dasdq1"
-				},
-				"status":1,
-				"restaurant":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"煌上煌烤鸭店",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"hotel":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"如家快捷酒店",
-					"enName":"RuJia",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"viewspot":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"activity": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"亲子游活动",
-					"maxNum":200,
-					"joinNum" : 106,
-					"favorCnt":100001,
-					"viewCnt":88888,
-					"poster":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				},
-				"shopping": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"lat":78.23,
-				"lng":97.42
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3795,154 +3843,154 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 > 示例
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result": {
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1002,
+			"nickName":"魔法师的小黑屋",
+			"avatar":"htpp://2.jpg",
+			"createTime":1425225600000,
+			"updateTime":1425225600000,
+			"traceTime":1425225600000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
+			"cover":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"desc":"XXX",
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"audio":{
+				"length":15,
+				"fileName":"123as3212c",
+				"url":"http://a.mp3",
+				"key":"sa2313dasdq1"
+			},
+			"status":1,
+			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1002,
-				"nickName":"魔法师的小黑屋",
-				"avatar":"htpp://2.jpg",
-				"createTime":1425225600000,
-				"updateTime":1425225600000,
-				"traceTime":1425225600000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"cover":{
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
 				},
-				"desc":"XXX",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"audio":{
-					"length":15,
-					"fileName":"123as3212c",
-					"url":"http://a.mp3",
-					"key":"sa2313dasdq1"
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"hotel":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"status":1,
-				"restaurant":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"煌上煌烤鸭店",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"viewspot":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"hotel":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"如家快捷酒店",
-					"enName":"RuJia",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"saleVolume":100,
-					"discount":0.65
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"activity": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"亲子游活动",
+				"maxNum":200,
+				"joinNum" : 106,
+				"favorCnt":100001,
+				"viewCnt":88888,
+				"poster":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			},
+			"shopping": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"viewspot":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"activity": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"亲子游活动",
-					"maxNum":200,
-					"joinNum" : 106,
-					"favorCnt":100001,
-					"viewCnt":88888,
-					"poster":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				},
-				"shopping": {
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"lat":78.23,
-				"lng":97.42
-			}
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"优衣库",
+				"enName":"Uniqlo",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"lat":78.23,
+			"lng":97.42
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3959,39 +4007,44 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"userId":1002,
-					"nickName":"魔法师的小黑屋",
-					"avatar":"htpp://2.jpg",
-					"createTime":1425225600000,
-					"updateTime":1425225600000,
-					"traceTime":1425225600000,
-					"cover":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"desc":"XXX",
-					"status":1,
-					"originId":"646f2da8b8ce0440eddb287f",
-					"originUserId":1001,
-					"originNickName":"魔法师",
-					"originAvatar":{
-						"url":"http://1.jpg",
-						"width":800,
-						"height":600
-					},
-					"lat":78.23,
-					"lng":97.42
-				}
-			]
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"userId":1002,
+				"nickName":"魔法师的小黑屋",
+				"avatar":"htpp://2.jpg",
+				"createTime":1425225600000,
+				"updateTime":1425225600000,
+				"traceTime":1425225600000,
+				"cover":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"desc":"XXX",
+				"status":1,
+				"originId":"646f2da8b8ce0440eddb287f",
+				"originUserId":1001,
+				"originNickName":"魔法师",
+				"originAvatar":{
+					"url":"http://1.jpg",
+					"width":800,
+					"height":600
+				},
+				"lat":78.23,
+				"lng":97.42
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -4004,42 +4057,184 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body：无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result": {
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result": {
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1002,
+			"nickName":"魔法师的小黑屋",
+			"avatar":"htpp://2.jpg",
+			"createTime":1425225600000,
+			"updateTime":1425225600000,
+			"traceTime":1425225600000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
+			"cover":{
+				"width":400,
+				"height":400,
+				"url":"http://1.jpg"
+			},
+			"desc":"XXX",
+			"images":[
+				{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			],
+			"audio":{
+				"length":15,
+				"fileName":"123as3212c",
+				"url":"http://a.mp3",
+				"key":"sa2313dasdq1"
+			},
+			"status":1,
+			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1002,
-				"nickName":"魔法师的小黑屋",
-				"avatar":"htpp://2.jpg",
-				"createTime":1425225600000,
-				"updateTime":1425225600000,
-				"traceTime":1425225600000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"cover":{
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
 				},
-				"desc":"XXX",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"audio":{
-					"length":15,
-					"fileName":"123as3212c",
-					"url":"http://a.mp3",
-					"key":"sa2313dasdq1"
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"煌上煌烤鸭店",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"hotel":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
 				},
-				"status":1,
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"如家快捷酒店",
+				"enName":"RuJia",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"viewspot":{
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"八一广场",
+				"enName":"",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"activity": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"亲子游活动",
+				"maxNum":200,
+				"joinNum" : 106,
+				"favorCnt":100001,
+				"viewCnt":88888,
+				"poster":{
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				}
+			},
+			"shopping": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"lat":180.1,
+				"lng":180.1,
+				"cover" : {
+					"width":400,
+					"height":400,
+					"url":"http://1.jpg"
+				},
+				"rank":3,
+				"hotness":0.97,
+				"rating":0.98,
+				"zhName":"优衣库",
+				"enName":"Uniqlo",
+				"url":"http://XXX",
+				"marketPrice":280.6,
+				"price":180.3,
+				"tags":["",""],
+				"openTime":"9:00~21:00"
+				"saleVolume":100,
+				"discount":0.65
+			},
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"lat":78.23,
+			"lng":97.42
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+***
+#形成规划模块
+###发布行程规划1045
+- Path:/app/users/{userId}/tripplans
+- Request Method:POST
+- Request Headers
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"tripItems":[
+			{
+				"tripTime":145000000000,
+				"desc":"XXX",
 				"restaurant":{
 					"id":"646f2da8b8ce0440eddb287f",
 					"lat":180.1,
@@ -4139,35 +4334,45 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 					"openTime":"9:00~21:00"
 					"saleVolume":100,
 					"discount":0.65
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"lat":78.23,
-				"lng":97.42
+				}
 			}
-		}
+		],
+		"originId":"646f2da8b8ce0440eddb287f",
+		"originUserId":1001,
+		"originNickName":"魔法师",
+		"originAvatar":{
+			"url":"http://1.jpg",
+			"width":800,
+			"height":600
+		},
+		"hotness":0.9
+	}
+- Response
 
-错误码|描述|原因
---|--|--
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
 
-***
-#形成规划模块
-###发布行程规划1045
-- Path:/app/users/{userId}/tripplans
-- Request Method:POST
-- Request Headers
+> 示例
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body
-
-		{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"createTime":1450000000,
+			"updateTime":1450000000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
 			"tripItems":[
 				{
 					"tripTime":145000000000,
@@ -4284,144 +4489,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 			},
 			"hotness":0.9
 		}
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1001,
-				"nickName":"魔法师",
-				"avatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"createTime":1450000000,
-				"updateTime":1450000000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"tripItems":[
-					{
-						"tripTime":145000000000,
-						"desc":"XXX",
-						"restaurant":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"煌上煌烤鸭店",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"hotel":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"如家快捷酒店",
-							"enName":"RuJia",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"viewspot":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"八一广场",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"activity": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"title":"亲子游活动",
-							"maxNum":200,
-							"joinNum" : 106,
-							"favorCnt":100001,
-							"viewCnt":88888,
-							"poster":{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						},
-						"shopping": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"优衣库",
-							"enName":"Uniqlo",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						}
-					}
-				],
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"hotness":0.9
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -4436,202 +4504,30 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1001,
-				"nickName":"魔法师",
-				"avatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"createTime":1450000000,
-				"updateTime":1450000000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"tripItems":[
-					{
-						"tripTime":145000000000,
-						"desc":"XXX",
-						"restaurant":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"煌上煌烤鸭店",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"hotel":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"如家快捷酒店",
-							"enName":"RuJia",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"viewspot":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"八一广场",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"activity": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"title":"亲子游活动",
-							"maxNum":200,
-							"joinNum" : 106,
-							"favorCnt":100001,
-							"viewCnt":88888,
-							"poster":{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						},
-						"shopping": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"优衣库",
-							"enName":"Uniqlo",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						}
-					}
-				],
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"hotness":0.9
-			}
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
 
-错误码|描述|原因
---|--|--
+> 示例
 
-###取得行程规划列表1047
-- Path:/app/users/{userId}/tripplans
-- Request Method:GET
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-	"id":"646f2da8b8ce0440eddb287f",
-					"userId":1001,
-					"nickName":"魔法师",
-					"avatar":{
-						"url":"http://1.jpg",
-						"width":800,
-						"height":600
-					},
-					"createTime":1450000000,
-					"updateTime":1450000000,
-					"shareCnt":100,
-					"favorCnt":1000,
-					"commentCnt":200,
-					"viewCnt":100000,
-					"originId":"646f2da8b8ce0440eddb287f",
-					"originUserId":1001,
-					"originNickName":"魔法师",
-					"originAvatar":{
-						"url":"http://1.jpg",
-						"width":800,
-						"height":600
-					},
-					"hotness":0.9
-				}
-			]
-		}
-
-错误码|描述|原因
---|--|--
-
-###修改行程规划1048
-- Path:/app/users/{userId}/tripplans/{tripPlanId}
-- Request Method:PUT
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body
-
-		{
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"createTime":1450000000,
+			"updateTime":1450000000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
 			"tripItems":[
 				{
 					"tripTime":145000000000,
@@ -4748,13 +4644,32 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 			},
 			"hotness":0.9
 		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得行程规划列表1047
+- Path:/app/users/{userId}/tripplans
+- Request Method:GET
+- Request Headers:
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
 				"id":"646f2da8b8ce0440eddb287f",
 				"userId":1001,
 				"nickName":"魔法师",
@@ -4769,112 +4684,6 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 				"favorCnt":1000,
 				"commentCnt":200,
 				"viewCnt":100000,
-				"tripItems":[
-					{
-						"tripTime":145000000000,
-						"desc":"XXX",
-						"restaurant":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"煌上煌烤鸭店",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"hotel":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"如家快捷酒店",
-							"enName":"RuJia",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"viewspot":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"八一广场",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						},
-						"activity": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"title":"亲子游活动",
-							"maxNum":200,
-							"joinNum" : 106,
-							"favorCnt":100001,
-							"viewCnt":88888,
-							"poster":{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						},
-						"shopping": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"优衣库",
-							"enName":"Uniqlo",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
-						}
-					}
-				],
 				"originId":"646f2da8b8ce0440eddb287f",
 				"originUserId":1001,
 				"originNickName":"魔法师",
@@ -4885,7 +4694,286 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 				},
 				"hotness":0.9
 			}
+		]
+	}
+
+错误码|描述|原因
+--|--|--
+
+###修改行程规划1048
+- Path:/app/users/{userId}/tripplans/{tripPlanId}
+- Request Method:PUT
+- Request Headers:
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"tripItems":[
+			{
+				"tripTime":145000000000,
+				"desc":"XXX",
+				"restaurant":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"煌上煌烤鸭店",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"hotel":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"如家快捷酒店",
+					"enName":"RuJia",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"viewspot":{
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"八一广场",
+					"enName":"",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				},
+				"activity": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"title":"亲子游活动",
+					"maxNum":200,
+					"joinNum" : 106,
+					"favorCnt":100001,
+					"viewCnt":88888,
+					"poster":{
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					}
+				},
+				"shopping": {
+					"id":"646f2da8b8ce0440eddb287f",
+					"lat":180.1,
+					"lng":180.1,
+					"cover" : {
+						"width":400,
+						"height":400,
+						"url":"http://1.jpg"
+					},
+					"rank":3,
+					"hotness":0.97,
+					"rating":0.98,
+					"zhName":"优衣库",
+					"enName":"Uniqlo",
+					"url":"http://XXX",
+					"marketPrice":280.6,
+					"price":180.3,
+					"tags":["",""],
+					"openTime":"9:00~21:00"
+					"saleVolume":100,
+					"discount":0.65
+				}
+			}
+		],
+		"originId":"646f2da8b8ce0440eddb287f",
+		"originUserId":1001,
+		"originNickName":"魔法师",
+		"originAvatar":{
+			"url":"http://1.jpg",
+			"width":800,
+			"height":600
+		},
+		"hotness":0.9
+	}
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"createTime":1450000000,
+			"updateTime":1450000000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
+			"tripItems":[
+				{
+					"tripTime":145000000000,
+					"desc":"XXX",
+					"restaurant":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"煌上煌烤鸭店",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"hotel":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"如家快捷酒店",
+						"enName":"RuJia",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"viewspot":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"八一广场",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"activity": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"亲子游活动",
+						"maxNum":200,
+						"joinNum" : 106,
+						"favorCnt":100001,
+						"viewCnt":88888,
+						"poster":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						}
+					},
+					"shopping": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"优衣库",
+						"enName":"Uniqlo",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					}
+				}
+			],
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"hotness":0.9
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -4900,142 +4988,147 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1001,
-				"nickName":"魔法师",
-				"avatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"createTime":1450000000,
-				"updateTime":1450000000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"tripItems":[
-					{
-						"tripTime":145000000000,
-						"desc":"XXX",
-						"restaurant":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"煌上煌烤鸭店",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"createTime":1450000000,
+			"updateTime":1450000000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
+			"tripItems":[
+				{
+					"tripTime":145000000000,
+					"desc":"XXX",
+					"restaurant":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"hotel":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"如家快捷酒店",
-							"enName":"RuJia",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"煌上煌烤鸭店",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"hotel":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"viewspot":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"八一广场",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"如家快捷酒店",
+						"enName":"RuJia",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"viewspot":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"activity": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"title":"亲子游活动",
-							"maxNum":200,
-							"joinNum" : 106,
-							"favorCnt":100001,
-							"viewCnt":88888,
-							"poster":{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						},
-						"shopping": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"优衣库",
-							"enName":"Uniqlo",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"八一广场",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"activity": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"亲子游活动",
+						"maxNum":200,
+						"joinNum" : 106,
+						"favorCnt":100001,
+						"viewCnt":88888,
+						"poster":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						}
+					},
+					"shopping": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"优衣库",
+						"enName":"Uniqlo",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
 					}
-				],
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"hotness":0.9
-			}
+				}
+			],
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"hotness":0.9
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5050,142 +5143,147 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1001,
-				"nickName":"魔法师",
-				"avatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"createTime":1450000000,
-				"updateTime":1450000000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
-				"tripItems":[
-					{
-						"tripTime":145000000000,
-						"desc":"XXX",
-						"restaurant":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"煌上煌烤鸭店",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"createTime":1450000000,
+			"updateTime":1450000000,
+			"shareCnt":100,
+			"favorCnt":1000,
+			"commentCnt":200,
+			"viewCnt":100000,
+			"tripItems":[
+				{
+					"tripTime":145000000000,
+					"desc":"XXX",
+					"restaurant":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"hotel":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"如家快捷酒店",
-							"enName":"RuJia",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"煌上煌烤鸭店",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"hotel":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"viewspot":{
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"八一广场",
-							"enName":"",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"如家快捷酒店",
+						"enName":"RuJia",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"viewspot":{
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						},
-						"activity": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"title":"亲子游活动",
-							"maxNum":200,
-							"joinNum" : 106,
-							"favorCnt":100001,
-							"viewCnt":88888,
-							"poster":{
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							}
-						},
-						"shopping": {
-							"id":"646f2da8b8ce0440eddb287f",
-							"lat":180.1,
-							"lng":180.1,
-							"cover" : {
-								"width":400,
-								"height":400,
-								"url":"http://1.jpg"
-							},
-							"rank":3,
-							"hotness":0.97,
-							"rating":0.98,
-							"zhName":"优衣库",
-							"enName":"Uniqlo",
-							"url":"http://XXX",
-							"marketPrice":280.6,
-							"price":180.3,
-							"tags":["",""],
-							"openTime":"9:00~21:00"
-							"saleVolume":100,
-							"discount":0.65
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"八一广场",
+						"enName":"",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
+					},
+					"activity": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"title":"亲子游活动",
+						"maxNum":200,
+						"joinNum" : 106,
+						"favorCnt":100001,
+						"viewCnt":88888,
+						"poster":{
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
 						}
+					},
+					"shopping": {
+						"id":"646f2da8b8ce0440eddb287f",
+						"lat":180.1,
+						"lng":180.1,
+						"cover" : {
+							"width":400,
+							"height":400,
+							"url":"http://1.jpg"
+						},
+						"rank":3,
+						"hotness":0.97,
+						"rating":0.98,
+						"zhName":"优衣库",
+						"enName":"Uniqlo",
+						"url":"http://XXX",
+						"marketPrice":280.6,
+						"price":180.3,
+						"tags":["",""],
+						"openTime":"9:00~21:00"
+						"saleVolume":100,
+						"discount":0.65
 					}
-				],
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"hotness":0.9
-			}
+				}
+			],
+			"originId":"646f2da8b8ce0440eddb287f",
+			"originUserId":1001,
+			"originNickName":"魔法师",
+			"originAvatar":{
+				"url":"http://1.jpg",
+				"width":800,
+				"height":600
+			},
+			"hotness":0.9
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5201,6 +5299,11 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
 	{
 		"source":"baidu",
 		"topics":["湖边","摄影","婚纱"],
@@ -5210,32 +5313,37 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 	}
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"source":"baidu",
-				"topics":["湖边","摄影","婚纱"],
-				"tags":["旅拍","XXX"],
-				"viewCnt":100,
-				"answerCnt":10,
-				"maxVoteCnt":10000,
-				"publishTime":145000000000,
-				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-				"contents":"如题",
-				"author": {
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar": {
-						"url":"http://1.jpg",
-						"width":800,
-						"height":600
-					}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"source":"baidu",
+			"topics":["湖边","摄影","婚纱"],
+			"tags":["旅拍","XXX"],
+			"viewCnt":100,
+			"answerCnt":10,
+			"maxVoteCnt":10000,
+			"publishTime":145000000000,
+			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+			"contents":"如题",
+			"author": {
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar": {
+					"url":"http://1.jpg",
+					"width":800,
+					"height":600
 				}
 			}
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5248,11 +5356,78 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"source":"baidu",
+			"topics":["湖边","摄影","婚纱"],
+			"tags":["旅拍","XXX"],
+			"viewCnt":100,
+			"answerCnt":10,
+			"maxVoteCnt":10000,
+			"publishTime":145000000000,
+			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+			"contents":"如题",
+			"author": {
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar": {
+					"url":"http://1.jpg",
+					"width":800,
+					"height":600
+				}
+			},
+			"answers":[
+				{
+					"voteCnt":100,
+					"accepted":true,
+					"author":{
+						"userId":10001,
+						"nickName":"雷锋",
+						"avatar":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					},
+					"publishTime":1450000000000,
+					"title":"",
+					"contents":"XXX"
+				}
+			]
+		}
+	}
+
+错误码|描述|原因
+--|--|--
+
+###取得用户问题列表1052
+- Path:/app/users/{userId}/quoras
+- Request Method:GET
+- Request Headers:无
+- Query String:无
+- Request Body:无
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
 				"id":"646f2da8b8ce0440eddb287f",
 				"source":"baidu",
 				"topics":["湖边","摄影","婚纱"],
@@ -5271,67 +5446,10 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 						"width":800,
 						"height":600
 					}
-				},
-				"answers":[
-					{
-						"voteCnt":100,
-						"accepted":true,
-						"author":{
-							"userId":10001,
-							"nickName":"雷锋",
-							"avatar":{
-								"width":600,
-								"height":600,
-								"url":"http://1.jpg"
-							}
-						},
-						"publishTime":1450000000000,
-						"title":"",
-						"contents":"XXX"
-					}
-				]
-			}
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得用户问题列表1052
-- Path:/app/users/{userId}/quoras
-- Request Method:GET
-- Request Headers:无
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"source":"baidu",
-					"topics":["湖边","摄影","婚纱"],
-					"tags":["旅拍","XXX"],
-					"viewCnt":100,
-					"answerCnt":10,
-					"maxVoteCnt":10000,
-					"publishTime":145000000000,
-					"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-					"contents":"如题",
-					"author": {
-						"userId":10001,
-						"nickName":"魔法师",
-						"avatar": {
-							"url":"http://1.jpg",
-							"width":800,
-							"height":600
-						}
-					}
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5344,34 +5462,39 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"source":"baidu",
-					"topics":["湖边","摄影","婚纱"],
-					"tags":["旅拍","XXX"],
-					"viewCnt":100,
-					"answerCnt":10,
-					"maxVoteCnt":10000,
-					"publishTime":145000000000,
-					"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-					"contents":"如题",
-					"author": {
-						"userId":10001,
-						"nickName":"魔法师",
-						"avatar": {
-							"url":"http://1.jpg",
-							"width":800,
-							"height":600
-						}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"source":"baidu",
+				"topics":["湖边","摄影","婚纱"],
+				"tags":["旅拍","XXX"],
+				"viewCnt":100,
+				"answerCnt":10,
+				"maxVoteCnt":10000,
+				"publishTime":145000000000,
+				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+				"contents":"如题",
+				"author": {
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"url":"http://1.jpg",
+						"width":800,
+						"height":600
 					}
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5386,66 +5509,76 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
-		{
-			"author":{
-				"userId":10001,
-				"nickName":"雷锋",
-				"avatar":{
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				}
-			},
-			"title":"",
-			"contents":"XXX"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"author":{
+			"userId":10001,
+			"nickName":"雷锋",
+			"avatar":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		},
+		"title":"",
+		"contents":"XXX"
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"source":"baidu",
-				"topics":["湖边","摄影","婚纱"],
-				"tags":["旅拍","XXX"],
-				"viewCnt":100,
-				"answerCnt":10,
-				"maxVoteCnt":10000,
-				"publishTime":145000000000,
-				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-				"contents":"如题",
-				"author": {
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar": {
-						"url":"http://1.jpg",
-						"width":800,
-						"height":600
-					}
-				},
-				"answers":[
-					{
-						"voteCnt":100,
-						"accepted":true,
-						"author":{
-							"userId":10001,
-							"nickName":"雷锋",
-							"avatar":{
-								"width":600,
-								"height":600,
-								"url":"http://1.jpg"
-							}
-						},
-						"publishTime":1450000000000,
-						"title":"",
-						"contents":"XXX"
-					}
-				]
-			}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+> 示例
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"646f2da8b8ce0440eddb287f",
+			"source":"baidu",
+			"topics":["湖边","摄影","婚纱"],
+			"tags":["旅拍","XXX"],
+			"viewCnt":100,
+			"answerCnt":10,
+			"maxVoteCnt":10000,
+			"publishTime":145000000000,
+			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+			"contents":"如题",
+			"author": {
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar": {
+					"url":"http://1.jpg",
+					"width":800,
+					"height":600
+				}
+			},
+			"answers":[
+				{
+					"voteCnt":100,
+					"accepted":true,
+					"author":{
+						"userId":10001,
+						"nickName":"雷锋",
+						"avatar":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					},
+					"publishTime":1450000000000,
+					"title":"",
+					"contents":"XXX"
+				}
+			]
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5466,9 +5599,9 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--|--|--
 followingId|Long|是|无|待关注用户id
 
-		{
-			"followingId":10001
-		}
+	{
+		"followingId":10001
+	}
 
 - Response
 
@@ -5497,9 +5630,9 @@ followingId|Long|是|无|待关注用户id
 --|--|--|--|--
 followingId|Long|是|无|待取消关注用户id
 
-		{
-			"followingId":10001
-		}
+	{
+		"followingId":10001
+	}
 
 - Response
 
@@ -5524,11 +5657,23 @@ followingId|Long|是|无|待取消关注用户id
 
 参数名|类型|必需|默认值|参数描述
 --|--|--|--|--
-offset|Integer|否|无|从第offset个文档开始取
-limit|Integer|否|无|取limit个文档
+offset|Integer|否|0|从第offset个文档开始取
+limit|Integer|否|200|取limit个文档
 
 - Request Body:无
 - Response
+
+参数名|类型|必含|默认值|参数描述
+--|--|--|--|--
+id|String|是|无|主键
+userId|Long|是|无|用户id
+nickName|String|是|无|用户昵称
+avatar|Object|是|无|用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+memo|String|否|无|备注
 
 	{
 		"code":0,
@@ -5647,6 +5792,10 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+memo|String|是|无|备注
+
 	{
 		"memo":"备注"
 	}
@@ -5737,16 +5886,20 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+blockId|Long|是|无|待屏蔽用户id
+
 	{
 		"blockId":10001
 	}
 
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -5765,10 +5918,10 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5784,8 +5937,13 @@ memo|String|否|无|备注
 
 - Query String
 
-		offset:0
-		limit:100
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|第几个开始
+limit|Integer|否|200|最多多少个
+
+	offset:0
+	limit:100
 
 - Request Body:无
 - Response
@@ -5833,8 +5991,13 @@ memo|String|否|无|备注
 
 - Query String
 
-		offset:0
-		limit:100
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|第几个开始
+limit|Integer|否|200|最多多少个
+
+	offset:0
+	limit:100
 
 - Request Body:无
 - Response
@@ -5871,7 +6034,36 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+
+	{
+		"senderId":10001,
+		"senderNickName":"魔法师",
+		"senderAvatar":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"receiverId":10002,
+		"contents":"您好！",
+		"msgType":1,
+		"chatType":1,
+		"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"msgId":10,
 			"senderId":10001,
 			"senderNickName":"魔法师",
 			"senderAvatar":{
@@ -5883,32 +6075,10 @@ memo|String|否|无|备注
 			"contents":"您好！",
 			"msgType":1,
 			"chatType":1,
+			"timestamp":145000000000,
 			"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 		}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"msgId":10,
-				"senderId":10001,
-				"senderNickName":"魔法师",
-				"senderAvatar":{
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"receiverId":10002,
-				"contents":"您好！",
-				"msgType":1,
-				"chatType":1,
-				"timestamp":145000000000,
-				"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5923,33 +6093,39 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"purgeBefore":145000000000
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"purgeBefore":145000000000
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"msgId":10,
-					"senderId":10001,
-					"senderNickName":"魔法师",
-					"senderAvatar":{
-						c
-					},
-					"receiverId":10002,
-					"contents":"您好！",
-					"msgType":1,
-					"chatType":1,
-					"timestamp":145000000000,
-					"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-				}
-			]
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"msgId":10,
+				"senderId":10001,
+				"senderNickName":"魔法师",
+				"senderAvatar":{
+					c
+				},
+				"receiverId":10002,
+				"contents":"您好！",
+				"msgType":1,
+				"chatType":1,
+				"timestamp":145000000000,
+				"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -5964,6 +6140,9 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
 	{
 		"mute":1
 	}
@@ -5972,7 +6151,6 @@ memo|String|否|无|备注
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
@@ -5992,17 +6170,20 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-				"muted":1,
-				"pinned":1,
-				"targetId":10001
-			}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"muted":1,
+			"pinned":1,
+			"targetId":10001
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6017,7 +6198,36 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"name":"旅拍大咖",
+		"groupDesc":"旅行摄影群组，欢迎各位参与",
+		"avatar": {
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"tags":["旅拍","影楼","摄影工作室"],
+		"creator":1001,
+		"participants":[1002,1003,1004],
+		"maxUsers":50,
+		"visible":true
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"chatGroupId":100001,
 			"name":"旅拍大咖",
 			"groupDesc":"旅行摄影群组，欢迎各位参与",
 			"avatar": {
@@ -6031,30 +6241,7 @@ memo|String|否|无|备注
 			"maxUsers":50,
 			"visible":true
 		}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-				"chatGroupId":100001,
-				"name":"旅拍大咖",
-				"groupDesc":"旅行摄影群组，欢迎各位参与",
-				"avatar": {
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"tags":["旅拍","影楼","摄影工作室"],
-				"creator":1001,
-				"participants":[1002,1003,1004],
-				"maxUsers":50,
-				"visible":true
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6069,7 +6256,34 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"name":"旅拍大咖",
+		"groupDesc":"旅行摄影群组，欢迎各位参与",
+		"avatar": {
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"tags":["旅拍","影楼","摄影工作室"],
+		"maxUsers":50,
+		"visible":true
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"chatGroupId":100001,
 			"name":"旅拍大咖",
 			"groupDesc":"旅行摄影群组，欢迎各位参与",
 			"avatar": {
@@ -6078,33 +6292,12 @@ memo|String|否|无|备注
 				"url":"http://1.jpg"
 			},
 			"tags":["旅拍","影楼","摄影工作室"],
+			"creator":1001,
+			"participants":[1002,1003,1004],
 			"maxUsers":50,
 			"visible":true
 		}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-				"chatGroupId":100001,
-				"name":"旅拍大咖",
-				"groupDesc":"旅行摄影群组，欢迎各位参与",
-				"avatar": {
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"tags":["旅拍","影楼","摄影工作室"],
-				"creator":1001,
-				"participants":[1002,1003,1004],
-				"maxUsers":50,
-				"visible":true
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6120,27 +6313,30 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-				"chatGroupId":100001,
-				"name":"旅拍大咖",
-				"groupDesc":"旅行摄影群组，欢迎各位参与",
-				"avatar": {
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"tags":["旅拍","影楼","摄影工作室"],
-				"creator":1001,
-				"participants":[1002,1003,1004],
-				"maxUsers":50,
-				"visible":true
-			}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"chatGroupId":100001,
+			"name":"旅拍大咖",
+			"groupDesc":"旅行摄影群组，欢迎各位参与",
+			"avatar": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"tags":["旅拍","影楼","摄影工作室"],
+			"creator":1001,
+			"participants":[1002,1003,1004],
+			"maxUsers":50,
+			"visible":true
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6156,22 +6352,25 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6186,17 +6385,23 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"memberId":10002
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"memberId":10002
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 ###删除群成员1073
 - Path:/app/chatgroups/{chatgroupId}/members/{memberId}
@@ -6229,29 +6434,32 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"chatGroupId":100001,
-					"name":"旅拍大咖",
-					"groupDesc":"旅行摄影群组，欢迎各位参与",
-					"avatar": {
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"tags":["旅拍","影楼","摄影工作室"],
-					"creator":1001,
-					"participants":[1002,1003,1004],
-					"maxUsers":50,
-					"visible":true
-				}
-			]
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"chatGroupId":100001,
+				"name":"旅拍大咖",
+				"groupDesc":"旅行摄影群组，欢迎各位参与",
+				"avatar": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"tags":["旅拍","影楼","摄影工作室"],
+				"creator":1001,
+				"participants":[1002,1003,1004],
+				"maxUsers":50,
+				"visible":true
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6266,7 +6474,44 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"title":"周游20国姑娘被亿万富豪持枪逼婚",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"images":[
+			{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		],
+		"summary":"还有这种事，求逼婚",
+		"content":"还有这种事，求逼婚",
+		"authorId":1001, // 非必须
+		"authorNickName":"魔法师", // 非必须
+		"authorAvatar":{ // 非必须
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		}
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
 			"title":"周游20国姑娘被亿万富豪持枪逼婚",
 			"cover":{
 				"width":600,
@@ -6280,8 +6525,17 @@ memo|String|否|无|备注
 					"url":"http://1.jpg"
 				}
 			],
+			"publishTime":1450000000000,
+			"updateTime":1450000000000,
+			"favorCnt":0,
+			"commentCnt":0,
+			"viewCnt":0,
+			"shareCnt":0,
 			"summary":"还有这种事，求逼婚",
 			"content":"还有这种事，求逼婚",
+			"rank":100,
+			"hotness":0.96,
+			"rating":0.98,
 			"authorId":1001, // 非必须
 			"authorNickName":"魔法师", // 非必须
 			"authorAvatar":{ // 非必须
@@ -6290,47 +6544,7 @@ memo|String|否|无|备注
 				"url":"http://1.jpg"
 			}
 		}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"title":"周游20国姑娘被亿万富豪持枪逼婚",
-				"cover":{
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"images":[
-					{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				],
-				"publishTime":1450000000000,
-				"updateTime":1450000000000,
-				"favorCnt":0,
-				"commentCnt":0,
-				"viewCnt":0,
-				"shareCnt":0,
-				"summary":"还有这种事，求逼婚",
-				"content":"还有这种事，求逼婚",
-				"rank":100,
-				"hotness":0.96,
-				"rating":0.98,
-				"authorId":1001, // 非必须
-				"authorNickName":"魔法师", // 非必须
-				"authorAvatar":{ // 非必须
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				}
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6347,35 +6561,38 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"title":"周游20国姑娘被亿万富豪持枪逼婚",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"publishTime":1450000000000,
-					"updateTime":1450000000000,
-					"favorCnt":0,
-					"commentCnt":0,
-					"viewCnt":0,
-					"shareCnt":0,
-					"summary":"还有这种事，求逼婚",
-					"authorId":1001, // 非必须
-					"authorNickName":"魔法师", // 非必须
-					"authorAvatar":{ // 非必须
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"title":"周游20国姑娘被亿万富豪持枪逼婚",
+				"cover":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"publishTime":1450000000000,
+				"updateTime":1450000000000,
+				"favorCnt":0,
+				"commentCnt":0,
+				"viewCnt":0,
+				"shareCnt":0,
+				"summary":"还有这种事，求逼婚",
+				"authorId":1001, // 非必须
+				"authorNickName":"魔法师", // 非必须
+				"authorAvatar":{ // 非必须
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
 				}
-			]
-		}
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6392,16 +6609,19 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"title":"周游20国姑娘被亿万富豪持枪逼婚",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			},
-			"summary":"还有这种事，求逼婚"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"title":"周游20国姑娘被亿万富豪持枪逼婚",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"summary":"还有这种事，求逼婚"
+	}
 
 - Response
 
@@ -6444,16 +6664,19 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"title":"潜水沙龙",
-			"poster":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			},
-			"desc":"潜水交流"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"title":"潜水沙龙",
+		"poster":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"desc":"潜水交流"
+	}
 
 - Response
 
@@ -6496,15 +6719,18 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			},
-			"desc":"我在天安门广场,升旗仪式很威武"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"desc":"我在天安门广场,升旗仪式很威武"
+	}
 
 - Response
 
@@ -6547,24 +6773,27 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"title":"我在天安门广场",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			},
-			"desc":"升旗仪式很威武"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"title":"我在天安门广场",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"desc":"升旗仪式很威武"
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6599,11 +6828,14 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"title":"现在的南昌冷吗？",
-			"contents":"需要带什么衣服过去穿？"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"title":"现在的南昌冷吗？",
+		"contents":"需要带什么衣服过去穿？"
+	}
 
 - Response
 
@@ -6646,16 +6878,19 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"zhName":"煌上煌烤鸭店",
-			"openTime":"8：00~21：00",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"zhName":"煌上煌烤鸭店",
+		"openTime":"8：00~21：00",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
 		}
+	}
 
 - Response
 
@@ -6698,16 +6933,19 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"zhName":"不羁客栈",
-			"openTime":"8：00~23：00",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"zhName":"不羁客栈",
+		"openTime":"8：00~23：00",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
 		}
+	}
 
 - Response
 
@@ -6750,16 +6988,19 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"cover":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			},
-			"title":"井冈山一日游",
-			"summary":"灰常漂亮"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"cover":{
+			"width":600,
+			"height":600,
+			"url":"http://1.jpg"
+		},
+		"title":"井冈山一日游",
+		"summary":"灰常漂亮"
+	}
 
 - Response
 
@@ -6803,105 +7044,108 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"",
-				"userId":1001,
-				"posts":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"周游20国姑娘被亿万富豪持枪逼婚",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"summary":"还有这种事，求逼婚"
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"",
+			"userId":1001,
+			"posts":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"周游20国姑娘被亿万富豪持枪逼婚",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"summary":"还有这种事，求逼婚"
+				}
+			],
+			"traces":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"我在天安门广场,升旗仪式很威武"
+				}
+			],
+			"tripPlans":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"我在天安门广场",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"升旗仪式很威武"
+				}
+			],
+			"activities":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"潜水沙龙",
+					"poster":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"潜水交流"
+				}
+			],
+			"quoras":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"现在的南昌冷吗？",
+					"contents":"需要带什么衣服过去穿？"
+				}
+			],
+			"restaurants":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"煌上煌烤鸭店",
+					"openTime":"8：00~21：00",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				"traces":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"我在天安门广场,升旗仪式很威武"
+				}
+			],
+			"hotels":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"不羁客栈",
+					"openTime":"8：00~23：00",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				"tripPlans":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"我在天安门广场",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"升旗仪式很威武"
-					}
-				],
-				"activities":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"潜水沙龙",
-						"poster":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"潜水交流"
-					}
-				],
-				"quoras":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"现在的南昌冷吗？",
-						"contents":"需要带什么衣服过去穿？"
-					}
-				],
-				"restaurants":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"zhName":"煌上煌烤鸭店",
-						"openTime":"8：00~21：00",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"hotels":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"zhName":"不羁客栈",
-						"openTime":"8：00~23：00",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"travelNotes":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"title":"井冈山一日游",
-						"summary":"灰常漂亮"
-					}
-				]
-			}
+				}
+			],
+			"travelNotes":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"title":"井冈山一日游",
+					"summary":"灰常漂亮"
+				}
+			]
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6918,25 +7162,31 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
-			"voteType":1,
-			"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-		}
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"voteType":1,
+		"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result": {
-				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
-				"userId":10001,
-				"voteType":1,
-				"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-				"voteTime":145000000000000
-			}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result": {
+			"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
+			"userId":10001,
+			"voteType":1,
+			"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+			"voteTime":145000000000000
 		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -6970,26 +7220,32 @@ memo|String|否|无|备注
 
 - Query String:
 
-		voteType=1
-		targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	voteType=1
+	targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
 
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
-					"userId":10001,
-					"voteType":1,
-					"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-					"voteTime":145000000000000
-				}
-			]
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
+				"userId":10001,
+				"voteType":1,
+				"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+				"voteTime":145000000000000
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -7004,10 +7260,45 @@ memo|String|否|无|备注
 - Query String:无
 - Request Body
 
-		{
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	{
+		"rating":0.96,
+		"contents":"评论内容",
+		"commentType":1,
+		"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"images":[
+			{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			}
+		]
+	}
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
 			"rating":0.96,
+			"userId":10001,
+			"name":"魔法师",
+			"avatar":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
 			"contents":"评论内容",
 			"commentType":1,
+			"publishTime":145000000000,
 			"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 			"images":[
 				{
@@ -7017,36 +7308,7 @@ memo|String|否|无|备注
 				}
 			]
 		}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
-				"rating":0.96,
-				"userId":10001,
-				"name":"魔法师",
-				"avatar":{
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				},
-				"contents":"评论内容",
-				"commentType":1,
-				"publishTime":145000000000,
-				"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-				"images":[
-					{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				]
-			}
-		}
+	}
 
 错误码|描述|原因
 --|--|--
@@ -7080,41 +7342,47 @@ memo|String|否|无|备注
 
 - Query String:
 
-		commentType=1
-		itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
+	commentType=1
+	itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
-					"rating":0.96,
-					"userId":10001,
-					"name":"魔法师",
-					"avatar":{
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a",
+				"rating":0.96,
+				"userId":10001,
+				"name":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"contents":"评论内容",
+				"commentType":1,
+				"publishTime":145000000000,
+				"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"images":[
+					{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
-					},
-					"contents":"评论内容",
-					"commentType":1,
-					"publishTime":145000000000,
-					"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"images":[
-						{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					]
-				}
-			]
-		}
+					}
+				]
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
@@ -7131,22 +7399,25 @@ memo|String|否|无|备注
 - Request Body
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"userId":1001,
-					"nickName":"魔法师",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"userId":1001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
 				}
-			]
-		}
+			}
+		]
+	}
 
 ###群组搜索1101
 - Path:/app/chatgroups
@@ -7156,152 +7427,162 @@ memo|String|否|无|备注
 - Request Body
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"chatgroupId":1001,
-					"name":"魔法师群",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"chatgroupId":1001,
+				"name":"魔法师群",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
 				}
-			]
-		}
+			}
+		]
+	}
 
 ###全站搜索1102
 - Path:/app/search
 - Request Method:GET
 - Request Headers:无
 - Query String:?query=青春下一站&viewspot=true&trace=true&tripplan=true&quora=true&activity=true&user=ture&post=true&travelNote=true&restaurant=true&hotel=true&sortby=publishTime&sort=asc
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+
 - Request Body
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"viewspots":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"zhName":"不羁客栈",
-						"openTime":"8：00~23：00",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":{
+			"viewspots":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"不羁客栈",
+					"openTime":"8：00~23：00",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				
-				"users":[
-					{
-						"userId":1001,
-						"nickName:"",
-						"avatar":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
+				}
+			],
+			
+			"users":[
+				{
+					"userId":1001,
+					"nickName:"",
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				"posts":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"周游20国姑娘被亿万富豪持枪逼婚",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"summary":"还有这种事，求逼婚"
+				}
+			],
+			"posts":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"周游20国姑娘被亿万富豪持枪逼婚",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"summary":"还有这种事，求逼婚"
+				}
+			],
+			"traces":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"我在天安门广场,升旗仪式很威武"
+				}
+			],
+			"tripPlans":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"我在天安门广场",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"升旗仪式很威武"
+				}
+			],
+			"activities":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"潜水沙龙",
+					"poster":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"潜水交流"
+				}
+			],
+			"quoras":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"title":"现在的南昌冷吗？",
+					"contents":"需要带什么衣服过去穿？"
+				}
+			],
+			"restaurants":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"煌上煌烤鸭店",
+					"openTime":"8：00~21：00",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				"traces":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"我在天安门广场,升旗仪式很威武"
+				}
+			],
+			"hotels":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"不羁客栈",
+					"openTime":"8：00~23：00",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
 					}
-				],
-				"tripPlans":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"我在天安门广场",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"升旗仪式很威武"
-					}
-				],
-				"activities":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"潜水沙龙",
-						"poster":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"desc":"潜水交流"
-					}
-				],
-				"quoras":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"title":"现在的南昌冷吗？",
-						"contents":"需要带什么衣服过去穿？"
-					}
-				],
-				"restaurants":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"zhName":"煌上煌烤鸭店",
-						"openTime":"8：00~21：00",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"hotels":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"zhName":"不羁客栈",
-						"openTime":"8：00~23：00",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					}
-				],
-				"travelNotes":[
-					{
-						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-						"cover":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						},
-						"title":"井冈山一日游",
-						"summary":"灰常漂亮"
-					}
-				]
-			}
+				}
+			],
+			"travelNotes":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"title":"井冈山一日游",
+					"summary":"灰常漂亮"
+				}
+			]
 		}
+	}
 
 ###绑定邮箱1103
 - Path:/app/users/{userId}/email
@@ -7324,10 +7605,10 @@ token|Object|是|无|令牌
 
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
