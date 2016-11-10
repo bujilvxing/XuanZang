@@ -5918,10 +5918,10 @@ blockId|Long|是|无|待屏蔽用户id
 - Request Body:无
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -6002,6 +6002,18 @@ limit|Integer|否|200|最多多少个
 - Request Body:无
 - Response
 
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是|无|用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+memo|String|否|无|备注
+
 	{
 		"code":0,
 		"msg":"success",
@@ -6039,13 +6051,6 @@ limit|Integer|否|200|最多多少个
 
 
 	{
-		"senderId":10001,
-		"senderNickName":"魔法师",
-		"senderAvatar":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
 		"receiverId":10002,
 		"contents":"您好！",
 		"msgType":1,
