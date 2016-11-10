@@ -868,6 +868,7 @@ updateTime|Long|是|0|用户更新时间
 101001|用户未登录|用户未登录
 101002|性别不合法|性别参数的传的值不是1~3
 101003|星座不合法|星座参数的传的值不是1~12
+101004|用户不存在|用户id输入有误
 
 ###绑定手机号1011
 - Path:/app/users/{userId}/tel
@@ -5480,6 +5481,7 @@ followingId|Long|是|无|待关注用户id
 --|--|--
 105501|参数followingId不可为空|没有传followingId参数
 105502|用户未登录|用户未登录
+105503|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
 ###取消关注用户1056
 - Path:/app/users/{userId}/followings
@@ -5551,7 +5553,7 @@ limit|Integer|否|无|取limit个文档
 --|--|--
 105701|用户未登录|用户未登录
 
-###获取好友详细信息1058
+###获取好友(关注人)的详细信息1058
 - Path:/app/users/{userId}/contacts/{contactId}
 - Request Method:GET
 - Request Headers:
@@ -5562,31 +5564,78 @@ limit|Integer|否|无|取limit个文档
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"level":1,
-				"zodiac":1,
-				"memo":"备注信息"
-			}
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+qq|Object|是|{}|第三方平台的信息
+provider|String|是|无|第三方平台的名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|否|不羁+userId|第三方平台的用户昵称
+avatar|String|否|默认用户头像|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
+key|String|是|无|授权码
+memo|String|否|无|备注
+
+	{
+	    "timestamp": 1478761623320,
+	    "code": 0,
+	    "result": {
+	        "id": "581c52918edd1f0f94b5b1b9",
+	        "email": "381364134@qq.com",
+	        "userId": 1,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "UG4LV8V9",
+	        "loginStatus": true,
+	        "loginTime": 1478758833216,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "memo": "魔法师",
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 
 错误码|描述|原因
 --|--|--
+105801|用户未登录|用户未登录
+105802|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
 ###修改好友备注1059
 - Path:/app/users/{userId}/contacts/{contactId}/memos
@@ -5598,37 +5647,85 @@ limit|Integer|否|无|取limit个文档
 - Query String:无
 - Request Body
 
-		{
-			"memo":"备注"
-		}
+	{
+		"memo":"备注"
+	}
 
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":{
-				"id":"557049120c2022abe1acf0a1",
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"gender":1, // 1表示未选择，2表示男，3表示女
-				"signature":"前世的乡愁",
-				"residence":"北京市海淀区闵庄路15号",
-				"birthday":"1990-06-01",
-				"level":1,
-				"zodiac":1,
-				"memo":"备注信息"
-			}
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是||用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+gender|Integer|是|1|1、未选择，2、男 3、女
+promotionCode|String|是|无|默认6位的数字或者大写字母，可以自定义长度
+loginStatus|Boolean|是|false|登录状态
+loginTime|Long|否|0|登录时间
+logoutTime|Long|否|0|登出时间
+version|Integer|否|0|登录设备版本
+roles|Array[Integer]|是|[]|角色
+qq|Object|是|{}|第三方平台的信息
+provider|String|是|无|第三方平台的名称
+oauthId|String|是|无|第三方平台的用户id
+nickName|String|否|不羁+userId|第三方平台的用户昵称
+avatar|String|否|默认用户头像|第三方平台的用户头像
+token|String|是|无|第三方平台的用户令牌
+level|Integer|是|1|用户等级
+soundNotify|Boolean|是|true|是否声音提醒
+vibrateNotify|Boolean|是|true|是否振动提醒
+backGround|Object|是||用户背景图片
+createTime|Long|是|0|用户创建时间
+updateTime|Long|是|0|用户更新时间
+key|String|是|无|授权码
+memo|String|否|无|备注
+
+	{
+	    "timestamp": 1478761623320,
+	    "code": 0,
+	    "result": {
+	        "id": "581c52918edd1f0f94b5b1b9",
+	        "email": "381364134@qq.com",
+	        "userId": 1,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "gender": 1,
+	        "promotionCode": "UG4LV8V9",
+	        "loginStatus": true,
+	        "loginTime": 1478758833216,
+	        "logoutTime": 0,
+	        "version": 0,
+	        "roles": [],
+	        "memo": "魔法师",
+	        "level": 1,
+	        "soundNotify": true,
+	        "vibrateNotify": true,
+	        "backGround": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 0,
+	        "updateTime": 0
+	    }
+	}
 
 错误码|描述|原因
 --|--|--
+105901|备注不可为空或者或字符串|没有传memo参数或者参数memo的值为空字符串
+105902|用户未登录|用户未登录
+105903|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
 ###将用户加入黑名单1060
 - Path:/app/users/{userId}/blacklist
