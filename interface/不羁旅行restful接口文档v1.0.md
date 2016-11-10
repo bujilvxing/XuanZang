@@ -5790,28 +5790,42 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				}
-			]
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|系统生成的主键
+userId|Long|是|无|用户id
+nickName|String|是|不羁+userId|用户昵称
+avatar|Object|是|无|用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+memo|String|否|无|备注
+
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"memo":"备注"
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
+106201|用户未登录|用户未登录
 
 ###用户的粉丝列表1063
-- Path:/app/users/{userId}/followers
+- Path:/app/users/{userId}/follows
 - Request Method:GET
 - Request Headers:
 
@@ -5825,25 +5839,27 @@ memo|String|否|无|备注
 - Request Body:无
 - Response
 
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000,
-			"result":[
-				{
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				}
-			]
-		}
+	{
+		"code":0,
+		"msg":"success",
+		"timestamp":1425225600000,
+		"result":[
+			{
+				"userId":10001,
+				"nickName":"魔法师",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"memo":"备注"
+			}
+		]
+	}
 
 错误码|描述|原因
 --|--|--
+106301|用户未登录|用户未登录
 
 ###发送消息1064
 - Path:/app/messages
