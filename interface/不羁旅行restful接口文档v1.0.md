@@ -6036,21 +6036,70 @@ limit|Integer|否|200|最多多少个
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
-
+receiverId|Long|是|无|接收消息的用户或者群组id
+contents|Object|是|无|消息内容，为下面的其中一种，文字、图片、位置、表情或者语音等
+text|String|否|无|文本
+thumb|Object|否|无|缩略图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+full|Object|否|无|完整图
+origin|Object|否|无|原图
+audio|Object|否|无|音频
+length|Integer|否|无|长度
+fileName|String|否|无|文件名
+url|String|否|无|语音链接
+key|Integer|否|无|语音的七牛key
+position|Object|否|无|位置
+name|String|否|无|位置名称
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+desc|String|否|无|位置描述
+emoticon|Object|否|无|表情
+group|String|否|无|表情组
+url|String|否|无|表情链接
+convId|String|否|无|会话id
 
 	{
-		"senderId":10001,
-		"senderNickName":"魔法师",
-		"senderAvatar":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
 		"receiverId":10002,
-		"contents":"您好！",
+		"content": {
+			"text":"您好！",
+			"thumb": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"full": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"origin": {
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
+			},
+			"audio": {
+				"length":20,
+				"fileName":"",
+				"url":"",
+				"key":""
+			},
+			"position":{
+				"name":"位置名称",
+				"lat":160.11,
+				"lng":150.44,
+				"desc":"描述"
+			},
+			"emoticon": {
+				"group":"表情组",
+				"url":"http://1.jpg"
+			}
+		},
 		"msgType":1,
 		"chatType":1,
-		"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+		"convId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 	}
 
 - Response
