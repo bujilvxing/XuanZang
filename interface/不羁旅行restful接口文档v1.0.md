@@ -1071,7 +1071,7 @@ status|String|是|无|专栏状态
 --|--|--
 
 ###取得商品列表(特产等)1016
-- Path:/app/marketplace/commodities
+- Path:/app/marketplace/columncommodities
 - Request Method:GET
 - Request Headers:无
 - Query String:category=speciality&offset=0&limit=100
@@ -1187,7 +1187,7 @@ status|String|是|无|专栏状态
 --|--|--
 
 ###取得攻略列表1018
-- Path:/app/guides
+- Path:/app/columnguides
 - Request Method:GET
 - Request Headers:无
 - Query String:无
