@@ -987,6 +987,20 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+itemId|String|是|无|主键
+rank|Integer|是|无|排名
+itemType|String|是|无|所属模块分类
+columnType|String|是|无|所属的专栏分类
+title|String|是|无|标题
+linkType|String|是|"app"|链接分类
+link|String|是|无|链接
+desc|String|否|无|描述
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+status|String|是|无|专栏状态
 
 > 示例
 
@@ -997,22 +1011,26 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 		"result":[
 			{
 				"itemId":"546f2da8b8ce0440eddb287e",
+				"rank":1,
 				"itemType":"hotel",
+				"columnType": "special",
 				"title":"如家豪华酒店",
 				"linkType":"app",
-				"linkUrl":"http://XXX",
+				"link":"http://XXX",
 				"desc":"超大双人床",
 				"cover": {
 					"width":400,
 					"height":400,
 					"url":"http://1.jpg"
-				}
+				},
+				"status":"review"
 			}
 		]
 	}
 
 错误码|描述|原因
 --|--|--
+101401|运营专栏数据为空|没有录入运营专栏的数据
 
 ###取得首页1015
 - Path:/app/misc/banners
