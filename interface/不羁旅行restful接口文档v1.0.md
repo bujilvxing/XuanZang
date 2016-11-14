@@ -555,6 +555,7 @@ key|String|是|无|授权码
 100503|参数token为空|没有传token参数
 100504|参数clientId为空|没有传clientId参数
 100505|参数provider不合法|provider取值只能是"qq","weixin","sina"
+
 ###退出登录1006
 - Path:/app/logout
 - Request Method:POST
@@ -731,6 +732,8 @@ key|String|是|无|授权码
 
 错误码|描述|原因
 --|--|--
+100901|用户未登录|用户未登录
+100902|用户不存在|输入的用户id有误，用户信息被非法删除，用户已注销
 
 ###修改用户信息1010
 - Path:/app/users/{userId}
@@ -892,10 +895,10 @@ token|Object|是|无|令牌
 
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -929,10 +932,10 @@ tel|String|是|无|手机号
 	}
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -964,10 +967,10 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 - Response
 
-	{
-		"code":0,
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -6118,12 +6121,61 @@ convId|String|否|无|会话id
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+msgId|Long|是|无|消息id
+senderId|Long|是|无|发送者用户id
+senderNickName|String|是|无|发送者用户昵称
+senderAvatar|Object|是|无|发送者用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+receiverId|Long|是|无|接收者用户(群组)id
+full|Object|否|无|完整图
+origin|Object|否|无|原图
+audio|Object|否|无|音频
+length|Integer|否|无|长度
+fileName|String|否|无|文件名
+url|String|否|无|语音链接
+key|Integer|否|无|语音的七牛key
+position|Object|否|无|位置
+name|String|否|无|位置名称
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+desc|String|否|无|位置描述
+emoticon|Object|否|无|表情
+group|String|否|无|表情组
+url|String|否|无|表情链接
+msgType|Integer|是|无|消息类型
+chatType|Integer|是|无|1表示单聊，2表示群聊
+timestamp|Long|是|无|消息创建时间
+convId|String|否|无|会话id
+
+消息类型|值
+--|--
+文本消息|1
+图片消息|2
+音频消息|3
+位置消息|4
+攻略消息|5
+游记消息|6
+景点消息|7
+美食消息|8
+购物消息|9
+旅馆消息|10
+商品消息|11
+订单消息|12
+名片消息|13
+关注消息|14
+提示消息|15
+通知消息|16
 
 	{
 		"code":0,
 		"msg":"success",
 		"timestamp":1425225600000,
 		"result":{
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 			"msgId":10,
 			"senderId":10001,
 			"senderNickName":"魔法师",
@@ -6133,16 +6185,67 @@ convId|String|否|无|会话id
 				"url":"http://1.jpg"
 			},
 			"receiverId":10002,
-			"contents":"您好！",
+			"content": {
+				"text":"您好！",
+				"thumb": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"full": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"origin": {
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"audio": {
+					"length":20,
+					"fileName":"",
+					"url":"",
+					"key":""
+				},
+				"position":{
+					"name":"位置名称",
+					"lat":160.11,
+					"lng":150.44,
+					"desc":"描述"
+				},
+				"emoticon": {
+					"group":"表情组",
+					"url":"http://1.jpg"
+				}
+			},
 			"msgType":1,
 			"chatType":1,
 			"timestamp":145000000000,
-			"conversionId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+			"convId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 		}
 	}
 
 错误码|描述|原因
 --|--|--
+106401|接收者id不可为空|没有传receiverId参数
+106402|消息内容不可为空|没有传content参数
+106403|消息类型不可为空|没有传msgType参数
+106404|聊天类型不可为空|没有传chatType参数
+106405|缩略图不可为空|如果发的图片消息，没有传thumb参数
+106406|完整图不可为空|如果发的图片消息，没有传full参数
+106407|原图不可为空|如果发的图片消息，没有传origin参数
+106408|链接不可为空|如果发的富文本消息，没有传url参数
+106409|长度不可为空|如果发的语音消息，没有传length参数
+106410|经度不可为空|如果发的位置消息，没有传lat参数
+106411|纬度不可为空|如果发的位置消息，没有传lng参数
+106412|消息类型不合法|消息的类型的值不在合法范围内
+106413|聊天类型不合法|聊天类型的值不在合法范围内
+106414|用户不存在|接收者用户id输入有误或者用户被非法删除
+106415|聊天组不存在|接收者是群组，但是群组id输入有误或者群组被非法删除
+106416|回话id不合法|会话的id不合法
+106417|用户未登录|用户未登录
+106418|消息id不合法|重发旧消息时，旧消息被非法删除
 
 ###拉取消息1065
 - Path:/app/users/{userId}/messages
