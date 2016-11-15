@@ -7755,121 +7755,290 @@ fmt|String|否|无|图片格式
 - Path:/app/search
 - Request Method:GET
 - Request Headers:无
-- Query String:?query=青春下一站&viewspot=true&trace=true&tripplan=true&quora=true&activity=true&user=ture&post=true&travelNote=true&restaurant=true&hotel=true&sortby=publishTime&sort=asc
+- Query String:?query=青春下一站all=false&viewspot=true&trace=true&tripplan=true&quora=true&activity=true&user=ture&post=true&travelNote=true&restaurant=true&hotel=true
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+query|String|是|无|搜索关键字
+all|Boolean|否|false|是否全站搜索
+momemt|Boolean|否|false|是否搜索朋友圈
+commodity|Boolean|否|false|是否搜索商品
+guide|Boolean|否|false|是否搜索攻略
+viewspot|Boolean|否|false|是否搜索景点
+trace|Boolean|否|false|是否搜索足迹
+tripPlan|Boolean|否|false|是否搜索形成规划
+quora|Boolean|否|false|是否搜索问答
+activity|Boolean|否|false|是否搜索活动
+travelNote|Boolean|否|false|是否搜索游记
+restaurant|Boolean|否|false|是否搜索美食
+hotel|Boolean|否|false|是否搜索宾馆
+shopping|Boolean|否|false|是否搜索购物
 
 - Request Body
 - Response
 
 字段名|类型|必含|默认值|描述
---|--|--|--|--
+--|--|--|--|--     
+
 
 	{
 		"code":0,
 		"msg":"success",
 		"timestamp":1425225600000,
 		"result":{
-			"viewspots":[
+			"moments":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"zhName":"不羁客栈",
-					"openTime":"8：00~23：00",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				}
-			],
-			
-			"users":[
-				{
 					"userId":1001,
-					"nickName:"",
+					"nickName":"魔法师",
 					"avatar":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
+					},
+					"text":"文本",
+					"card":{
+						"id":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+						"title":"标题",
+						"summary":"摘要",
+						"cover":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"thumb":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						},
+						"detailUrl":"http:XXX"
 					}
 				}
 			],
-			"posts":[
+			"commodities":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"周游20国姑娘被亿万富豪持枪逼婚",
+					"firstCategory":"一级分类",
+					"secondCategory":"二级分类",
+					"thirdCategory":"三级分类",
+					"title":"标题",
+					"desc":"描述",
 					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
 					},
-					"summary":"还有这种事，求逼婚"
+					"price":78.1,
+					"marketPrice":120.24,
+					"status":1,
+					"salesVolume":100,
+					"createTime":145000000000,
+					"updateTime":145000000000,
+					"rating":0.9,
+					"commodityType":"specical"
+				}
+			],
+			"guides":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					}
+					"updateTime":14500000000000,
+					"title":"标题",
+					"desc":"描述",
+					"summary":"摘要",
+					"detailUrl":"http:XXX",
+					"viewCnt":10000,
+					"shareCnt":900
+				}
+			],
+			"viewspots":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"不羁客栈",
+					"enName":"Bu Ji Hotel",
+					"url":"http:XXX",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"marketPrice":108.9,
+					"price":12.1,
+					"saleVolume":1000,
+					"discount":0.75,
+					"contact":{
+						"phoneList":["21312","2423424"],
+						"cellphoneList":["13811111111"],
+						"qq":"234231231",
+						"weixin":"bujilvxing",
+						"sina":"23131",
+						"fax":"26432423",
+						"email":"aaa@qq.com",
+						"website":"http://www.xxx.com"
+					}
 				}
 			],
 			"traces":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"userId":1001,
+					"nickName":"魔法师",
 					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
 					},
-					"desc":"我在天安门广场,升旗仪式很威武"
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"desc":"我在天安门广场,升旗仪式很威武",
+					"audio":{
+						"length":35,
+						"createTime":1450000000000,
+						"fileName":"文件名",
+						"url":"http:XXX",
+						"key":""
+					},
+					"originId":"",
+					"originUserId":1002,
+					"originNickName":"昵称",
+					"originAvatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
 				}
 			],
 			"tripPlans":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"我在天安门广场",
+					"userId":1001,
+					"nickName":"魔法师",
 					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
 					},
-					"desc":"升旗仪式很威武"
+					"avatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"title":"我在天安门广场,升旗仪式很威武",
+					"originId":"",
+					"originUserId":1002,
+					"originNickName":"昵称",
+					"originAvatar":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
 				}
 			],
 			"activities":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 					"title":"潜水沙龙",
-					"poster":{
+					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
 					},
-					"desc":"潜水交流"
+					"maxNum":100,
+					"joinNum":34,
+					"favorCnt":54,
+					"commentCnt":34,
+					"viewCnt":54,
+					"shareCnt":53,
+					"isFree":true
 				}
 			],
 			"quoras":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 					"title":"现在的南昌冷吗？",
-					"contents":"需要带什么衣服过去穿？"
+					"viewCnt":133,
+					"answerCnt":125,
+					"maxVoteCnt":111,
+					"author":{
+						"id":"",
+						"userId":10009,
+						"nickName":"魔法师",
+						"avatar":{
+							"width":600,
+							"height":600,
+							"url":"http://1.jpg"
+						}
+					}
+					"publishTime":1450000000000，
+					"title":"标题",
+					"contents":"内容"
 				}
 			],
 			"restaurants":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"zhName":"煌上煌烤鸭店",
-					"openTime":"8：00~21：00",
+					"zhName":"煌上煌",
+					"enName":"huang shang huang",
+					"url":"http:XXX",
 					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
+					},
+					"marketPrice":108.9,
+					"price":12.1,
+					"saleVolume":1000,
+					"contact":{
+						"phoneList":["21312","2423424"],
+						"cellphoneList":["13811111111"],
+						"qq":"234231231",
+						"weixin":"bujilvxing",
+						"sina":"23131",
+						"fax":"26432423",
+						"email":"aaa@qq.com",
+						"website":"http://www.xxx.com"
 					}
 				}
 			],
 			"hotels":[
 				{
 					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"zhName":"不羁客栈",
-					"openTime":"8：00~23：00",
+					"zhName":"煌上煌",
+					"enName":"huang shang huang",
+					"url":"http:XXX",
 					"cover":{
 						"width":600,
 						"height":600,
 						"url":"http://1.jpg"
+					},
+					"marketPrice":108.9,
+					"price":12.1,
+					"saleVolume":1000,
+					"discount":0.75
+					"contact":{
+						"phoneList":["21312","2423424"],
+						"cellphoneList":["13811111111"],
+						"qq":"234231231",
+						"weixin":"bujilvxing",
+						"sina":"23131",
+						"fax":"26432423",
+						"email":"aaa@qq.com",
+						"website":"http://www.xxx.com"
+					},
+					"tags":["",""],
+					"address":{
+						"province":"江西",
+						"city":"南昌",
+						"district":"昌北",
+						"detail":"详细地址",
+						"zipCode":"212312"
 					}
 				}
 			],
@@ -7882,11 +8051,43 @@ fmt|String|否|无|图片格式
 						"url":"http://1.jpg"
 					},
 					"title":"井冈山一日游",
-					"summary":"灰常漂亮"
+					"summary":"灰常漂亮",
+					"essence":true
+				}
+			],
+			"shoppings":[
+				{
+					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+					"zhName":"煌上煌",
+					"enName":"huang shang huang",
+					"url":"http:XXX",
+					"cover":{
+						"width":600,
+						"height":600,
+						"url":"http://1.jpg"
+					},
+					"marketPrice":108.9,
+					"price":12.1,
+					"saleVolume":1000,
+					"discount":0.75
+					"contact":{
+						"phoneList":["21312","2423424"],
+						"cellphoneList":["13811111111"],
+						"qq":"234231231",
+						"weixin":"bujilvxing",
+						"sina":"23131",
+						"fax":"26432423",
+						"email":"aaa@qq.com",
+						"website":"http://www.xxx.com"
+					}
 				}
 			]
 		}
 	}
+
+错误码|描述|原因
+--|--|--
+110201|query不可为空|没有传query参数
 
 ###绑定邮箱1103
 - Path:/app/users/{userId}/email

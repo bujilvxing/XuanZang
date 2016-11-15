@@ -2393,6 +2393,16 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>100901</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>100902</td>
+	<td>用户不存在</td>
+	<td>输入的用户id有误，用户信息被非法删除，用户已注销</td>
+</tr>
 </tbody>
 </table>
 <h3>修改用户信息1010</h3>
@@ -2910,10 +2920,12 @@ Query strings
 <ul>
 <li>
 <p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;timestamp&quot;:1425225600000
-}</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
 </li>
 </ul>
 <table>
@@ -3001,10 +3013,12 @@ Query strings
 <ul>
 <li>
 <p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;timestamp&quot;:1425225600000
-}</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
 </li>
 </ul>
 <table>
@@ -3083,10 +3097,12 @@ Query strings
 <ul>
 <li>
 <p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;timestamp&quot;:1425225600000
-}</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
 </li>
 </ul>
 <table>
@@ -9784,10 +9800,12 @@ Query strings
 <li>Request Body:无</li>
 <li>
 <p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;timestamp&quot;:1425225600000
-}</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
 </li>
 </ul>
 <table>
@@ -10014,27 +10032,103 @@ limit:100
 
 <ul>
 <li>Request Body:无</li>
-<li>
-<p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;timestamp&quot;:1425225600000,
-	&quot;result&quot;:[
-		{
-			&quot;userId&quot;:10001,
-			&quot;nickName&quot;:&quot;魔法师&quot;,
-			&quot;avatar&quot;:{
-				&quot;width&quot;:600,
-				&quot;height&quot;:600,
-				&quot;url&quot;:&quot;http://1.jpg&quot;
-			},
-			&quot;memo&quot;:&quot;备注&quot;
-		}
-	]
-}</p>
-</li>
+<li>Response</li>
 </ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>系统生成的主键</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户id</td>
+</tr>
+<tr>
+	<td>nickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>不羁+userId</td>
+	<td>用户昵称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>memo</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>备注</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;msg&quot;:&quot;success&quot;,
+    &quot;timestamp&quot;:1425225600000,
+    &quot;result&quot;:[
+        {
+            &quot;userId&quot;:10001,
+            &quot;nickName&quot;:&quot;魔法师&quot;,
+            &quot;avatar&quot;:{
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;memo&quot;:&quot;备注&quot;
+        }
+    ]
+}
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -10075,21 +10169,215 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>receiverId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>接收消息的用户或者群组id</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息内容，为下面的其中一种，文字、图片、位置、表情或者语音等</td>
+</tr>
+<tr>
+	<td>text</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>文本</td>
+</tr>
+<tr>
+	<td>thumb</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>缩略图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>full</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>完整图</td>
+</tr>
+<tr>
+	<td>origin</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>原图</td>
+</tr>
+<tr>
+	<td>audio</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>音频</td>
+</tr>
+<tr>
+	<td>length</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>长度</td>
+</tr>
+<tr>
+	<td>fileName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>文件名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音链接</td>
+</tr>
+<tr>
+	<td>key</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音的七牛key</td>
+</tr>
+<tr>
+	<td>position</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置</td>
+</tr>
+<tr>
+	<td>name</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置名称</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置描述</td>
+</tr>
+<tr>
+	<td>emoticon</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情</td>
+</tr>
+<tr>
+	<td>group</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情组</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情链接</td>
+</tr>
+<tr>
+	<td>convId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>会话id</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
-    &quot;senderId&quot;:10001,
-    &quot;senderNickName&quot;:&quot;魔法师&quot;,
-    &quot;senderAvatar&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
     &quot;receiverId&quot;:10002,
-    &quot;contents&quot;:&quot;您好！&quot;,
+    &quot;content&quot;: {
+        &quot;text&quot;:&quot;您好！&quot;,
+        &quot;thumb&quot;: {
+            &quot;width&quot;:600,
+            &quot;height&quot;:600,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
+        },
+        &quot;full&quot;: {
+            &quot;width&quot;:600,
+            &quot;height&quot;:600,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
+        },
+        &quot;origin&quot;: {
+            &quot;width&quot;:600,
+            &quot;height&quot;:600,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
+        },
+        &quot;audio&quot;: {
+            &quot;length&quot;:20,
+            &quot;fileName&quot;:&quot;&quot;,
+            &quot;url&quot;:&quot;&quot;,
+            &quot;key&quot;:&quot;&quot;
+        },
+        &quot;position&quot;:{
+            &quot;name&quot;:&quot;位置名称&quot;,
+            &quot;lat&quot;:160.11,
+            &quot;lng&quot;:150.44,
+            &quot;desc&quot;:&quot;描述&quot;
+        },
+        &quot;emoticon&quot;: {
+            &quot;group&quot;:&quot;表情组&quot;,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
+        }
+    },
     &quot;msgType&quot;:1,
     &quot;chatType&quot;:1,
-    &quot;conversionId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+    &quot;convId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
 }
 </code></pre>
 
@@ -10107,6 +10395,283 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>msgId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息id</td>
+</tr>
+<tr>
+	<td>senderId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户id</td>
+</tr>
+<tr>
+	<td>senderNickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户昵称</td>
+</tr>
+<tr>
+	<td>senderAvatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>receiverId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>接收者用户(群组)id</td>
+</tr>
+<tr>
+	<td>full</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>完整图</td>
+</tr>
+<tr>
+	<td>origin</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>原图</td>
+</tr>
+<tr>
+	<td>audio</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>音频</td>
+</tr>
+<tr>
+	<td>length</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>长度</td>
+</tr>
+<tr>
+	<td>fileName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>文件名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音链接</td>
+</tr>
+<tr>
+	<td>key</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音的七牛key</td>
+</tr>
+<tr>
+	<td>position</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置</td>
+</tr>
+<tr>
+	<td>name</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置名称</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置描述</td>
+</tr>
+<tr>
+	<td>emoticon</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情</td>
+</tr>
+<tr>
+	<td>group</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情组</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情链接</td>
+</tr>
+<tr>
+	<td>msgType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息类型</td>
+</tr>
+<tr>
+	<td>chatType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>1表示单聊，2表示群聊</td>
+</tr>
+<tr>
+	<td>timestamp</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息创建时间</td>
+</tr>
+<tr>
+	<td>convId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>会话id</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+	<th>消息类型</th>
+	<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>文本消息</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>图片消息</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>音频消息</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>位置消息</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>攻略消息</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>游记消息</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>景点消息</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>美食消息</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>购物消息</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>旅馆消息</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>商品消息</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>订单消息</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>名片消息</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>关注消息</td>
+	<td>14</td>
+</tr>
+<tr>
+	<td>提示消息</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>通知消息</td>
+	<td>16</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
@@ -10114,6 +10679,7 @@ limit:100
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:{
+        &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
         &quot;msgId&quot;:10,
         &quot;senderId&quot;:10001,
         &quot;senderNickName&quot;:&quot;魔法师&quot;,
@@ -10123,11 +10689,44 @@ limit:100
             &quot;url&quot;:&quot;http://1.jpg&quot;
         },
         &quot;receiverId&quot;:10002,
-        &quot;contents&quot;:&quot;您好！&quot;,
+        &quot;content&quot;: {
+            &quot;text&quot;:&quot;您好！&quot;,
+            &quot;thumb&quot;: {
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;full&quot;: {
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;origin&quot;: {
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;audio&quot;: {
+                &quot;length&quot;:20,
+                &quot;fileName&quot;:&quot;&quot;,
+                &quot;url&quot;:&quot;&quot;,
+                &quot;key&quot;:&quot;&quot;
+            },
+            &quot;position&quot;:{
+                &quot;name&quot;:&quot;位置名称&quot;,
+                &quot;lat&quot;:160.11,
+                &quot;lng&quot;:150.44,
+                &quot;desc&quot;:&quot;描述&quot;
+            },
+            &quot;emoticon&quot;: {
+                &quot;group&quot;:&quot;表情组&quot;,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            }
+        },
         &quot;msgType&quot;:1,
         &quot;chatType&quot;:1,
         &quot;timestamp&quot;:145000000000,
-        &quot;conversionId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+        &quot;convId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
     }
 }
 </code></pre>
@@ -10141,6 +10740,106 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>106401</td>
+	<td>接收者id不可为空</td>
+	<td>没有传receiverId参数</td>
+</tr>
+<tr>
+	<td>106402</td>
+	<td>消息内容不可为空</td>
+	<td>没有传content参数</td>
+</tr>
+<tr>
+	<td>106403</td>
+	<td>消息类型不可为空</td>
+	<td>没有传msgType参数</td>
+</tr>
+<tr>
+	<td>106404</td>
+	<td>聊天类型不可为空</td>
+	<td>没有传chatType参数</td>
+</tr>
+<tr>
+	<td>106405</td>
+	<td>缩略图不可为空</td>
+	<td>如果发的图片消息，没有传thumb参数</td>
+</tr>
+<tr>
+	<td>106406</td>
+	<td>完整图不可为空</td>
+	<td>如果发的图片消息，没有传full参数</td>
+</tr>
+<tr>
+	<td>106407</td>
+	<td>原图不可为空</td>
+	<td>如果发的图片消息，没有传origin参数</td>
+</tr>
+<tr>
+	<td>106408</td>
+	<td>链接不可为空</td>
+	<td>如果发的富文本消息，没有传url参数</td>
+</tr>
+<tr>
+	<td>106409</td>
+	<td>音频不可为空</td>
+	<td>如果发的是音频消息，没有传audio参数</td>
+</tr>
+<tr>
+	<td>106410</td>
+	<td>长度不可为空</td>
+	<td>如果发的语音消息，没有传length参数</td>
+</tr>
+<tr>
+	<td>106411</td>
+	<td>位置不可为空</td>
+	<td>如果发的位置消息，没有传position参数</td>
+</tr>
+<tr>
+	<td>106412</td>
+	<td>经度不可为空</td>
+	<td>如果发的位置消息，没有传lat参数</td>
+</tr>
+<tr>
+	<td>106413</td>
+	<td>纬度不可为空</td>
+	<td>如果发的位置消息，没有传lng参数</td>
+</tr>
+<tr>
+	<td>106414</td>
+	<td>消息类型不合法</td>
+	<td>消息的类型的值不在合法范围内</td>
+</tr>
+<tr>
+	<td>106415</td>
+	<td>聊天类型不合法</td>
+	<td>聊天类型的值不在合法范围内</td>
+</tr>
+<tr>
+	<td>106416</td>
+	<td>用户不存在</td>
+	<td>接收者用户id输入有误或者用户被非法删除</td>
+</tr>
+<tr>
+	<td>106417</td>
+	<td>聊天组不存在</td>
+	<td>接收者是聊天组，但是聊天组id输入有误或者群组被非法删除</td>
+</tr>
+<tr>
+	<td>106418</td>
+	<td>回话id不合法</td>
+	<td>会话的id不合法</td>
+</tr>
+<tr>
+	<td>106419</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>106420</td>
+	<td>消息id不合法</td>
+	<td>重发旧消息时，旧消息被非法删除</td>
+</tr>
 </tbody>
 </table>
 <h3>拉取消息1065</h3>
@@ -10167,6 +10866,13 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>purgeBefore</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>0</td>
+	<td>客户端收到的最后一条消息的时间</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
@@ -10188,6 +10894,283 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>msgId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息id</td>
+</tr>
+<tr>
+	<td>senderId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户id</td>
+</tr>
+<tr>
+	<td>senderNickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户昵称</td>
+</tr>
+<tr>
+	<td>senderAvatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发送者用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>receiverId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>接收者用户(群组)id</td>
+</tr>
+<tr>
+	<td>full</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>完整图</td>
+</tr>
+<tr>
+	<td>origin</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>原图</td>
+</tr>
+<tr>
+	<td>audio</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>音频</td>
+</tr>
+<tr>
+	<td>length</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>长度</td>
+</tr>
+<tr>
+	<td>fileName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>文件名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音链接</td>
+</tr>
+<tr>
+	<td>key</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>语音的七牛key</td>
+</tr>
+<tr>
+	<td>position</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置</td>
+</tr>
+<tr>
+	<td>name</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置名称</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>位置描述</td>
+</tr>
+<tr>
+	<td>emoticon</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情</td>
+</tr>
+<tr>
+	<td>group</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情组</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>表情链接</td>
+</tr>
+<tr>
+	<td>msgType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息类型</td>
+</tr>
+<tr>
+	<td>chatType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>1表示单聊，2表示群聊</td>
+</tr>
+<tr>
+	<td>timestamp</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息创建时间</td>
+</tr>
+<tr>
+	<td>convId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>会话id</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+	<th>消息类型</th>
+	<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>文本消息</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>图片消息</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>音频消息</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>位置消息</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>攻略消息</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>游记消息</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>景点消息</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>美食消息</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>购物消息</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>旅馆消息</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>商品消息</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>订单消息</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>名片消息</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>关注消息</td>
+	<td>14</td>
+</tr>
+<tr>
+	<td>提示消息</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>通知消息</td>
+	<td>16</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
@@ -10196,18 +11179,54 @@ limit:100
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:[
         {
+            &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
             &quot;msgId&quot;:10,
             &quot;senderId&quot;:10001,
             &quot;senderNickName&quot;:&quot;魔法师&quot;,
             &quot;senderAvatar&quot;:{
-                c
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
             },
             &quot;receiverId&quot;:10002,
-            &quot;contents&quot;:&quot;您好！&quot;,
+            &quot;content&quot;: {
+                &quot;text&quot;:&quot;您好！&quot;,
+                &quot;thumb&quot;: {
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;full&quot;: {
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;origin&quot;: {
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;audio&quot;: {
+                    &quot;length&quot;:20,
+                    &quot;fileName&quot;:&quot;&quot;,
+                    &quot;url&quot;:&quot;&quot;,
+                    &quot;key&quot;:&quot;&quot;
+                },
+                &quot;position&quot;:{
+                    &quot;name&quot;:&quot;位置名称&quot;,
+                    &quot;lat&quot;:160.11,
+                    &quot;lng&quot;:150.44,
+                    &quot;desc&quot;:&quot;描述&quot;
+                },
+                &quot;emoticon&quot;: {
+                    &quot;group&quot;:&quot;表情组&quot;,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                }
+            },
             &quot;msgType&quot;:1,
             &quot;chatType&quot;:1,
             &quot;timestamp&quot;:145000000000,
-            &quot;conversionId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+            &quot;convId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
         }
     ]
 }
@@ -10222,11 +11241,16 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>106501</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>修改会话属性1066</h3>
 <ul>
-<li>Path:/app/users/{userId}/conversations/{conversationId}</li>
+<li>Path:/app/users/{userId}/conversations/{id}</li>
 <li>Request Method:PATCH</li>
 <li>
 <p>Request Headers:</p>
@@ -10248,10 +11272,17 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>mute</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>消息免打扰，true添加，false表示移除</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
-    &quot;mute&quot;:1
+    &quot;mute&quot;:true
 }
 </code></pre>
 
@@ -10275,14 +11306,27 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>106601</td>
+	<td>mute不可为空</td>
+	<td>没有传mute参数</td>
+</tr>
+<tr>
+	<td>106602</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>106603</td>
+	<td>会话不存在</td>
+	<td>会话id输入有误或者会话被非法删除</td>
+</tr>
 </tbody>
 </table>
-<hr />
-<h1>群组</h1>
-<h3>取得会话属性1067</h3>
+<h3>根据会话id列表取得会话属性1067</h3>
 <ul>
-<li>Path:/app/users/{userId}/conversations/{conversationId}</li>
-<li>Request Method:GET</li>
+<li>Path:/app/users/{userId}/conversations</li>
+<li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
 <p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
@@ -10304,18 +11348,63 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>会话id</td>
+</tr>
+<tr>
+	<td>createTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>0</td>
+	<td>会话创建时间</td>
+</tr>
+<tr>
+	<td>updateTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>0</td>
+	<td>会话更新时间</td>
+</tr>
+<tr>
+	<td>lastMsgContent</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>会话最后一条消息的摘要</td>
+</tr>
+<tr>
+	<td>muted</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否消息免打扰</td>
+</tr>
+<tr>
+	<td>pinned</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否会话置顶</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-        &quot;muted&quot;:1,
-        &quot;pinned&quot;:1,
-        &quot;targetId&quot;:10001
-    }
+    &quot;result&quot;:[
+        {
+            &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+            &quot;createTime&quot;:145000000000,
+            &quot;updateTime&quot;:145000000000,
+            &quot;lastMsgContent&quot;:&quot;哈哈&quot;,
+            &quot;muted&quot;:1,
+            &quot;pinned&quot;:1
+        }
+    ]
 }
 </code></pre>
 
@@ -10328,8 +11417,25 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>106701</td>
+	<td>会话id列表参数不可为空</td>
+	<td>没有传ids参数</td>
+</tr>
+<tr>
+	<td>106702</td>
+	<td>会话id不合法</td>
+	<td>id不是[0-9, a-f]的24位字符串</td>
+</tr>
+<tr>
+	<td>106703</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
+<hr />
+<h1>群组</h1>
 <h3>创建群组1068</h3>
 <ul>
 <li>Path:/app/chatgroups</li>
@@ -12267,8 +13373,16 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 <ul>
 <li>Path:/app/users</li>
 <li>Request Method:GET</li>
-<li>Request Headers:无</li>
-<li>Query String:?query=13811111111</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:?query=13811111111</p>
+</li>
 <li>Request Body</li>
 <li>Response</li>
 </ul>
@@ -12283,32 +13397,126 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户id</td>
+</tr>
+<tr>
+	<td>nickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户昵称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
     &quot;code&quot;:0,
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
-        {
-            &quot;userId&quot;:1001,
-            &quot;nickName&quot;:&quot;魔法师&quot;,
-            &quot;avatar&quot;:{
-                &quot;width&quot;:600,
-                &quot;height&quot;:600,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            }
+    &quot;result&quot;: {
+        &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+        &quot;userId&quot;:1001,
+        &quot;nickName&quot;:&quot;魔法师&quot;,
+        &quot;avatar&quot;:{
+            &quot;width&quot;:600,
+            &quot;height&quot;:600,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
         }
-    ]
+    }
 }
 </code></pre>
 
-<h3>群组搜索1101</h3>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>110001</td>
+	<td>query不可为空</td>
+	<td>没有传query参数</td>
+</tr>
+<tr>
+	<td>110002</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>110003</td>
+	<td>query不合法</td>
+	<td>query仅支持 邮箱号，手机号，userId</td>
+</tr>
+<tr>
+	<td>110004</td>
+	<td>用户不存在</td>
+	<td>未找到要搜索的用户信息</td>
+</tr>
+</tbody>
+</table>
+<h3>聊天组搜索1101</h3>
 <ul>
 <li>Path:/app/chatgroups</li>
 <li>Request Method:GET</li>
-<li>Request Headers:无</li>
-<li>Query String:?query=10001</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:?query=10001</p>
+</li>
 <li>Request Body</li>
 <li>Response</li>
 </ul>
@@ -12323,6 +13531,62 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>chatgroupId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>聊天组id</td>
+</tr>
+<tr>
+	<td>name</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>聊天组名称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>聊天组头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
@@ -12331,6 +13595,7 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:[
         {
+            &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
             &quot;chatgroupId&quot;:1001,
             &quot;name&quot;:&quot;魔法师群&quot;,
             &quot;avatar&quot;:{
@@ -12343,12 +13608,33 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 }
 </code></pre>
 
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>110101</td>
+	<td>query不可为空</td>
+	<td>没有传query参数</td>
+</tr>
+<tr>
+	<td>110102</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
 <h3>全站搜索1102</h3>
 <ul>
 <li>Path:/app/search</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:?query=青春下一站&amp;viewspot=true&amp;trace=true&amp;tripplan=true&amp;quora=true&amp;activity=true&amp;user=ture&amp;post=true&amp;travelNote=true&amp;restaurant=true&amp;hotel=true&amp;sortby=publishTime&amp;sort=asc</li>
+<li>Query String:?query=青春下一站all=false&amp;viewspot=true&amp;trace=true&amp;tripplan=true&amp;quora=true&amp;activity=true&amp;user=ture&amp;post=true&amp;travelNote=true&amp;restaurant=true&amp;hotel=true</li>
 </ul>
 <table>
 <thead>
@@ -12361,6 +13647,104 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>query</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>搜索关键字</td>
+</tr>
+<tr>
+	<td>all</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否全站搜索</td>
+</tr>
+<tr>
+	<td>momemt</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索朋友圈</td>
+</tr>
+<tr>
+	<td>commodity</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索商品</td>
+</tr>
+<tr>
+	<td>guide</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索攻略</td>
+</tr>
+<tr>
+	<td>viewspot</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索景点</td>
+</tr>
+<tr>
+	<td>trace</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索足迹</td>
+</tr>
+<tr>
+	<td>tripPlan</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索形成规划</td>
+</tr>
+<tr>
+	<td>quora</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索问答</td>
+</tr>
+<tr>
+	<td>activity</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索活动</td>
+</tr>
+<tr>
+	<td>travelNote</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索游记</td>
+</tr>
+<tr>
+	<td>restaurant</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索美食</td>
+</tr>
+<tr>
+	<td>hotel</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索宾馆</td>
+</tr>
+<tr>
+	<td>shopping</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>false</td>
+	<td>是否搜索购物</td>
+</tr>
 </tbody>
 </table>
 <ul>
@@ -12385,105 +13769,259 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:{
-        &quot;viewspots&quot;:[
+        &quot;moments&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;zhName&quot;:&quot;不羁客栈&quot;,
-                &quot;openTime&quot;:&quot;8：00~23：00&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            }
-        ],
-
-        &quot;users&quot;:[
-            {
                 &quot;userId&quot;:1001,
-                &quot;nickName:&quot;&quot;,
+                &quot;nickName&quot;:&quot;魔法师&quot;,
                 &quot;avatar&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;text&quot;:&quot;文本&quot;,
+                &quot;card&quot;:{
+                    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+                    &quot;title&quot;:&quot;标题&quot;,
+                    &quot;summary&quot;:&quot;摘要&quot;,
+                    &quot;cover&quot;:{
+                        &quot;width&quot;:600,
+                        &quot;height&quot;:600,
+                        &quot;url&quot;:&quot;http://1.jpg&quot;
+                    },
+                    &quot;thumb&quot;:{
+                        &quot;width&quot;:600,
+                        &quot;height&quot;:600,
+                        &quot;url&quot;:&quot;http://1.jpg&quot;
+                    },
+                    &quot;detailUrl&quot;:&quot;http:XXX&quot;
                 }
             }
         ],
-        &quot;posts&quot;:[
+        &quot;commodities&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;周游20国姑娘被亿万富豪持枪逼婚&quot;,
+                &quot;firstCategory&quot;:&quot;一级分类&quot;,
+                &quot;secondCategory&quot;:&quot;二级分类&quot;,
+                &quot;thirdCategory&quot;:&quot;三级分类&quot;,
+                &quot;title&quot;:&quot;标题&quot;,
+                &quot;desc&quot;:&quot;描述&quot;,
                 &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;summary&quot;:&quot;还有这种事，求逼婚&quot;
+                &quot;price&quot;:78.1,
+                &quot;marketPrice&quot;:120.24,
+                &quot;status&quot;:1,
+                &quot;salesVolume&quot;:100,
+                &quot;createTime&quot;:145000000000,
+                &quot;updateTime&quot;:145000000000,
+                &quot;rating&quot;:0.9,
+                &quot;commodityType&quot;:&quot;specical&quot;
+            }
+        ],
+        &quot;guides&quot;:[
+            {
+                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+                &quot;cover&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                }
+                &quot;updateTime&quot;:14500000000000,
+                &quot;title&quot;:&quot;标题&quot;,
+                &quot;desc&quot;:&quot;描述&quot;,
+                &quot;summary&quot;:&quot;摘要&quot;,
+                &quot;detailUrl&quot;:&quot;http:XXX&quot;,
+                &quot;viewCnt&quot;:10000,
+                &quot;shareCnt&quot;:900
+            }
+        ],
+        &quot;viewspots&quot;:[
+            {
+                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+                &quot;zhName&quot;:&quot;不羁客栈&quot;,
+                &quot;enName&quot;:&quot;Bu Ji Hotel&quot;,
+                &quot;url&quot;:&quot;http:XXX&quot;,
+                &quot;cover&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;marketPrice&quot;:108.9,
+                &quot;price&quot;:12.1,
+                &quot;saleVolume&quot;:1000,
+                &quot;discount&quot;:0.75,
+                &quot;contact&quot;:{
+                    &quot;phoneList&quot;:[&quot;21312&quot;,&quot;2423424&quot;],
+                    &quot;cellphoneList&quot;:[&quot;13811111111&quot;],
+                    &quot;qq&quot;:&quot;234231231&quot;,
+                    &quot;weixin&quot;:&quot;bujilvxing&quot;,
+                    &quot;sina&quot;:&quot;23131&quot;,
+                    &quot;fax&quot;:&quot;26432423&quot;,
+                    &quot;email&quot;:&quot;aaa@qq.com&quot;,
+                    &quot;website&quot;:&quot;http://www.xxx.com&quot;
+                }
             }
         ],
         &quot;traces&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+                &quot;userId&quot;:1001,
+                &quot;nickName&quot;:&quot;魔法师&quot;,
                 &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;desc&quot;:&quot;我在天安门广场,升旗仪式很威武&quot;
+                &quot;avatar&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;desc&quot;:&quot;我在天安门广场,升旗仪式很威武&quot;,
+                &quot;audio&quot;:{
+                    &quot;length&quot;:35,
+                    &quot;createTime&quot;:1450000000000,
+                    &quot;fileName&quot;:&quot;文件名&quot;,
+                    &quot;url&quot;:&quot;http:XXX&quot;,
+                    &quot;key&quot;:&quot;&quot;
+                },
+                &quot;originId&quot;:&quot;&quot;,
+                &quot;originUserId&quot;:1002,
+                &quot;originNickName&quot;:&quot;昵称&quot;,
+                &quot;originAvatar&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
             }
         ],
         &quot;tripPlans&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;我在天安门广场&quot;,
+                &quot;userId&quot;:1001,
+                &quot;nickName&quot;:&quot;魔法师&quot;,
                 &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;desc&quot;:&quot;升旗仪式很威武&quot;
+                &quot;avatar&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;title&quot;:&quot;我在天安门广场,升旗仪式很威武&quot;,
+                &quot;originId&quot;:&quot;&quot;,
+                &quot;originUserId&quot;:1002,
+                &quot;originNickName&quot;:&quot;昵称&quot;,
+                &quot;originAvatar&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
             }
         ],
         &quot;activities&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
                 &quot;title&quot;:&quot;潜水沙龙&quot;,
-                &quot;poster&quot;:{
+                &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;desc&quot;:&quot;潜水交流&quot;
+                &quot;maxNum&quot;:100,
+                &quot;joinNum&quot;:34,
+                &quot;favorCnt&quot;:54,
+                &quot;commentCnt&quot;:34,
+                &quot;viewCnt&quot;:54,
+                &quot;shareCnt&quot;:53,
+                &quot;isFree&quot;:true
             }
         ],
         &quot;quoras&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
                 &quot;title&quot;:&quot;现在的南昌冷吗？&quot;,
-                &quot;contents&quot;:&quot;需要带什么衣服过去穿？&quot;
+                &quot;viewCnt&quot;:133,
+                &quot;answerCnt&quot;:125,
+                &quot;maxVoteCnt&quot;:111,
+                &quot;author&quot;:{
+                    &quot;id&quot;:&quot;&quot;,
+                    &quot;userId&quot;:10009,
+                    &quot;nickName&quot;:&quot;魔法师&quot;,
+                    &quot;avatar&quot;:{
+                        &quot;width&quot;:600,
+                        &quot;height&quot;:600,
+                        &quot;url&quot;:&quot;http://1.jpg&quot;
+                    }
+                }
+                &quot;publishTime&quot;:1450000000000，
+                &quot;title&quot;:&quot;标题&quot;,
+                &quot;contents&quot;:&quot;内容&quot;
             }
         ],
         &quot;restaurants&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                &quot;openTime&quot;:&quot;8：00~21：00&quot;,
+                &quot;zhName&quot;:&quot;煌上煌&quot;,
+                &quot;enName&quot;:&quot;huang shang huang&quot;,
+                &quot;url&quot;:&quot;http:XXX&quot;,
                 &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;marketPrice&quot;:108.9,
+                &quot;price&quot;:12.1,
+                &quot;saleVolume&quot;:1000,
+                &quot;contact&quot;:{
+                    &quot;phoneList&quot;:[&quot;21312&quot;,&quot;2423424&quot;],
+                    &quot;cellphoneList&quot;:[&quot;13811111111&quot;],
+                    &quot;qq&quot;:&quot;234231231&quot;,
+                    &quot;weixin&quot;:&quot;bujilvxing&quot;,
+                    &quot;sina&quot;:&quot;23131&quot;,
+                    &quot;fax&quot;:&quot;26432423&quot;,
+                    &quot;email&quot;:&quot;aaa@qq.com&quot;,
+                    &quot;website&quot;:&quot;http://www.xxx.com&quot;
                 }
             }
         ],
         &quot;hotels&quot;:[
             {
                 &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;zhName&quot;:&quot;不羁客栈&quot;,
-                &quot;openTime&quot;:&quot;8：00~23：00&quot;,
+                &quot;zhName&quot;:&quot;煌上煌&quot;,
+                &quot;enName&quot;:&quot;huang shang huang&quot;,
+                &quot;url&quot;:&quot;http:XXX&quot;,
                 &quot;cover&quot;:{
                     &quot;width&quot;:600,
                     &quot;height&quot;:600,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;marketPrice&quot;:108.9,
+                &quot;price&quot;:12.1,
+                &quot;saleVolume&quot;:1000,
+                &quot;discount&quot;:0.75
+                &quot;contact&quot;:{
+                    &quot;phoneList&quot;:[&quot;21312&quot;,&quot;2423424&quot;],
+                    &quot;cellphoneList&quot;:[&quot;13811111111&quot;],
+                    &quot;qq&quot;:&quot;234231231&quot;,
+                    &quot;weixin&quot;:&quot;bujilvxing&quot;,
+                    &quot;sina&quot;:&quot;23131&quot;,
+                    &quot;fax&quot;:&quot;26432423&quot;,
+                    &quot;email&quot;:&quot;aaa@qq.com&quot;,
+                    &quot;website&quot;:&quot;http://www.xxx.com&quot;
+                },
+                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
+                &quot;address&quot;:{
+                    &quot;province&quot;:&quot;江西&quot;,
+                    &quot;city&quot;:&quot;南昌&quot;,
+                    &quot;district&quot;:&quot;昌北&quot;,
+                    &quot;detail&quot;:&quot;详细地址&quot;,
+                    &quot;zipCode&quot;:&quot;212312&quot;
                 }
             }
         ],
@@ -12496,13 +14034,57 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
                 &quot;title&quot;:&quot;井冈山一日游&quot;,
-                &quot;summary&quot;:&quot;灰常漂亮&quot;
+                &quot;summary&quot;:&quot;灰常漂亮&quot;,
+                &quot;essence&quot;:true
+            }
+        ],
+        &quot;shoppings&quot;:[
+            {
+                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+                &quot;zhName&quot;:&quot;煌上煌&quot;,
+                &quot;enName&quot;:&quot;huang shang huang&quot;,
+                &quot;url&quot;:&quot;http:XXX&quot;,
+                &quot;cover&quot;:{
+                    &quot;width&quot;:600,
+                    &quot;height&quot;:600,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;marketPrice&quot;:108.9,
+                &quot;price&quot;:12.1,
+                &quot;saleVolume&quot;:1000,
+                &quot;discount&quot;:0.75
+                &quot;contact&quot;:{
+                    &quot;phoneList&quot;:[&quot;21312&quot;,&quot;2423424&quot;],
+                    &quot;cellphoneList&quot;:[&quot;13811111111&quot;],
+                    &quot;qq&quot;:&quot;234231231&quot;,
+                    &quot;weixin&quot;:&quot;bujilvxing&quot;,
+                    &quot;sina&quot;:&quot;23131&quot;,
+                    &quot;fax&quot;:&quot;26432423&quot;,
+                    &quot;email&quot;:&quot;aaa@qq.com&quot;,
+                    &quot;website&quot;:&quot;http://www.xxx.com&quot;
+                }
             }
         ]
     }
 }
 </code></pre>
 
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>110201</td>
+	<td>query不可为空</td>
+	<td>没有传query参数</td>
+</tr>
+</tbody>
+</table>
 <h3>绑定邮箱1103</h3>
 <ul>
 <li>Path:/app/users/{userId}/email</li>
