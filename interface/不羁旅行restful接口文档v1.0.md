@@ -6413,9 +6413,9 @@ mute|Boolean|是|无|消息免打扰，true添加，false表示移除
 106602|用户未登录|用户未登录
 106603|会话不存在|会话id输入有误或者会话被非法删除
 
-###取得会话属性1067
-- Path:/app/users/{userId}/conversations/{id}
-- Request Method:GET
+###根据会话id列表取得会话属性1067
+- Path:/app/users/{userId}/conversations
+- Request Method:POST
 - Request Headers:
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
@@ -6426,21 +6426,33 @@ mute|Boolean|是|无|消息免打扰，true添加，false表示移除
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|会话id
+createTime|Long|是|0|会话创建时间
+updateTime|Long|是|0|会话更新时间
+lastMsgContent|Long|是|无|会话最后一条消息的摘要
+muted|Boolean|是|无|是否消息免打扰
+pinned|Boolean|是|无|是否会话置顶
 
 	{
 		"code":0,
-		"msg":"success",
 		"timestamp":1425225600000,
-		"result":{
-			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-			"muted":1,
-			"pinned":1,
-			"targetId":10001
-		}
+		"result":[
+			{
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"createTime":145000000000,
+				"updateTime":145000000000,
+				"lastMsgContent":"哈哈",
+				"muted":1,
+				"pinned":1
+			}
+		]
 	}
 
 错误码|描述|原因
 --|--|--
+106701|会话id列表参数不可为空|没有传ids参数
+106702|会话id不合法|id不是[0-9, a-f]的24位字符串
+106703|用户未登录|用户未登录
 
 ---
 #群组
