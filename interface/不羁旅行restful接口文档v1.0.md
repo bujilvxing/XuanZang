@@ -7662,41 +7662,71 @@ pinned|Boolean|是|无|是否会话置顶
 ###用户搜索1100
 - Path:/app/users
 - Request Method:GET
-- Request Headers:无
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
 - Query String:?query=13811111111
 - Request Body
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+userId|Long|是|无|用户id
+nickName|String|是|无|用户昵称
+avatar|Object|否|无|用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
 
 	{
 		"code":0,
 		"msg":"success",
 		"timestamp":1425225600000,
-		"result":[
-			{
-				"userId":1001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":600,
-					"height":600,
-					"url":"http://1.jpg"
-				}
+		"result": {
+			"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+			"userId":1001,
+			"nickName":"魔法师",
+			"avatar":{
+				"width":600,
+				"height":600,
+				"url":"http://1.jpg"
 			}
-		]
+		}
 	}
 
-###群组搜索1101
+错误码|描述|原因
+--|--|--
+110001|query不可为空|没有传query参数
+110002|用户未登录|用户未登录
+110003|query不合法|query仅支持 邮箱号，手机号，userId
+110004|用户不存在|未找到要搜索的用户信息
+
+###聊天组搜索1101
 - Path:/app/chatgroups
 - Request Method:GET
-- Request Headers:无
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
 - Query String:?query=10001
 - Request Body
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+chatgroupId|Long|是|无|聊天组id
+name|String|是|无|聊天组名称
+avatar|Object|否|无|聊天组头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
 
 	{
 		"code":0,
@@ -7704,6 +7734,7 @@ pinned|Boolean|是|无|是否会话置顶
 		"timestamp":1425225600000,
 		"result":[
 			{
+				"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 				"chatgroupId":1001,
 				"name":"魔法师群",
 				"avatar":{
@@ -7714,6 +7745,11 @@ pinned|Boolean|是|无|是否会话置顶
 			}
 		]
 	}
+
+错误码|描述|原因
+--|--|--
+110101|query不可为空|没有传query参数
+110102|用户未登录|用户未登录
 
 ###全站搜索1102
 - Path:/app/search
