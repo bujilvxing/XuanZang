@@ -6867,293 +6867,43 @@ pinned|Boolean|是|无|是否会话置顶
 
 ---
 #收藏
-###收藏帖子1077
-- Path:/app/users/{userId}/favorites/posts
+###添加收藏1077
+- Path:/app/favorites
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+favoriteType|Integer|是|无|收藏类型
+itemId|String|是|无|收藏对象id
+authorId|Long|否|无|作者id
+authorNickName|String|否|无|作者昵称
+authorAvatar|Object|否|无|作者头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+cover|Object|否|无|封面图
+title|String|是|无|标题
 
 	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+		"favoriteType":1,
+		"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
 		"title":"周游20国姑娘被亿万富豪持枪逼婚",
 		"cover":{
 			"width":600,
 			"height":600,
 			"url":"http://1.jpg"
 		},
-		"summary":"还有这种事，求逼婚"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏帖子1078
-- Path:/app/users/{userId}/favorites/posts/{postId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏活动1079
-- Path:/app/users/{userId}/favorites/activities
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"title":"潜水沙龙",
-		"poster":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
-		"desc":"潜水交流"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏活动1080
-- Path:/app/users/{userId}/favorites/activities/{activityId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏足迹1081
-- Path:/app/users/{userId}/favorites/traces
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"cover":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
-		"desc":"我在天安门广场,升旗仪式很威武"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏足迹1082
-- Path:/app/users/{userId}/favorites/traces/{traceId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏行程规划1083
-- Path:/app/users/{userId}/favorites/tripplans
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"title":"我在天安门广场",
-		"cover":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
-		"desc":"升旗仪式很威武"
-	}
-
-- Response
-
-	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000
-	}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏行程规划1084
-- Path:/app/users/{userId}/favorites/tripplans/{tripplanId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏问答1085
-- Path:/app/users/{userId}/favorites/quoras
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"title":"现在的南昌冷吗？",
-		"contents":"需要带什么衣服过去穿？"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏问答1086
-- Path:/app/users/{userId}/favorites/quoras/{quoraId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏美食1087
-- Path:/app/users/{userId}/favorites/restaurants
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"zhName":"煌上煌烤鸭店",
-		"openTime":"8：00~21：00",
-		"cover":{
+		"authorId":10001,
+		"authorNickName":"魔法师",
+		"authorAvatar"：{
 			"width":600,
 			"height":600,
 			"url":"http://1.jpg"
@@ -7164,19 +6914,20 @@ pinned|Boolean|是|无|是否会话置顶
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+107701|用户未登录|用户未登录
 
-###取消收藏美食1088
-- Path:/app/users/{userId}/favorites/restaurants/{restaurantId}
+###取消收藏1078
+- Path:/app/favorites/posts/{postId}
 - Request Method:DELETE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body:无
@@ -7191,117 +6942,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###收藏客栈1089
-- Path:/app/users/{userId}/favorites/hotels
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"zhName":"不羁客栈",
-		"openTime":"8：00~23：00",
-		"cover":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		}
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏客栈1090
-- Path:/app/users/{userId}/favorites/hotels/hotelId
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###收藏游记1091
-- Path:/app/users/{userId}/favorites/travelnotes
-- Request Method:POST
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	{
-		"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-		"cover":{
-			"width":600,
-			"height":600,
-			"url":"http://1.jpg"
-		},
-		"title":"井冈山一日游",
-		"summary":"灰常漂亮"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取消收藏游记1092
-- Path:/app/users/{userId}/favorites/travelnotes/{travelnoteId}
-- Request Method:DELETE
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-- Query String:无
-- Request Body:无
-- Response
-
-		{
-			"code":0,
-			"msg":"success",
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-
-###取得用户收藏列表1093
+###取得用户收藏列表1079
 - Path:/app/users/{userId}/favorites
 - Request Method:GET
 - Request Headers:
