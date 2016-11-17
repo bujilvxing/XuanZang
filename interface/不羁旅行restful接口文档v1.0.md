@@ -6919,7 +6919,12 @@ title|String|是|无|标题
 
 错误码|描述|原因
 --|--|--
-107701|用户未登录|用户未登录
+107701|收藏类型不可为空|没有传favoriteType参数
+107702|收藏对象id不可为空|没有传itemId参数
+107703|收藏标题不可为空|没有传title参数
+107704|用户未登录|用户未登录
+107705|favoriteType不合法|favoriteType的输入有误
+107706|itemId不合法|itemId的输入有误
 
 ###取消收藏1078
 - Path:/app/favorites/posts/{postId}
