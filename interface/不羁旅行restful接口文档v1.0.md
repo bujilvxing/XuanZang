@@ -6927,7 +6927,7 @@ title|String|是|无|标题
 107706|itemId不合法|itemId的输入有误
 
 ###取消收藏1078
-- Path:/app/favorites/posts/{postId}
+- Path:/app/favorites/{itemId}
 - Request Method:DELETE
 - Request Headers:
 
@@ -6940,12 +6940,12 @@ title|String|是|无|标题
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+107801|用户未登录|用户未登录
 
 ###取得用户收藏列表1079
 - Path:/app/users/{userId}/favorites
