@@ -7016,38 +7016,35 @@ favoriteTime|Long|是|无|收藏时间
 - Request Headers:
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"userId":1001
 
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+voteType|Integer|是|无|点赞类型
+itemId|String|是|无|点赞对象id
 
 	{
 		"voteType":1,
-		"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+		"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 	}
 
 - Response
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
-	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result": {
-			"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
-			"userId":10001,
-			"voteType":1,
-			"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
-			"voteTime":145000000000000
+		{
+			"code":0,
+			"timestamp":1425225600000
 		}
-	}
 
 错误码|描述|原因
 --|--|--
+109401|点赞类型不可为空|没有传voteType参数
+109402|点赞对象id不可为空|没有传itemId参数
+109403|用户未登录|用户未登录
+109404|voteType不合法|voteType输入有误
+109405|itemId不合法|itemId输入有误
 
 ###取消点赞1095
 - Path:/app/votes/{voteId}
@@ -7099,7 +7096,7 @@ favoriteTime|Long|是|无|收藏时间
 				"id":"8c91a6deec8f42c9acfb0d1bd89dee9a"
 				"userId":10001,
 				"voteType":1,
-				"targetId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
+				"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e"
 				"voteTime":145000000000000
 			}
 		]
