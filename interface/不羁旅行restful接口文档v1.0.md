@@ -6948,11 +6948,12 @@ title|String|是|无|标题
 107801|用户未登录|用户未登录
 
 ###取得用户收藏列表1079
-- Path:/app/users/{userId}/favorites
+- Path:/app/favorites
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body:无
@@ -6960,109 +6961,52 @@ title|String|是|无|标题
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+userId|Long|是|无|用户id
+favoriteType|Integer|是|无|收藏类型
+itemId|String|是|无|收藏对象id
+authorId|Long|否|无|作者用户id
+authorNickName|String|否|无|作者昵称
+authorAvatar|Object|否|无|作者头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+cover|Object|否|无|封面图
+title|String|是|无|标题
+favoriteTime|Long|是|无|收藏时间
 
 	{
 		"code":0,
 		"msg":"success",
 		"timestamp":1425225600000,
-		"result":{
-			"id":"",
-			"userId":1001,
-			"posts":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"周游20国姑娘被亿万富豪持枪逼婚",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"summary":"还有这种事，求逼婚"
-				}
-			],
-			"traces":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"desc":"我在天安门广场,升旗仪式很威武"
-				}
-			],
-			"tripPlans":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"我在天安门广场",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"desc":"升旗仪式很威武"
-				}
-			],
-			"activities":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"潜水沙龙",
-					"poster":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"desc":"潜水交流"
-				}
-			],
-			"quoras":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"title":"现在的南昌冷吗？",
-					"contents":"需要带什么衣服过去穿？"
-				}
-			],
-			"restaurants":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"zhName":"煌上煌烤鸭店",
-					"openTime":"8：00~21：00",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				}
-			],
-			"hotels":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"zhName":"不羁客栈",
-					"openTime":"8：00~23：00",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					}
-				}
-			],
-			"travelNotes":[
-				{
-					"id":"9c91a6deec8f42c9acfb0d1bd89dee9e",
-					"cover":{
-						"width":600,
-						"height":600,
-						"url":"http://1.jpg"
-					},
-					"title":"井冈山一日游",
-					"summary":"灰常漂亮"
-				}
-			]
-		}
+		"result":[
+			{
+				"id":"",
+				"userId":1001,
+				"favoriteType":1,
+				"itemId":"9c91a6deec8f42c9acfb0d1bd89dee9e",
+				"authorId":1002,
+				"authorNickName":"魔法师",
+				"authorAvatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"cover":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
+				},
+				"title":"被持枪逼婚",
+				"favoriteTime":145000000000
+			}
+		]
 	}
 
 错误码|描述|原因
 --|--|--
+107901|用户未登录|用户未登录
 
 ---
 #点赞
