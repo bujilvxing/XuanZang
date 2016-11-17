@@ -7047,11 +7047,12 @@ itemId|String|是|无|点赞对象id
 109405|itemId不合法|itemId输入有误
 
 ###取消点赞1095
-- Path:/app/votes/{voteId}
+- Path:/app/votes/{itemId}
 - Request Method:DELETE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body:无
@@ -7059,33 +7060,32 @@ itemId|String|是|无|点赞对象id
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+109501|用户未登录|用户未登录
 
 ###取得点赞列表1096
 - Path:/app/votes
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
-- Query String:
-
-字段名|类型|必需|默认值|描述
---|--|--|--|--
-
-	voteType=1
-	targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
-
+- Query String:无
 - Request Body:无
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+userId|Long|是|无|用户id
+voteType|Integer|是|无|点赞类型
+itemId|String|是|无|点赞对象id
+voteTime|Long|是|无|点赞时间
 
 	{
 		"code":0,
@@ -7104,6 +7104,7 @@ itemId|String|是|无|点赞对象id
 
 错误码|描述|原因
 --|--|--
+109601|用户未登录|用户未登录
 
 ###添加新评论1097
 - Path:/app/comments
