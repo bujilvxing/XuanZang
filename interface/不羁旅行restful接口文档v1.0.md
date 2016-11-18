@@ -2906,6 +2906,8 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Query String:无
 - Request Body
 
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
 
 	{
 		"id":"646f2da8b8ce0440eddb287f",
@@ -2934,11 +2936,10 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 - Response
 
-	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000
-	}
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
 
 错误码|描述|原因
 --|--|--
@@ -3088,13 +3089,45 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
 		"userId":1001
 
-- Query String:offset=1&limit=100
+- Query String:
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几条开始取
+limit|Integer|否|10|取多少条
+latestTime|Long|否|无|最晚时间，取最新消息时需要传此参数
+earliestTime|Long|否|无|最早时间，取过去的消息时需要传此参数
+
 - Request Body:无
 - Response
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|主键
+publishTime|Long|是|无|发布时间
+userId|Long|是|无|发布此消息的用户id
+nickName|String|是|无|发布此消息的用户昵称
+avatar|Object|是|无|发布此消息的用户头像
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+originId|String|否|无|原消息的主键
+originUserId|Long|否|无|发布此消息的用户id
+originNickName|String|否|无|发布此消息的用户昵称
+originAvatar|Object|否|无|发布此消息的用户头像
+text|String|否|无|消息文本内容
+images|ArrayNode|否|无|消息图片内容
+comment|String|否|无|自己评论
+card|Object|否|无|卡片
+id|String|是|无|卡片主键
+title|String|是|无|标题
+summary|String|否|无|摘要
+cover|Object|是|无|封面
+detailUrl|String|是|无|详情链接
+favorCnt|Integer|是|0|收藏次数
+voteCnt|Integer|是|0|点赞次数
 
 > 示例
 
@@ -3145,13 +3178,17 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 						"url":"http://1.jpg"
 					},
 					"detailUrl":"http://xxx.html"
-				}
+				},
+				"favorCnt":100,
+				"voteCnt":10
 			}
 		]
 	}
 
 错误码|描述|原因
 --|--|--
+103801|latestTime和earliestTime不可同时为空|latestTime和earliestTime参数都没有传
+103801|用户未登录|用户未登录
 
 ###发布朋友圈1039
 - Path:/app/traces
