@@ -3085,7 +3085,9 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 - Request Method:GET
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
 - Query String:offset=1&limit=100
 - Request Body:无
 - Response
