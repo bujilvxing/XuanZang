@@ -5727,27 +5727,31 @@ fmt|String|否|无|图片格式
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+title|String|是|无|回答标题
+content|String|是|无|回答的内容
 
 > 示例
 
 	{
-		"author":{
-			"userId":10001,
-			"nickName":"雷锋",
-			"avatar":{
-				"width":600,
-				"height":600,
-				"url":"http://1.jpg"
-			}
-		},
 		"title":"",
-		"contents":"XXX"
+		"content":"XXX"
 	}
 
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+author|Object|是|无|问题的作者
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+voteCnt|Integer|否|无|回答的点赞数
+accepted|Boolean|否|无|回答是否被采纳
+publishTime|Long|是|无|回答发布时间
+title|String|是|无|回答的标题
+content|String|是|无|回答的内容
+questionId|String|是|无|问题主键
 
 > 示例
 
@@ -5756,48 +5760,73 @@ fmt|String|否|无|图片格式
 		"msg":"success",
 		"timestamp":1425225600000,
 		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"source":"baidu",
-			"topics":["湖边","摄影","婚纱"],
-			"tags":["旅拍","XXX"],
-			"viewCnt":100,
-			"answerCnt":10,
-			"maxVoteCnt":10000,
-			"publishTime":145000000000,
-			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-			"contents":"如题",
-			"author": {
+			"voteCnt":100,
+			"accepted":true,
+			"author":{
 				"userId":10001,
-				"nickName":"魔法师",
-				"avatar": {
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
+				"nickName":"雷锋",
+				"avatar":{
+					"width":600,
+					"height":600,
+					"url":"http://1.jpg"
 				}
 			},
-			"answers":[
-				{
-					"voteCnt":100,
-					"accepted":true,
-					"author":{
-						"userId":10001,
-						"nickName":"雷锋",
-						"avatar":{
-							"width":600,
-							"height":600,
-							"url":"http://1.jpg"
-						}
-					},
-					"publishTime":1450000000000,
-					"title":"",
-					"contents":"XXX"
-				}
-			]
+			"publishTime":1450000000000,
+			"title":"",
+			"contents":"XXX"
 		}
 	}
 
 错误码|描述|原因
 --|--|--
+108101|标题不可为空|没有传title字段
+108102|内容不可为空|没有传content字段
+108103|用户未登录|用户未登录
+108104|用户不存在|用户被非法删除了
+
+###删除问题1082
+- Path:/app/questions/{questionId}
+- Request Method:DELETE
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
+- Query String:无
+- Request Body:无
+- Response
+
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
+
+错误码|描述|原因
+--|--|--
+108201|用户未登录|用户未登录
+108202|没有权限|不是问题的作者或者管理员
+
+###删除问题1083
+- Path:/app/questions/{questionId}/answers/{answerId}
+- Request Method:DELETE
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
+- Query String:无
+- Request Body:无
+- Response
+
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
+
+错误码|描述|原因
+--|--|--
+108301|用户未登录|用户未登录
+108302|没有权限|不是问题的作者或者管理员
 
 ---
 #消息和社交
