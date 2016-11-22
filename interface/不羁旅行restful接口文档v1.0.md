@@ -5439,17 +5439,24 @@ detailUrl|String|是|无|卡片的链接
 
 ---
 #问题
-###用户发布问题1051
-- Path:/app/users/{userId}/quoras
+###发布问题1051
+- Path:/app/questions
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":10001
+
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+source|String|否|"不羁旅行"|问题来源
+topics|List<String>|否|无|问题的主题
+tags|List<String>|否|无|问题的标签
+title|String|是|无|标题
+contents|String|是|无|具体描述
 
 > 示例
 
@@ -5458,8 +5465,9 @@ detailUrl|String|是|无|卡片的链接
 		"topics":["湖边","摄影","婚纱"],
 		"tags":["旅拍","XXX"],
 		"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-		"contents":"如题"
+		"content":"如题"
 	}
+
 - Response
 
 字段名|类型|必含|默认值|描述
@@ -5469,33 +5477,18 @@ detailUrl|String|是|无|卡片的链接
 
 	{
 		"code":0,
-		"msg":"success",
 		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"source":"baidu",
-			"topics":["湖边","摄影","婚纱"],
-			"tags":["旅拍","XXX"],
-			"viewCnt":100,
-			"answerCnt":10,
-			"maxVoteCnt":10000,
-			"publishTime":145000000000,
-			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-			"contents":"如题",
-			"author": {
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar": {
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				}
-			}
+		"result": {
+			
 		}
 	}
 
 错误码|描述|原因
 --|--|--
+105101|标题不可为空|没有传title字段
+105102|内容不可为空|没有传content字段
+105103|用户未登录|用户未登录
+105104|用户不存在|用户被非法删除了
 
 ###取得问题详情1052
 - Path:/app/quoras/{quoraId}
@@ -5507,6 +5500,31 @@ detailUrl|String|是|无|卡片的链接
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+question|Object|是|无|问题信息
+id|String|是|无|问题主键
+source|String|是|无|问题来源
+topics|List<String>|否|无|问题主题
+tags|List<String>|否|无|问题标签
+viewCnt|Integer|否|无|问题的浏览数
+favorCnt|Integer|否|无|问题的收藏数
+voteCnt|Integer|否|无|问题的点赞数
+answerCnt|Integer|是|0|问题的回答数
+maxVoteCnt|Integer|是|无|问题答案的最大点赞数
+publishTime|Long|是|无|问题发布时间
+title|String|是|无|问题的标题
+content|String|是|无|问题的内容
+author|Object|是|无|问题的作者
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+answers|ArrayNode|否|无|回答
+voteCnt|Integer|否|无|回答的点赞数
+accepted|Boolean|否|无|回答是否被采纳
+publishTime|Long|是|无|回答发布时间
+title|String|是|无|回答的标题
+content|String|是|无|回答的内容
+questionId|String|是|无|问题主键
 
 > 示例
 
@@ -5515,23 +5533,27 @@ detailUrl|String|是|无|卡片的链接
 		"msg":"success",
 		"timestamp":1425225600000,
 		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"source":"baidu",
-			"topics":["湖边","摄影","婚纱"],
-			"tags":["旅拍","XXX"],
-			"viewCnt":100,
-			"answerCnt":10,
-			"maxVoteCnt":10000,
-			"publishTime":145000000000,
-			"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
-			"contents":"如题",
-			"author": {
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar": {
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
+			"question": {
+				"id":"646f2da8b8ce0440eddb287f",
+				"source":"baidu",
+				"topics":["湖边","摄影","婚纱"],
+				"tags":["旅拍","XXX"],
+				"viewCnt":100,
+				"favorCnt":100,
+				"voteCnt":100,
+				"answerCnt":10,
+				"maxVoteCnt":10000,
+				"publishTime":145000000000,
+				"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+				"content":"如题",
+				"author": {
+					"userId":10001,
+					"nickName":"魔法师",
+					"avatar": {
+						"url":"http://1.jpg",
+						"width":800,
+						"height":600
+					}
 				}
 			},
 			"answers":[
@@ -5549,7 +5571,8 @@ detailUrl|String|是|无|卡片的链接
 					},
 					"publishTime":1450000000000,
 					"title":"",
-					"contents":"XXX"
+					"contents":"XXX",
+					"questionId":"646f2da8b8ce0440eddb287f"
 				}
 			]
 		}
@@ -5557,8 +5580,9 @@ detailUrl|String|是|无|卡片的链接
 
 错误码|描述|原因
 --|--|--
+105201|问题不存在|问题的id输入有误，或者问题被非法删除
 
-###取得用户问题列表1052
+###取得用户问题列表1053
 - Path:/app/users/{userId}/quoras
 - Request Method:GET
 - Request Headers:无
@@ -5603,7 +5627,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###取得问题列表1053
+###取得问题列表1054
 - Path:/app/quoras
 - Request Method:GET
 - Request Headers:无
@@ -5648,7 +5672,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###添加回答1054
+###添加回答1081
 - Path:/app/quoras/{quoraId}/answers
 - Request Method:POST
 - Request Headers:
