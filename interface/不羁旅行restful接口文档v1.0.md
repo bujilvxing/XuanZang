@@ -5828,6 +5828,80 @@ questionId|String|是|无|问题主键
 108301|用户未登录|用户未登录
 108302|没有权限|不是问题的作者或者管理员
 
+###编辑问题1084
+- Path:/app/questions/{questionId}
+- Request Method:PUT
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+source|String|否|"不羁旅行"|问题来源
+topics|List<String>|否|无|问题的主题
+tags|List<String>|否|无|问题的标签
+title|String|是|无|标题
+contents|String|是|无|具体描述
+
+> 示例
+
+	{
+		"source":"baidu",
+		"topics":["湖边","摄影","婚纱"],
+		"tags":["旅拍","XXX"],
+		"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+		"content":"如题"
+	}
+
+- Response
+
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
+
+错误码|描述|原因
+--|--|--
+108401|用户未登录|用户未登录
+
+###编辑问题1085
+- Path:/app/questions/{questionId}/answers/{answerId}
+- Request Method:PUT
+- Request Headers:
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+title|String|是|无|标题
+contents|String|是|无|具体描述
+
+> 示例
+
+	{
+		"title":"上哪里找影楼去鄱阳湖拍婚纱照？",
+		"content":"如题"
+	}
+
+- Response
+
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
+
+错误码|描述|原因
+--|--|--
+108501|用户未登录|用户未登录
+
 ---
 #消息和社交
 ###关注用户1055
