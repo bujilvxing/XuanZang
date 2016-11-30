@@ -4364,13 +4364,15 @@ detailUrl|String|是|无|卡片的链接
 --|--|--
 
 ***
-#形成规划模块
+#行程规划模块
 ###发布行程规划1045
-- Path:/app/users/{userId}/tripplans
+- Path:/app/tripplans
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":10001
+
 - Query String:无
 - Request Body
 
