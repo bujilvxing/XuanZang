@@ -1482,7 +1482,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 ***
 #POI模块
 ###取得客栈列表1020
-- Path:/app/poi/hotels
+- Path:/app/hotels
 - Request Method:GET
 - Request Headers:无
 - Query String:offset=0&limit=100
@@ -1528,7 +1528,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得客栈详情1021
-- Path:/app/poi/hotels/{hotelId}
+- Path:/app/hotels/{hotelId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -1946,7 +1946,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得景点列表1024
-- Path:/app/poi/viewspots
+- Path:/app/viewspots
 - Request Method:GET
 - Request Headers:无
 - Query String:offset=0&limit=100
@@ -1993,7 +1993,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得景点详情1025
-- Path:/app/poi/viewspots/{viewspotId}
+- Path:/app/viewspots/{viewspotId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -2088,7 +2088,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得餐厅列表1026
-- Path:/app/poi/restaurants
+- Path:/app/restaurants
 - Request Method:GET
 - Request Headers:无
 - Query String:offset=1&limit=100
@@ -2135,7 +2135,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得餐厅详情1027
-- Path:/app/poi/restaurants/{restaurantId}
+- Path:/app/restaurants/{restaurantId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -2238,7 +2238,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得商场列表1028
-- Path:/app/poi/shoppings
+- Path:/app/shoppings
 - Request Method:GET
 - Request Headers:无
 - Query String:offset=1&limit=100
@@ -2283,7 +2283,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 --|--|--
 
 ###取得商场详情1029
-- Path:/app/poi/shoppings/{shoppingId}
+- Path:/app/shoppings/{shoppingId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -2589,17 +2589,11 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-***
-#搜索模块
-###搜索全部以及按分类搜索1032
-包含：用户，形成规划，足迹，游记，美食，客栈，景点，购物，特产，婚纱摄影
-
-- Path:/app/search
+###取得用户活动列表1086
+- Path:/app/users/{userId}/activities
 - Request Method:GET
 - Request Headers:无
-- Query String:user=false&tripplan=false
-
-	没有参数的，表示搜索所有的分类。设置为false的表示不需要搜索该分类
+- Query String:offset=1&limit=100
 - Request Body:无
 - Response
 > 返回字段说明
@@ -2613,245 +2607,45 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 		"code":0,
 		"msg":"success",
 		"timestamp":1425225600000,
-		"result":{
-			"userInfos":[
-				{
-					"userId":10001,
-					"nickName":"魔法师",
-					"avatar": {
+		"result":[
+			{
+				"id":"646f2da8b8ce0440eddb287f",
+				"title":"北京冰雪嘉年华",
+				"maxNum":200,
+				"joinNum":100,
+				"startTime":14500000000,
+				"endTime":14500000000,
+				"address":{
+					"province":"江西省",
+					"city":"南昌市",
+					"district":"东湖区",
+					"detail":"XXX",
+					"zipCode":"100071"
+				},
+				"favorCnt":1000,
+				"viewCnt":31231,
+				"posters":[
+					{
 						"width":400,
 						"height":400,
 						"url":"http://1.jpg"
-					},
-					"gender":1
-				}
-			],
-			"tripPlans":[
-				{
-					"id":"",
-					"userId":"",
-					"nickName":"",
-					"avatar":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"tripItems":[
+					}
+				],
+				"tags":["",""],
+				"tickets":[
+					{
 						"id":"646f2da8b8ce0440eddb287f",
-					"userId":10001,
-					"nickName":"魔法屋",
-					"avatar": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"tripItems": [
-						{
-							"tripTime":1450000000000,
-							"createTime":1450000000000,
-							"desc":"",
-							"restaurant":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"煌上煌烤鸭店",
-								"enName":"",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"hotel":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"如家快捷酒店",
-								"enName":"RuJia",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"viewspot":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"八一广场",
-								"enName":"",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"activity": {
-								"id":"646f2da8b8ce0440eddb287f",
-								"title":"亲子游活动",
-								"maxNum":200,
-								"joinNum" : 106,
-								"favorCnt":100001,
-								"viewCnt":88888,
-								"poster":{
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								}
-							},
-							"shopping": {
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"优衣库",
-								"enName":"Uniqlo",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							}
-						}
-					]
-				}
-			],
-			"traces":[],
-			"restaurants":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"煌上煌烤鸭店",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"hotels":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"如家快捷酒店",
-					"enName":"RuJia",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"viewspots":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"shoppings":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00",
-					"discount":0.65
-				}
-			],
-			"specialities":[],
-			"photographies":[]
-		}
+						"price":100.1,
+						"free":false;
+						"refundWay":1,
+						"refundDesc":"",
+						"desc":"",
+						"maxNum":100
+			
+					}
+				]
+			}
+		]
 	}
 
 错误码|描述|原因
