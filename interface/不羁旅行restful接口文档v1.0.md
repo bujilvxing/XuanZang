@@ -4418,7 +4418,7 @@ shopping|Object|否|无|购物信息
 			"url":"http://1.jpg",
 			"width":800,
 			"height":600
-		}
+		},
 		"originId":"646f2da8b8ce0440eddb287f",
 		"originUserId":1001,
 		"originNickName":"魔法师",
@@ -4815,6 +4815,7 @@ shopping|Object|否|无|购物信息
 - Request Headers:
 
 	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
 - Query String:无
 - Request Body:无
 - Response
@@ -4838,12 +4839,12 @@ shopping|Object|否|无|购物信息
 					"width":800,
 					"height":600
 				},
-				"createTime":1450000000,
-				"updateTime":1450000000,
-				"shareCnt":100,
-				"favorCnt":1000,
-				"commentCnt":200,
-				"viewCnt":100000,
+				"title":"标题",
+				"cover":{
+					"url":"http://1.jpg",
+					"width":800,
+					"height":600
+				},
 				"originId":"646f2da8b8ce0440eddb287f",
 				"originUserId":1001,
 				"originNickName":"魔法师",
@@ -4851,14 +4852,14 @@ shopping|Object|否|无|购物信息
 					"url":"http://1.jpg",
 					"width":800,
 					"height":600
-				},
-				"hotness":0.9
+				}
 			}
 		]
 	}
 
 错误码|描述|原因
 --|--|--
+104701|用户未登录|用户未登录
 
 ###修改行程规划1048
 - Path:/app/tripplans/{tripPlanId}
@@ -4880,10 +4881,6 @@ url|String|是|""|图片链接
 width|Integer|是|0|图片宽度
 height|Integer|是|0|图片高度
 fmt|String|否|无|图片格式
-orginId|String|否|无|源行程规划id
-originUserId|Long|否|无|形程规划原创用户id
-originNickName|String|否|无|形程规划原创用户昵称
-originAvatar|Object|否|无|形程规划原创用户头像
 tripItems|ArrayObject|否|无|行程规划项
 tripTime|Long|是|无|行程项时间
 desc|String|是|无|行程项描述
@@ -4910,14 +4907,6 @@ shopping|Object|否|无|购物信息
 		"title":"标题",
 		"desc":"描述",
 		"cover": {
-			"url":"http://1.jpg",
-			"width":800,
-			"height":600
-		}
-		"originId":"646f2da8b8ce0440eddb287f",
-		"originUserId":1001,
-		"originNickName":"魔法师",
-		"originAvatar":{
 			"url":"http://1.jpg",
 			"width":800,
 			"height":600
