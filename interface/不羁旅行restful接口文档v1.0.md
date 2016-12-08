@@ -6716,7 +6716,7 @@ pinned|Boolean|是|无|是否会话置顶
 --|--|--
 
 ###发布帖子1075
-- Path:/app/posts
+- Path:/app/chatgroups/{chatgroupId}/posts
 - Request Method:POST
 - Request Headers:
 

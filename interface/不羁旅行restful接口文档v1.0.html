@@ -3762,7 +3762,7 @@ Query strings
 <h1>POI模块</h1>
 <h3>取得客栈列表1020</h3>
 <ul>
-<li>Path:/app/poi/hotels</li>
+<li>Path:/app/hotels</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:offset=0&amp;limit=100</li>
@@ -3831,7 +3831,7 @@ Query strings
 </table>
 <h3>取得客栈详情1021</h3>
 <ul>
-<li>Path:/app/poi/hotels/{hotelId}</li>
+<li>Path:/app/hotels/{hotelId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -4318,7 +4318,7 @@ Query strings
 </table>
 <h3>取得景点列表1024</h3>
 <ul>
-<li>Path:/app/poi/viewspots</li>
+<li>Path:/app/viewspots</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:offset=0&amp;limit=100</li>
@@ -4388,7 +4388,7 @@ Query strings
 </table>
 <h3>取得景点详情1025</h3>
 <ul>
-<li>Path:/app/poi/viewspots/{viewspotId}</li>
+<li>Path:/app/viewspots/{viewspotId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -4506,7 +4506,7 @@ Query strings
 </table>
 <h3>取得餐厅列表1026</h3>
 <ul>
-<li>Path:/app/poi/restaurants</li>
+<li>Path:/app/restaurants</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:offset=1&amp;limit=100</li>
@@ -4576,7 +4576,7 @@ Query strings
 </table>
 <h3>取得餐厅详情1027</h3>
 <ul>
-<li>Path:/app/poi/restaurants/{restaurantId}</li>
+<li>Path:/app/restaurants/{restaurantId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -4702,7 +4702,7 @@ Query strings
 </table>
 <h3>取得商场列表1028</h3>
 <ul>
-<li>Path:/app/poi/shoppings</li>
+<li>Path:/app/shoppings</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:offset=1&amp;limit=100</li>
@@ -4770,7 +4770,7 @@ Query strings
 </table>
 <h3>取得商场详情1029</h3>
 <ul>
-<li>Path:/app/poi/shoppings/{shoppingId}</li>
+<li>Path:/app/shoppings/{shoppingId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -5177,18 +5177,12 @@ Query strings
 <tbody>
 </tbody>
 </table>
-<hr />
-<h1>搜索模块</h1>
-<h3>搜索全部以及按分类搜索1032</h3>
-<p>包含：用户，形成规划，足迹，游记，美食，客栈，景点，购物，特产，婚纱摄影</p>
+<h3>取得用户活动列表1086</h3>
 <ul>
-<li>Path:/app/search</li>
+<li>Path:/app/users/{userId}/activities</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>
-<p>Query String:user=false&amp;tripplan=false</p>
-<p>没有参数的，表示搜索所有的分类。设置为false的表示不需要搜索该分类</p>
-</li>
+<li>Query String:offset=1&amp;limit=100</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -5215,245 +5209,45 @@ Query strings
     &quot;code&quot;:0,
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;userInfos&quot;:[
-            {
-                &quot;userId&quot;:10001,
-                &quot;nickName&quot;:&quot;魔法师&quot;,
-                &quot;avatar&quot;: {
+    &quot;result&quot;:[
+        {
+            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+            &quot;title&quot;:&quot;北京冰雪嘉年华&quot;,
+            &quot;maxNum&quot;:200,
+            &quot;joinNum&quot;:100,
+            &quot;startTime&quot;:14500000000,
+            &quot;endTime&quot;:14500000000,
+            &quot;address&quot;:{
+                &quot;province&quot;:&quot;江西省&quot;,
+                &quot;city&quot;:&quot;南昌市&quot;,
+                &quot;district&quot;:&quot;东湖区&quot;,
+                &quot;detail&quot;:&quot;XXX&quot;,
+                &quot;zipCode&quot;:&quot;100071&quot;
+            },
+            &quot;favorCnt&quot;:1000,
+            &quot;viewCnt&quot;:31231,
+            &quot;posters&quot;:[
+                {
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;gender&quot;:1
-            }
-        ],
-        &quot;tripPlans&quot;:[
-            {
-                &quot;id&quot;:&quot;&quot;,
-                &quot;userId&quot;:&quot;&quot;,
-                &quot;nickName&quot;:&quot;&quot;,
-                &quot;avatar&quot;:{
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;tripItems&quot;:[
+                }
+            ],
+            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
+            &quot;tickets&quot;:[
+                {
                     &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;userId&quot;:10001,
-                &quot;nickName&quot;:&quot;魔法屋&quot;,
-                &quot;avatar&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;tripItems&quot;: [
-                    {
-                        &quot;tripTime&quot;:1450000000000,
-                        &quot;createTime&quot;:1450000000000,
-                        &quot;desc&quot;:&quot;&quot;,
-                        &quot;restaurant&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                            &quot;enName&quot;:&quot;&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;hotel&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                            &quot;enName&quot;:&quot;RuJia&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;viewspot&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;八一广场&quot;,
-                            &quot;enName&quot;:&quot;&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;activity&quot;: {
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;title&quot;:&quot;亲子游活动&quot;,
-                            &quot;maxNum&quot;:200,
-                            &quot;joinNum&quot; : 106,
-                            &quot;favorCnt&quot;:100001,
-                            &quot;viewCnt&quot;:88888,
-                            &quot;poster&quot;:{
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            }
-                        },
-                        &quot;shopping&quot;: {
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;优衣库&quot;,
-                            &quot;enName&quot;:&quot;Uniqlo&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        }
-                    }
-                ]
-            }
-        ],
-        &quot;traces&quot;:[],
-        &quot;restaurants&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            }
-        ],
-        &quot;hotels&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                &quot;enName&quot;:&quot;RuJia&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            }
-        ],
-        &quot;viewspots&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;八一广场&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            }
-        ],
-        &quot;shoppings&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;优衣库&quot;,
-                &quot;enName&quot;:&quot;Uniqlo&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;,
-                &quot;discount&quot;:0.65
-            }
-        ],
-        &quot;specialities&quot;:[],
-        &quot;photographies&quot;:[]
-    }
+                    &quot;price&quot;:100.1,
+                    &quot;free&quot;:false;
+                    &quot;refundWay&quot;:1,
+                    &quot;refundDesc&quot;:&quot;&quot;,
+                    &quot;desc&quot;:&quot;&quot;,
+                    &quot;maxNum&quot;:100
+
+                }
+            ]
+        }
+    ]
 }
 </code></pre>
 
@@ -5540,40 +5334,56 @@ Query strings
 <p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
 </li>
 <li>Query String:无</li>
-<li>
-<p>Request Body</p>
-<p>{
-	&quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-	&quot;cover&quot;: {
-		&quot;width&quot;:400,
-		&quot;height&quot;:400,
-		&quot;url&quot;:&quot;http://1.jpg&quot;
-	},
-	&quot;images&quot;:[
-		{
-			&quot;width&quot;:400,
-			&quot;height&quot;:400,
-			&quot;url&quot;:&quot;http://1.jpg&quot;
-		}
-	],
-	&quot;title&quot;:&quot;&quot;,
-	&quot;travelTime&quot;:14500000000,
-	&quot;contents&quot;:[
-		{
-			&quot;day1&quot;:&quot;XXX&quot;,
-			&quot;day2&quot;:&quot;XXX&quot;
-		}
-	],
-	&quot;summary&quot;:&quot;&quot;
-}</p>
-</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<pre><code>{
+    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+    &quot;cover&quot;: {
+        &quot;width&quot;:400,
+        &quot;height&quot;:400,
+        &quot;url&quot;:&quot;http://1.jpg&quot;
+    },
+    &quot;images&quot;:[
+        {
+            &quot;width&quot;:400,
+            &quot;height&quot;:400,
+            &quot;url&quot;:&quot;http://1.jpg&quot;
+        }
+    ],
+    &quot;title&quot;:&quot;&quot;,
+    &quot;travelTime&quot;:14500000000,
+    &quot;contents&quot;:[
+        {
+            &quot;day1&quot;:&quot;XXX&quot;,
+            &quot;day2&quot;:&quot;XXX&quot;
+        }
+    ],
+    &quot;summary&quot;:&quot;&quot;
+}
+</code></pre>
+
+<ul>
 <li>
 <p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;timestamp&quot;:1425225600000
-}</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
 </li>
 </ul>
 <table>
@@ -5810,9 +5620,57 @@ Query strings
 <li>Request Method:GET</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
-<li>Query String:offset=1&amp;limit=100</li>
+<li>
+<p>Query String</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几条开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少条</td>
+</tr>
+<tr>
+	<td>latestTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>最晚时间，取最新消息时需要传此参数</td>
+</tr>
+<tr>
+	<td>earliestTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>最早时间，取过去的消息时需要传此参数</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -5830,6 +5688,174 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>朋友圈发布时间</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户id</td>
+</tr>
+<tr>
+	<td>nickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户昵称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>originId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的主键</td>
+</tr>
+<tr>
+	<td>originUserId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者id</td>
+</tr>
+<tr>
+	<td>originNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者昵称</td>
+</tr>
+<tr>
+	<td>originAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者头像</td>
+</tr>
+<tr>
+	<td>text</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为文字</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayNode</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为图片列表</td>
+</tr>
+<tr>
+	<td>comment</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布时，自己的评论</td>
+</tr>
+<tr>
+	<td>card</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为卡片</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片主键</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的标题</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的摘要</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的封面图</td>
+</tr>
+<tr>
+	<td>detailUrl</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的链接</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>收藏次数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>点赞次数</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -5876,13 +5902,10 @@ Query strings
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;thumb&quot;:{
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
                 &quot;detailUrl&quot;:&quot;http://xxx.html&quot;
-            }
+            },
+            &quot;favorCnt&quot;:1001,
+            &quot;voteCnt&quot;:100
         }
     ]
 }
@@ -5897,17 +5920,343 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>103801</td>
+	<td>latestTime和earliestTime不可同时为空</td>
+	<td>要么含有latestTime，要么含有earliestTime</td>
+</tr>
+<tr>
+	<td>103801</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3>查看某个人的朋友圈1080</h3>
+<ul>
+<li>Path:/app/users/{targetId}/moments</li>
+<li>Request Method:GET</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几条开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>100</td>
+	<td>取多少条</td>
+</tr>
+<tr>
+	<td>latestTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>最晚时间，用于拉取最新的朋友圈</td>
+</tr>
+<tr>
+	<td>earliestTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>最早时间，用户拉取老的朋友圈</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<blockquote>
+<p>返回字段说明</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>朋友圈发布时间</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户id</td>
+</tr>
+<tr>
+	<td>nickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户昵称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>发布朋友圈的用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>originId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的主键</td>
+</tr>
+<tr>
+	<td>originUserId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者id</td>
+</tr>
+<tr>
+	<td>originNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者昵称</td>
+</tr>
+<tr>
+	<td>originAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发的朋友圈的源朋友圈的作者头像</td>
+</tr>
+<tr>
+	<td>text</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为文字</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayNode</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为图片列表</td>
+</tr>
+<tr>
+	<td>comment</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布时，自己的评论</td>
+</tr>
+<tr>
+	<td>card</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>发布的内容为卡片</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的标题</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的摘要</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的封面图</td>
+</tr>
+<tr>
+	<td>detailUrl</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的链接</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>收藏次数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>点赞次数</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;msg&quot;:&quot;success&quot;,
+    &quot;timestamp&quot;:1425225600000,
+    &quot;result&quot;:[
+        {
+            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+            &quot;publishTime&quot;:14500000000,
+            &quot;userId&quot;:10001,
+            &quot;nickName&quot;:&quot;魔法师&quot;,
+            &quot;avatar&quot;:{
+                &quot;width&quot;:400,
+                &quot;height&quot;:400,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;originId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+            &quot;originUserId&quot;:10002,
+            &quot;originNickName&quot;:&quot;魔法屋&quot;,
+            &quot;originAvatar&quot;:{
+                &quot;width&quot;:400,
+                &quot;height&quot;:400,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;text&quot;:&quot;南昌如此之美&quot;,
+            &quot;images&quot;:[
+                {
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                }
+            ],
+            &quot;comment&quot;:&quot;自己评论&quot;,
+            &quot;card&quot;: {
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;title&quot;:&quot;&quot;,
+                &quot;summary&quot;:&quot;&quot;,
+                &quot;cover&quot;:{
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;detailUrl&quot;:&quot;http://xxx.html&quot;
+            },
+            &quot;favorCnt&quot;:100,
+            &quot;voteCnt&quot;:10
+        }
+    ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>108001</td>
+	<td>latestTime和earliestTime不可同时为空</td>
+	<td>latestTime和earliestTime参数都没有传</td>
+</tr>
+<tr>
+	<td>108001</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>发布朋友圈1039</h3>
 <ul>
-<li>Path:/app/traces</li>
+<li>Path:/app/moments</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -5921,6 +6270,125 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>originId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源朋友圈消息的id</td>
+</tr>
+<tr>
+	<td>originUserId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源朋友圈消息的发布者用户id</td>
+</tr>
+<tr>
+	<td>originNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源朋友圈消息的发布者用户昵称</td>
+</tr>
+<tr>
+	<td>originAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源朋友圈消息的发布者用户头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>text</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>文字消息朋友圈</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayNode</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片列表朋友圈</td>
+</tr>
+<tr>
+	<td>comment</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>自己评论</td>
+</tr>
+<tr>
+	<td>card</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>卡片朋友圈</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的主键</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的标题</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的摘要</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的封面图</td>
+</tr>
+<tr>
+	<td>detailUrl</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>卡片的链接</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -5953,11 +6421,6 @@ Query strings
             &quot;height&quot;:400,
             &quot;url&quot;:&quot;http://1.jpg&quot;
         },
-        &quot;thumb&quot;:{
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        },
         &quot;detailUrl&quot;:&quot;http://xxx.html&quot;
     }
 }
@@ -5969,25 +6432,8 @@ Query strings
 <blockquote>
 <p>返回字段说明</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<blockquote>
-<p>示例</p>
-</blockquote>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
@@ -7138,16 +7584,21 @@ Query strings
 </tbody>
 </table>
 <hr />
-<h1>形成规划模块</h1>
+<h1>行程规划模块</h1>
 <h3>发布行程规划1045</h3>
 <ul>
-<li>Path:/app/users/{userId}/tripplans</li>
+<li>Path:/app/tripplans</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:10001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -7161,118 +7612,229 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程规划标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程规划描述</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>orginId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源行程规划id</td>
+</tr>
+<tr>
+	<td>originUserId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>形程规划原创用户id</td>
+</tr>
+<tr>
+	<td>originNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>形程规划原创用户昵称</td>
+</tr>
+<tr>
+	<td>originAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>形程规划原创用户头像</td>
+</tr>
+<tr>
+	<td>tripItems</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>行程规划项</td>
+</tr>
+<tr>
+	<td>tripTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程项时间</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程项描述</td>
+</tr>
+<tr>
+	<td>restaurant</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>美食信息</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食封面图</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食英文名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食链接</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食市场价</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食价格</td>
+</tr>
+<tr>
+	<td>hotel</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>宾馆信息</td>
+</tr>
+<tr>
+	<td>viewspot</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>景点信息</td>
+</tr>
+<tr>
+	<td>activity</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动信息</td>
+</tr>
+<tr>
+	<td>theme</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动主题</td>
+</tr>
+<tr>
+	<td>category</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动分类</td>
+</tr>
+<tr>
+	<td>visiable</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动是否可见，1表示不可见，2表示可见</td>
+</tr>
+<tr>
+	<td>isFree</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>shopping</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>购物信息</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;tripItems&quot;:[
-        {
-            &quot;tripTime&quot;:145000000000,
-            &quot;desc&quot;:&quot;XXX&quot;,
-            &quot;restaurant&quot;:{
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            },
-            &quot;hotel&quot;:{
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                &quot;enName&quot;:&quot;RuJia&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            },
-            &quot;viewspot&quot;:{
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;八一广场&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            },
-            &quot;activity&quot;: {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;title&quot;:&quot;亲子游活动&quot;,
-                &quot;maxNum&quot;:200,
-                &quot;joinNum&quot; : 106,
-                &quot;favorCnt&quot;:100001,
-                &quot;viewCnt&quot;:88888,
-                &quot;poster&quot;:{
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            },
-            &quot;shopping&quot;: {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;优衣库&quot;,
-                &quot;enName&quot;:&quot;Uniqlo&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
-            }
-        }
-    ],
+    &quot;title&quot;:&quot;标题&quot;,
+    &quot;desc&quot;:&quot;描述&quot;,
+    &quot;cover&quot;: {
+        &quot;url&quot;:&quot;http://1.jpg&quot;,
+        &quot;width&quot;:800,
+        &quot;height&quot;:600
+    },
     &quot;originId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
     &quot;originUserId&quot;:1001,
     &quot;originNickName&quot;:&quot;魔法师&quot;,
@@ -7281,7 +7843,77 @@ Query strings
         &quot;width&quot;:800,
         &quot;height&quot;:600
     },
-    &quot;hotness&quot;:0.9
+    &quot;tripItems&quot;:[
+        {
+            &quot;tripTime&quot;:145000000000,
+            &quot;desc&quot;:&quot;XXX&quot;,
+            &quot;restaurant&quot;:{
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;cover&quot; : {
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
+                &quot;enName&quot;:&quot;&quot;,
+                &quot;url&quot;:&quot;http://XXX&quot;,
+                &quot;marketPrice&quot;:280.6,
+                &quot;price&quot;:180.3
+            },
+            &quot;hotel&quot;:{
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;cover&quot; : {
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
+                &quot;enName&quot;:&quot;RuJia&quot;,
+                &quot;url&quot;:&quot;http://XXX&quot;,
+                &quot;marketPrice&quot;:280.6,
+                &quot;price&quot;:180.3
+            },
+            &quot;viewspot&quot;:{
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;cover&quot; : {
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;zhName&quot;:&quot;八一广场&quot;,
+                &quot;enName&quot;:&quot;&quot;,
+                &quot;url&quot;:&quot;http://XXX&quot;,
+                &quot;marketPrice&quot;:280.6,
+                &quot;price&quot;:180.3
+            },
+            &quot;activity&quot;: {
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;title&quot;:&quot;亲子游活动&quot;,
+                &quot;cover&quot;:{
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;theme&quot;:&quot;主题&quot;,
+                &quot;category&quot;:&quot;活动分类&quot;,
+                &quot;visiable&quot;:1,
+                &quot;isFree&quot;:true
+            },
+            &quot;shopping&quot;: {
+                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+                &quot;cover&quot; : {
+                    &quot;width&quot;:400,
+                    &quot;height&quot;:400,
+                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                },
+                &quot;zhName&quot;:&quot;优衣库&quot;,
+                &quot;enName&quot;:&quot;Uniqlo&quot;,
+                &quot;url&quot;:&quot;http://XXX&quot;,
+                &quot;marketPrice&quot;:280.6,
+                &quot;price&quot;:180.3
+            }
+        }
+    ]
 }
 </code></pre>
 
@@ -7451,17 +8083,47 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104501</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>104502</td>
+	<td>用户不存在</td>
+	<td>用户被非法删除</td>
+</tr>
+<tr>
+	<td>104503</td>
+	<td>源用户id不可为空</td>
+	<td>没有传originUserId字段</td>
+</tr>
+<tr>
+	<td>104504</td>
+	<td>源用户昵称不可为空</td>
+	<td>没有传originNickName字段</td>
+</tr>
+<tr>
+	<td>104505</td>
+	<td>源用户头像不可为空</td>
+	<td>没有传originAvatar字段</td>
+</tr>
 </tbody>
 </table>
 <h3>复制行程规划1046</h3>
 <ul>
-<li>Path:/app/users/{userId}/tripplans/{tripPlanId}/copy</li>
+<li>Path:/app/tripplans/{tripPlanId}/fork</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -7638,7 +8300,9 @@ Query strings
 <p>Request Headers:</p>
 <p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -7672,12 +8336,12 @@ Query strings
                 &quot;width&quot;:800,
                 &quot;height&quot;:600
             },
-            &quot;createTime&quot;:1450000000,
-            &quot;updateTime&quot;:1450000000,
-            &quot;shareCnt&quot;:100,
-            &quot;favorCnt&quot;:1000,
-            &quot;commentCnt&quot;:200,
-            &quot;viewCnt&quot;:100000,
+            &quot;title&quot;:&quot;标题&quot;,
+            &quot;cover&quot;:{
+                &quot;url&quot;:&quot;http://1.jpg&quot;,
+                &quot;width&quot;:800,
+                &quot;height&quot;:600
+            },
             &quot;originId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
             &quot;originUserId&quot;:1001,
             &quot;originNickName&quot;:&quot;魔法师&quot;,
@@ -7685,8 +8349,7 @@ Query strings
                 &quot;url&quot;:&quot;http://1.jpg&quot;,
                 &quot;width&quot;:800,
                 &quot;height&quot;:600
-            },
-            &quot;hotness&quot;:0.9
+            }
         }
     ]
 }
@@ -7701,17 +8364,27 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104701</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>修改行程规划1048</h3>
 <ul>
-<li>Path:/app/users/{userId}/tripplans/{tripPlanId}</li>
+<li>Path:/app/tripplans/{tripPlanId}</li>
 <li>Request Method:PUT</li>
 <li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:10001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -7725,127 +8398,272 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程规划标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程规划描述</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>tripItems</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>行程规划项</td>
+</tr>
+<tr>
+	<td>tripTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程项时间</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>行程项描述</td>
+</tr>
+<tr>
+	<td>restaurant</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>美食信息</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食封面图</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食英文名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食链接</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食市场价</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>美食价格</td>
+</tr>
+<tr>
+	<td>hotel</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>宾馆信息</td>
+</tr>
+<tr>
+	<td>viewspot</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>景点信息</td>
+</tr>
+<tr>
+	<td>activity</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动信息</td>
+</tr>
+<tr>
+	<td>theme</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动主题</td>
+</tr>
+<tr>
+	<td>category</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动分类</td>
+</tr>
+<tr>
+	<td>visiable</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动是否可见，1表示不可见，2表示可见</td>
+</tr>
+<tr>
+	<td>isFree</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>shopping</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>购物信息</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
+    &quot;title&quot;:&quot;标题&quot;,
+    &quot;desc&quot;:&quot;描述&quot;,
+    &quot;cover&quot;: {
+        &quot;url&quot;:&quot;http://1.jpg&quot;,
+        &quot;width&quot;:800,
+        &quot;height&quot;:600
+    },
     &quot;tripItems&quot;:[
         {
             &quot;tripTime&quot;:145000000000,
             &quot;desc&quot;:&quot;XXX&quot;,
             &quot;restaurant&quot;:{
                 &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
                 &quot;cover&quot; : {
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
                 &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
                 &quot;enName&quot;:&quot;&quot;,
                 &quot;url&quot;:&quot;http://XXX&quot;,
                 &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;price&quot;:180.3
             },
             &quot;hotel&quot;:{
                 &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
                 &quot;cover&quot; : {
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
                 &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
                 &quot;enName&quot;:&quot;RuJia&quot;,
                 &quot;url&quot;:&quot;http://XXX&quot;,
                 &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;price&quot;:180.3
             },
             &quot;viewspot&quot;:{
                 &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
                 &quot;cover&quot; : {
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
                 &quot;zhName&quot;:&quot;八一广场&quot;,
                 &quot;enName&quot;:&quot;&quot;,
                 &quot;url&quot;:&quot;http://XXX&quot;,
                 &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;price&quot;:180.3
             },
             &quot;activity&quot;: {
                 &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
                 &quot;title&quot;:&quot;亲子游活动&quot;,
-                &quot;maxNum&quot;:200,
-                &quot;joinNum&quot; : 106,
-                &quot;favorCnt&quot;:100001,
-                &quot;viewCnt&quot;:88888,
-                &quot;poster&quot;:{
+                &quot;cover&quot;:{
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
+                },
+                &quot;theme&quot;:&quot;主题&quot;,
+                &quot;category&quot;:&quot;活动分类&quot;,
+                &quot;visiable&quot;:1,
+                &quot;isFree&quot;:true
             },
             &quot;shopping&quot;: {
                 &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
                 &quot;cover&quot; : {
                     &quot;width&quot;:400,
                     &quot;height&quot;:400,
                     &quot;url&quot;:&quot;http://1.jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
                 &quot;zhName&quot;:&quot;优衣库&quot;,
                 &quot;enName&quot;:&quot;Uniqlo&quot;,
                 &quot;url&quot;:&quot;http://XXX&quot;,
                 &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;price&quot;:180.3
             }
         }
-    ],
-    &quot;originId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-    &quot;originUserId&quot;:1001,
-    &quot;originNickName&quot;:&quot;魔法师&quot;,
-    &quot;originAvatar&quot;:{
-        &quot;url&quot;:&quot;http://1.jpg&quot;,
-        &quot;width&quot;:800,
-        &quot;height&quot;:600
-    },
-    &quot;hotness&quot;:0.9
+    ]
 }
 </code></pre>
 
@@ -8019,13 +8837,15 @@ Query strings
 </table>
 <h3>取得行程规划详情1049</h3>
 <ul>
-<li>Path:/app/users/{userId}/tripplans/{tripPlanId}</li>
+<li>Path:/app/tripplans/{tripPlanId}</li>
 <li>Request Method:GET</li>
 <li>
 <p>Request Headers:</p>
 <p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -8192,171 +9012,36 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104901</td>
+	<td>行程规划不存在</td>
+	<td>行程规划被删除</td>
+</tr>
 </tbody>
 </table>
 <h3>删除行程规划1050</h3>
 <ul>
-<li>Path:/app/users/{userId}/tripplans/{tripPlanId}</li>
+<li>Path:/app/tripplans/{tripPlanId}</li>
 <li>Request Method:DELETE</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;userId&quot;:1001,
-        &quot;nickName&quot;:&quot;魔法师&quot;,
-        &quot;avatar&quot;:{
-            &quot;url&quot;:&quot;http://1.jpg&quot;,
-            &quot;width&quot;:800,
-            &quot;height&quot;:600
-        },
-        &quot;createTime&quot;:1450000000,
-        &quot;updateTime&quot;:1450000000,
-        &quot;shareCnt&quot;:100,
-        &quot;favorCnt&quot;:1000,
-        &quot;commentCnt&quot;:200,
-        &quot;viewCnt&quot;:100000,
-        &quot;tripItems&quot;:[
-            {
-                &quot;tripTime&quot;:145000000000,
-                &quot;desc&quot;:&quot;XXX&quot;,
-                &quot;restaurant&quot;:{
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;lat&quot;:180.1,
-                    &quot;lng&quot;:180.1,
-                    &quot;cover&quot; : {
-                        &quot;width&quot;:400,
-                        &quot;height&quot;:400,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    },
-                    &quot;rank&quot;:3,
-                    &quot;hotness&quot;:0.97,
-                    &quot;rating&quot;:0.98,
-                    &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                    &quot;enName&quot;:&quot;&quot;,
-                    &quot;url&quot;:&quot;http://XXX&quot;,
-                    &quot;marketPrice&quot;:280.6,
-                    &quot;price&quot;:180.3,
-                    &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                    &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                    &quot;saleVolume&quot;:100,
-                    &quot;discount&quot;:0.65
-                },
-                &quot;hotel&quot;:{
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;lat&quot;:180.1,
-                    &quot;lng&quot;:180.1,
-                    &quot;cover&quot; : {
-                        &quot;width&quot;:400,
-                        &quot;height&quot;:400,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    },
-                    &quot;rank&quot;:3,
-                    &quot;hotness&quot;:0.97,
-                    &quot;rating&quot;:0.98,
-                    &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                    &quot;enName&quot;:&quot;RuJia&quot;,
-                    &quot;url&quot;:&quot;http://XXX&quot;,
-                    &quot;marketPrice&quot;:280.6,
-                    &quot;price&quot;:180.3,
-                    &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                    &quot;saleVolume&quot;:100,
-                    &quot;discount&quot;:0.65
-                },
-                &quot;viewspot&quot;:{
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;lat&quot;:180.1,
-                    &quot;lng&quot;:180.1,
-                    &quot;cover&quot; : {
-                        &quot;width&quot;:400,
-                        &quot;height&quot;:400,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    },
-                    &quot;rank&quot;:3,
-                    &quot;hotness&quot;:0.97,
-                    &quot;rating&quot;:0.98,
-                    &quot;zhName&quot;:&quot;八一广场&quot;,
-                    &quot;enName&quot;:&quot;&quot;,
-                    &quot;url&quot;:&quot;http://XXX&quot;,
-                    &quot;marketPrice&quot;:280.6,
-                    &quot;price&quot;:180.3,
-                    &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                    &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                    &quot;saleVolume&quot;:100,
-                    &quot;discount&quot;:0.65
-                },
-                &quot;activity&quot;: {
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;title&quot;:&quot;亲子游活动&quot;,
-                    &quot;maxNum&quot;:200,
-                    &quot;joinNum&quot; : 106,
-                    &quot;favorCnt&quot;:100001,
-                    &quot;viewCnt&quot;:88888,
-                    &quot;poster&quot;:{
-                        &quot;width&quot;:400,
-                        &quot;height&quot;:400,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    }
-                },
-                &quot;shopping&quot;: {
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;lat&quot;:180.1,
-                    &quot;lng&quot;:180.1,
-                    &quot;cover&quot; : {
-                        &quot;width&quot;:400,
-                        &quot;height&quot;:400,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    },
-                    &quot;rank&quot;:3,
-                    &quot;hotness&quot;:0.97,
-                    &quot;rating&quot;:0.98,
-                    &quot;zhName&quot;:&quot;优衣库&quot;,
-                    &quot;enName&quot;:&quot;Uniqlo&quot;,
-                    &quot;url&quot;:&quot;http://XXX&quot;,
-                    &quot;marketPrice&quot;:280.6,
-                    &quot;price&quot;:180.3,
-                    &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                    &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                    &quot;saleVolume&quot;:100,
-                    &quot;discount&quot;:0.65
-                }
-            }
-        ],
-        &quot;originId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;originUserId&quot;:1001,
-        &quot;originNickName&quot;:&quot;魔法师&quot;,
-        &quot;originAvatar&quot;:{
-            &quot;url&quot;:&quot;http://1.jpg&quot;,
-            &quot;width&quot;:800,
-            &quot;height&quot;:600
-        },
-        &quot;hotness&quot;:0.9
-    }
+    &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
 
@@ -8369,19 +9054,29 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>105001</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <hr />
 <h1>问题</h1>
-<h3>用户发布问题1051</h3>
+<h3>发布问题1051</h3>
 <ul>
-<li>Path:/app/users/{userId}/quoras</li>
+<li>Path:/app/questions</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:10001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -8395,6 +9090,41 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>&quot;不羁旅行&quot;</td>
+	<td>问题来源</td>
+</tr>
+<tr>
+	<td>topics</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的主题</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的标签</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>具体描述</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -8405,7 +9135,7 @@ Query strings
     &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
     &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
     &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-    &quot;contents&quot;:&quot;如题&quot;
+    &quot;content&quot;:&quot;如题&quot;
 }
 </code></pre>
 
@@ -8430,28 +9160,9 @@ Query strings
 </blockquote>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;source&quot;:&quot;baidu&quot;,
-        &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
-        &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
-        &quot;viewCnt&quot;:100,
-        &quot;answerCnt&quot;:10,
-        &quot;maxVoteCnt&quot;:10000,
-        &quot;publishTime&quot;:145000000000,
-        &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-        &quot;contents&quot;:&quot;如题&quot;,
-        &quot;author&quot;: {
-            &quot;userId&quot;:10001,
-            &quot;nickName&quot;:&quot;魔法师&quot;,
-            &quot;avatar&quot;: {
-                &quot;url&quot;:&quot;http://1.jpg&quot;,
-                &quot;width&quot;:800,
-                &quot;height&quot;:600
-            }
-        }
+    &quot;result&quot;: {
+
     }
 }
 </code></pre>
@@ -8465,6 +9176,26 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>105101</td>
+	<td>标题不可为空</td>
+	<td>没有传title字段</td>
+</tr>
+<tr>
+	<td>105102</td>
+	<td>内容不可为空</td>
+	<td>没有传content字段</td>
+</tr>
+<tr>
+	<td>105103</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>105104</td>
+	<td>用户不存在</td>
+	<td>用户被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <h3>取得问题详情1052</h3>
@@ -8487,6 +9218,181 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>question</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题信息</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题主键</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题来源</td>
+</tr>
+<tr>
+	<td>topics</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题主题</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题标签</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的浏览数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的点赞数</td>
+</tr>
+<tr>
+	<td>answerCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>问题的回答数</td>
+</tr>
+<tr>
+	<td>maxVoteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题答案的最大点赞数</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题发布时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的内容</td>
+</tr>
+<tr>
+	<td>author</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的作者</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>answers</td>
+	<td>ArrayNode</td>
+	<td>否</td>
+	<td>无</td>
+	<td>回答</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>回答的点赞数</td>
+</tr>
+<tr>
+	<td>accepted</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>回答是否被采纳</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答发布时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答的标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答的内容</td>
+</tr>
+<tr>
+	<td>questionId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题主键</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -8497,23 +9403,27 @@ Query strings
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;source&quot;:&quot;baidu&quot;,
-        &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
-        &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
-        &quot;viewCnt&quot;:100,
-        &quot;answerCnt&quot;:10,
-        &quot;maxVoteCnt&quot;:10000,
-        &quot;publishTime&quot;:145000000000,
-        &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-        &quot;contents&quot;:&quot;如题&quot;,
-        &quot;author&quot;: {
-            &quot;userId&quot;:10001,
-            &quot;nickName&quot;:&quot;魔法师&quot;,
-            &quot;avatar&quot;: {
-                &quot;url&quot;:&quot;http://1.jpg&quot;,
-                &quot;width&quot;:800,
-                &quot;height&quot;:600
+        &quot;question&quot;: {
+            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+            &quot;source&quot;:&quot;baidu&quot;,
+            &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
+            &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
+            &quot;viewCnt&quot;:100,
+            &quot;favorCnt&quot;:100,
+            &quot;voteCnt&quot;:100,
+            &quot;answerCnt&quot;:10,
+            &quot;maxVoteCnt&quot;:10000,
+            &quot;publishTime&quot;:145000000000,
+            &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
+            &quot;content&quot;:&quot;如题&quot;,
+            &quot;author&quot;: {
+                &quot;userId&quot;:10001,
+                &quot;nickName&quot;:&quot;魔法师&quot;,
+                &quot;avatar&quot;: {
+                    &quot;url&quot;:&quot;http://1.jpg&quot;,
+                    &quot;width&quot;:800,
+                    &quot;height&quot;:600
+                }
             }
         },
         &quot;answers&quot;:[
@@ -8531,7 +9441,8 @@ Query strings
                 },
                 &quot;publishTime&quot;:1450000000000,
                 &quot;title&quot;:&quot;&quot;,
-                &quot;contents&quot;:&quot;XXX&quot;
+                &quot;contents&quot;:&quot;XXX&quot;,
+                &quot;questionId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;
             }
         ]
     }
@@ -8547,14 +9458,56 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>105201</td>
+	<td>问题不存在</td>
+	<td>问题的id输入有误，或者问题被非法删除</td>
+</tr>
 </tbody>
 </table>
-<h3>取得用户问题列表1052</h3>
+<h3>取得用户问题列表1053</h3>
 <ul>
-<li>Path:/app/users/{userId}/quoras</li>
+<li>Path:/app/users/{targetId}/questions</li>
 <li>Request Method:GET</li>
-<li>Request Headers:无</li>
-<li>Query String:无</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:10001
+</code></pre>
+
+</li>
+<li>
+<p>Query String</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个问题开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个问题</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -8569,6 +9522,111 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>question</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题信息</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题主键</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的浏览数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的点赞数</td>
+</tr>
+<tr>
+	<td>answerCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>问题的回答数</td>
+</tr>
+<tr>
+	<td>maxVoteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题答案的最大点赞数</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题发布时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的内容</td>
+</tr>
+<tr>
+	<td>author</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的作者</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -8581,15 +9639,14 @@ Query strings
     &quot;result&quot;:[
         {
             &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;source&quot;:&quot;baidu&quot;,
-            &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
-            &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
             &quot;viewCnt&quot;:100,
+            &quot;favorCnt&quot;:100,
+            &quot;voteCnt&quot;:100,
             &quot;answerCnt&quot;:10,
             &quot;maxVoteCnt&quot;:10000,
             &quot;publishTime&quot;:145000000000,
             &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-            &quot;contents&quot;:&quot;如题&quot;,
+            &quot;content&quot;:&quot;如题&quot;,
             &quot;author&quot;: {
                 &quot;userId&quot;:10001,
                 &quot;nickName&quot;:&quot;魔法师&quot;,
@@ -8613,14 +9670,48 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>105301</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
-<h3>取得问题列表1053</h3>
+<h3>取得问题列表1054</h3>
 <ul>
-<li>Path:/app/quoras</li>
+<li>Path:/app/questions</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:无</li>
+<li>Query String</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个问题开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个问题</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -8635,6 +9726,111 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>question</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题信息</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题主键</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的浏览数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的点赞数</td>
+</tr>
+<tr>
+	<td>answerCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>问题的回答数</td>
+</tr>
+<tr>
+	<td>maxVoteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题答案的最大点赞数</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题发布时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的内容</td>
+</tr>
+<tr>
+	<td>author</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的作者</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -8647,15 +9843,14 @@ Query strings
     &quot;result&quot;:[
         {
             &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;source&quot;:&quot;baidu&quot;,
-            &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
-            &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
             &quot;viewCnt&quot;:100,
+            &quot;favorCnt&quot;:100,
+            &quot;voteCnt&quot;:100,
             &quot;answerCnt&quot;:10,
             &quot;maxVoteCnt&quot;:10000,
             &quot;publishTime&quot;:145000000000,
             &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-            &quot;contents&quot;:&quot;如题&quot;,
+            &quot;content&quot;:&quot;如题&quot;,
             &quot;author&quot;: {
                 &quot;userId&quot;:10001,
                 &quot;nickName&quot;:&quot;魔法师&quot;,
@@ -8670,24 +9865,16 @@ Query strings
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>添加回答1054</h3>
+<h3>添加回答1081</h3>
 <ul>
-<li>Path:/app/quoras/{quoraId}/answers</li>
+<li>Path:/app/questions/{questionId}/answers</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -8705,23 +9892,28 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答的内容</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;author&quot;:{
-        &quot;userId&quot;:10001,
-        &quot;nickName&quot;:&quot;雷锋&quot;,
-        &quot;avatar&quot;:{
-            &quot;width&quot;:600,
-            &quot;height&quot;:600,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        }
-    },
     &quot;title&quot;:&quot;&quot;,
-    &quot;contents&quot;:&quot;XXX&quot;
+    &quot;content&quot;:&quot;XXX&quot;
 }
 </code></pre>
 
@@ -8739,6 +9931,83 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>author</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题的作者</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>回答的点赞数</td>
+</tr>
+<tr>
+	<td>accepted</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>回答是否被采纳</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答发布时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答的标题</td>
+</tr>
+<tr>
+	<td>content</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>回答的内容</td>
+</tr>
+<tr>
+	<td>questionId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>问题主键</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -8749,43 +10018,20 @@ Query strings
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
     &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;source&quot;:&quot;baidu&quot;,
-        &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
-        &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
-        &quot;viewCnt&quot;:100,
-        &quot;answerCnt&quot;:10,
-        &quot;maxVoteCnt&quot;:10000,
-        &quot;publishTime&quot;:145000000000,
-        &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
-        &quot;contents&quot;:&quot;如题&quot;,
-        &quot;author&quot;: {
+        &quot;voteCnt&quot;:100,
+        &quot;accepted&quot;:true,
+        &quot;author&quot;:{
             &quot;userId&quot;:10001,
-            &quot;nickName&quot;:&quot;魔法师&quot;,
-            &quot;avatar&quot;: {
-                &quot;url&quot;:&quot;http://1.jpg&quot;,
-                &quot;width&quot;:800,
-                &quot;height&quot;:600
+            &quot;nickName&quot;:&quot;雷锋&quot;,
+            &quot;avatar&quot;:{
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
             }
         },
-        &quot;answers&quot;:[
-            {
-                &quot;voteCnt&quot;:100,
-                &quot;accepted&quot;:true,
-                &quot;author&quot;:{
-                    &quot;userId&quot;:10001,
-                    &quot;nickName&quot;:&quot;雷锋&quot;,
-                    &quot;avatar&quot;:{
-                        &quot;width&quot;:600,
-                        &quot;height&quot;:600,
-                        &quot;url&quot;:&quot;http://1.jpg&quot;
-                    }
-                },
-                &quot;publishTime&quot;:1450000000000,
-                &quot;title&quot;:&quot;&quot;,
-                &quot;contents&quot;:&quot;XXX&quot;
-            }
-        ]
+        &quot;publishTime&quot;:1450000000000,
+        &quot;title&quot;:&quot;&quot;,
+        &quot;contents&quot;:&quot;XXX&quot;
     }
 }
 </code></pre>
@@ -8799,6 +10045,292 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>108101</td>
+	<td>标题不可为空</td>
+	<td>没有传title字段</td>
+</tr>
+<tr>
+	<td>108102</td>
+	<td>内容不可为空</td>
+	<td>没有传content字段</td>
+</tr>
+<tr>
+	<td>108103</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>108104</td>
+	<td>用户不存在</td>
+	<td>用户被非法删除了</td>
+</tr>
+</tbody>
+</table>
+<h3>删除问题1082</h3>
+<ul>
+<li>Path:/app/questions/{questionId}</li>
+<li>Request Method:DELETE</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body:无</li>
+<li>
+<p>Response</p>
+<p>{
+	&quot;code&quot;:0,
+	&quot;timestamp&quot;:1425225600000
+}</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>108201</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>108202</td>
+	<td>没有权限</td>
+	<td>不是问题的作者或者管理员</td>
+</tr>
+</tbody>
+</table>
+<h3>删除问题1083</h3>
+<ul>
+<li>Path:/app/questions/{questionId}/answers/{answerId}</li>
+<li>Request Method:DELETE</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body:无</li>
+<li>
+<p>Response</p>
+<p>{
+	&quot;code&quot;:0,
+	&quot;timestamp&quot;:1425225600000
+}</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>108301</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>108302</td>
+	<td>没有权限</td>
+	<td>不是问题的作者或者管理员</td>
+</tr>
+</tbody>
+</table>
+<h3>编辑问题1084</h3>
+<ul>
+<li>Path:/app/questions/{questionId}</li>
+<li>Request Method:PUT</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>&quot;不羁旅行&quot;</td>
+	<td>问题来源</td>
+</tr>
+<tr>
+	<td>topics</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的主题</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>List<String></td>
+	<td>否</td>
+	<td>无</td>
+	<td>问题的标签</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>具体描述</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code>{
+    &quot;source&quot;:&quot;baidu&quot;,
+    &quot;topics&quot;:[&quot;湖边&quot;,&quot;摄影&quot;,&quot;婚纱&quot;],
+    &quot;tags&quot;:[&quot;旅拍&quot;,&quot;XXX&quot;],
+    &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
+    &quot;content&quot;:&quot;如题&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Response</p>
+<p>{
+	&quot;code&quot;:0,
+	&quot;timestamp&quot;:1425225600000
+}</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>108401</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3>编辑问题1085</h3>
+<ul>
+<li>Path:/app/questions/{questionId}/answers/{answerId}</li>
+<li>Request Method:PUT</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>具体描述</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code>{
+    &quot;title&quot;:&quot;上哪里找影楼去鄱阳湖拍婚纱照？&quot;,
+    &quot;content&quot;:&quot;如题&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Response</p>
+<p>{
+	&quot;code&quot;:0,
+	&quot;timestamp&quot;:1425225600000
+}</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>108501</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -11888,7 +13420,7 @@ limit:100
 </table>
 <h3>发布帖子1075</h3>
 <ul>
-<li>Path:/app/posts</li>
+<li>Path:/app/chatgroups/{chatgroupId}/posts</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
@@ -12075,13 +13607,16 @@ limit:100
 </table>
 <hr />
 <h1>收藏</h1>
-<h3>收藏帖子1077</h3>
+<h3>添加收藏1077</h3>
 <ul>
-<li>Path:/app/users/{userId}/favorites/posts</li>
+<li>Path:/app/favorites</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -12099,480 +13634,97 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>favoriteType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>收藏类型</td>
+</tr>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>收藏对象id</td>
+</tr>
+<tr>
+	<td>authorId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者id</td>
+</tr>
+<tr>
+	<td>authorNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者昵称</td>
+</tr>
+<tr>
+	<td>authorAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+    &quot;favoriteType&quot;:1,
+    &quot;itemId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
     &quot;title&quot;:&quot;周游20国姑娘被亿万富豪持枪逼婚&quot;,
     &quot;cover&quot;:{
         &quot;width&quot;:600,
         &quot;height&quot;:600,
         &quot;url&quot;:&quot;http://1.jpg&quot;
     },
-    &quot;summary&quot;:&quot;还有这种事，求逼婚&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏帖子1078</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/posts/{postId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>收藏活动1079</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/activities</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;title&quot;:&quot;潜水沙龙&quot;,
-    &quot;poster&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
-    &quot;desc&quot;:&quot;潜水交流&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏活动1080</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/activities/{activityId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>收藏足迹1081</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/traces</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;cover&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
-    &quot;desc&quot;:&quot;我在天安门广场,升旗仪式很威武&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏足迹1082</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/traces/{traceId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>收藏行程规划1083</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/tripplans</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;title&quot;:&quot;我在天安门广场&quot;,
-    &quot;cover&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
-    &quot;desc&quot;:&quot;升旗仪式很威武&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<p>{
-	&quot;code&quot;:0,
-	&quot;msg&quot;:&quot;success&quot;,
-	&quot;timestamp&quot;:1425225600000
-}</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏行程规划1084</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/tripplans/{tripplanId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>收藏问答1085</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/quoras</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;title&quot;:&quot;现在的南昌冷吗？&quot;,
-    &quot;contents&quot;:&quot;需要带什么衣服过去穿？&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏问答1086</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/quoras/{quoraId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>收藏美食1087</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/restaurants</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-    &quot;openTime&quot;:&quot;8：00~21：00&quot;,
-    &quot;cover&quot;:{
+    &quot;authorId&quot;:10001,
+    &quot;authorNickName&quot;:&quot;魔法师&quot;,
+    &quot;authorAvatar&quot;：{
         &quot;width&quot;:600,
         &quot;height&quot;:600,
         &quot;url&quot;:&quot;http://1.jpg&quot;
@@ -12585,7 +13737,6 @@ limit:100
 <p>Response</p>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
@@ -12601,15 +13752,48 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>107701</td>
+	<td>收藏类型不可为空</td>
+	<td>没有传favoriteType参数</td>
+</tr>
+<tr>
+	<td>107702</td>
+	<td>收藏对象id不可为空</td>
+	<td>没有传itemId参数</td>
+</tr>
+<tr>
+	<td>107703</td>
+	<td>收藏标题不可为空</td>
+	<td>没有传title参数</td>
+</tr>
+<tr>
+	<td>107704</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>107705</td>
+	<td>favoriteType不合法</td>
+	<td>favoriteType的输入有误</td>
+</tr>
+<tr>
+	<td>107706</td>
+	<td>itemId不合法</td>
+	<td>itemId的输入有误</td>
+</tr>
 </tbody>
 </table>
-<h3>取消收藏美食1088</h3>
+<h3>取消收藏1078</h3>
 <ul>
-<li>Path:/app/users/{userId}/favorites/restaurants/{restaurantId}</li>
+<li>Path:/app/favorites/{itemId}</li>
 <li>Request Method:DELETE</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -12619,7 +13803,6 @@ limit:100
 <p>Response</p>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
@@ -12635,205 +13818,33 @@ limit:100
 </tr>
 </thead>
 <tbody>
-</tbody>
-</table>
-<h3>收藏客栈1089</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/hotels</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
 <tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
+	<td>107801</td>
+	<td>收藏类型不可为空</td>
+	<td>没有传favoriteType参数</td>
 </tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;zhName&quot;:&quot;不羁客栈&quot;,
-    &quot;openTime&quot;:&quot;8：00~23：00&quot;,
-    &quot;cover&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    }
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
 <tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
+	<td>107802</td>
+	<td>favoriteType不合法</td>
+	<td>favoriteType的输入有误</td>
 </tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏客栈1090</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/hotels/hotelId</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
 <tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
+	<td>107803</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
 </tr>
-</thead>
-<tbody>
 </tbody>
 </table>
-<h3>收藏游记1091</h3>
+<h3>取得用户收藏列表1079</h3>
 <ul>
-<li>Path:/app/users/{userId}/favorites/travelnotes</li>
-<li>Request Method:POST</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-    &quot;cover&quot;:{
-        &quot;width&quot;:600,
-        &quot;height&quot;:600,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
-    &quot;title&quot;:&quot;井冈山一日游&quot;,
-    &quot;summary&quot;:&quot;灰常漂亮&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消收藏游记1092</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites/travelnotes/{travelnoteId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取得用户收藏列表1093</h3>
-<ul>
-<li>Path:/app/users/{userId}/favorites</li>
+<li>Path:/app/favorites</li>
 <li>Request Method:GET</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -12852,106 +13863,132 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户id</td>
+</tr>
+<tr>
+	<td>favoriteType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>收藏类型</td>
+</tr>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>收藏对象id</td>
+</tr>
+<tr>
+	<td>authorId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者用户id</td>
+</tr>
+<tr>
+	<td>authorNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者昵称</td>
+</tr>
+<tr>
+	<td>authorAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>作者头像</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>favoriteTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>收藏时间</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
     &quot;code&quot;:0,
     &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;&quot;,
-        &quot;userId&quot;:1001,
-        &quot;posts&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;周游20国姑娘被亿万富豪持枪逼婚&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;summary&quot;:&quot;还有这种事，求逼婚&quot;
-            }
-        ],
-        &quot;traces&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;desc&quot;:&quot;我在天安门广场,升旗仪式很威武&quot;
-            }
-        ],
-        &quot;tripPlans&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;我在天安门广场&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;desc&quot;:&quot;升旗仪式很威武&quot;
-            }
-        ],
-        &quot;activities&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;潜水沙龙&quot;,
-                &quot;poster&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;desc&quot;:&quot;潜水交流&quot;
-            }
-        ],
-        &quot;quoras&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;title&quot;:&quot;现在的南昌冷吗？&quot;,
-                &quot;contents&quot;:&quot;需要带什么衣服过去穿？&quot;
-            }
-        ],
-        &quot;restaurants&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                &quot;openTime&quot;:&quot;8：00~21：00&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            }
-        ],
-        &quot;hotels&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;zhName&quot;:&quot;不羁客栈&quot;,
-                &quot;openTime&quot;:&quot;8：00~23：00&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            }
-        ],
-        &quot;travelNotes&quot;:[
-            {
-                &quot;id&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
-                &quot;cover&quot;:{
-                    &quot;width&quot;:600,
-                    &quot;height&quot;:600,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;title&quot;:&quot;井冈山一日游&quot;,
-                &quot;summary&quot;:&quot;灰常漂亮&quot;
-            }
-        ]
-    }
+    &quot;result&quot;:[
+        {
+            &quot;id&quot;:&quot;&quot;,
+            &quot;userId&quot;:1001,
+            &quot;favoriteType&quot;:1,
+            &quot;itemId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;,
+            &quot;authorId&quot;:1002,
+            &quot;authorNickName&quot;:&quot;魔法师&quot;,
+            &quot;authorAvatar&quot;:{
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;cover&quot;:{
+                &quot;width&quot;:600,
+                &quot;height&quot;:600,
+                &quot;url&quot;:&quot;http://1.jpg&quot;
+            },
+            &quot;title&quot;:&quot;被持枪逼婚&quot;,
+            &quot;favoriteTime&quot;:145000000000
+        }
+    ]
 }
 </code></pre>
 
@@ -12964,6 +14001,11 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>107901</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -12974,7 +14016,8 @@ limit:100
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001</p>
 </li>
 <li>
 <p>Query String:无</p>
@@ -12992,72 +14035,33 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>voteType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>点赞类型</td>
+</tr>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>点赞对象id</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
     &quot;voteType&quot;:1,
-    &quot;targetId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+    &quot;itemId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
 }
 </code></pre>
 
 <ul>
-<li>Response</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;: {
-        &quot;id&quot;:&quot;8c91a6deec8f42c9acfb0d1bd89dee9a&quot;
-        &quot;userId&quot;:10001,
-        &quot;voteType&quot;:1,
-        &quot;targetId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
-        &quot;voteTime&quot;:145000000000000
-    }
-}
-</code></pre>
-
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>取消点赞1095</h3>
-<ul>
-<li>Path:/app/votes/{voteId}</li>
-<li>Request Method:DELETE</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:无</p>
-</li>
-<li>Request Body:无</li>
 <li>
 <p>Response</p>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
@@ -13073,6 +14077,82 @@ limit:100
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>109401</td>
+	<td>点赞类型不可为空</td>
+	<td>没有传voteType参数</td>
+</tr>
+<tr>
+	<td>109402</td>
+	<td>点赞对象id不可为空</td>
+	<td>没有传itemId参数</td>
+</tr>
+<tr>
+	<td>109403</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>109404</td>
+	<td>voteType不合法</td>
+	<td>voteType输入有误</td>
+</tr>
+<tr>
+	<td>109405</td>
+	<td>itemId不合法</td>
+	<td>itemId输入有误</td>
+</tr>
+</tbody>
+</table>
+<h3>取消点赞1095</h3>
+<ul>
+<li>Path:/app/votes/{itemId}</li>
+<li>Request Method:DELETE</li>
+<li>
+<p>Request Headers:</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body:无</li>
+<li>
+<p>Response</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>109501</td>
+	<td>点赞类型不可为空</td>
+	<td>没有传voteType参数</td>
+</tr>
+<tr>
+	<td>109502</td>
+	<td>voteType不合法</td>
+	<td>voteType输入有误</td>
+</tr>
+<tr>
+	<td>109503</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>取得点赞列表1096</h3>
@@ -13081,30 +14161,14 @@ limit:100
 <li>Request Method:GET</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>
-<p>Query String:</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<pre><code>voteType=1
-targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
 </code></pre>
 
-<ul>
+</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -13119,6 +14183,41 @@ targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>用户id</td>
+</tr>
+<tr>
+	<td>voteType</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>点赞类型</td>
+</tr>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>点赞对象id</td>
+</tr>
+<tr>
+	<td>voteTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>点赞时间</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
@@ -13130,7 +14229,7 @@ targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
             &quot;id&quot;:&quot;8c91a6deec8f42c9acfb0d1bd89dee9a&quot;
             &quot;userId&quot;:10001,
             &quot;voteType&quot;:1,
-            &quot;targetId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
+            &quot;itemId&quot;:&quot;9c91a6deec8f42c9acfb0d1bd89dee9e&quot;
             &quot;voteTime&quot;:145000000000000
         }
     ]
@@ -13146,6 +14245,11 @@ targetId=9c91a6deec8f42c9acfb0d1bd89dee9e
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>109601</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>添加新评论1097</h3>
