@@ -3157,7 +3157,7 @@ detailUrl|String|是|无|卡片的链接
 ***
 #足迹模块
 ###发布用户足迹1040
-- Path:/app/users/{userId}/traces/traces
+- Path:/app/traces
 - Request Method:POST
 - Request Headers
 
@@ -3464,7 +3464,7 @@ detailUrl|String|是|无|卡片的链接
 --|--|--
 
 ###修改足迹1041
-- Path:/app/users/{userId}/traces/{traceId}
+- Path:/app/traces/{traceId}
 - Request Method:PUT
 - Request Headers
 
@@ -3771,7 +3771,7 @@ detailUrl|String|是|无|卡片的链接
 --|--|--
 
 ###删除用户足迹1042
-- Path:/app/users/{userId}/traces/{traceId}
+- Path:/app/traces/{traceId}
 - Request Method:DELETE
 - Request Headers
 
@@ -3993,7 +3993,7 @@ detailUrl|String|是|无|卡片的链接
 --|--|--
 
 ###取得足迹详情1044
-- Path:/app/users/{userId}/traces/{traceId}
+- Path:/app/traces/{traceId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
