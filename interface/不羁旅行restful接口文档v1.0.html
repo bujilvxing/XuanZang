@@ -623,7 +623,7 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;account&quot;:&quot;13811111111&quot;,   // 可以是手机号，也可以是邮箱号
+    &quot;account&quot;:&quot;13811111111&quot;,
     &quot;action&quot;:1
 }
 </code></pre>
@@ -967,7 +967,7 @@ Query strings
 	<td>promotionCodeSize</td>
 	<td>Integer</td>
 	<td>否</td>
-	<td>6</td>
+	<td>8</td>
 	<td>邀请码长度</td>
 </tr>
 </tbody>
@@ -1150,22 +1150,24 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;timestamp&quot;: 1478098984477,
+    &quot;timestamp&quot;: 1481466395798,
     &quot;code&quot;: 0,
     &quot;result&quot;: {
-        &quot;id&quot;: &quot;581a0028d903d71bb874d1df&quot;,
-        &quot;email&quot;: &quot;381364134@qq.com&quot;,
-        &quot;userId&quot;: 2,
-        &quot;nickName&quot;: &quot;不羁2&quot;,
+        &quot;id&quot;: &quot;584d621b2395512a982104b5&quot;,
+        &quot;tel&quot;: {
+            &quot;dialCode&quot;: 86,
+            &quot;number&quot;: &quot;15300167102&quot;
+        },
+        &quot;userId&quot;: 1,
+        &quot;nickName&quot;: &quot;不羁1&quot;,
         &quot;avatar&quot;: {
-            &quot;id&quot;: &quot;5819fff1d903d71bb874d1d8&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
             &quot;width&quot;: 100,
             &quot;height&quot;: 100,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
         &quot;gender&quot;: 1,
-        &quot;promotionCode&quot;: &quot;56B992&quot;,
+        &quot;promotionCode&quot;: &quot;KJBPY5AJ&quot;,
         &quot;loginStatus&quot;: false,
         &quot;loginTime&quot;: 0,
         &quot;logoutTime&quot;: 0,
@@ -1175,14 +1177,13 @@ Query strings
         &quot;soundNotify&quot;: true,
         &quot;vibrateNotify&quot;: true,
         &quot;backGround&quot;: {
-            &quot;id&quot;: &quot;5819fff1d903d71bb874d1d9&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg&quot;,
             &quot;width&quot;: 400,
             &quot;height&quot;: 400,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;createTime&quot;: 0,
-        &quot;updateTime&quot;: 0
+        &quot;createTime&quot;: 1481466395602,
+        &quot;updateTime&quot;: 1481466395602
     }
 }
 </code></pre>
@@ -1454,40 +1455,41 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;timestamp&quot;: 1478251455371,
+    &quot;timestamp&quot;: 1481467046953,
     &quot;code&quot;: 0,
     &quot;result&quot;: {
-        &quot;id&quot;: &quot;581c52918edd1f0f94b5b1b9&quot;,
-        &quot;email&quot;: &quot;381364134@qq.com&quot;,
-        &quot;userId&quot;: 1,
-        &quot;nickName&quot;: &quot;不羁1&quot;,
+        &quot;id&quot;: &quot;584d621b2395512a982104b5&quot;,
+        &quot;tel&quot;: {
+            &quot;dialCode&quot;: 86,
+            &quot;number&quot;: &quot;13811111111&quot;
+        },
+        &quot;userId&quot;: 100001,
+        &quot;nickName&quot;: &quot;不羁100001&quot;,
         &quot;avatar&quot;: {
-            &quot;id&quot;: &quot;581c51c88edd1f0f94b5b1b1&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
             &quot;width&quot;: 100,
             &quot;height&quot;: 100,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
         &quot;gender&quot;: 1,
-        &quot;promotionCode&quot;: &quot;UG4LV8V9&quot;,
+        &quot;promotionCode&quot;: &quot;KJBPY5AJ&quot;,
         &quot;loginStatus&quot;: true,
-        &quot;loginTime&quot;: 1478251168995,
+        &quot;loginTime&quot;: 1481466977003,
         &quot;logoutTime&quot;: 0,
         &quot;version&quot;: 0,
-        &quot;roles&quot;: [],
+        &quot;roles&quot;: [1],
         &quot;level&quot;: 1,
         &quot;soundNotify&quot;: true,
         &quot;vibrateNotify&quot;: true,
         &quot;backGround&quot;: {
-            &quot;id&quot;: &quot;581c51c88edd1f0f94b5b1b2&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg&quot;,
             &quot;width&quot;: 400,
             &quot;height&quot;: 400,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;createTime&quot;: 0,
-        &quot;updateTime&quot;: 0,
-        &quot;key&quot;: &quot;75dd5365bfb3fd94620458bbff79cb27f139a3d39c95e9dfce2f912d26c7ff1e&quot;
+        &quot;createTime&quot;: 1481466395602,
+        &quot;updateTime&quot;: 1481466395602,
+        &quot;key&quot;: &quot;cb591a364b833a77555d1aeb33e06be139254bd1e2b5e3ec5e0769ff74aef7e6&quot;
     }
 }
 </code></pre>
@@ -1597,12 +1599,12 @@ Query strings
 </tbody>
 </table>
 <pre><code>{
-    &quot;provider&quot;:&quot;qq&quot;,
-    &quot;oauthId&quot;:&quot;231da3213da&quot;,
-    &quot;nickName&quot;:&quot;小呆&quot;,
-    &quot;avatar&quot;:&quot;http://1.jpg&quot;,
-    &quot;token&quot;:&quot;a23ca21354cad2321c231c&quot;,
-    &quot;clientId&quot;:&quot;ad312c3123b323e32b2332a&quot;
+    &quot;provider&quot;:&quot;weixin&quot;,
+    &quot;oauthId&quot;:&quot;xiaozhi&quot;,
+    &quot;nickName&quot;:&quot;逍遥&quot;,
+    &quot;token&quot;:&quot;dadsadadsadasdasdadadadasd&quot;,
+    &quot;avatar&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+    &quot;clientId&quot;:&quot;da12a231ce4278678234ca3243b432&quot;
 }
 </code></pre>
 
@@ -1825,46 +1827,44 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;timestamp&quot;: 1478533884105,
+    &quot;timestamp&quot;: 1481467787272,
     &quot;code&quot;: 0,
     &quot;result&quot;: {
-        &quot;id&quot;: &quot;58209febd903d70e107cab77&quot;,
-        &quot;userId&quot;: 4,
-        &quot;nickName&quot;: &quot;小呆&quot;,
+        &quot;id&quot;: &quot;584d678b2395512a982104ba&quot;,
+        &quot;userId&quot;: 100002,
+        &quot;nickName&quot;: &quot;逍遥&quot;,
         &quot;avatar&quot;: {
-            &quot;id&quot;: &quot;&quot;,
-            &quot;url&quot;: &quot;http://1.jpg&quot;,
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
             &quot;width&quot;: 0,
             &quot;height&quot;: 0,
             &quot;fmt&quot;: &quot;&quot;
         },
         &quot;gender&quot;: 1,
-        &quot;promotionCode&quot;: &quot;9SXVI8WX&quot;,
+        &quot;promotionCode&quot;: &quot;CC278J84&quot;,
         &quot;loginStatus&quot;: false,
         &quot;loginTime&quot;: 0,
         &quot;logoutTime&quot;: 0,
         &quot;version&quot;: 0,
         &quot;roles&quot;: [],
-        &quot;qq&quot;: {
-            &quot;provider&quot;: &quot;qq&quot;,
-            &quot;oauthId&quot;: &quot;231da3213da&quot;,
-            &quot;nickName&quot;: &quot;小呆&quot;,
-            &quot;avatar&quot;: &quot;http://1.jpg&quot;,
-            &quot;token&quot;: &quot;a23ca21354cad2321c231c&quot;
+        &quot;weixin&quot;: {
+            &quot;provider&quot;: &quot;weixin&quot;,
+            &quot;oauthId&quot;: &quot;xiaozhi&quot;,
+            &quot;nickName&quot;: &quot;逍遥&quot;,
+            &quot;avatar&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;token&quot;: &quot;dadsadadsadasdasdadadadasd&quot;
         },
         &quot;level&quot;: 1,
         &quot;soundNotify&quot;: true,
         &quot;vibrateNotify&quot;: true,
         &quot;backGround&quot;: {
-            &quot;id&quot;: &quot;58209febd903d70e107cab74&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg&quot;,
             &quot;width&quot;: 400,
             &quot;height&quot;: 400,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;createTime&quot;: 1478533099579,
-        &quot;updateTime&quot;: 1478533099579,
-        &quot;key&quot;: &quot;279e601b0fb6ee63b5dd1acdc3e20b21c9bf0296193a1ae426067b5aebea37c3&quot;
+        &quot;createTime&quot;: 1481467787268,
+        &quot;updateTime&quot;: 1481467787268,
+        &quot;key&quot;: &quot;0d1badffb1b43e404de6b1307eea4324057d31f555e1a94fbe868403bc4caf50&quot;
     }
 }
 </code></pre>
@@ -1911,8 +1911,10 @@ Query strings
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-<p>&quot;userId&quot;:1001</p>
+<pre><code>&quot;key&quot;:&quot;bf997008dc3e41953db8d9af8580f0ca4489c53d94d02851ed5e5961804cd96b&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -1922,7 +1924,6 @@ Query strings
 <p>Response</p>
 <pre><code>{
     &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
     &quot;timestamp&quot;:1425225600000
 }
 </code></pre>
@@ -2005,7 +2006,6 @@ Query strings
 </blockquote>
 <pre><code>    {
         &quot;code&quot;:0,
-        &quot;msg&quot;:&quot;success&quot;,
         &quot;timestamp&quot;:1425225600000
     }
 </code></pre>
@@ -2019,6 +2019,36 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>100701</td>
+	<td>参数账户为空</td>
+	<td>没有传account字段</td>
+</tr>
+<tr>
+	<td>100702</td>
+	<td>参数新密码为空</td>
+	<td>没有传newPassword字段</td>
+</tr>
+<tr>
+	<td>100703</td>
+	<td>参数令牌为空</td>
+	<td>没有传token字段</td>
+</tr>
+<tr>
+	<td>100704</td>
+	<td>账户格式不正确</td>
+	<td>账户不是合法的手机号或者合法的邮箱号</td>
+</tr>
+<tr>
+	<td>100705</td>
+	<td>用户不存在</td>
+	<td>账户输入有误或者用户被非法删除</td>
+</tr>
+<tr>
+	<td>100706</td>
+	<td>参数令牌不合法</td>
+	<td>令牌输入有误</td>
+</tr>
 </tbody>
 </table>
 <h3>修改密码1008</h3>
@@ -2347,39 +2377,40 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;timestamp&quot;: 1478513549001,
+    &quot;timestamp&quot;: 1481470630856,
     &quot;code&quot;: 0,
     &quot;result&quot;: {
-        &quot;id&quot;: &quot;581c52918edd1f0f94b5b1b9&quot;,
-        &quot;email&quot;: &quot;381364134@qq.com&quot;,
-        &quot;userId&quot;: 1,
-        &quot;nickName&quot;: &quot;不羁1&quot;,
+        &quot;id&quot;: &quot;584d621b2395512a982104b5&quot;,
+        &quot;tel&quot;: {
+            &quot;dialCode&quot;: 86,
+            &quot;number&quot;: &quot;13811111111&quot;
+        },
+        &quot;userId&quot;: 100001,
+        &quot;nickName&quot;: &quot;不羁100001&quot;,
         &quot;avatar&quot;: {
-            &quot;id&quot;: &quot;581c51c88edd1f0f94b5b1b1&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
             &quot;width&quot;: 100,
             &quot;height&quot;: 100,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
         &quot;gender&quot;: 1,
-        &quot;promotionCode&quot;: &quot;UG4LV8V9&quot;,
+        &quot;promotionCode&quot;: &quot;KJBPY5AJ&quot;,
         &quot;loginStatus&quot;: true,
-        &quot;loginTime&quot;: 1478510849981,
-        &quot;logoutTime&quot;: 0,
+        &quot;loginTime&quot;: 1481470605065,
+        &quot;logoutTime&quot;: 1481470096458,
         &quot;version&quot;: 0,
         &quot;roles&quot;: [],
         &quot;level&quot;: 1,
         &quot;soundNotify&quot;: true,
         &quot;vibrateNotify&quot;: true,
         &quot;backGround&quot;: {
-            &quot;id&quot;: &quot;581c51c88edd1f0f94b5b1b2&quot;,
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg&quot;,
             &quot;width&quot;: 400,
             &quot;height&quot;: 400,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;createTime&quot;: 0,
-        &quot;updateTime&quot;: 0
+        &quot;createTime&quot;: 1481466395602,
+        &quot;updateTime&quot;: 1481466395602
     }
 }
 </code></pre>
@@ -2411,7 +2442,7 @@ Query strings
 <li>Request Method:PATCH</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<p>&quot;key&quot;:&quot;4a3451488b06cd3b9b69cdc7741278b57ef1afd84555d921ad838fe7274f34cb&quot;</p>
 </li>
 <li>Query String:无</li>
 <li>Request Body</li>
@@ -2807,13 +2838,16 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;timestamp&quot;: 1478584187234,
+    &quot;timestamp&quot;: 1481470813509,
     &quot;code&quot;: 0,
     &quot;result&quot;: {
-        &quot;id&quot;: &quot;581c52918edd1f0f94b5b1b9&quot;,
-        &quot;email&quot;: &quot;381364134@qq.com&quot;,
-        &quot;userId&quot;: 1,
-        &quot;nickName&quot;: &quot;逍遥&quot;,
+        &quot;id&quot;: &quot;584d621b2395512a982104b5&quot;,
+        &quot;tel&quot;: {
+            &quot;dialCode&quot;: 86,
+            &quot;number&quot;: &quot;13811111111&quot;
+        },
+        &quot;userId&quot;: 100001,
+        &quot;nickName&quot;: &quot;魔法师&quot;,
         &quot;avatar&quot;: {
             &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
             &quot;width&quot;: 100,
@@ -2821,10 +2855,10 @@ Query strings
             &quot;fmt&quot;: &quot;jpg&quot;
         },
         &quot;gender&quot;: 1,
-        &quot;promotionCode&quot;: &quot;UG4LV8V9&quot;,
+        &quot;promotionCode&quot;: &quot;KJBPY5AJ&quot;,
         &quot;loginStatus&quot;: true,
-        &quot;loginTime&quot;: 1478583857333,
-        &quot;logoutTime&quot;: 0,
+        &quot;loginTime&quot;: 1481470605065,
+        &quot;logoutTime&quot;: 1481470096458,
         &quot;version&quot;: 0,
         &quot;roles&quot;: [],
         &quot;level&quot;: 1,
@@ -2836,8 +2870,8 @@ Query strings
             &quot;height&quot;: 400,
             &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;createTime&quot;: 0,
-        &quot;updateTime&quot;: 0
+        &quot;createTime&quot;: 1481466395602,
+        &quot;updateTime&quot;: 1481470813496
     }
 }
 </code></pre>
@@ -2969,9 +3003,105 @@ Query strings
 </tr>
 </tbody>
 </table>
+<h3>绑定邮箱1012</h3>
+<ul>
+<li>Path:/app/users/{userId}/email</li>
+<li>Request Method:PUT</li>
+<li>
+<p>Request Headers:</p>
+<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+</li>
+<li>Query String:无</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>参数名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>参数描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>email</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>邮箱号</td>
+</tr>
+<tr>
+	<td>token</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>令牌</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;email&quot;:&quot;381364134@qq.com&quot;,
+    &quot;token&quot;:&quot;token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>Response</p>
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
+</code></pre>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>101201</td>
+	<td>参数email为空</td>
+	<td>没有传email字段</td>
+</tr>
+<tr>
+	<td>101202</td>
+	<td>参数token为空</td>
+	<td>没有传token字段</td>
+</tr>
+<tr>
+	<td>101203</td>
+	<td>邮箱号格式不正确</td>
+	<td>邮箱号输入有误</td>
+</tr>
+<tr>
+	<td>101204</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>101205</td>
+	<td>邮箱号已存在</td>
+	<td>邮箱号已注册其他账号或者绑定其他账号</td>
+</tr>
+<tr>
+	<td>101206</td>
+	<td>令牌不合法</td>
+	<td>令牌不合法</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h1>其他模块</h1>
-<h3>申请商家1012</h3>
+<h3>申请商家1013</h3>
 <ul>
 <li>Path:/app/misc/sellers</li>
 <li>Request Method:POST</li>
@@ -3031,23 +3161,23 @@ Query strings
 </thead>
 <tbody>
 <tr>
-	<td>101201</td>
+	<td>101301</td>
 	<td>参数tel为空</td>
 	<td>没有传tel参数</td>
 </tr>
 <tr>
-	<td>101202</td>
+	<td>101302</td>
 	<td>手机号格式不正确</td>
 	<td>手机号输入有误</td>
 </tr>
 <tr>
-	<td>101203</td>
+	<td>101303</td>
 	<td>用户未登录</td>
 	<td>用户未登录</td>
 </tr>
 </tbody>
 </table>
-<h3>用户反馈1013</h3>
+<h3>用户反馈1014</h3>
 <ul>
 <li>Path:/app/misc/feedback</li>
 <li>Request Method:POST</li>
@@ -3115,12 +3245,12 @@ Query strings
 </thead>
 <tbody>
 <tr>
-	<td>101301</td>
+	<td>101401</td>
 	<td>参数content为空</td>
 	<td>没有传content参数</td>
 </tr>
 <tr>
-	<td>101302</td>
+	<td>101402</td>
 	<td>用户未登录</td>
 	<td>用户未登录</td>
 </tr>
@@ -3128,7 +3258,7 @@ Query strings
 </table>
 <hr />
 <h1>首页运营模块</h1>
-<h3>取得专栏1014</h3>
+<h3>取得专栏1015</h3>
 <ul>
 <li>Path:/app/misc/columns</li>
 <li>Request Method:GET</li>
@@ -3189,7 +3319,7 @@ Query strings
 <tbody>
 </tbody>
 </table>
-<h3>取得首页1015</h3>
+<h3>取得首页1016</h3>
 <ul>
 <li>Path:/app/misc/banners</li>
 <li>Request Method:GET</li>
@@ -3250,7 +3380,7 @@ Query strings
 <tbody>
 </tbody>
 </table>
-<h3>取得商品列表(特产等)1016</h3>
+<h3>取得商品列表(特产等)1017</h3>
 <ul>
 <li>Path:/app/marketplace/commodities</li>
 <li>Request Method:GET</li>
@@ -3302,7 +3432,7 @@ Query strings
 }
 </code></pre>
 
-<h3>取得商品详情(特产等)1017</h3>
+<h3>取得商品详情(特产等)1018</h3>
 <ul>
 <li>Path:/app/marketplace/commodities/{commodityId}</li>
 <li>Request Method:GET</li>
@@ -3404,7 +3534,7 @@ Query strings
 <tbody>
 </tbody>
 </table>
-<h3>取得攻略列表1018</h3>
+<h3>取得攻略列表1019</h3>
 <ul>
 <li>Path:/app/guides</li>
 <li>Request Method:GET</li>
@@ -3461,7 +3591,7 @@ Query strings
 <tbody>
 </tbody>
 </table>
-<h3>取得攻略详情1019</h3>
+<h3>取得攻略详情1020</h3>
 <ul>
 <li>Path:/app/guides/{guideId}</li>
 <li>Request Method:GET</li>
@@ -6442,7 +6572,7 @@ Query strings
 <h1>足迹模块</h1>
 <h3>发布用户足迹1040</h3>
 <ul>
-<li>Path:/app/users/{userId}/traces/traces</li>
+<li>Path:/app/traces</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
@@ -6784,7 +6914,7 @@ Query strings
 </table>
 <h3>修改足迹1041</h3>
 <ul>
-<li>Path:/app/users/{userId}/traces/{traceId}</li>
+<li>Path:/app/traces/{traceId}</li>
 <li>Request Method:PUT</li>
 <li>
 <p>Request Headers</p>
@@ -7129,7 +7259,7 @@ Query strings
 </table>
 <h3>删除用户足迹1042</h3>
 <ul>
-<li>Path:/app/users/{userId}/traces/{traceId}</li>
+<li>Path:/app/traces/{traceId}</li>
 <li>Request Method:DELETE</li>
 <li>
 <p>Request Headers</p>
@@ -7399,7 +7529,7 @@ Query strings
 </table>
 <h3>取得足迹详情1044</h3>
 <ul>
-<li>Path:/app/users/{userId}/traces/{traceId}</li>
+<li>Path:/app/traces/{traceId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -15186,102 +15316,6 @@ itemId=9c91a6deec8f42c9acfb0d1bd89dee9e
 	<td>110201</td>
 	<td>query不可为空</td>
 	<td>没有传query参数</td>
-</tr>
-</tbody>
-</table>
-<h3>绑定邮箱1103</h3>
-<ul>
-<li>Path:/app/users/{userId}/email</li>
-<li>Request Method:PUT</li>
-<li>
-<p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>Query String:无</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>参数名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>参数描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>email</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>邮箱号</td>
-</tr>
-<tr>
-	<td>token</td>
-	<td>Object</td>
-	<td>是</td>
-	<td>无</td>
-	<td>令牌</td>
-</tr>
-</tbody>
-</table>
-<pre><code>{
-    &quot;email&quot;:&quot;381364134@qq.com&quot;,
-    &quot;token&quot;:&quot;token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>110301</td>
-	<td>参数email为空</td>
-	<td>没有传email字段</td>
-</tr>
-<tr>
-	<td>110302</td>
-	<td>参数token为空</td>
-	<td>没有传token字段</td>
-</tr>
-<tr>
-	<td>110303</td>
-	<td>邮箱号格式不正确</td>
-	<td>邮箱号输入有误</td>
-</tr>
-<tr>
-	<td>110304</td>
-	<td>用户未登录</td>
-	<td>用户未登录</td>
-</tr>
-<tr>
-	<td>110305</td>
-	<td>邮箱号已存在</td>
-	<td>邮箱号已注册其他账号或者绑定其他账号</td>
-</tr>
-<tr>
-	<td>110306</td>
-	<td>令牌不合法</td>
-	<td>令牌不合法</td>
 </tr>
 </tbody>
 </table>

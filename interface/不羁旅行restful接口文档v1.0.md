@@ -156,8 +156,8 @@ action|Integer|是|无|1表示新用户注册；2表示用户绑定手机号；3
 > 示例
 
 	{
-		"account":"13811111111",   // 可以是手机号，也可以是邮箱号
-		"action":1
+	    "account":"13811111111",
+	    "action":1
 	}
 
 - Response
@@ -265,7 +265,7 @@ token|String|是|无|合法的令牌，带合法的令牌请求视为有效，�
 account|String|是|无|可以是手机号，也可以是邮箱号
 token|String|是|无|令牌
 password|String|是|无|密码
-promotionCodeSize|Integer|否|6|邀请码长度
+promotionCodeSize|Integer|否|8|邀请码长度
 
 	{
 		"token":"token::eddf6dce4dbd41b29893d0d3a5b7bcfa",
@@ -304,22 +304,24 @@ updateTime|Long|是|0|用户更新时间
 > 示例
 
 	{
-	    "timestamp": 1478098984477,
+	    "timestamp": 1481466395798,
 	    "code": 0,
 	    "result": {
-	        "id": "581a0028d903d71bb874d1df",
-	        "email": "381364134@qq.com",
-	        "userId": 2,
-	        "nickName": "不羁2",
+	        "id": "584d621b2395512a982104b5",
+	        "tel": {
+	            "dialCode": 86,
+	            "number": "15300167102"
+	        },
+	        "userId": 1,
+	        "nickName": "不羁1",
 	        "avatar": {
-	            "id": "5819fff1d903d71bb874d1d8",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 100,
 	            "height": 100,
 	            "fmt": "jpg"
 	        },
 	        "gender": 1,
-	        "promotionCode": "56B992",
+	        "promotionCode": "KJBPY5AJ",
 	        "loginStatus": false,
 	        "loginTime": 0,
 	        "logoutTime": 0,
@@ -329,16 +331,16 @@ updateTime|Long|是|0|用户更新时间
 	        "soundNotify": true,
 	        "vibrateNotify": true,
 	        "backGround": {
-	            "id": "5819fff1d903d71bb874d1d9",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
 	            "width": 400,
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
-	        "createTime": 0,
-	        "updateTime": 0
+	        "createTime": 1481466395602,
+	        "updateTime": 1481466395602
 	    }
 	}
+
 错误码|描述|原因
 --|--|--
 100301|参数账户为空|没有传account参数
@@ -398,42 +400,44 @@ key|String|是|无|授权码
 > 示例
 
 	{
-	    "timestamp": 1478251455371,
+	    "timestamp": 1481467046953,
 	    "code": 0,
 	    "result": {
-	        "id": "581c52918edd1f0f94b5b1b9",
-	        "email": "381364134@qq.com",
-	        "userId": 1,
-	        "nickName": "不羁1",
+	        "id": "584d621b2395512a982104b5",
+	        "tel": {
+	            "dialCode": 86,
+	            "number": "13811111111"
+	        },
+	        "userId": 100001,
+	        "nickName": "不羁100001",
 	        "avatar": {
-	            "id": "581c51c88edd1f0f94b5b1b1",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 100,
 	            "height": 100,
 	            "fmt": "jpg"
 	        },
 	        "gender": 1,
-	        "promotionCode": "UG4LV8V9",
+	        "promotionCode": "KJBPY5AJ",
 	        "loginStatus": true,
-	        "loginTime": 1478251168995,
+	        "loginTime": 1481466977003,
 	        "logoutTime": 0,
 	        "version": 0,
-	        "roles": [],
+	        "roles": [1],
 	        "level": 1,
 	        "soundNotify": true,
 	        "vibrateNotify": true,
 	        "backGround": {
-	            "id": "581c51c88edd1f0f94b5b1b2",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
 	            "width": 400,
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
-	        "createTime": 0,
-	        "updateTime": 0,
-	        "key": "75dd5365bfb3fd94620458bbff79cb27f139a3d39c95e9dfce2f912d26c7ff1e"
+	        "createTime": 1481466395602,
+	        "updateTime": 1481466395602,
+	        "key": "cb591a364b833a77555d1aeb33e06be139254bd1e2b5e3ec5e0769ff74aef7e6"
 	    }
 	}
+
 错误码|描述|原因
 --|--|--
 100401|参数账户为空|没有传account参数
@@ -460,12 +464,12 @@ token|String|是|无|第三方平台的用户令牌
 clientId|String|是|无|个推的clientId，消息推送时使用
 
 	{
-		"provider":"qq",
-		"oauthId":"231da3213da",
-		"nickName":"小呆",
-		"avatar":"http://1.jpg",
-		"token":"a23ca21354cad2321c231c",
-		"clientId":"ad312c3123b323e32b2332a"
+	    "provider":"weixin",
+	    "oauthId":"xiaozhi",
+	    "nickName":"逍遥",
+	    "token":"dadsadadsadasdasdadadadasd",
+	    "avatar": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	    "clientId":"da12a231ce4278678234ca3243b432"
 	}
 
 - Response
@@ -505,46 +509,44 @@ key|String|是|无|授权码
 > 示例
 
 	{
-	    "timestamp": 1478533884105,
+	    "timestamp": 1481467787272,
 	    "code": 0,
 	    "result": {
-	        "id": "58209febd903d70e107cab77",
-	        "userId": 4,
-	        "nickName": "小呆",
+	        "id": "584d678b2395512a982104ba",
+	        "userId": 100002,
+	        "nickName": "逍遥",
 	        "avatar": {
-	            "id": "",
-	            "url": "http://1.jpg",
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 0,
 	            "height": 0,
 	            "fmt": ""
 	        },
 	        "gender": 1,
-	        "promotionCode": "9SXVI8WX",
+	        "promotionCode": "CC278J84",
 	        "loginStatus": false,
 	        "loginTime": 0,
 	        "logoutTime": 0,
 	        "version": 0,
 	        "roles": [],
-	        "qq": {
-	            "provider": "qq",
-	            "oauthId": "231da3213da",
-	            "nickName": "小呆",
-	            "avatar": "http://1.jpg",
-	            "token": "a23ca21354cad2321c231c"
+	        "weixin": {
+	            "provider": "weixin",
+	            "oauthId": "xiaozhi",
+	            "nickName": "逍遥",
+	            "avatar": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "token": "dadsadadsadasdasdadadadasd"
 	        },
 	        "level": 1,
 	        "soundNotify": true,
 	        "vibrateNotify": true,
 	        "backGround": {
-	            "id": "58209febd903d70e107cab74",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
 	            "width": 400,
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
-	        "createTime": 1478533099579,
-	        "updateTime": 1478533099579,
-	        "key": "279e601b0fb6ee63b5dd1acdc3e20b21c9bf0296193a1ae426067b5aebea37c3"
+	        "createTime": 1481467787268,
+	        "updateTime": 1481467787268,
+	        "key": "0d1badffb1b43e404de6b1307eea4324057d31f555e1a94fbe868403bc4caf50"
 	    }
 	}
 
@@ -561,9 +563,8 @@ key|String|是|无|授权码
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-	"userId":1001
+		"key":"bf997008dc3e41953db8d9af8580f0ca4489c53d94d02851ed5e5961804cd96b"
+		"userId":100001
 
 - Query String:无
 - Request Body:无
@@ -571,7 +572,6 @@ key|String|是|无|授权码
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
@@ -606,12 +606,17 @@ token|String|是|无|令牌
 
 		{
 			"code":0,
-			"msg":"success",
 			"timestamp":1425225600000
 		}
 
 错误码|描述|原因
 --|--|--
+100701|参数账户为空|没有传account字段
+100702|参数新密码为空|没有传newPassword字段
+100703|参数令牌为空|没有传token字段
+100704|账户格式不正确|账户不是合法的手机号或者合法的邮箱号
+100705|用户不存在|账户输入有误或者用户被非法删除
+100706|参数令牌不合法|令牌输入有误
 
 ###修改密码1008
 - Path:/app/users/{userId}/password
@@ -694,39 +699,40 @@ key|String|是|无|授权码
 > 示例
 
 	{
-	    "timestamp": 1478513549001,
+	    "timestamp": 1481470630856,
 	    "code": 0,
 	    "result": {
-	        "id": "581c52918edd1f0f94b5b1b9",
-	        "email": "381364134@qq.com",
-	        "userId": 1,
-	        "nickName": "不羁1",
+	        "id": "584d621b2395512a982104b5",
+	        "tel": {
+	            "dialCode": 86,
+	            "number": "13811111111"
+	        },
+	        "userId": 100001,
+	        "nickName": "不羁100001",
 	        "avatar": {
-	            "id": "581c51c88edd1f0f94b5b1b1",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 100,
 	            "height": 100,
 	            "fmt": "jpg"
 	        },
 	        "gender": 1,
-	        "promotionCode": "UG4LV8V9",
+	        "promotionCode": "KJBPY5AJ",
 	        "loginStatus": true,
-	        "loginTime": 1478510849981,
-	        "logoutTime": 0,
+	        "loginTime": 1481470605065,
+	        "logoutTime": 1481470096458,
 	        "version": 0,
 	        "roles": [],
 	        "level": 1,
 	        "soundNotify": true,
 	        "vibrateNotify": true,
 	        "backGround": {
-	            "id": "581c51c88edd1f0f94b5b1b2",
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_background.jpg",
 	            "width": 400,
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
-	        "createTime": 0,
-	        "updateTime": 0
+	        "createTime": 1481466395602,
+	        "updateTime": 1481466395602
 	    }
 	}
 
@@ -740,7 +746,7 @@ key|String|是|无|授权码
 - Request Method:PATCH
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"4a3451488b06cd3b9b69cdc7741278b57ef1afd84555d921ad838fe7274f34cb"
 - Query String:无
 - Request Body
 
@@ -833,13 +839,16 @@ updateTime|Long|是|0|用户更新时间
 > 示例
 
 	{
-	    "timestamp": 1478584187234,
+	    "timestamp": 1481470813509,
 	    "code": 0,
 	    "result": {
-	        "id": "581c52918edd1f0f94b5b1b9",
-	        "email": "381364134@qq.com",
-	        "userId": 1,
-	        "nickName": "逍遥",
+	        "id": "584d621b2395512a982104b5",
+	        "tel": {
+	            "dialCode": 86,
+	            "number": "13811111111"
+	        },
+	        "userId": 100001,
+	        "nickName": "魔法师",
 	        "avatar": {
 	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
 	            "width": 100,
@@ -847,10 +856,10 @@ updateTime|Long|是|0|用户更新时间
 	            "fmt": "jpg"
 	        },
 	        "gender": 1,
-	        "promotionCode": "UG4LV8V9",
+	        "promotionCode": "KJBPY5AJ",
 	        "loginStatus": true,
-	        "loginTime": 1478583857333,
-	        "logoutTime": 0,
+	        "loginTime": 1481470605065,
+	        "logoutTime": 1481470096458,
 	        "version": 0,
 	        "roles": [],
 	        "level": 1,
@@ -862,8 +871,8 @@ updateTime|Long|是|0|用户更新时间
 	            "height": 400,
 	            "fmt": "jpg"
 	        },
-	        "createTime": 0,
-	        "updateTime": 0
+	        "createTime": 1481466395602,
+	        "updateTime": 1481470813496
 	    }
 	}
 
@@ -909,9 +918,44 @@ token|Object|是|无|令牌
 101105|手机号已存在|手机号已注册其他账号或者绑定其他账号
 101106|令牌不合法|令牌不合法
 
+###绑定邮箱1012
+- Path:/app/users/{userId}/email
+- Request Method:PUT
+- Request Headers:
+
+	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+- Query String:无
+- Request Body
+
+参数名|类型|必需|默认值|参数描述
+--|--|--|--|--
+email|String|是|无|邮箱号
+token|Object|是|无|令牌
+
+	{
+		"email":"381364134@qq.com",
+		"token":"token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
+	}
+
+- Response
+
+		{
+			"code":0,
+			"timestamp":1425225600000
+		}
+
+错误码|描述|原因
+--|--|--
+101201|参数email为空|没有传email字段
+101202|参数token为空|没有传token字段
+101203|邮箱号格式不正确|邮箱号输入有误
+101204|用户未登录|用户未登录
+101205|邮箱号已存在|邮箱号已注册其他账号或者绑定其他账号
+101206|令牌不合法|令牌不合法
+
 ***
 #其他模块
-###申请商家1012
+###申请商家1013
 - Path:/app/misc/sellers
 - Request Method:POST
 - Request Headers
@@ -939,11 +983,11 @@ tel|String|是|无|手机号
 
 错误码|描述|原因
 --|--|--
-101201|参数tel为空|没有传tel参数
-101202|手机号格式不正确|手机号输入有误
-101203|用户未登录|用户未登录
+101301|参数tel为空|没有传tel参数
+101302|手机号格式不正确|手机号输入有误
+101303|用户未登录|用户未登录
 
-###用户反馈1013
+###用户反馈1014
 - Path:/app/misc/feedback
 - Request Method:POST
 - Request Headers
@@ -974,12 +1018,12 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 错误码|描述|原因
 --|--|--
-101301|参数content为空|没有传content参数
-101302|用户未登录|用户未登录
+101401|参数content为空|没有传content参数
+101402|用户未登录|用户未登录
 
 ***
 #首页运营模块
-###取得专栏1014
+###取得专栏1015
 - Path:/app/misc/columns
 - Request Method:GET
 - Request Headers:无
@@ -1017,7 +1061,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得首页1015
+###取得首页1016
 - Path:/app/misc/banners
 - Request Method:GET
 - Request Headers:无
@@ -1055,7 +1099,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得商品列表(特产等)1016
+###取得商品列表(特产等)1017
 - Path:/app/marketplace/commodities
 - Request Method:GET
 - Request Headers:无
@@ -1092,7 +1136,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 		]
 	}
 
-###取得商品详情(特产等)1017
+###取得商品详情(特产等)1018
 - Path:/app/marketplace/commodities/{commodityId}
 - Request Method:GET
 - Request Headers:无
@@ -1171,7 +1215,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得攻略列表1018
+###取得攻略列表1019
 - Path:/app/guides
 - Request Method:GET
 - Request Headers:无
@@ -1205,7 +1249,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得攻略详情1019
+###取得攻略详情1020
 - Path:/app/guides/{guideId}
 - Request Method:GET
 - Request Headers:无
@@ -7664,37 +7708,3 @@ shopping|Boolean|否|false|是否搜索购物
 --|--|--
 110201|query不可为空|没有传query参数
 
-###绑定邮箱1103
-- Path:/app/users/{userId}/email
-- Request Method:PUT
-- Request Headers:
-
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-- Query String:无
-- Request Body
-
-参数名|类型|必需|默认值|参数描述
---|--|--|--|--
-email|String|是|无|邮箱号
-token|Object|是|无|令牌
-
-	{
-		"email":"381364134@qq.com",
-		"token":"token::eddf6dce-4dbd-41b2-9893-d0d3a5b7bcfa"
-	}
-
-- Response
-
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
-
-错误码|描述|原因
---|--|--
-110301|参数email为空|没有传email字段
-110302|参数token为空|没有传token字段
-110303|邮箱号格式不正确|邮箱号输入有误
-110304|用户未登录|用户未登录
-110305|邮箱号已存在|邮箱号已注册其他账号或者绑定其他账号
-110306|令牌不合法|令牌不合法
