@@ -923,7 +923,7 @@ token|Object|是|无|令牌
 - Request Method:PUT
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"e38f80ccd586bf82155c13bdc5fb78f641a893790f9c0ceae5419b9a2c6d00d8"
 - Query String:无
 - Request Body
 
@@ -1525,7 +1525,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 ***
 #POI模块
-###取得客栈列表1020
+###取得客栈列表1021
 - Path:/app/hotels
 - Request Method:GET
 - Request Headers:无
@@ -1571,7 +1571,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得客栈详情1021
+###取得客栈详情1022
 - Path:/app/hotels/{hotelId}
 - Request Method:GET
 - Request Headers:无
@@ -1751,7 +1751,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得目的地列表1022
+###取得目的地列表1023
 - Path:/app/localities
 - Request Method:GET
 - Request Headers:无
@@ -1793,7 +1793,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得目的地详情1023
+###取得目的地详情1024
 - Path:/app/localities/{localityId}
 - Request Method:GET
 - Request Headers:无
@@ -1989,7 +1989,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得景点列表1024
+###取得景点列表1025
 - Path:/app/viewspots
 - Request Method:GET
 - Request Headers:无
@@ -2036,7 +2036,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得景点详情1025
+###取得景点详情1026
 - Path:/app/viewspots/{viewspotId}
 - Request Method:GET
 - Request Headers:无
@@ -2131,7 +2131,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得餐厅列表1026
+###取得餐厅列表1027
 - Path:/app/restaurants
 - Request Method:GET
 - Request Headers:无
@@ -2178,7 +2178,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得餐厅详情1027
+###取得餐厅详情1028
 - Path:/app/restaurants/{restaurantId}
 - Request Method:GET
 - Request Headers:无
@@ -2281,7 +2281,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得商场列表1028
+###取得商场列表1029
 - Path:/app/shoppings
 - Request Method:GET
 - Request Headers:无
@@ -2326,7 +2326,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得商场详情1029
+###取得商场详情1030
 - Path:/app/shoppings/{shoppingId}
 - Request Method:GET
 - Request Headers:无
@@ -2430,7 +2430,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 ***
 #活动模块
-###发布活动1030
+###发布活动1031
 - Path:/app/activities
 - Request Method:POST
 - Request Headers:
@@ -2493,7 +2493,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得活动列表1031
+###取得活动列表1032
 - Path:/app/activities
 - Request Method:GET
 - Request Headers:无
@@ -2555,7 +2555,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得活动详情1032
+###取得活动详情1033
 - Path:/app/activities/{activityId}
 - Request Method:GET
 - Request Headers:无
@@ -2633,7 +2633,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得用户活动列表1086
+###取得用户活动列表1034
 - Path:/app/users/{userId}/activities
 - Request Method:GET
 - Request Headers:无
@@ -2695,9 +2695,18 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
+###报名活动1035
+###退出报名1036
+###更新活动1037
+###添加门票1038
+###删除门票1039
+###修改门票1040
+###取得门票详情1041
+###取得用户门票列表1042
+
 ***
 #游记模块
-###取得游记列表1033
+###取得游记列表1043
 - Path:/app/travelnotes
 - Request Method:GET
 - Request Headers:无
@@ -2735,7 +2744,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###发布游记1034
+###发布游记1044
 - Path:/app/travelnotes
 - Request Method:POST
 - Request Headers
@@ -2782,7 +2791,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###修改游记1035
+###修改游记1045
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:PUT
 - Request Headers
@@ -2837,7 +2846,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###取得游记详情1036
+###取得游记详情1046
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:GET
 - Request Headers:无
@@ -2893,7 +2902,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 错误码|描述|原因
 --|--|--
 
-###删除游记1037
+###删除游记1047
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:DELETE
 - Request Headers
@@ -2910,16 +2919,17 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 	{
 		"code":0,
-		"msg":"success",
 		"timestamp":1425225600000
 	}
 
 错误码|描述|原因
 --|--|--
 
+###取得用户游记列表1048
+
 ***
 #时间线模块
-###查看朋友圈1038
+###查看朋友圈1049
 - Path:/app/moments
 - Request Method:GET
 - Request Headers
@@ -3020,10 +3030,10 @@ voteCnt|Integer|是|0|点赞次数
 
 错误码|描述|原因
 --|--|--
-103801|latestTime和earliestTime不可同时为空|要么含有latestTime，要么含有earliestTime
-103801|用户未登录|用户未登录
+104901|latestTime和earliestTime不可同时为空|要么含有latestTime，要么含有earliestTime
+104901|用户未登录|用户未登录
 
-###查看某个人的朋友圈1080
+###查看某个人的朋友圈1050
 - Path:/app/users/{targetId}/moments
 - Request Method:GET
 - Request Headers
@@ -3123,10 +3133,10 @@ voteCnt|Integer|是|0|点赞次数
 
 错误码|描述|原因
 --|--|--
-108001|latestTime和earliestTime不可同时为空|latestTime和earliestTime参数都没有传
-108001|用户未登录|用户未登录
+105001|latestTime和earliestTime不可同时为空|latestTime和earliestTime参数都没有传
+105001|用户未登录|用户未登录
 
-###发布朋友圈1039
+###发布朋友圈1051
 - Path:/app/moments
 - Request Method:POST
 - Request Headers
@@ -3200,7 +3210,7 @@ detailUrl|String|是|无|卡片的链接
 
 ***
 #足迹模块
-###发布用户足迹1040
+###发布用户足迹1052
 - Path:/app/traces
 - Request Method:POST
 - Request Headers
@@ -3507,7 +3517,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###修改足迹1041
+###修改足迹1053
 - Path:/app/traces/{traceId}
 - Request Method:PUT
 - Request Headers
@@ -3814,7 +3824,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###删除用户足迹1042
+###删除用户足迹1054
 - Path:/app/traces/{traceId}
 - Request Method:DELETE
 - Request Headers
@@ -3982,7 +3992,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###取得足迹列表1043
+###取得足迹列表1055
 - Path:/app/users/{userId}/traces
 - Request Method:GET
 - Request Headers
@@ -4036,7 +4046,7 @@ detailUrl|String|是|无|卡片的链接
 错误码|描述|原因
 --|--|--
 
-###取得足迹详情1044
+###取得足迹详情1056
 - Path:/app/traces/{traceId}
 - Request Method:GET
 - Request Headers:无
@@ -4203,7 +4213,7 @@ detailUrl|String|是|无|卡片的链接
 
 ***
 #行程规划模块
-###发布行程规划1045
+###发布行程规划1057
 - Path:/app/tripplans
 - Request Method:POST
 - Request Headers
@@ -4484,13 +4494,13 @@ shopping|Object|否|无|购物信息
 
 错误码|描述|原因
 --|--|--
-104501|用户未登录|用户未登录
-104502|用户不存在|用户被非法删除
-104503|源用户id不可为空|没有传originUserId字段
-104504|源用户昵称不可为空|没有传originNickName字段
-104505|源用户头像不可为空|没有传originAvatar字段
+105701|用户未登录|用户未登录
+105702|用户不存在|用户被非法删除
+105703|源用户id不可为空|没有传originUserId字段
+105704|源用户昵称不可为空|没有传originNickName字段
+105705|源用户头像不可为空|没有传originAvatar字段
 
-###复制行程规划1046
+###复制行程规划1058
 - Path:/app/tripplans/{tripPlanId}/fork
 - Request Method:POST
 - Request Headers
@@ -4647,7 +4657,7 @@ shopping|Object|否|无|购物信息
 错误码|描述|原因
 --|--|--
 
-###取得行程规划列表1047
+###取得行程规划列表1059
 - Path:/app/users/{userId}/tripplans
 - Request Method:GET
 - Request Headers:
@@ -4697,9 +4707,9 @@ shopping|Object|否|无|购物信息
 
 错误码|描述|原因
 --|--|--
-104701|用户未登录|用户未登录
+105901|用户未登录|用户未登录
 
-###修改行程规划1048
+###修改行程规划1060
 - Path:/app/tripplans/{tripPlanId}
 - Request Method:PUT
 - Request Headers
@@ -4968,7 +4978,7 @@ shopping|Object|否|无|购物信息
 错误码|描述|原因
 --|--|--
 
-###取得行程规划详情1049
+###取得行程规划详情1061
 - Path:/app/tripplans/{tripPlanId}
 - Request Method:GET
 - Request Headers:
@@ -5123,9 +5133,9 @@ shopping|Object|否|无|购物信息
 
 错误码|描述|原因
 --|--|--
-104901|行程规划不存在|行程规划被删除
+106101|行程规划不存在|行程规划被删除
 
-###删除行程规划1050
+###删除行程规划1062
 - Path:/app/tripplans/{tripPlanId}
 - Request Method:DELETE
 - Request Headers
@@ -5146,11 +5156,11 @@ shopping|Object|否|无|购物信息
 
 错误码|描述|原因
 --|--|--
-105001|用户未登录|用户未登录
+106201|用户未登录|用户未登录
 
 ---
 #问题
-###发布问题1051
+###发布问题1063
 - Path:/app/questions
 - Request Method:POST
 - Request Headers
@@ -5196,12 +5206,12 @@ contents|String|是|无|具体描述
 
 错误码|描述|原因
 --|--|--
-105101|标题不可为空|没有传title字段
-105102|内容不可为空|没有传content字段
-105103|用户未登录|用户未登录
-105104|用户不存在|用户被非法删除了
+106301|标题不可为空|没有传title字段
+106302|内容不可为空|没有传content字段
+106303|用户未登录|用户未登录
+106304|用户不存在|用户被非法删除了
 
-###取得问题详情1052
+###取得问题详情1064
 - Path:/app/quoras/{quoraId}
 - Request Method:GET
 - Request Headers:无
@@ -5291,9 +5301,10 @@ questionId|String|是|无|问题主键
 
 错误码|描述|原因
 --|--|--
-105201|问题不存在|问题的id输入有误，或者问题被非法删除
+106401|问题不存在|问题的id输入有误，或者问题被非法删除
 
-###取得用户问题列表1053
+
+###取得用户问题列表1065
 - Path:/app/users/{targetId}/questions
 - Request Method:GET
 - Request Headers
@@ -5361,9 +5372,9 @@ fmt|String|否|无|图片格式
 
 错误码|描述|原因
 --|--|--
-105301|用户未登录|用户未登录
+106501|用户未登录|用户未登录
 
-###取得问题列表1054
+###取得问题列表1066
 - Path:/app/questions
 - Request Method:GET
 - Request Headers:无
@@ -5425,7 +5436,7 @@ fmt|String|否|无|图片格式
 		]
 	}
 
-###添加回答1081
+###添加回答1067
 - Path:/app/questions/{questionId}/answers
 - Request Method:POST
 - Request Headers:
@@ -5490,12 +5501,12 @@ questionId|String|是|无|问题主键
 
 错误码|描述|原因
 --|--|--
-108101|标题不可为空|没有传title字段
-108102|内容不可为空|没有传content字段
-108103|用户未登录|用户未登录
-108104|用户不存在|用户被非法删除了
+106701|标题不可为空|没有传title字段
+106702|内容不可为空|没有传content字段
+106703|用户未登录|用户未登录
+106704|用户不存在|用户被非法删除了
 
-###删除问题1082
+###删除问题1068
 - Path:/app/questions/{questionId}
 - Request Method:DELETE
 - Request Headers:
@@ -5514,10 +5525,10 @@ questionId|String|是|无|问题主键
 
 错误码|描述|原因
 --|--|--
-108201|用户未登录|用户未登录
-108202|没有权限|不是问题的作者或者管理员
+106801|用户未登录|用户未登录
+106802|没有权限|不是问题的作者或者管理员
 
-###删除问题1083
+###删除问题1069
 - Path:/app/questions/{questionId}/answers/{answerId}
 - Request Method:DELETE
 - Request Headers:
@@ -5536,10 +5547,10 @@ questionId|String|是|无|问题主键
 
 错误码|描述|原因
 --|--|--
-108301|用户未登录|用户未登录
-108302|没有权限|不是问题的作者或者管理员
+106901|用户未登录|用户未登录
+106902|没有权限|不是问题的作者或者管理员
 
-###编辑问题1084
+###编辑问题1070
 - Path:/app/questions/{questionId}
 - Request Method:PUT
 - Request Headers:
@@ -5577,9 +5588,9 @@ contents|String|是|无|具体描述
 
 错误码|描述|原因
 --|--|--
-108401|用户未登录|用户未登录
+107001|用户未登录|用户未登录
 
-###编辑问题1085
+###编辑问题1071
 - Path:/app/questions/{questionId}/answers/{answerId}
 - Request Method:PUT
 - Request Headers:
@@ -5611,11 +5622,11 @@ contents|String|是|无|具体描述
 
 错误码|描述|原因
 --|--|--
-108501|用户未登录|用户未登录
+107101|用户未登录|用户未登录
 
 ---
 #消息和社交
-###关注用户1055
+###关注用户1072
 - Path:/app/users/{userId}/followings
 - Request Method:POST
 - Request Headers:
@@ -5642,11 +5653,11 @@ followingId|Long|是|无|待关注用户id
 
 错误码|描述|原因
 --|--|--
-105501|参数followingId不可为空|没有传followingId参数
-105502|用户未登录|用户未登录
-105503|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
+107201|参数followingId不可为空|没有传followingId参数
+107202|用户未登录|用户未登录
+107203|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
-###取消关注用户1056
+###取消关注用户1073
 - Path:/app/users/{userId}/followings
 - Request Method:DELETE
 - Request Headers:
@@ -5673,10 +5684,10 @@ followingId|Long|是|无|待取消关注用户id
 
 错误码|描述|原因
 --|--|--
-105601|参数followingId不可为空|没有传followingId参数
-105602|用户未登录|用户未登录
+107301|参数followingId不可为空|没有传followingId参数
+107302|用户未登录|用户未登录
 
-###用户的好友列表1057
+###用户的好友列表1074
 - Path:/app/users/{userId}/contacts
 - Request Method:GET
 - Request Headers:
@@ -5726,9 +5737,9 @@ memo|String|否|无|备注
 
 错误码|描述|原因
 --|--|--
-105701|用户未登录|用户未登录
+107401|用户未登录|用户未登录
 
-###获取好友(关注人)的详细信息1058
+###获取好友(关注人)的详细信息1075
 - Path:/app/users/{userId}/contacts/{contactId}
 - Request Method:GET
 - Request Headers:
@@ -5809,10 +5820,10 @@ memo|String|否|无|备注
 
 错误码|描述|原因
 --|--|--
-105801|用户未登录|用户未登录
-105802|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
+107501|用户未登录|用户未登录
+107502|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
-###修改好友备注1059
+###修改好友备注1076
 - Path:/app/users/{userId}/contacts/{contactId}/memos
 - Request Method:PUT
 - Request Headers:
@@ -5902,11 +5913,11 @@ memo|String|否|无|备注
 
 错误码|描述|原因
 --|--|--
-105901|备注不可为空或者或字符串|没有传memo参数或者参数memo的值为空字符串
-105902|用户未登录|用户未登录
-105903|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
+107601|备注不可为空或者或字符串|没有传memo参数或者参数memo的值为空字符串
+107602|用户未登录|用户未登录
+107603|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
-###将用户加入黑名单1060
+###将用户加入黑名单1077
 - Path:/app/users/{userId}/blacklist
 - Request Method:POST
 - Request Headers:
@@ -5933,11 +5944,11 @@ blockId|Long|是|无|待屏蔽用户id
 
 错误码|描述|原因
 --|--|--
-106001|屏蔽用户id不可为空|没有传blockId参数
-106002|用户未登录|用户未登录
-106003|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
+107701|屏蔽用户id不可为空|没有传blockId参数
+107702|用户未登录|用户未登录
+107703|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
-###将用户移除黑名单1061
+###将用户移除黑名单1078
 - Path:/app/users/{userId}/blacklist/{blockId}
 - Request Method:DELETE
 - Request Headers:
@@ -5955,10 +5966,10 @@ blockId|Long|是|无|待屏蔽用户id
 
 错误码|描述|原因
 --|--|--
-106101|用户未登录|用户未登录
-106102|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
+107801|用户未登录|用户未登录
+107802|用户不存在|1、输入有误，2、被关注的用户已经注销， 3、被关注的用户被非法删除
 
-###用户的关注列表1062
+###用户的关注列表1079
 - Path:/app/users/{userId}/followings
 - Request Method:GET
 - Request Headers:
@@ -6010,9 +6021,9 @@ memo|String|否|无|备注
 
 错误码|描述|原因
 --|--|--
-106201|用户未登录|用户未登录
+107901|用户未登录|用户未登录
 
-###用户的粉丝列表1063
+###用户的粉丝列表1080
 - Path:/app/users/{userId}/follows
 - Request Method:GET
 - Request Headers:
@@ -6064,9 +6075,9 @@ memo|String|否|无|备注
 
 错误码|描述|原因
 --|--|--
-106301|用户未登录|用户未登录
+108001|用户未登录|用户未登录
 
-###发送消息1064
+###发送消息1081
 - Path:/app/messages
 - Request Method:POST
 - Request Headers:
@@ -6255,28 +6266,28 @@ convId|String|否|无|会话id
 
 错误码|描述|原因
 --|--|--
-106401|接收者id不可为空|没有传receiverId参数
-106402|消息内容不可为空|没有传content参数
-106403|消息类型不可为空|没有传msgType参数
-106404|聊天类型不可为空|没有传chatType参数
-106405|缩略图不可为空|如果发的图片消息，没有传thumb参数
-106406|完整图不可为空|如果发的图片消息，没有传full参数
-106407|原图不可为空|如果发的图片消息，没有传origin参数
-106408|链接不可为空|如果发的富文本消息，没有传url参数
-106409|音频不可为空|如果发的是音频消息，没有传audio参数
-106410|长度不可为空|如果发的语音消息，没有传length参数
-106411|位置不可为空|如果发的位置消息，没有传position参数
-106412|经度不可为空|如果发的位置消息，没有传lat参数
-106413|纬度不可为空|如果发的位置消息，没有传lng参数
-106414|消息类型不合法|消息的类型的值不在合法范围内
-106415|聊天类型不合法|聊天类型的值不在合法范围内
-106416|用户不存在|接收者用户id输入有误或者用户被非法删除
-106417|聊天组不存在|接收者是聊天组，但是聊天组id输入有误或者群组被非法删除
-106418|回话id不合法|会话的id不合法
-106419|用户未登录|用户未登录
-106420|消息id不合法|重发旧消息时，旧消息被非法删除
+108101|接收者id不可为空|没有传receiverId参数
+108102|消息内容不可为空|没有传content参数
+108103|消息类型不可为空|没有传msgType参数
+108104|聊天类型不可为空|没有传chatType参数
+108105|缩略图不可为空|如果发的图片消息，没有传thumb参数
+108106|完整图不可为空|如果发的图片消息，没有传full参数
+108107|原图不可为空|如果发的图片消息，没有传origin参数
+108108|链接不可为空|如果发的富文本消息，没有传url参数
+108109|音频不可为空|如果发的是音频消息，没有传audio参数
+108110|长度不可为空|如果发的语音消息，没有传length参数
+108111|位置不可为空|如果发的位置消息，没有传position参数
+108112|经度不可为空|如果发的位置消息，没有传lat参数
+108113|纬度不可为空|如果发的位置消息，没有传lng参数
+108114|消息类型不合法|消息的类型的值不在合法范围内
+108115|聊天类型不合法|聊天类型的值不在合法范围内
+108116|用户不存在|接收者用户id输入有误或者用户被非法删除
+108117|聊天组不存在|接收者是聊天组，但是聊天组id输入有误或者群组被非法删除
+108118|回话id不合法|会话的id不合法
+108119|用户未登录|用户未登录
+108120|消息id不合法|重发旧消息时，旧消息被非法删除
 
-###拉取消息1065
+###拉取消息1082
 - Path:/app/users/{userId}/messages
 - Request Method:POST
 - Request Headers:
@@ -6407,9 +6418,9 @@ convId|String|否|无|会话id
 
 错误码|描述|原因
 --|--|--
-106501|用户未登录|用户未登录
+108201|用户未登录|用户未登录
 
-###修改会话属性1066
+###修改会话属性1083
 - Path:/app/users/{userId}/conversations/{id}
 - Request Method:PATCH
 - Request Headers:
@@ -6436,11 +6447,11 @@ mute|Boolean|是|无|消息免打扰，true添加，false表示移除
 
 错误码|描述|原因
 --|--|--
-106601|mute不可为空|没有传mute参数
-106602|用户未登录|用户未登录
-106603|会话不存在|会话id输入有误或者会话被非法删除
+108301|mute不可为空|没有传mute参数
+108302|用户未登录|用户未登录
+108303|会话不存在|会话id输入有误或者会话被非法删除
 
-###根据会话id列表取得会话属性1067
+###根据会话id列表取得会话属性1084
 - Path:/app/users/{userId}/conversations
 - Request Method:POST
 - Request Headers:
@@ -6477,13 +6488,13 @@ pinned|Boolean|是|无|是否会话置顶
 
 错误码|描述|原因
 --|--|--
-106701|会话id列表参数不可为空|没有传ids参数
-106702|会话id不合法|id不是[0-9, a-f]的24位字符串
-106703|用户未登录|用户未登录
+108401|会话id列表参数不可为空|没有传ids参数
+108402|会话id不合法|id不是[0-9, a-f]的24位字符串
+108403|用户未登录|用户未登录
 
 ---
 #群组
-###创建群组1068
+###创建群组1085
 - Path:/app/chatgroups
 - Request Method:POST
 - Request Headers
@@ -6541,7 +6552,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###修改群组信息1069
+###修改群组信息1086
 - Path:/app/chatgroups/{chatgroupId}
 - Request Method:PUT
 - Request Headers:
@@ -6597,7 +6608,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###取得群组信息1070
+###取得群组信息1087
 - Path:/app/chatgroups/{chatgroupId}
 - Request Method:GET
 - Request Headers:
@@ -6636,7 +6647,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###取得群组成员信息列表1071
+###取得群组成员信息列表1088
 - Path:/app/chatgroups/{chatgroupId}/members
 - Request Method:GET
 - Request Headers:
@@ -6670,7 +6681,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###添加群成员1072
+###添加群成员1089
 - Path:/app/chatgroups/{chatgroupId}/members
 - Request Method:POST
 - Request Headers:
@@ -6694,11 +6705,10 @@ pinned|Boolean|是|无|是否会话置顶
 
 	{
 		"code":0,
-		"msg":"success",
 		"timestamp":1425225600000
 	}
 
-###删除群成员1073
+###删除群成员1090
 - Path:/app/chatgroups/{chatgroupId}/members/{memberId}
 - Request Method:DETELE
 - Request Headers:
@@ -6718,7 +6728,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###取得用户群组列表1074
+###取得用户群组列表1091
 - Path:/app/user/{userId}/chatgroups
 - Request Method:GET
 - Request Headers:
@@ -6759,7 +6769,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###发布帖子1075
+###发布帖子1092
 - Path:/app/chatgroups/{chatgroupId}/posts
 - Request Method:POST
 - Request Headers:
@@ -6844,7 +6854,7 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
-###取得群帖子列表1076
+###取得群帖子列表1093
 按照最新评论时间倒序
 - Path:/app/chatgroups/{chatgroupId}/posts
 - Request Method:GET
@@ -6892,9 +6902,14 @@ pinned|Boolean|是|无|是否会话置顶
 错误码|描述|原因
 --|--|--
 
+###更新聊天组帖子1094
+###删除聊天组帖子1095
+###取得聊天组帖子详情1096
+###取得用户帖子列表1097
+
 ---
 #收藏
-###添加收藏1077
+###添加收藏1098
 - Path:/app/favorites
 - Request Method:POST
 - Request Headers:
@@ -6946,14 +6961,14 @@ title|String|是|无|标题
 
 错误码|描述|原因
 --|--|--
-107701|收藏类型不可为空|没有传favoriteType参数
-107702|收藏对象id不可为空|没有传itemId参数
-107703|收藏标题不可为空|没有传title参数
-107704|用户未登录|用户未登录
-107705|favoriteType不合法|favoriteType的输入有误
-107706|itemId不合法|itemId的输入有误
+109801|收藏类型不可为空|没有传favoriteType参数
+109802|收藏对象id不可为空|没有传itemId参数
+109803|收藏标题不可为空|没有传title参数
+109804|用户未登录|用户未登录
+109805|favoriteType不合法|favoriteType的输入有误
+109806|itemId不合法|itemId的输入有误
 
-###取消收藏1078
+###取消收藏1099
 - Path:/app/favorites/{itemId}
 - Request Method:DELETE
 - Request Headers:
@@ -6972,11 +6987,11 @@ title|String|是|无|标题
 
 错误码|描述|原因
 --|--|--
-107801|收藏类型不可为空|没有传favoriteType参数
-107802|favoriteType不合法|favoriteType的输入有误
-107803|用户未登录|用户未登录
+109901|收藏类型不可为空|没有传favoriteType参数
+109902|favoriteType不合法|favoriteType的输入有误
+109903|用户未登录|用户未登录
 
-###取得用户收藏列表1079
+###取得用户收藏列表1100
 - Path:/app/favorites
 - Request Method:GET
 - Request Headers:
@@ -7035,11 +7050,11 @@ favoriteTime|Long|是|无|收藏时间
 
 错误码|描述|原因
 --|--|--
-107901|用户未登录|用户未登录
+110001|用户未登录|用户未登录
 
 ---
 #点赞
-###点赞1094
+###点赞1101
 - Path:/app/votes
 - Request Method:POST
 - Request Headers:
@@ -7069,13 +7084,13 @@ itemId|String|是|无|点赞对象id
 
 错误码|描述|原因
 --|--|--
-109401|点赞类型不可为空|没有传voteType参数
-109402|点赞对象id不可为空|没有传itemId参数
-109403|用户未登录|用户未登录
-109404|voteType不合法|voteType输入有误
-109405|itemId不合法|itemId输入有误
+110101|点赞类型不可为空|没有传voteType参数
+110102|点赞对象id不可为空|没有传itemId参数
+110103|用户未登录|用户未登录
+110104|voteType不合法|voteType输入有误
+110105|itemId不合法|itemId输入有误
 
-###取消点赞1095
+###取消点赞1102
 - Path:/app/votes/{itemId}
 - Request Method:DELETE
 - Request Headers:
@@ -7094,11 +7109,11 @@ itemId|String|是|无|点赞对象id
 
 错误码|描述|原因
 --|--|--
-109501|点赞类型不可为空|没有传voteType参数
-109502|voteType不合法|voteType输入有误
-109503|用户未登录|用户未登录
+110201|点赞类型不可为空|没有传voteType参数
+110202|voteType不合法|voteType输入有误
+110203|用户未登录|用户未登录
 
-###取得点赞列表1096
+###取得点赞列表1103
 - Path:/app/votes
 - Request Method:GET
 - Request Headers:
@@ -7135,9 +7150,9 @@ voteTime|Long|是|无|点赞时间
 
 错误码|描述|原因
 --|--|--
-109601|用户未登录|用户未登录
+110301|用户未登录|用户未登录
 
-###添加新评论1097
+###添加新评论1104
 - Path:/app/comments
 - Request Method:POST
 - Request Headers:
@@ -7200,7 +7215,7 @@ voteTime|Long|是|无|点赞时间
 错误码|描述|原因
 --|--|--
 
-###删除评论1098
+###删除评论1105
 - Path:/app/comments/{commentId}
 - Request Method:DELETE
 - Request Headers:
@@ -7220,7 +7235,7 @@ voteTime|Long|是|无|点赞时间
 错误码|描述|原因
 --|--|--
 
-###取得评论列表1099
+###取得评论列表1106
 - Path:/app/comments
 - Request Method:GET
 - Request Headers:
@@ -7278,7 +7293,7 @@ voteTime|Long|是|无|点赞时间
 ***
 #搜索
 
-###用户搜索1100
+###用户搜索1107
 - Path:/app/users
 - Request Method:GET
 - Request Headers:
@@ -7319,12 +7334,12 @@ fmt|String|否|无|图片格式
 
 错误码|描述|原因
 --|--|--
-110001|query不可为空|没有传query参数
-110002|用户未登录|用户未登录
-110003|query不合法|query仅支持 邮箱号，手机号，userId
-110004|用户不存在|未找到要搜索的用户信息
+110701|query不可为空|没有传query参数
+110702|用户未登录|用户未登录
+110703|query不合法|query仅支持 邮箱号，手机号，userId
+110704|用户不存在|未找到要搜索的用户信息
 
-###聊天组搜索1101
+###聊天组搜索1108
 - Path:/app/chatgroups
 - Request Method:GET
 - Request Headers:
@@ -7367,10 +7382,10 @@ fmt|String|否|无|图片格式
 
 错误码|描述|原因
 --|--|--
-110101|query不可为空|没有传query参数
-110102|用户未登录|用户未登录
+110801|query不可为空|没有传query参数
+110802|用户未登录|用户未登录
 
-###全站搜索1102
+###全站搜索1109
 - Path:/app/search
 - Request Method:GET
 - Request Headers:无
@@ -7706,5 +7721,5 @@ shopping|Boolean|否|false|是否搜索购物
 
 错误码|描述|原因
 --|--|--
-110201|query不可为空|没有传query参数
+110901|query不可为空|没有传query参数
 
