@@ -594,20 +594,20 @@ account|String|是|无|可以是手机号，也可以是邮箱号
 newPassword|String|是|无|新密码
 token|String|是|无|令牌
 
-		{
-			"account":"13811111111",
-			"newPassword":"123343",
-			"token":"token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-		}
+	{
+		"account":"13811111111",
+		"newPassword":"123343",
+		"token":"token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	}
 - Response
 > 返回字段说明
 
 > 示例
 
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
+	{
+		"code":0,
+		"timestamp":1425225600000
+	}
 
 错误码|描述|原因
 --|--|--
@@ -861,7 +861,7 @@ updateTime|Long|是|0|用户更新时间
 	        "loginTime": 1481470605065,
 	        "logoutTime": 1481470096458,
 	        "version": 0,
-	        "roles": [],
+	        "roles": [1],
 	        "level": 1,
 	        "soundNotify": true,
 	        "vibrateNotify": true,
@@ -991,9 +991,8 @@ tel|String|是|无|手机号
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-	"userId":1001
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body
@@ -1023,7 +1022,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 ***
 #首页运营模块
 ###取得专栏1015
-- Path:/app/misc/columns
+- Path:/app/columns
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -1033,35 +1032,47 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+itemId|String|是|无|专栏项id
+rank|Integer|否|无|排名
+itemType|String|是|无|专栏项类型，比如："hotel"、"viewspot"
+columnType|String|是|无|专栏类型，只能是"special"
+title|String|是|无|标题
+linkType|String|是|无|专栏链接类型。"app"表示内部链接，"web"表示网页链接
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+status|String|是|无|专栏状态，review表示待审核，pub表示使用中，disabled表示失效
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"itemId":"546f2da8b8ce0440eddb287e",
-				"itemType":"hotel",
-				"title":"如家豪华酒店",
-				"linkType":"app",
-				"linkUrl":"http://XXX",
-				"desc":"超大双人床",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			}
-		]
+	    "timestamp": 1481552586128,
+	    "code": 0,
+	    "result": [
+	        {
+	            "itemId": "584eb2c09542330bccd8a391",
+	            "rank": 1,
+	            "itemType": "viewspot",
+	            "columnType": "special",
+	            "title": "首页客栈1",
+	            "desc": "描述1",
+	            "link": "http://hotel1",
+	            "linkType": "app",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "status": "pub"
+	        }
+	    ]
 	}
-
-错误码|描述|原因
---|--|--
 
 ###取得首页1016
-- Path:/app/misc/banners
+- Path:/app/banners
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -1071,35 +1082,47 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+itemId|String|是|无|专栏项id
+rank|Integer|否|无|排名
+itemType|String|是|无|专栏项类型，比如："hotel"、"viewspot"
+columnType|String|是|无|专栏类型，只能是"slide"
+title|String|是|无|标题
+linkType|String|是|无|专栏链接类型。"app"表示内部链接，"web"表示网页链接
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+status|String|是|无|专栏状态，review表示待审核，pub表示使用中，disabled表示失效
 
 > 示例
 
-	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"itemId":"546f2da8b8ce0440eddb287e",
-				"itemType":"hotel",
-				"title":"如家豪华酒店",
-				"linkType":"app",
-				"linkUrl":"http://XXX",
-				"desc":"超大双人床",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			}
-		]
-	}
+{
+    "timestamp": 1481552433970,
+    "code": 0,
+    "result": [
+        {
+            "itemId": "584eb172954233105801a3e6",
+            "rank": 1,
+            "itemType": "hotel",
+            "columnType": "slide",
+            "title": "首页客栈1",
+            "desc": "描述1",
+            "link": "http://hotel1",
+            "linkType": "app",
+            "cover": {
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            },
+            "status": "pub"
+        }
+    ]
+}
 
-错误码|描述|原因
---|--|--
-
-###取得商品列表(特产等)1017
-- Path:/app/marketplace/commodities
+###取得首页商品列表(特产等)1017
+- Path:/app/commodities
 - Request Method:GET
 - Request Headers:无
 - Query String:category=speciality&offset=0&limit=100
@@ -1109,6 +1132,19 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|商品id
+category|String|是|无|商品分类
+title|String|是|无|标题
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+price|Double|是|无|价格
+marketPrice|Double|是|无|市场价格
+status|Integer|否|无|状态
+salesVolume|Integer|否|无|销量
+rating|Double|否|无|评分
 
 > 示例
 
@@ -1136,7 +1172,7 @@ origin|String|否|无|从哪个App反馈过来的, 例如：不羁旅行
 	}
 
 ###取得商品详情(特产等)1018
-- Path:/app/marketplace/commodities/{commodityId}
+- Path:/app/commodities/{commodityId}
 - Request Method:GET
 - Request Headers:无
 - Query String:无
