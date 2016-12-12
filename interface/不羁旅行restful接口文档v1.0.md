@@ -956,13 +956,12 @@ token|Object|是|无|令牌
 ***
 #其他模块
 ###申请商家1013
-- Path:/app/misc/sellers
+- Path:/app/sellers
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
-
-	"userId":1001
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":1001
 
 - Query String:无
 - Request Body
@@ -988,7 +987,7 @@ tel|String|是|无|手机号
 101303|用户未登录|用户未登录
 
 ###用户反馈1014
-- Path:/app/misc/feedback
+- Path:/app/feedback
 - Request Method:POST
 - Request Headers
 
