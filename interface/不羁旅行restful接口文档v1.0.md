@@ -1598,43 +1598,89 @@ shareCnt|Integer|否|无|转发数
 - Path:/app/hotels
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=0&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+contact
+zhName
+enName
+url
+marketPrice
+price
+tags
+address
+province
+city
+district
+detail
+zipCode
+saleVolume
+discount
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"如家快捷酒店",
-				"enName":"RuJia",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"saleVolume":100,
-				"discount":0.65
-			}
-		]
+	    "timestamp": 1481612944764,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584f9e7a8edd1f19cc29a7fd",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "contact": {
+	                "phoneList": [
+	                    "010-62737359"
+	                ],
+	                "cellphoneList": [
+	                    "13811111111"
+	                ],
+	                "qq": "1234213123",
+	                "weixin": "mofashi",
+	                "sina": "312413123",
+	                "fax": "010-62737358",
+	                "email": "3813231231@qq.com",
+	                "website": "www.bjlx.com"
+	            },
+	            "zhName": "不羁客栈",
+	            "enName": "BuJiLvXing Hotel",
+	            "url": "http://xxx",
+	            "marketPrice": 400,
+	            "price": 200,
+	            "tags": [
+	                "不羁",
+	                "客栈"
+	            ],
+	            "address": {
+	                "province": "江西省",
+	                "city": "南昌市",
+	                "district": "昌北区",
+	                "detail": "机场路16号",
+	                "zipCode": "333133"
+	            },
+	            "saleVolume": 100,
+	            "discount": 0.9800000190734863
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -1655,166 +1701,134 @@ shareCnt|Integer|否|无|转发数
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"lat":180.1,
-			"lng":180.1,
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"rank":3,
-			"hotness":0.97,
-			"rating":0.98,
-			"contact": {
-				"phoneList":["010-86752341","010-86752342"],
-				"cellphoneList":["13811111111", "13811111112"],
-				"qq":"13231235432",
-				"weixin":"pisa",
-				"sina":"a123123",
-				"fax":"010-23131231",
-				"email":"bujilvxing@163.com",
-				"website":"www.baidu.com"
-			},
-			"zhName":"如家快捷酒店",
-			"enName":"RuJia",
-			"url":"http://XXX",
-			"marketPrice":280.6,
-			"price":180.3,
-			"priceDesc":"",
-			"description":{
-				"desc":"XXX",
-				"details":"XXX",
-				"tips":"XXX",
-				"traffic":"XXX"
-			},
-			"tags":["",""],
-			"alias":["",""],
-			"targets":["",""],
-			"address":"XXX",
-			"locList":[
-				{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			],
-			"saleVolume":100,
-			"discount":0.65,
-			"rentCar": {
-				"price":180,
-				"pickupAddr":{
-					"province":"江西省",
-					"city":"南昌市",
-					"district":"东湖区",
-					"detail":"XXX",
-					"zipCode":"100071"
-				},
-				"returnAddr":{
-					"province":"江西省",
-					"city":"南昌市",
-					"district":"东湖区",
-					"detail":"XXX",
-					"zipCode":"100071"
-				},
-				"contact":{
-					"phoneList":["010-86752341","010-86752342"],
-					"cellphoneList":["13811111111", "13811111112"],
-					"qq":"13231235432",
-					"weixin":"pisa",
-					"sina":"a123123",
-					"fax":"010-23131231",
-					"email":"bujilvxing@163.com",
-					"website":"www.baidu.com"
-				},
-				"minRentDay":1,
-				"car":{
-					"id":"646f2da8b8ce0440eddb287f",
-					"carId":"赣N7023",
-					"transmission":1,
-					"vehicleType":"豪华型",
-					"brand":"丰田",
-					"carOwner":{
-						"surname":"王",
-						"givenName":"力宏",
-						"gender":1,
-						"birthday":"1982-12-03",
-						"identities":[
-							{
-								"idType":"身份证",
-								"number":"137771198212037145"
-							}
-						],
-						"tel":{
-							"dialCode":86,
-							"number":"13811111111"
-						}
-					},
-					"displacement":3.0,
-					"seatNum":5,
-					"name":"丰田霸道",
-					"fuelType":"汽油",
-					"gasolineType":"93#"
-					"actuationType":"前后驱动",
-					"dormer":true,
-					"gps":true,
-					"seatType":"织物座椅",
-					"airbagNum":3,
-					"gearboxType":"AT",
-					"airConditioner":true
-				},
-				"autoInsurance":true,
-				"autoInsurancePrice":50,
-				"pickup":true
-			},
-			"locality": {
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"alias":[],
-				"hotness":0.97,
-				"rating":0.97,
-				"tags":["红色摇篮"],
-				"desc":"",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"lat":115.27,
-				"lng":28.09
-			},
-			"availableDays":[
-				{
-					"bookTime":"2016-08-01",
-					"available":true,
-					"price":392.1
-				}
-			]
-		}
+	    "timestamp": 1481613399622,
+	    "code": 0,
+	    "result": {
+	        "id": "584f9e7a8edd1f19cc29a7fd",
+	        "lat": 160,
+	        "lng": 170,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rank": 1,
+	        "rating": 0.99,
+	        "hotness": 0.98,
+	        "favorCnt": 0,
+	        "contact": {
+	            "phoneList": [
+	                "010-62737359"
+	            ],
+	            "cellphoneList": [
+	                "13811111111"
+	            ],
+	            "qq": "1234213123",
+	            "weixin": "mofashi",
+	            "sina": "312413123",
+	            "fax": "010-62737358",
+	            "email": "3813231231@qq.com",
+	            "website": "www.bjlx.com"
+	        },
+	        "zhName": "不羁客栈",
+	        "enName": "BuJiLvXing Hotel",
+	        "url": "http://xxx",
+	        "marketPrice": 400,
+	        "price": 200,
+	        "priceDesc": "双十二特惠",
+	        "openTime": "9:00~21:00",
+	        "description": {
+	            "desc": "客栈描述",
+	            "details": "客栈详情",
+	            "tips": "客栈提示",
+	            "traffic": "到达客栈交通方式"
+	        },
+	        "tags": [
+	            "不羁",
+	            "客栈"
+	        ],
+	        "alias": [
+	            "不羁家"
+	        ],
+	        "targets": [
+	            ""
+	        ],
+	        "source": "bjlx",
+	        "guideUrl": "http://xxx",
+	        "address": {
+	            "province": "江西省",
+	            "city": "南昌市",
+	            "district": "昌北区",
+	            "detail": "机场路16号",
+	            "zipCode": "333133"
+	        },
+	        "locList": [
+	            {
+	                "id": "584f9e7a8edd1f19cc29a7fb",
+	                "zhName": "南昌市",
+	                "enName": "NanChang",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "visitCnt": 0,
+	                "commentCnt": 0,
+	                "favorCnt": 0,
+	                "hotness": 0,
+	                "rating": 0
+	            }
+	        ],
+	        "saleVolume": 100,
+	        "discount": 0.9800000190734863,
+	        "rentCar": {
+	            "id": "584f9e7a8edd1f19cc29a7fc",
+	            "price": 100,
+	            "minRentDay": 1,
+	            "autoInsurance": true,
+	            "autoInsurancePrice": 10,
+	            "pickup": true
+	        },
+	        "locality": {
+	            "id": "584f9e7a8edd1f19cc29a7fb",
+	            "zhName": "南昌市",
+	            "enName": "NanChang",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "visitCnt": 0,
+	            "commentCnt": 0,
+	            "favorCnt": 0,
+	            "hotness": 0,
+	            "rating": 0
+	        },
+	        "availableDays": [
+	            {
+	                "bookTime": 1481612922366,
+	                "available": true,
+	                "price": 100
+	            }
+	        ]
+	    }
 	}
 
 错误码|描述|原因
@@ -1824,7 +1838,13 @@ shareCnt|Integer|否|无|转发数
 - Path:/app/localities
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=0&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
@@ -2062,44 +2082,56 @@ shareCnt|Integer|否|无|转发数
 - Path:/app/viewspots
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=0&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1021
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"八一广场",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			}
-		]
+	    "timestamp": 1481614252371,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584fa3998edd1f2740896e8a",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "contact": {
+	                "phoneList": [
+	                    "010-62737359"
+	                ],
+	                "cellphoneList": [
+	                    "13811111111"
+	                ],
+	                "qq": "1234213123",
+	                "weixin": "mofashi",
+	                "sina": "312413123",
+	                "fax": "010-62737358",
+	                "email": "3813231231@qq.com",
+	                "website": "www.bjlx.com"
+	            },
+	            "zhName": "庐山",
+	            "enName": "Lu Shan",
+	            "url": "http://xxx",
+	            "marketPrice": 180,
+	            "price": 160,
+	            "saleVolume": 0,
+	            "discount": 0.8799999952316284
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -2114,87 +2146,121 @@ shareCnt|Integer|否|无|转发数
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1022
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"lat":180.1,
-			"lng":180.1,
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"rank":3,
-			"hotness":0.97,
-			"rating":0.98,
-			"zhName":"八一广场",
-			"enName":"",
-			"url":"http://XXX",
-			"marketPrice":280.6,
-			"price":180.3,
-			"priceDesc":"",
-			"tags":["",""],
-			"openTime":"9:00~21:00",
-			"description":{
-				"desc":"XXX",
-				"details":"XXX",
-				"tips":"XXX",
-				"traffic":"XXX"
-			},
-			"alias":["",""],
-			"targets":["",""],
-			"locList":[
-				{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			],
-			"locality":{
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"alias":[],
-				"hotness":0.97,
-				"rating":0.97,
-				"tags":["红色摇篮"],
-				"desc":"",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"lat":115.27,
-				"lng":28.09
-			}
-		}
+	    "timestamp": 1481614334614,
+	    "code": 0,
+	    "result": {
+	        "id": "584fa3998edd1f2740896e8a",
+	        "lat": 160,
+	        "lng": 170,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rank": 1,
+	        "rating": 0.99,
+	        "hotness": 0.98,
+	        "favorCnt": 0,
+	        "contact": {
+	            "phoneList": [
+	                "010-62737359"
+	            ],
+	            "cellphoneList": [
+	                "13811111111"
+	            ],
+	            "qq": "1234213123",
+	            "weixin": "mofashi",
+	            "sina": "312413123",
+	            "fax": "010-62737358",
+	            "email": "3813231231@qq.com",
+	            "website": "www.bjlx.com"
+	        },
+	        "zhName": "庐山",
+	        "enName": "Lu Shan",
+	        "url": "http://xxx",
+	        "marketPrice": 180,
+	        "price": 160,
+	        "priceDesc": "双十二特惠",
+	        "openTime": "9:00~21:00",
+	        "description": {
+	            "desc": "景点描述",
+	            "details": "景点详情",
+	            "tips": "景点提示",
+	            "traffic": "到达景点交通方式"
+	        },
+	        "tags": [
+	            "不羁",
+	            "客栈"
+	        ],
+	        "targets": [
+	            "不羁家"
+	        ],
+	        "source": "bjlx",
+	        "guideUrl": "http://xxx",
+	        "address": {
+	            "province": "江西省",
+	            "city": "九江市",
+	            "district": "庐山区",
+	            "detail": "牯岭镇16号",
+	            "zipCode": "333133"
+	        },
+	        "locList": [
+	            {
+	                "id": "584fa3998edd1f2740896e88",
+	                "zhName": "九江市",
+	                "enName": "JiuJiang",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "visitCnt": 0,
+	                "commentCnt": 0,
+	                "favorCnt": 0,
+	                "hotness": 0,
+	                "rating": 0
+	            }
+	        ],
+	        "saleVolume": 0,
+	        "discount": 0.8799999952316284,
+	        "locality": {
+	            "id": "584fa3998edd1f2740896e88",
+	            "zhName": "九江市",
+	            "enName": "JiuJiang",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "visitCnt": 0,
+	            "commentCnt": 0,
+	            "favorCnt": 0,
+	            "hotness": 0,
+	            "rating": 0
+	        }
+	    }
 	}
 
 错误码|描述|原因
@@ -2204,44 +2270,56 @@ shareCnt|Integer|否|无|转发数
 - Path:/app/restaurants
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=1&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1021
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			}
-		]
+	    "timestamp": 1481615608587,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584fa8cf8edd1f122cd8df34",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "contact": {
+	                "phoneList": [
+	                    "010-62737359"
+	                ],
+	                "cellphoneList": [
+	                    "13811111111"
+	                ],
+	                "qq": "1234213123",
+	                "weixin": "mofashi",
+	                "sina": "312413123",
+	                "fax": "010-62737358",
+	                "email": "3813231231@qq.com",
+	                "website": "www.bjlx.com"
+	            },
+	            "favorCnt": 0,
+	            "zhName": "季季红",
+	            "enName": "JiJiHong",
+	            "url": "http://xxx",
+	            "marketPrice": 50,
+	            "price": 34,
+	            "saleVolume": 0
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -2256,95 +2334,119 @@ shareCnt|Integer|否|无|转发数
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1022
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"lat":180.1,
-			"lng":180.1,
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			],
-			"rank":3,
-			"hotness":0.97,
-			"rating":0.98,
-			"contact":{
-				"phoneList":["010-86752341","010-86752342"],
-				"cellphoneList":["13811111111", "13811111112"],
-				"qq":"13231235432",
-				"weixin":"pisa",
-				"sina":"a123123",
-				"fax":"010-23131231",
-				"email":"bujilvxing@163.com",
-				"website":"www.baidu.com"
-			},
-			"zhName":"煌上煌烤鸭店",
-			"enName":"",
-			"url":"http://XXX",
-			"priceDesc":"",
-			"price":180.3,
-			"tags":["",""],
-			"description":{
-				"desc":"XXX",
-				"details":"XXX",
-				"tips":"XXX",
-				"traffic":"XXX"
-			},
-			"alias":["",""],
-			"targets":["",""],
-			"locList":[
-				{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			],
-			"locality":{
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"alias":[],
-				"hotness":0.97,
-				"rating":0.97,
-				"tags":["红色摇篮"],
-				"desc":"",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"lat":115.27,
-				"lng":28.09
-			},
-			"openTime":"9:00~21:00"
-			"saleVolume":100
-		}
+	    "timestamp": 1481615683218,
+	    "code": 0,
+	    "result": {
+	        "id": "584fa8cf8edd1f122cd8df34",
+	        "lat": 160,
+	        "lng": 170,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rank": 1,
+	        "rating": 0.99,
+	        "hotness": 0.98,
+	        "contact": {
+	            "phoneList": [
+	                "010-62737359"
+	            ],
+	            "cellphoneList": [
+	                "13811111111"
+	            ],
+	            "qq": "1234213123",
+	            "weixin": "mofashi",
+	            "sina": "312413123",
+	            "fax": "010-62737358",
+	            "email": "3813231231@qq.com",
+	            "website": "www.bjlx.com"
+	        },
+	        "zhName": "季季红",
+	        "enName": "JiJiHong",
+	        "url": "http://xxx",
+	        "marketPrice": 50,
+	        "price": 34,
+	        "priceDesc": "双十二特惠",
+	        "openTime": "9:00~21:00",
+	        "description": {
+	            "desc": "美食描述",
+	            "details": "美食详情",
+	            "tips": "美食提示",
+	            "traffic": "到达美食交通方式"
+	        },
+	        "tags": [
+	            "火锅",
+	            "季季红"
+	        ],
+	        "targets": [
+	            "季季红火锅"
+	        ],
+	        "source": "bjlx",
+	        "guideUrl": "http://xxx",
+	        "address": {
+	            "province": "江西省",
+	            "city": "九江市",
+	            "district": "庐山区",
+	            "detail": "优衣库",
+	            "zipCode": "333133"
+	        },
+	        "locList": [
+	            {
+	                "id": "584fa8cf8edd1f122cd8df32",
+	                "zhName": "九江市",
+	                "enName": "JiuJiang",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "visitCnt": 0,
+	                "commentCnt": 0,
+	                "favorCnt": 0,
+	                "hotness": 0,
+	                "rating": 0
+	            }
+	        ],
+	        "saleVolume": 0,
+	        "locality": {
+	            "id": "584fa8cf8edd1f122cd8df32",
+	            "zhName": "九江市",
+	            "enName": "JiuJiang",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "visitCnt": 0,
+	            "commentCnt": 0,
+	            "favorCnt": 0,
+	            "hotness": 0,
+	            "rating": 0
+	        }
+	    }
 	}
 
 错误码|描述|原因
@@ -2354,42 +2456,56 @@ shareCnt|Integer|否|无|转发数
 - Path:/app/shoppings
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=1&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1021
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"优衣库",
-				"enName":"Uniqlo",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-			}
-		]
+	    "timestamp": 1481614897912,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584fa6268edd1f0abc14cd8b",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "contact": {
+	                "phoneList": [
+	                    "010-62737359"
+	                ],
+	                "cellphoneList": [
+	                    "13811111111"
+	                ],
+	                "qq": "1234213123",
+	                "weixin": "mofashi",
+	                "sina": "312413123",
+	                "fax": "010-62737358",
+	                "email": "3813231231@qq.com",
+	                "website": "www.bjlx.com"
+	            },
+	            "zhName": "优衣库",
+	            "enName": "UNIQLO",
+	            "url": "http://xxx",
+	            "marketPrice": 180,
+	            "price": 160,
+	            "saleVolume": 0,
+	            "discount": 0.8799999952316284
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -2404,94 +2520,121 @@ shareCnt|Integer|否|无|转发数
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
---|--|--|--|--
+见1022
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"lat":180.1,
-			"lng":180.1,
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			],
-			"rank":3,
-			"hotness":0.97,
-			"rating":0.98,
-			"contact":{
-				"phoneList":["010-86752341","010-86752342"],
-				"cellphoneList":["13811111111", "13811111112"],
-				"qq":"13231235432",
-				"weixin":"pisa",
-				"sina":"a123123",
-				"fax":"010-23131231",
-				"email":"bujilvxing@163.com",
-				"website":"www.baidu.com"
-			},
-			"zhName":"煌上煌烤鸭店",
-			"enName":"",
-			"url":"http://XXX",
-			"priceDesc":"",
-			"price":180.3,
-			"tags":["",""],
-			"description":{
-				"desc":"XXX",
-				"details":"XXX",
-				"tips":"XXX",
-				"traffic":"XXX"
-			},
-			"alias":["",""],
-			"targets":["",""],
-			"locList":[
-				{
-					"id": "646f2da8b8ce0440eddb287f",
-					"zhName":"南昌",
-					"enName":"NanChang",
-					"alias":[],
-					"hotness":0.97,
-					"rating":0.97,
-					"tags":["红色摇篮"],
-					"desc":"",
-					"cover": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"lat":115.27,
-					"lng":28.09
-				}
-			],
-			"locality":{
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"alias":[],
-				"hotness":0.97,
-				"rating":0.97,
-				"tags":["红色摇篮"],
-				"desc":"",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"lat":115.27,
-				"lng":28.09
-			},
-			"openTime":"9:00~21:00"
-		}
+	    "timestamp": 1481614965842,
+	    "code": 0,
+	    "result": {
+	        "id": "584fa6268edd1f0abc14cd8b",
+	        "lat": 160,
+	        "lng": 170,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rank": 1,
+	        "rating": 0.99,
+	        "hotness": 0.98,
+	        "favorCnt": 0,
+	        "contact": {
+	            "phoneList": [
+	                "010-62737359"
+	            ],
+	            "cellphoneList": [
+	                "13811111111"
+	            ],
+	            "qq": "1234213123",
+	            "weixin": "mofashi",
+	            "sina": "312413123",
+	            "fax": "010-62737358",
+	            "email": "3813231231@qq.com",
+	            "website": "www.bjlx.com"
+	        },
+	        "zhName": "优衣库",
+	        "enName": "UNIQLO",
+	        "url": "http://xxx",
+	        "marketPrice": 180,
+	        "price": 160,
+	        "priceDesc": "双十二特惠",
+	        "openTime": "9:00~21:00",
+	        "description": {
+	            "desc": "购物描述",
+	            "details": "购物详情",
+	            "tips": "购物提示",
+	            "traffic": "到达购物交通方式"
+	        },
+	        "tags": [
+	            "服装",
+	            "优衣库"
+	        ],
+	        "targets": [
+	            "优衣库"
+	        ],
+	        "source": "bjlx",
+	        "guideUrl": "http://xxx",
+	        "address": {
+	            "province": "江西省",
+	            "city": "九江市",
+	            "district": "庐山区",
+	            "detail": "优衣库",
+	            "zipCode": "333133"
+	        },
+	        "locList": [
+	            {
+	                "id": "584fa6268edd1f0abc14cd89",
+	                "zhName": "九江市",
+	                "enName": "JiuJiang",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "visitCnt": 0,
+	                "commentCnt": 0,
+	                "favorCnt": 0,
+	                "hotness": 0,
+	                "rating": 0
+	            }
+	        ],
+	        "saleVolume": 0,
+	        "discount": 0.8799999952316284,
+	        "locality": {
+	            "id": "584fa6268edd1f0abc14cd89",
+	            "zhName": "九江市",
+	            "enName": "JiuJiang",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "visitCnt": 0,
+	            "commentCnt": 0,
+	            "favorCnt": 0,
+	            "hotness": 0,
+	            "rating": 0
+	        }
+	    }
 	}
 
 错误码|描述|原因
