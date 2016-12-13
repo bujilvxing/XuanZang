@@ -1611,27 +1611,35 @@ limit|Integer|否|10|取多少个
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
-id
+id|String|是|无|客栈id
 cover|Object|是|无|封面图
 url|String|是|""|图片链接
 width|Integer|是|0|图片宽度
 height|Integer|是|0|图片高度
 fmt|String|否|无|图片格式
-contact
-zhName
-enName
-url
-marketPrice
-price
-tags
-address
-province
-city
-district
-detail
-zipCode
-saleVolume
-discount
+contact|Object|否|无|商家联系方式
+phoneList|ArrayString|否|无|联系座机电话列表
+cellphoneList|ArrayString|否|无|联系手机列表
+qq|String|否|无|qq号
+weixin|String|否|无|微信号
+sina|String|否|无|新浪微博号
+fax|String|否|无|传真号
+email|String|否|无|邮箱号
+website|String|否|无|网址
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|客栈链接
+marketPrice|Integer|是|无|市场价
+price|Integer|是|无|价格
+tags|ArrayString|否|无|客栈标签列表
+address|Object|是|无|客栈地址
+province|String|否|无|省
+city|String|否|无|市
+district|String|否|无|区
+detail|String|否|无|详细地址
+zipCode|String|否|无|邮编
+saleVolume|Integer|否|无|销量
+discount|Float|否|无|折扣
 
 > 示例
 
@@ -1683,9 +1691,6 @@ discount
 	    ]
 	}
 
-错误码|描述|原因
---|--|--
-
 ###取得客栈详情1022
 - Path:/app/hotels/{hotelId}
 - Request Method:GET
@@ -1697,6 +1702,64 @@ discount
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|客栈id
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|客栈图集
+rank|Integer|否|无|客栈排名
+rating|Double|是|无|客栈得分
+hotness|Double|是|无|客栈热度
+favorCnt|Integer|否|无|客栈收藏数
+contact|Object|否|无|商家联系方式
+phoneList|ArrayString|否|无|联系座机电话列表
+cellphoneList|ArrayString|否|无|联系手机列表
+qq|String|否|无|qq号
+weixin|String|否|无|微信号
+sina|String|否|无|新浪微博号
+fax|String|否|无|传真号
+email|String|否|无|邮箱号
+website|String|否|无|网址
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|客栈链接
+marketPrice|Integer|是|无|市场价
+price|Integer|是|无|价格
+priceDesc|String|否|无|价格描述
+openTime|String|否|无|值班时间
+description|Object|否|无|描述
+desc|String|否|无|客栈描述
+details|String|否|无|客栈详情
+tips|String|否|无|客栈提示
+traffic|String|否|无|到达客栈交通方式
+tags|ArrayString|否|无|客栈标签列表
+alias|ArrayString|否|无|客栈别名
+targets|ArrayString|否|无|客栈所在行政区划分
+source|String|否|无|客栈信息来源
+guideUrl|String|否|无|客栈指南链接
+address|Object|是|无|客栈地址
+province|String|否|无|省
+city|String|否|无|市
+district|String|否|无|区
+detail|String|否|无|详细地址
+zipCode|String|否|无|邮编
+saleVolume|Integer|否|无|销量
+discount|Float|否|无|折扣
+locList|ArrayObject|否|无|从属行政关系
+rentCar|Object|否|无|租车信息
+price|Integer|是|无|租车价格
+minRentDay|Integer|是|无|起租天数
+autoInsurance|Boolean|是|无|是否有保险
+autoInsurancePrice|Integer|是|无|保险价格
+pickup|Boolean|是|无|是否去接客人
+availableDays|ArrayObject|否|无|客栈可使用的时间
+bookTime|Long|是|无|预定时间
+available|Boolean|是|无|是否可使用
+price|Integer|是|无|价格
 
 > 示例
 
@@ -1833,6 +1896,7 @@ discount
 
 错误码|描述|原因
 --|--|--
+102201|宾馆不存在|参数输入有误或者客栈被非法删除了
 
 ###取得目的地列表1023
 - Path:/app/localities
@@ -1851,6 +1915,20 @@ limit|Integer|否|10|取多少个
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|目的地id
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+alias|Array String|否|无|别名
+rating|Double|是|无|客栈得分
+hotness|Double|是|无|客栈热度
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+desc|String|是|无|描述
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
 
 > 示例
 
@@ -1878,9 +1956,6 @@ limit|Integer|否|10|取多少个
 			}
 		]
 	}
-
-错误码|描述|原因
---|--|--
 
 ###取得目的地详情1024
 - Path:/app/localities/{localityId}
@@ -2077,6 +2152,7 @@ limit|Integer|否|10|取多少个
 
 错误码|描述|原因
 --|--|--
+102401|目的地不存在|参数输入有误或者目的地被非法删除了
 
 ###取得景点列表1025
 - Path:/app/viewspots
@@ -2133,9 +2209,6 @@ limit|Integer|否|10|取多少个
 	        }
 	    ]
 	}
-
-错误码|描述|原因
---|--|--
 
 ###取得景点详情1026
 - Path:/app/viewspots/{viewspotId}
@@ -2265,6 +2338,7 @@ limit|Integer|否|10|取多少个
 
 错误码|描述|原因
 --|--|--
+102601|景点不存在|参数输入有误或者景点被非法删除了
 
 ###取得餐厅列表1027
 - Path:/app/restaurants
@@ -2321,9 +2395,6 @@ limit|Integer|否|10|取多少个
 	        }
 	    ]
 	}
-
-错误码|描述|原因
---|--|--
 
 ###取得餐厅详情1028
 - Path:/app/restaurants/{restaurantId}
@@ -2451,6 +2522,7 @@ limit|Integer|否|10|取多少个
 
 错误码|描述|原因
 --|--|--
+102801|美食不存在|参数输入有误或者美食被非法删除了
 
 ###取得商场列表1029
 - Path:/app/shoppings
@@ -2507,9 +2579,6 @@ limit|Integer|否|10|取多少个
 	        }
 	    ]
 	}
-
-错误码|描述|原因
---|--|--
 
 ###取得商场详情1030
 - Path:/app/shoppings/{shoppingId}
@@ -2639,6 +2708,7 @@ limit|Integer|否|10|取多少个
 
 错误码|描述|原因
 --|--|--
+103001|购物不存在|参数输入有误或者购物被非法删除了
 
 ***
 #活动模块
