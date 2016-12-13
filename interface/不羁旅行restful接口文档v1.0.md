@@ -1071,6 +1071,10 @@ status|String|是|无|专栏状态，review表示待审核，pub表示使用中�
 	    ]
 	}
 
+错误码|描述|原因
+--|--|--
+101501|运营专栏数据为空|运营尚未弄好数据
+
 ###取得首页1016
 - Path:/app/banners
 - Request Method:GET
@@ -1097,29 +1101,33 @@ status|String|是|无|专栏状态，review表示待审核，pub表示使用中�
 
 > 示例
 
-{
-    "timestamp": 1481552433970,
-    "code": 0,
-    "result": [
-        {
-            "itemId": "584eb172954233105801a3e6",
-            "rank": 1,
-            "itemType": "hotel",
-            "columnType": "slide",
-            "title": "首页客栈1",
-            "desc": "描述1",
-            "link": "http://hotel1",
-            "linkType": "app",
-            "cover": {
-                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
-                "width": 100,
-                "height": 100,
-                "fmt": "jpg"
-            },
-            "status": "pub"
-        }
-    ]
-}
+	{
+	    "timestamp": 1481552433970,
+	    "code": 0,
+	    "result": [
+	        {
+	            "itemId": "584eb172954233105801a3e6",
+	            "rank": 1,
+	            "itemType": "hotel",
+	            "columnType": "slide",
+	            "title": "首页客栈1",
+	            "desc": "描述1",
+	            "link": "http://hotel1",
+	            "linkType": "app",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "status": "pub"
+	        }
+	    ]
+	}
+
+错误码|描述|原因
+--|--|--
+101601|banner数据为空|运营尚未弄好数据
 
 ###取得首页商品列表(特产等)1017
 - Path:/app/commodities
@@ -1132,9 +1140,14 @@ status|String|是|无|专栏状态，review表示待审核，pub表示使用中�
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
-id|String|是|无|商品id
+id|String|是|无|主键
 category|String|是|无|商品分类
+id|String|是|无|商品id
+firstCategory|String|是|无|商品一级分类
+secondCategory|String|是|无|商品二级分类
+thirdCategory|String|是|无|商品三级分类
 title|String|是|无|标题
+desc|String|否|无|商品描述
 cover|Object|否|无|封面图
 url|String|是|""|图片链接
 width|Integer|是|0|图片宽度
@@ -1149,27 +1162,44 @@ rating|Double|否|无|评分
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"546f2da8b8ce0440eddb287e",
-				"category":["specialty"],
-				"title":"煌上煌烤鸭",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"price":33.3,
-				"marketPrice":56.4,
-				"status":1,
-				"salesVolume":100,
-				"rating":0.98
-			}
-		]
+	    "timestamp": 1481597738543,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584f62d98edd1f1cc40e93dd",
+	            "category": "specialities",
+	            "commodities": [
+	                {
+	                    "id": "584f62d98edd1f1cc40e93c9",
+	                    "firstCategory": "一级分类",
+	                    "secondCategory": "二级分类",
+	                    "thirdCategory": "三级分类",
+	                    "title": "商品0",
+	                    "desc": "商品描述0",
+	                    "cover": {
+	                        "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                        "width": 100,
+	                        "height": 100,
+	                        "fmt": "jpg"
+	                    },
+	                    "price": 1000,
+	                    "marketPrice": 2000,
+	                    "status": 2,
+	                    "salesVolume": 0,
+	                    "createTime": 1481597657636,
+	                    "updateTime": 0,
+	                    "rating": 0,
+	                    "commodityType": "specialities"
+	                }
+	            ]
+	        }
+	    ]
 	}
+
+错误码|描述|原因
+--|--|--
+101701|首页运营商品数据为空|运营尚未准备数据
+101702|首页商品数据为空|商品的数据被非法删除
 
 ###取得商品详情(特产等)1018
 - Path:/app/commodities/{commodityId}
@@ -1182,76 +1212,120 @@ rating|Double|否|无|评分
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|商品id
+firstCategory|String|是|无|商品一级分类
+secondCategory|String|是|无|商品二级分类
+thirdCategory|String|是|无|商品三级分类
+title|String|是|无|标题
+desc|String|否|无|商品描述
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|商品组图
+price|Double|是|无|价格
+marketPrice|Double|是|无|市场价格
+status|Integer|否|无|状态
+favorCnt|Integer|否|0|被喜欢的次数
+salesVolume|Integer|否|无|销量
+plans|ArrayObject|否|无|套餐列表
+planId|String|是|无|套餐id
+title|String|是|无|套餐标题
+desc|String|是|无|套餐描述
+pricings|ArrayObject|否|无|套餐价格列表
+price|Integer|是|无|价格
+timeRange|ArrayLong|否|无|价格的时间区间
+marketPrice|Integer|是|无|套餐市场价格
+price|Integer|是|无|套餐价格
+stockInfos|ArrayObject|否|无|套餐库存列表
+status|String|是|无|库存状态。empty|nonempty|plenty
+quantity|Integer|是|无|库存量
+timeRange|ArrayLong|否|无|库存的有效时间区间
+timeRequired|Boolean|是|false|是否有失效性
+rating|Double|否|无|评分
+version|Integer|是|无|版本
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"546f2da8b8ce0440eddb287e",
-			"category":["specialty"],
-			"title":"煌上煌烤鸭",
-			"locality": {
-				"id": "646f2da8b8ce0440eddb287f",
-				"zhName":"南昌",
-				"enName":"NanChang",
-				"alias":[],
-				"hotness":0.97,
-				"rating":0.97,
-				"tags":["红色摇篮"],
-				"desc":"",
-				"cover": {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"lat":115.27,
-				"lng":28.09
-			},
-			"desc":"太好吃了",
-			"cover": {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			}],
-			"price":33.3,
-			"marketPrice":56.4,
-			"status":1,
-			"plans":[{
-				"planId":"646f2da8b8ce0440eddb287f",
-				"title":"买3只送1只",
-				"desc":"",
-				"pricing":[],
-				"marketPrice":56.4,
-				"price":33.3,
-				"stockInfo":[{
-					"status":"plenty",
-					"quantity":100,
-					"timeRange":[]##  ##
-				}],
-				"timeRequired":false
-			}],
-			"salesVolume":100,
-			"createTime":1450000000000,
-			"updateTime":1450000000000,
-			"rating":0.98,
-			"commodityType":"食品",
-			"version":1
-		}
+	    "timestamp": 1481599196626,
+	    "code": 0,
+	    "result": {
+	        "id": "584f62d98edd1f1cc40e93c9",
+	        "firstCategory": "一级分类",
+	        "secondCategory": "二级分类",
+	        "thirdCategory": "三级分类",
+	        "title": "商品0",
+	        "desc": "商品描述0",
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "price": 1000,
+	        "marketPrice": 2000,
+	        "status": 2,
+	        "favorCnt": 0,
+	        "plans": [
+	            {
+	                "planId": "584f62d98edd1f1cc40e93c8",
+	                "title": "套餐0",
+	                "desc": "套餐描述0",
+	                "pricings": [
+	                    {
+	                        "price": 1000,
+	                        "timeRange": [
+	                            1481597657337,
+	                            1482202457337
+	                        ]
+	                    }
+	                ],
+	                "marketPrice": 2000,
+	                "price": 1000,
+	                "stockInfos": [
+	                    {
+	                        "status": "plenty",
+	                        "quantity": 10000,
+	                        "timeRange": [
+	                            1481597657337,
+	                            1482202457337
+	                        ]
+	                    }
+	                ],
+	                "timeRequired": true
+	            }
+	        ],
+	        "salesVolume": 0,
+	        "createTime": 1481597657636,
+	        "updateTime": 0,
+	        "rating": 0,
+	        "version": 0,
+	        "commodityType": "specical"
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+101801|商品不存在|商品被非法删除
 
-###取得攻略列表1019
-- Path:/app/guides
+###取得首页攻略列表1019
+- Path:/app/columnguides
 - Request Method:GET
 - Request Headers:无
 - Query String:无
@@ -1261,28 +1335,48 @@ rating|Double|否|无|评分
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|攻略id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+updateTime|Long|否|无|更新时间
+title|String|是|无|标题
+desc|String|否|无|描述
+summary|String|是|无|摘要
+detailUrl|String|是|无|详情链接
+viewCnt|Integer|否|无|阅读数
+shareCnt|Integer|否|无|转发数
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[{
-			"id":"646f2da8b8ce0440eddb287f",
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"title":"南昌文化",
-			"summary":"革命根据地，风景如画...",
-			"viewCnt":1000000
-		}]
+	    "timestamp": 1481610904356,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "584f91108edd1f202c8969d4",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "updateTime": 1481609488583,
+	            "title": "攻略1",
+	            "desc": "攻略描述1",
+	            "summary": "攻略摘要1",
+	            "detailUrl": "http://XXX",
+	            "viewCnt": 0,
+	            "shareCnt": 0
+	        }
+	    ]
 	}
 
 错误码|描述|原因
 --|--|--
+101901|攻略数据为空|运营人员没有弄好数据
 
 ###取得攻略详情1020
 - Path:/app/guides/{guideId}
@@ -1295,268 +1389,208 @@ rating|Double|否|无|评分
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|攻略id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|攻略图集
+updateTime|Long|否|无|更新时间
+title|String|是|无|标题
+desc|String|否|无|描述
+bestTripTime|String|否|无|最佳旅行时间
+tips|String|否|无|提示
+hotels|ArrayObject|否|无|旅馆列表
+zhName|String|是|无|旅馆中文名称
+enName|String|否|无|旅馆英文名称
+url|String|是|无|旅馆链接
+marketPrice|Integer|是|无|市场价
+price|Integer|是|无|价格
+saleVolume|Integer|是|无|销量
+shoppings|ArrayObject|否|无|购物列表
+restaurants|ArrayObject|否|无|美食列表
+viewspots|ArrayObject|否|无|景点列表
+tripPlans|ArrayObject|否|无|行程规划列表
+userId|Long|是|无|作者用户id
+nickName|String|是|无|作者昵称
+avatar|Object|是|无|作者头像
+originId|String|否|无|源行程规划的id
+originUserId|Long|否|无|源作者用户id
+originNickName|String|否|无|源作者昵称
+originAvatar|Object|否|无|源作者头像
+activities|ArrayObject|否|无|活动列表
+joinNum|Integer|是|无|参加人数
+favorCnt|Integer|是|0|收藏人数
+commentCnt|Integer|是|0|评论人数
+viewCnt|Integer|是|0|阅读人数
+shareCnt|Integer|是|0|转发人数
+voteCnt|Integer|是|0|点赞人数
+isFree|Boolean|是|无|是否免费
+summary|String|是|无|摘要
+detailUrl|String|是|无|详情链接
+viewCnt|Integer|否|无|阅读数
+shareCnt|Integer|否|无|转发数
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"cover" : {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"updateTime":1425225600000,
-			"title":"南昌文化",
-			"desc":"南昌是一个...",
-			"bestTripTime":"5月1日~10月20日",
-			"tips":"",
-			"hotels":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"如家快捷酒店",
-					"enName":"RuJia",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"shoppings":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"优衣库",
-					"enName":"Uniqlo",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"restaurants":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"煌上煌烤鸭店",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"activities": [
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"亲子游活动",
-					"maxNum":200,
-					"joinNum" : 106,
-					"favorCnt":100001,
-					"viewCnt":88888,
-					"poster":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				}
-			],
-			"viewspots":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"lat":180.1,
-					"lng":180.1,
-					"cover" : {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"rank":3,
-					"hotness":0.97,
-					"rating":0.98,
-					"zhName":"八一广场",
-					"enName":"",
-					"url":"http://XXX",
-					"marketPrice":280.6,
-					"price":180.3,
-					"tags":["",""],
-					"openTime":"9:00~21:00"
-					"saleVolume":100,
-					"discount":0.65
-				}
-			],
-			"tripPlans":[
-				{
-					"id":"646f2da8b8ce0440eddb287f",
-					"userId":10001,
-					"nickName":"魔法屋",
-					"avatar": {
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"tripItems": [
-						{
-							"tripTime":1450000000000,
-							"createTime":1450000000000,
-							"desc":"",
-							"restaurant":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"煌上煌烤鸭店",
-								"enName":"",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"hotel":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"如家快捷酒店",
-								"enName":"RuJia",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"viewspot":{
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"八一广场",
-								"enName":"",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							},
-							"activity": {
-								"id":"646f2da8b8ce0440eddb287f",
-								"title":"亲子游活动",
-								"maxNum":200,
-								"joinNum" : 106,
-								"favorCnt":100001,
-								"viewCnt":88888,
-								"poster":{
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								}
-							},
-							"shopping": {
-								"id":"646f2da8b8ce0440eddb287f",
-								"lat":180.1,
-								"lng":180.1,
-								"cover" : {
-									"width":400,
-									"height":400,
-									"url":"http://1.jpg"
-								},
-								"rank":3,
-								"hotness":0.97,
-								"rating":0.98,
-								"zhName":"优衣库",
-								"enName":"Uniqlo",
-								"url":"http://XXX",
-								"marketPrice":280.6,
-								"price":180.3,
-								"tags":["",""],
-								"openTime":"9:00~21:00"
-								"saleVolume":100,
-								"discount":0.65
-							}
-						}
-					]
-				}
-			],
-			"summary":"革命根据地，风景如画...",
-			"viewCnt":1000000
-		}
+	    "timestamp": 1481609826938,
+	    "code": 0,
+	    "result": {
+	        "id": "584f91108edd1f202c8969d4",
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "updateTime": 1481609488583,
+	        "title": "攻略1",
+	        "desc": "攻略描述1",
+	        "bestTripTime": "4~5月",
+	        "tips": "攻略提示",
+	        "hotels": [
+	            {
+	                "id": "584f91108edd1f202c8969cc",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "zhName": "不羁客栈",
+	                "enName": "BuJiLvXing Hotel",
+	                "url": "http://xxx",
+	                "marketPrice": 400,
+	                "price": 200,
+	                "saleVolume": 0
+	            }
+	        ],
+	        "shoppings": [
+	            {
+	                "id": "584f91108edd1f202c8969ce",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "zhName": "优衣库",
+	                "enName": "uniqlo",
+	                "url": "http://xxx",
+	                "marketPrice": 300,
+	                "price": 200,
+	                "saleVolume": 0
+	            }
+	        ],
+	        "restaurants": [
+	            {
+	                "id": "584f91108edd1f202c8969cf",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "favorCnt": 0,
+	                "zhName": "煌上煌",
+	                "enName": "Huang Shang Huang",
+	                "url": "http://xxx",
+	                "marketPrice": 120,
+	                "price": 80,
+	                "saleVolume": 0
+	            }
+	        ],
+	        "viewspots": [
+	            {
+	                "id": "584f91108edd1f202c8969d0",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "zhName": "庐山",
+	                "enName": "LuShan",
+	                "url": "http://xxx",
+	                "marketPrice": 200,
+	                "price": 180,
+	                "saleVolume": 0
+	            }
+	        ],
+	        "tripPlans": [
+	            {
+	                "id": "584f91108edd1f202c8969d2",
+	                "userId": 100001,
+	                "nickName": "魔法师",
+	                "avatar": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "title": "庐山行程规划",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "originId": "584f91108edd1f202c8969d1",
+	                "originUserId": 100002,
+	                "originNickName": "逍遥",
+	                "originAvatar": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                }
+	            }
+	        ],
+	        "activities": [
+	            {
+	                "id": "584f91108edd1f202c8969d3",
+	                "title": "活动标题1",
+	                "joinNum": 0,
+	                "favorCnt": 0,
+	                "commentCnt": 0,
+	                "viewCnt": 0,
+	                "shareCnt": 0,
+	                "voteCnt": 0,
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "isFree": true
+	            }
+	        ],
+	        "summary": "攻略摘要1",
+	        "detailUrl": "http://XXX",
+	        "viewCnt": 0,
+	        "shareCnt": 0
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+102001|攻略不存在|攻略被非法删除
 
 ***
 #POI模块

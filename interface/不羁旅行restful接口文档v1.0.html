@@ -1990,11 +1990,11 @@ Query strings
 </tr>
 </tbody>
 </table>
-<pre><code>    {
-        &quot;account&quot;:&quot;13811111111&quot;,
-        &quot;newPassword&quot;:&quot;123343&quot;,
-        &quot;token&quot;:&quot;token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
-    }
+<pre><code>{
+    &quot;account&quot;:&quot;13811111111&quot;,
+    &quot;newPassword&quot;:&quot;123343&quot;,
+    &quot;token&quot;:&quot;token::9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+}
 </code></pre>
 
 <ul>
@@ -2004,10 +2004,10 @@ Query strings
 <p>返回字段说明</p>
 <p>示例</p>
 </blockquote>
-<pre><code>    {
-        &quot;code&quot;:0,
-        &quot;timestamp&quot;:1425225600000
-    }
+<pre><code>{
+    &quot;code&quot;:0,
+    &quot;timestamp&quot;:1425225600000
+}
 </code></pre>
 
 <table>
@@ -2860,7 +2860,7 @@ Query strings
         &quot;loginTime&quot;: 1481470605065,
         &quot;logoutTime&quot;: 1481470096458,
         &quot;version&quot;: 0,
-        &quot;roles&quot;: [],
+        &quot;roles&quot;: [1],
         &quot;level&quot;: 1,
         &quot;soundNotify&quot;: true,
         &quot;vibrateNotify&quot;: true,
@@ -3103,12 +3103,14 @@ Query strings
 <h1>其他模块</h1>
 <h3>申请商家1013</h3>
 <ul>
-<li>Path:/app/misc/sellers</li>
+<li>Path:/app/sellers</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-<p>&quot;userId&quot;:1001</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -3179,12 +3181,14 @@ Query strings
 </table>
 <h3>用户反馈1014</h3>
 <ul>
-<li>Path:/app/misc/feedback</li>
+<li>Path:/app/feedback</li>
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-<p>&quot;userId&quot;:1001</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:1001
+</code></pre>
+
 </li>
 <li>
 <p>Query String:无</p>
@@ -3260,7 +3264,7 @@ Query strings
 <h1>首页运营模块</h1>
 <h3>取得专栏1015</h3>
 <ul>
-<li>Path:/app/misc/columns</li>
+<li>Path:/app/columns</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -3281,28 +3285,115 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏项id</td>
+</tr>
+<tr>
+	<td>rank</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>排名</td>
+</tr>
+<tr>
+	<td>itemType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏项类型，比如：&quot;hotel&quot;、&quot;viewspot&quot;</td>
+</tr>
+<tr>
+	<td>columnType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏类型，只能是&quot;special&quot;</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>linkType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏链接类型。&quot;app&quot;表示内部链接，&quot;web&quot;表示网页链接</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>status</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏状态，review表示待审核，pub表示使用中，disabled表示失效</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481552586128,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;itemId&quot;:&quot;546f2da8b8ce0440eddb287e&quot;,
-            &quot;itemType&quot;:&quot;hotel&quot;,
-            &quot;title&quot;:&quot;如家豪华酒店&quot;,
-            &quot;linkType&quot;:&quot;app&quot;,
-            &quot;linkUrl&quot;:&quot;http://XXX&quot;,
-            &quot;desc&quot;:&quot;超大双人床&quot;,
+            &quot;itemId&quot;: &quot;584eb2c09542330bccd8a391&quot;,
+            &quot;rank&quot;: 1,
+            &quot;itemType&quot;: &quot;viewspot&quot;,
+            &quot;columnType&quot;: &quot;special&quot;,
+            &quot;title&quot;: &quot;首页客栈1&quot;,
+            &quot;desc&quot;: &quot;描述1&quot;,
+            &quot;link&quot;: &quot;http://hotel1&quot;,
+            &quot;linkType&quot;: &quot;app&quot;,
             &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            }
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;status&quot;: &quot;pub&quot;
         }
     ]
 }
@@ -3317,11 +3408,16 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>101501</td>
+	<td>运营专栏数据为空</td>
+	<td>运营尚未弄好数据</td>
+</tr>
 </tbody>
 </table>
 <h3>取得首页1016</h3>
 <ul>
-<li>Path:/app/misc/banners</li>
+<li>Path:/app/banners</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -3342,28 +3438,115 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>itemId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏项id</td>
+</tr>
+<tr>
+	<td>rank</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>排名</td>
+</tr>
+<tr>
+	<td>itemType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏项类型，比如：&quot;hotel&quot;、&quot;viewspot&quot;</td>
+</tr>
+<tr>
+	<td>columnType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏类型，只能是&quot;slide&quot;</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>linkType</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏链接类型。&quot;app&quot;表示内部链接，&quot;web&quot;表示网页链接</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>status</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>专栏状态，review表示待审核，pub表示使用中，disabled表示失效</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481552433970,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;itemId&quot;:&quot;546f2da8b8ce0440eddb287e&quot;,
-            &quot;itemType&quot;:&quot;hotel&quot;,
-            &quot;title&quot;:&quot;如家豪华酒店&quot;,
-            &quot;linkType&quot;:&quot;app&quot;,
-            &quot;linkUrl&quot;:&quot;http://XXX&quot;,
-            &quot;desc&quot;:&quot;超大双人床&quot;,
+            &quot;itemId&quot;: &quot;584eb172954233105801a3e6&quot;,
+            &quot;rank&quot;: 1,
+            &quot;itemType&quot;: &quot;hotel&quot;,
+            &quot;columnType&quot;: &quot;slide&quot;,
+            &quot;title&quot;: &quot;首页客栈1&quot;,
+            &quot;desc&quot;: &quot;描述1&quot;,
+            &quot;link&quot;: &quot;http://hotel1&quot;,
+            &quot;linkType&quot;: &quot;app&quot;,
             &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            }
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;status&quot;: &quot;pub&quot;
         }
     ]
 }
@@ -3378,11 +3561,16 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>101601</td>
+	<td>banner数据为空</td>
+	<td>运营尚未弄好数据</td>
+</tr>
 </tbody>
 </table>
-<h3>取得商品列表(特产等)1017</h3>
+<h3>取得首页商品列表(特产等)1017</h3>
 <ul>
-<li>Path:/app/marketplace/commodities</li>
+<li>Path:/app/commodities</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:category=speciality&amp;offset=0&amp;limit=100</li>
@@ -3403,38 +3591,197 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>category</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品分类</td>
+</tr>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品id</td>
+</tr>
+<tr>
+	<td>firstCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品一级分类</td>
+</tr>
+<tr>
+	<td>secondCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品二级分类</td>
+</tr>
+<tr>
+	<td>thirdCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品三级分类</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>商品描述</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市场价格</td>
+</tr>
+<tr>
+	<td>status</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>状态</td>
+</tr>
+<tr>
+	<td>salesVolume</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>销量</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481597738543,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;546f2da8b8ce0440eddb287e&quot;,
-            &quot;category&quot;:[&quot;specialty&quot;],
-            &quot;title&quot;:&quot;煌上煌烤鸭&quot;,
-            &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            },
-            &quot;price&quot;:33.3,
-            &quot;marketPrice&quot;:56.4,
-            &quot;status&quot;:1,
-            &quot;salesVolume&quot;:100,
-            &quot;rating&quot;:0.98
+            &quot;id&quot;: &quot;584f62d98edd1f1cc40e93dd&quot;,
+            &quot;category&quot;: &quot;specialities&quot;,
+            &quot;commodities&quot;: [
+                {
+                    &quot;id&quot;: &quot;584f62d98edd1f1cc40e93c9&quot;,
+                    &quot;firstCategory&quot;: &quot;一级分类&quot;,
+                    &quot;secondCategory&quot;: &quot;二级分类&quot;,
+                    &quot;thirdCategory&quot;: &quot;三级分类&quot;,
+                    &quot;title&quot;: &quot;商品0&quot;,
+                    &quot;desc&quot;: &quot;商品描述0&quot;,
+                    &quot;cover&quot;: {
+                        &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                        &quot;width&quot;: 100,
+                        &quot;height&quot;: 100,
+                        &quot;fmt&quot;: &quot;jpg&quot;
+                    },
+                    &quot;price&quot;: 1000,
+                    &quot;marketPrice&quot;: 2000,
+                    &quot;status&quot;: 2,
+                    &quot;salesVolume&quot;: 0,
+                    &quot;createTime&quot;: 1481597657636,
+                    &quot;updateTime&quot;: 0,
+                    &quot;rating&quot;: 0,
+                    &quot;commodityType&quot;: &quot;specialities&quot;
+                }
+            ]
         }
     ]
 }
 </code></pre>
 
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>101701</td>
+	<td>首页运营商品数据为空</td>
+	<td>运营尚未准备数据</td>
+</tr>
+<tr>
+	<td>101702</td>
+	<td>首页商品数据为空</td>
+	<td>商品的数据被非法删除</td>
+</tr>
+</tbody>
+</table>
 <h3>取得商品详情(特产等)1018</h3>
 <ul>
-<li>Path:/app/marketplace/commodities/{commodityId}</li>
+<li>Path:/app/commodities/{commodityId}</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -3455,70 +3802,313 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品id</td>
+</tr>
+<tr>
+	<td>firstCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品一级分类</td>
+</tr>
+<tr>
+	<td>secondCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品二级分类</td>
+</tr>
+<tr>
+	<td>thirdCategory</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>商品三级分类</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>商品描述</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>商品组图</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市场价格</td>
+</tr>
+<tr>
+	<td>status</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>状态</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>被喜欢的次数</td>
+</tr>
+<tr>
+	<td>salesVolume</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>销量</td>
+</tr>
+<tr>
+	<td>plans</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>套餐列表</td>
+</tr>
+<tr>
+	<td>planId</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>套餐id</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>套餐标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>套餐描述</td>
+</tr>
+<tr>
+	<td>pricings</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>套餐价格列表</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>timeRange</td>
+	<td>ArrayLong</td>
+	<td>否</td>
+	<td>无</td>
+	<td>价格的时间区间</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>套餐市场价格</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>套餐价格</td>
+</tr>
+<tr>
+	<td>stockInfos</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>套餐库存列表</td>
+</tr>
+<tr>
+	<td>status</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>库存状态。empty</td>
+	<td>nonempty</td>
+	<td>plenty</td>
+</tr>
+<tr>
+	<td>quantity</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>库存量</td>
+</tr>
+<tr>
+	<td>timeRange</td>
+	<td>ArrayLong</td>
+	<td>否</td>
+	<td>无</td>
+	<td>库存的有效时间区间</td>
+</tr>
+<tr>
+	<td>timeRequired</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>false</td>
+	<td>是否有失效性</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
+<tr>
+	<td>version</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>版本</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;546f2da8b8ce0440eddb287e&quot;,
-        &quot;category&quot;:[&quot;specialty&quot;],
-        &quot;title&quot;:&quot;煌上煌烤鸭&quot;,
-        &quot;locality&quot;: {
-            &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;zhName&quot;:&quot;南昌&quot;,
-            &quot;enName&quot;:&quot;NanChang&quot;,
-            &quot;alias&quot;:[],
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.97,
-            &quot;tags&quot;:[&quot;红色摇篮&quot;],
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            },
-            &quot;lat&quot;:115.27,
-            &quot;lng&quot;:28.09
-        },
-        &quot;desc&quot;:&quot;太好吃了&quot;,
+    &quot;timestamp&quot;: 1481599196626,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584f62d98edd1f1cc40e93c9&quot;,
+        &quot;firstCategory&quot;: &quot;一级分类&quot;,
+        &quot;secondCategory&quot;: &quot;二级分类&quot;,
+        &quot;thirdCategory&quot;: &quot;三级分类&quot;,
+        &quot;title&quot;: &quot;商品0&quot;,
+        &quot;desc&quot;: &quot;商品描述0&quot;,
         &quot;cover&quot;: {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[{
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        }],
-        &quot;price&quot;:33.3,
-        &quot;marketPrice&quot;:56.4,
-        &quot;status&quot;:1,
-        &quot;plans&quot;:[{
-            &quot;planId&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;title&quot;:&quot;买3只送1只&quot;,
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;pricing&quot;:[],
-            &quot;marketPrice&quot;:56.4,
-            &quot;price&quot;:33.3,
-            &quot;stockInfo&quot;:[{
-                &quot;status&quot;:&quot;plenty&quot;,
-                &quot;quantity&quot;:100,
-                &quot;timeRange&quot;:[]##  ##
-            }],
-            &quot;timeRequired&quot;:false
-        }],
-        &quot;salesVolume&quot;:100,
-        &quot;createTime&quot;:1450000000000,
-        &quot;updateTime&quot;:1450000000000,
-        &quot;rating&quot;:0.98,
-        &quot;commodityType&quot;:&quot;食品&quot;,
-        &quot;version&quot;:1
+        &quot;images&quot;: [
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        ],
+        &quot;price&quot;: 1000,
+        &quot;marketPrice&quot;: 2000,
+        &quot;status&quot;: 2,
+        &quot;favorCnt&quot;: 0,
+        &quot;plans&quot;: [
+            {
+                &quot;planId&quot;: &quot;584f62d98edd1f1cc40e93c8&quot;,
+                &quot;title&quot;: &quot;套餐0&quot;,
+                &quot;desc&quot;: &quot;套餐描述0&quot;,
+                &quot;pricings&quot;: [
+                    {
+                        &quot;price&quot;: 1000,
+                        &quot;timeRange&quot;: [
+                            1481597657337,
+                            1482202457337
+                        ]
+                    }
+                ],
+                &quot;marketPrice&quot;: 2000,
+                &quot;price&quot;: 1000,
+                &quot;stockInfos&quot;: [
+                    {
+                        &quot;status&quot;: &quot;plenty&quot;,
+                        &quot;quantity&quot;: 10000,
+                        &quot;timeRange&quot;: [
+                            1481597657337,
+                            1482202457337
+                        ]
+                    }
+                ],
+                &quot;timeRequired&quot;: true
+            }
+        ],
+        &quot;salesVolume&quot;: 0,
+        &quot;createTime&quot;: 1481597657636,
+        &quot;updateTime&quot;: 0,
+        &quot;rating&quot;: 0,
+        &quot;version&quot;: 0,
+        &quot;commodityType&quot;: &quot;specical&quot;
     }
 }
 </code></pre>
@@ -3532,11 +4122,16 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>101801</td>
+	<td>商品不存在</td>
+	<td>商品被非法删除</td>
+</tr>
 </tbody>
 </table>
-<h3>取得攻略列表1019</h3>
+<h3>取得首页攻略列表1019</h3>
 <ul>
-<li>Path:/app/guides</li>
+<li>Path:/app/columnguides</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
 <li>Query String:无</li>
@@ -3557,26 +4152,123 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>攻略id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>updateTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>更新时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>摘要</td>
+</tr>
+<tr>
+	<td>detailUrl</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>详情链接</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发数</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        },
-        &quot;title&quot;:&quot;南昌文化&quot;,
-        &quot;summary&quot;:&quot;革命根据地，风景如画...&quot;,
-        &quot;viewCnt&quot;:1000000
-    }]
+    &quot;timestamp&quot;: 1481610904356,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
+        {
+            &quot;id&quot;: &quot;584f91108edd1f202c8969d4&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;updateTime&quot;: 1481609488583,
+            &quot;title&quot;: &quot;攻略1&quot;,
+            &quot;desc&quot;: &quot;攻略描述1&quot;,
+            &quot;summary&quot;: &quot;攻略摘要1&quot;,
+            &quot;detailUrl&quot;: &quot;http://XXX&quot;,
+            &quot;viewCnt&quot;: 0,
+            &quot;shareCnt&quot;: 0
+        }
+    ]
 }
 </code></pre>
 
@@ -3589,6 +4281,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>101901</td>
+	<td>攻略数据为空</td>
+	<td>运营人员没有弄好数据</td>
+</tr>
 </tbody>
 </table>
 <h3>取得攻略详情1020</h3>
@@ -3614,265 +4311,456 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>攻略id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>攻略图集</td>
+</tr>
+<tr>
+	<td>updateTime</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>更新时间</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>bestTripTime</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>最佳旅行时间</td>
+</tr>
+<tr>
+	<td>tips</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>提示</td>
+</tr>
+<tr>
+	<td>hotels</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>旅馆列表</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅馆中文名称</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>旅馆英文名称</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅馆链接</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市场价</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>saleVolume</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>销量</td>
+</tr>
+<tr>
+	<td>shoppings</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>购物列表</td>
+</tr>
+<tr>
+	<td>restaurants</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>美食列表</td>
+</tr>
+<tr>
+	<td>viewspots</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>景点列表</td>
+</tr>
+<tr>
+	<td>tripPlans</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>行程规划列表</td>
+</tr>
+<tr>
+	<td>userId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>作者用户id</td>
+</tr>
+<tr>
+	<td>nickName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>作者昵称</td>
+</tr>
+<tr>
+	<td>avatar</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>作者头像</td>
+</tr>
+<tr>
+	<td>originId</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源行程规划的id</td>
+</tr>
+<tr>
+	<td>originUserId</td>
+	<td>Long</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源作者用户id</td>
+</tr>
+<tr>
+	<td>originNickName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源作者昵称</td>
+</tr>
+<tr>
+	<td>originAvatar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>源作者头像</td>
+</tr>
+<tr>
+	<td>activities</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动列表</td>
+</tr>
+<tr>
+	<td>joinNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>参加人数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>收藏人数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>评论人数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>阅读人数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>转发人数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>点赞人数</td>
+</tr>
+<tr>
+	<td>isFree</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>摘要</td>
+</tr>
+<tr>
+	<td>detailUrl</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>详情链接</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>转发数</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+    &quot;timestamp&quot;: 1481609826938,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584f91108edd1f202c8969d4&quot;,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
+        &quot;images&quot;: [
             {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             }
         ],
-        &quot;updateTime&quot;:1425225600000,
-        &quot;title&quot;:&quot;南昌文化&quot;,
-        &quot;desc&quot;:&quot;南昌是一个...&quot;,
-        &quot;bestTripTime&quot;:&quot;5月1日~10月20日&quot;,
-        &quot;tips&quot;:&quot;&quot;,
-        &quot;hotels&quot;:[
+        &quot;updateTime&quot;: 1481609488583,
+        &quot;title&quot;: &quot;攻略1&quot;,
+        &quot;desc&quot;: &quot;攻略描述1&quot;,
+        &quot;bestTripTime&quot;: &quot;4~5月&quot;,
+        &quot;tips&quot;: &quot;攻略提示&quot;,
+        &quot;hotels&quot;: [
             {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;id&quot;: &quot;584f91108edd1f202c8969cc&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                &quot;enName&quot;:&quot;RuJia&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;zhName&quot;: &quot;不羁客栈&quot;,
+                &quot;enName&quot;: &quot;BuJiLvXing Hotel&quot;,
+                &quot;url&quot;: &quot;http://xxx&quot;,
+                &quot;marketPrice&quot;: 400,
+                &quot;price&quot;: 200,
+                &quot;saleVolume&quot;: 0
             }
         ],
-        &quot;shoppings&quot;:[
+        &quot;shoppings&quot;: [
             {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;id&quot;: &quot;584f91108edd1f202c8969ce&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;优衣库&quot;,
-                &quot;enName&quot;:&quot;Uniqlo&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;zhName&quot;: &quot;优衣库&quot;,
+                &quot;enName&quot;: &quot;uniqlo&quot;,
+                &quot;url&quot;: &quot;http://xxx&quot;,
+                &quot;marketPrice&quot;: 300,
+                &quot;price&quot;: 200,
+                &quot;saleVolume&quot;: 0
             }
         ],
-        &quot;restaurants&quot;:[
+        &quot;restaurants&quot;: [
             {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;id&quot;: &quot;584f91108edd1f202c8969cf&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;favorCnt&quot;: 0,
+                &quot;zhName&quot;: &quot;煌上煌&quot;,
+                &quot;enName&quot;: &quot;Huang Shang Huang&quot;,
+                &quot;url&quot;: &quot;http://xxx&quot;,
+                &quot;marketPrice&quot;: 120,
+                &quot;price&quot;: 80,
+                &quot;saleVolume&quot;: 0
+            }
+        ],
+        &quot;viewspots&quot;: [
+            {
+                &quot;id&quot;: &quot;584f91108edd1f202c8969d0&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;zhName&quot;: &quot;庐山&quot;,
+                &quot;enName&quot;: &quot;LuShan&quot;,
+                &quot;url&quot;: &quot;http://xxx&quot;,
+                &quot;marketPrice&quot;: 200,
+                &quot;price&quot;: 180,
+                &quot;saleVolume&quot;: 0
+            }
+        ],
+        &quot;tripPlans&quot;: [
+            {
+                &quot;id&quot;: &quot;584f91108edd1f202c8969d2&quot;,
+                &quot;userId&quot;: 100001,
+                &quot;nickName&quot;: &quot;魔法师&quot;,
+                &quot;avatar&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;title&quot;: &quot;庐山行程规划&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;originId&quot;: &quot;584f91108edd1f202c8969d1&quot;,
+                &quot;originUserId&quot;: 100002,
+                &quot;originNickName&quot;: &quot;逍遥&quot;,
+                &quot;originAvatar&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                }
             }
         ],
         &quot;activities&quot;: [
             {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;title&quot;:&quot;亲子游活动&quot;,
-                &quot;maxNum&quot;:200,
-                &quot;joinNum&quot; : 106,
-                &quot;favorCnt&quot;:100001,
-                &quot;viewCnt&quot;:88888,
-                &quot;poster&quot;:{
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            }
-        ],
-        &quot;viewspots&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;lat&quot;:180.1,
-                &quot;lng&quot;:180.1,
-                &quot;cover&quot; : {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;id&quot;: &quot;584f91108edd1f202c8969d3&quot;,
+                &quot;title&quot;: &quot;活动标题1&quot;,
+                &quot;joinNum&quot;: 0,
+                &quot;favorCnt&quot;: 0,
+                &quot;commentCnt&quot;: 0,
+                &quot;viewCnt&quot;: 0,
+                &quot;shareCnt&quot;: 0,
+                &quot;voteCnt&quot;: 0,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 },
-                &quot;rank&quot;:3,
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.98,
-                &quot;zhName&quot;:&quot;八一广场&quot;,
-                &quot;enName&quot;:&quot;&quot;,
-                &quot;url&quot;:&quot;http://XXX&quot;,
-                &quot;marketPrice&quot;:280.6,
-                &quot;price&quot;:180.3,
-                &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                &quot;saleVolume&quot;:100,
-                &quot;discount&quot;:0.65
+                &quot;isFree&quot;: true
             }
         ],
-        &quot;tripPlans&quot;:[
-            {
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;userId&quot;:10001,
-                &quot;nickName&quot;:&quot;魔法屋&quot;,
-                &quot;avatar&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;tripItems&quot;: [
-                    {
-                        &quot;tripTime&quot;:1450000000000,
-                        &quot;createTime&quot;:1450000000000,
-                        &quot;desc&quot;:&quot;&quot;,
-                        &quot;restaurant&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-                            &quot;enName&quot;:&quot;&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;hotel&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-                            &quot;enName&quot;:&quot;RuJia&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;viewspot&quot;:{
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;八一广场&quot;,
-                            &quot;enName&quot;:&quot;&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        },
-                        &quot;activity&quot;: {
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;title&quot;:&quot;亲子游活动&quot;,
-                            &quot;maxNum&quot;:200,
-                            &quot;joinNum&quot; : 106,
-                            &quot;favorCnt&quot;:100001,
-                            &quot;viewCnt&quot;:88888,
-                            &quot;poster&quot;:{
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            }
-                        },
-                        &quot;shopping&quot;: {
-                            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                            &quot;lat&quot;:180.1,
-                            &quot;lng&quot;:180.1,
-                            &quot;cover&quot; : {
-                                &quot;width&quot;:400,
-                                &quot;height&quot;:400,
-                                &quot;url&quot;:&quot;http://1.jpg&quot;
-                            },
-                            &quot;rank&quot;:3,
-                            &quot;hotness&quot;:0.97,
-                            &quot;rating&quot;:0.98,
-                            &quot;zhName&quot;:&quot;优衣库&quot;,
-                            &quot;enName&quot;:&quot;Uniqlo&quot;,
-                            &quot;url&quot;:&quot;http://XXX&quot;,
-                            &quot;marketPrice&quot;:280.6,
-                            &quot;price&quot;:180.3,
-                            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-                            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-                            &quot;saleVolume&quot;:100,
-                            &quot;discount&quot;:0.65
-                        }
-                    }
-                ]
-            }
-        ],
-        &quot;summary&quot;:&quot;革命根据地，风景如画...&quot;,
-        &quot;viewCnt&quot;:1000000
+        &quot;summary&quot;: &quot;攻略摘要1&quot;,
+        &quot;detailUrl&quot;: &quot;http://XXX&quot;,
+        &quot;viewCnt&quot;: 0,
+        &quot;shareCnt&quot;: 0
     }
 }
 </code></pre>
@@ -3886,6 +4774,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>102001</td>
+	<td>攻略不存在</td>
+	<td>攻略被非法删除</td>
+</tr>
 </tbody>
 </table>
 <hr />
