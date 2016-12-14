@@ -4788,7 +4788,36 @@ Query strings
 <li>Path:/app/hotels</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=0&amp;limit=100</li>
+<li>Query String</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -4806,52 +4835,263 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>contact</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>商家联系方式</td>
+</tr>
+<tr>
+	<td>phoneList</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>联系座机电话列表</td>
+</tr>
+<tr>
+	<td>cellphoneList</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>联系手机列表</td>
+</tr>
+<tr>
+	<td>qq</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>qq号</td>
+</tr>
+<tr>
+	<td>weixin</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>微信号</td>
+</tr>
+<tr>
+	<td>sina</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>新浪微博号</td>
+</tr>
+<tr>
+	<td>fax</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>传真号</td>
+</tr>
+<tr>
+	<td>email</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>邮箱号</td>
+</tr>
+<tr>
+	<td>website</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>网址</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>英文名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈链接</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市场价</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈标签列表</td>
+</tr>
+<tr>
+	<td>address</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈地址</td>
+</tr>
+<tr>
+	<td>province</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>省</td>
+</tr>
+<tr>
+	<td>city</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>市</td>
+</tr>
+<tr>
+	<td>district</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>区</td>
+</tr>
+<tr>
+	<td>detail</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>详细地址</td>
+</tr>
+<tr>
+	<td>zipCode</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>邮编</td>
+</tr>
+<tr>
+	<td>saleVolume</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>销量</td>
+</tr>
+<tr>
+	<td>discount</td>
+	<td>Float</td>
+	<td>否</td>
+	<td>无</td>
+	<td>折扣</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481612944764,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;lat&quot;:180.1,
-            &quot;lng&quot;:180.1,
-            &quot;cover&quot; : {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;id&quot;: &quot;584f9e7a8edd1f19cc29a7fd&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;rank&quot;:3,
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.98,
-            &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-            &quot;enName&quot;:&quot;RuJia&quot;,
-            &quot;url&quot;:&quot;http://XXX&quot;,
-            &quot;marketPrice&quot;:280.6,
-            &quot;price&quot;:180.3,
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;saleVolume&quot;:100,
-            &quot;discount&quot;:0.65
+            &quot;contact&quot;: {
+                &quot;phoneList&quot;: [
+                    &quot;010-62737359&quot;
+                ],
+                &quot;cellphoneList&quot;: [
+                    &quot;13811111111&quot;
+                ],
+                &quot;qq&quot;: &quot;1234213123&quot;,
+                &quot;weixin&quot;: &quot;mofashi&quot;,
+                &quot;sina&quot;: &quot;312413123&quot;,
+                &quot;fax&quot;: &quot;010-62737358&quot;,
+                &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+                &quot;website&quot;: &quot;www.bjlx.com&quot;
+            },
+            &quot;zhName&quot;: &quot;不羁客栈&quot;,
+            &quot;enName&quot;: &quot;BuJiLvXing Hotel&quot;,
+            &quot;url&quot;: &quot;http://xxx&quot;,
+            &quot;marketPrice&quot;: 400,
+            &quot;price&quot;: 200,
+            &quot;tags&quot;: [
+                &quot;不羁&quot;,
+                &quot;客栈&quot;
+            ],
+            &quot;address&quot;: {
+                &quot;province&quot;: &quot;江西省&quot;,
+                &quot;city&quot;: &quot;南昌市&quot;,
+                &quot;district&quot;: &quot;昌北区&quot;,
+                &quot;detail&quot;: &quot;机场路16号&quot;,
+                &quot;zipCode&quot;: &quot;333133&quot;
+            },
+            &quot;saleVolume&quot;: 100,
+            &quot;discount&quot;: 0.9800000190734863
         }
     ]
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <h3>取得客栈详情1022</h3>
 <ul>
 <li>Path:/app/hotels/{hotelId}</li>
@@ -4875,169 +5115,543 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈id</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈图集</td>
+</tr>
+<tr>
+	<td>rank</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈排名</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈得分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈热度</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈收藏数</td>
+</tr>
+<tr>
+	<td>contact</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>商家联系方式</td>
+</tr>
+<tr>
+	<td>phoneList</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>联系座机电话列表</td>
+</tr>
+<tr>
+	<td>cellphoneList</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>联系手机列表</td>
+</tr>
+<tr>
+	<td>qq</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>qq号</td>
+</tr>
+<tr>
+	<td>weixin</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>微信号</td>
+</tr>
+<tr>
+	<td>sina</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>新浪微博号</td>
+</tr>
+<tr>
+	<td>fax</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>传真号</td>
+</tr>
+<tr>
+	<td>email</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>邮箱号</td>
+</tr>
+<tr>
+	<td>website</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>网址</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>英文名</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈链接</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市场价</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
+<tr>
+	<td>priceDesc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>价格描述</td>
+</tr>
+<tr>
+	<td>openTime</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>值班时间</td>
+</tr>
+<tr>
+	<td>description</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈描述</td>
+</tr>
+<tr>
+	<td>details</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈详情</td>
+</tr>
+<tr>
+	<td>tips</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈提示</td>
+</tr>
+<tr>
+	<td>traffic</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>到达客栈交通方式</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈标签列表</td>
+</tr>
+<tr>
+	<td>alias</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈别名</td>
+</tr>
+<tr>
+	<td>targets</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈所在行政区划分</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈信息来源</td>
+</tr>
+<tr>
+	<td>guideUrl</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈指南链接</td>
+</tr>
+<tr>
+	<td>address</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈地址</td>
+</tr>
+<tr>
+	<td>province</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>省</td>
+</tr>
+<tr>
+	<td>city</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>市</td>
+</tr>
+<tr>
+	<td>district</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>区</td>
+</tr>
+<tr>
+	<td>detail</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>详细地址</td>
+</tr>
+<tr>
+	<td>zipCode</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>邮编</td>
+</tr>
+<tr>
+	<td>saleVolume</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>销量</td>
+</tr>
+<tr>
+	<td>discount</td>
+	<td>Float</td>
+	<td>否</td>
+	<td>无</td>
+	<td>折扣</td>
+</tr>
+<tr>
+	<td>locList</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>从属行政关系</td>
+</tr>
+<tr>
+	<td>rentCar</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>租车信息</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>租车价格</td>
+</tr>
+<tr>
+	<td>minRentDay</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>起租天数</td>
+</tr>
+<tr>
+	<td>autoInsurance</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否有保险</td>
+</tr>
+<tr>
+	<td>autoInsurancePrice</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>保险价格</td>
+</tr>
+<tr>
+	<td>pickup</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否去接客人</td>
+</tr>
+<tr>
+	<td>availableDays</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>客栈可使用的时间</td>
+</tr>
+<tr>
+	<td>bookTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>预定时间</td>
+</tr>
+<tr>
+	<td>available</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否可使用</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>价格</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;lat&quot;:180.1,
-        &quot;lng&quot;:180.1,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+    &quot;timestamp&quot;: 1481613399622,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584f9e7a8edd1f19cc29a7fd&quot;,
+        &quot;lat&quot;: 160,
+        &quot;lng&quot;: 170,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
+        &quot;images&quot;: [
             {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             }
         ],
-        &quot;rank&quot;:3,
-        &quot;hotness&quot;:0.97,
-        &quot;rating&quot;:0.98,
+        &quot;rank&quot;: 1,
+        &quot;rating&quot;: 0.99,
+        &quot;hotness&quot;: 0.98,
+        &quot;favorCnt&quot;: 0,
         &quot;contact&quot;: {
-            &quot;phoneList&quot;:[&quot;010-86752341&quot;,&quot;010-86752342&quot;],
-            &quot;cellphoneList&quot;:[&quot;13811111111&quot;, &quot;13811111112&quot;],
-            &quot;qq&quot;:&quot;13231235432&quot;,
-            &quot;weixin&quot;:&quot;pisa&quot;,
-            &quot;sina&quot;:&quot;a123123&quot;,
-            &quot;fax&quot;:&quot;010-23131231&quot;,
-            &quot;email&quot;:&quot;bujilvxing@163.com&quot;,
-            &quot;website&quot;:&quot;www.baidu.com&quot;
+            &quot;phoneList&quot;: [
+                &quot;010-62737359&quot;
+            ],
+            &quot;cellphoneList&quot;: [
+                &quot;13811111111&quot;
+            ],
+            &quot;qq&quot;: &quot;1234213123&quot;,
+            &quot;weixin&quot;: &quot;mofashi&quot;,
+            &quot;sina&quot;: &quot;312413123&quot;,
+            &quot;fax&quot;: &quot;010-62737358&quot;,
+            &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+            &quot;website&quot;: &quot;www.bjlx.com&quot;
         },
-        &quot;zhName&quot;:&quot;如家快捷酒店&quot;,
-        &quot;enName&quot;:&quot;RuJia&quot;,
-        &quot;url&quot;:&quot;http://XXX&quot;,
-        &quot;marketPrice&quot;:280.6,
-        &quot;price&quot;:180.3,
-        &quot;priceDesc&quot;:&quot;&quot;,
-        &quot;description&quot;:{
-            &quot;desc&quot;:&quot;XXX&quot;,
-            &quot;details&quot;:&quot;XXX&quot;,
-            &quot;tips&quot;:&quot;XXX&quot;,
-            &quot;traffic&quot;:&quot;XXX&quot;
+        &quot;zhName&quot;: &quot;不羁客栈&quot;,
+        &quot;enName&quot;: &quot;BuJiLvXing Hotel&quot;,
+        &quot;url&quot;: &quot;http://xxx&quot;,
+        &quot;marketPrice&quot;: 400,
+        &quot;price&quot;: 200,
+        &quot;priceDesc&quot;: &quot;双十二特惠&quot;,
+        &quot;openTime&quot;: &quot;9:00~21:00&quot;,
+        &quot;description&quot;: {
+            &quot;desc&quot;: &quot;客栈描述&quot;,
+            &quot;details&quot;: &quot;客栈详情&quot;,
+            &quot;tips&quot;: &quot;客栈提示&quot;,
+            &quot;traffic&quot;: &quot;到达客栈交通方式&quot;
         },
-        &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;alias&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;targets&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;address&quot;:&quot;XXX&quot;,
-        &quot;locList&quot;:[
+        &quot;tags&quot;: [
+            &quot;不羁&quot;,
+            &quot;客栈&quot;
+        ],
+        &quot;alias&quot;: [
+            &quot;不羁家&quot;
+        ],
+        &quot;targets&quot;: [
+            &quot;&quot;
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;guideUrl&quot;: &quot;http://xxx&quot;,
+        &quot;address&quot;: {
+            &quot;province&quot;: &quot;江西省&quot;,
+            &quot;city&quot;: &quot;南昌市&quot;,
+            &quot;district&quot;: &quot;昌北区&quot;,
+            &quot;detail&quot;: &quot;机场路16号&quot;,
+            &quot;zipCode&quot;: &quot;333133&quot;
+        },
+        &quot;locList&quot;: [
             {
-                &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;zhName&quot;:&quot;南昌&quot;,
-                &quot;enName&quot;:&quot;NanChang&quot;,
-                &quot;alias&quot;:[],
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.97,
-                &quot;tags&quot;:[&quot;红色摇篮&quot;],
-                &quot;desc&quot;:&quot;&quot;,
+                &quot;id&quot;: &quot;584f9e7a8edd1f19cc29a7fb&quot;,
+                &quot;zhName&quot;: &quot;南昌市&quot;,
+                &quot;enName&quot;: &quot;NanChang&quot;,
                 &quot;cover&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 },
-                &quot;lat&quot;:115.27,
-                &quot;lng&quot;:28.09
+                &quot;visitCnt&quot;: 0,
+                &quot;commentCnt&quot;: 0,
+                &quot;favorCnt&quot;: 0,
+                &quot;hotness&quot;: 0,
+                &quot;rating&quot;: 0
             }
         ],
-        &quot;saleVolume&quot;:100,
-        &quot;discount&quot;:0.65,
+        &quot;saleVolume&quot;: 100,
+        &quot;discount&quot;: 0.9800000190734863,
         &quot;rentCar&quot;: {
-            &quot;price&quot;:180,
-            &quot;pickupAddr&quot;:{
-                &quot;province&quot;:&quot;江西省&quot;,
-                &quot;city&quot;:&quot;南昌市&quot;,
-                &quot;district&quot;:&quot;东湖区&quot;,
-                &quot;detail&quot;:&quot;XXX&quot;,
-                &quot;zipCode&quot;:&quot;100071&quot;
-            },
-            &quot;returnAddr&quot;:{
-                &quot;province&quot;:&quot;江西省&quot;,
-                &quot;city&quot;:&quot;南昌市&quot;,
-                &quot;district&quot;:&quot;东湖区&quot;,
-                &quot;detail&quot;:&quot;XXX&quot;,
-                &quot;zipCode&quot;:&quot;100071&quot;
-            },
-            &quot;contact&quot;:{
-                &quot;phoneList&quot;:[&quot;010-86752341&quot;,&quot;010-86752342&quot;],
-                &quot;cellphoneList&quot;:[&quot;13811111111&quot;, &quot;13811111112&quot;],
-                &quot;qq&quot;:&quot;13231235432&quot;,
-                &quot;weixin&quot;:&quot;pisa&quot;,
-                &quot;sina&quot;:&quot;a123123&quot;,
-                &quot;fax&quot;:&quot;010-23131231&quot;,
-                &quot;email&quot;:&quot;bujilvxing@163.com&quot;,
-                &quot;website&quot;:&quot;www.baidu.com&quot;
-            },
-            &quot;minRentDay&quot;:1,
-            &quot;car&quot;:{
-                &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;carId&quot;:&quot;赣N7023&quot;,
-                &quot;transmission&quot;:1,
-                &quot;vehicleType&quot;:&quot;豪华型&quot;,
-                &quot;brand&quot;:&quot;丰田&quot;,
-                &quot;carOwner&quot;:{
-                    &quot;surname&quot;:&quot;王&quot;,
-                    &quot;givenName&quot;:&quot;力宏&quot;,
-                    &quot;gender&quot;:1,
-                    &quot;birthday&quot;:&quot;1982-12-03&quot;,
-                    &quot;identities&quot;:[
-                        {
-                            &quot;idType&quot;:&quot;身份证&quot;,
-                            &quot;number&quot;:&quot;137771198212037145&quot;
-                        }
-                    ],
-                    &quot;tel&quot;:{
-                        &quot;dialCode&quot;:86,
-                        &quot;number&quot;:&quot;13811111111&quot;
-                    }
-                },
-                &quot;displacement&quot;:3.0,
-                &quot;seatNum&quot;:5,
-                &quot;name&quot;:&quot;丰田霸道&quot;,
-                &quot;fuelType&quot;:&quot;汽油&quot;,
-                &quot;gasolineType&quot;:&quot;93#&quot;
-                &quot;actuationType&quot;:&quot;前后驱动&quot;,
-                &quot;dormer&quot;:true,
-                &quot;gps&quot;:true,
-                &quot;seatType&quot;:&quot;织物座椅&quot;,
-                &quot;airbagNum&quot;:3,
-                &quot;gearboxType&quot;:&quot;AT&quot;,
-                &quot;airConditioner&quot;:true
-            },
-            &quot;autoInsurance&quot;:true,
-            &quot;autoInsurancePrice&quot;:50,
-            &quot;pickup&quot;:true
+            &quot;id&quot;: &quot;584f9e7a8edd1f19cc29a7fc&quot;,
+            &quot;price&quot;: 100,
+            &quot;minRentDay&quot;: 1,
+            &quot;autoInsurance&quot;: true,
+            &quot;autoInsurancePrice&quot;: 10,
+            &quot;pickup&quot;: true
         },
         &quot;locality&quot;: {
-            &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;zhName&quot;:&quot;南昌&quot;,
-            &quot;enName&quot;:&quot;NanChang&quot;,
-            &quot;alias&quot;:[],
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.97,
-            &quot;tags&quot;:[&quot;红色摇篮&quot;],
-            &quot;desc&quot;:&quot;&quot;,
+            &quot;id&quot;: &quot;584f9e7a8edd1f19cc29a7fb&quot;,
+            &quot;zhName&quot;: &quot;南昌市&quot;,
+            &quot;enName&quot;: &quot;NanChang&quot;,
             &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;lat&quot;:115.27,
-            &quot;lng&quot;:28.09
+            &quot;visitCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;favorCnt&quot;: 0,
+            &quot;hotness&quot;: 0,
+            &quot;rating&quot;: 0
         },
-        &quot;availableDays&quot;:[
+        &quot;availableDays&quot;: [
             {
-                &quot;bookTime&quot;:&quot;2016-08-01&quot;,
-                &quot;available&quot;:true,
-                &quot;price&quot;:392.1
+                &quot;bookTime&quot;: 1481612922366,
+                &quot;available&quot;: true,
+                &quot;price&quot;: 100
             }
         ]
     }
@@ -5053,6 +5667,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>102201</td>
+	<td>宾馆不存在</td>
+	<td>参数输入有误或者客栈被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <h3>取得目的地列表1023</h3>
@@ -5060,7 +5679,36 @@ Query strings
 <li>Path:/app/localities</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=0&amp;limit=100</li>
+<li>Query String</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -5078,6 +5726,104 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>目的地id</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>英文名</td>
+</tr>
+<tr>
+	<td>alias</td>
+	<td>Array String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>别名</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈得分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈热度</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -5109,17 +5855,6 @@ Query strings
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <h3>取得目的地详情1024</h3>
 <ul>
 <li>Path:/app/localities/{localityId}</li>
@@ -5143,6 +5878,287 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>目的地id</td>
+</tr>
+<tr>
+	<td>zhName</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>中文名</td>
+</tr>
+<tr>
+	<td>enName</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>英文名</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>目的地图集</td>
+</tr>
+<tr>
+	<td>lat</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>经度</td>
+</tr>
+<tr>
+	<td>lng</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>纬度</td>
+</tr>
+<tr>
+	<td>rank</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>排名</td>
+</tr>
+<tr>
+	<td>remoteTraffic</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>其他城市到目的地的交通方式</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>标题</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>localTraffic</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>目的地本地的交通方式</td>
+</tr>
+<tr>
+	<td>shoppingIntro</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>购物简介</td>
+</tr>
+<tr>
+	<td>diningIntro</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>美食简介</td>
+</tr>
+<tr>
+	<td>cuisines</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>特色菜系</td>
+</tr>
+<tr>
+	<td>activities</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>特色活动列表</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动最大允许人数</td>
+</tr>
+<tr>
+	<td>joinNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>已经报名活动人数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动收藏人数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动浏览人数</td>
+</tr>
+<tr>
+	<td>poster</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动海报</td>
+</tr>
+<tr>
+	<td>tips</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>小贴士</td>
+</tr>
+<tr>
+	<td>geoHistory</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>历史文化</td>
+</tr>
+<tr>
+	<td>specials</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>目的地亮点</td>
+</tr>
+<tr>
+	<td>alias</td>
+	<td>Array String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>别名</td>
+</tr>
+<tr>
+	<td>visitCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>去过目的地的人数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>目的地的评论数</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>目的地的收藏数</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈得分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>客栈热度</td>
+</tr>
+<tr>
+	<td>superAdm</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>父行政区</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>标签列表</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>描述</td>
+</tr>
+<tr>
+	<td>travelMonth</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>适合旅行的月份</td>
+</tr>
+<tr>
+	<td>timeCostDesc</td>
+	<td></td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>适合旅行的月份</td>
+</tr>
+<tr>
+	<td>timeCost</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>建议游玩时间</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -5337,6 +6353,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>102401</td>
+	<td>目的地不存在</td>
+	<td>参数输入有误或者目的地被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <h3>取得景点列表1025</h3>
@@ -5344,13 +6365,8 @@ Query strings
 <li>Path:/app/viewspots</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=0&amp;limit=100</li>
-<li>Request Body:无</li>
-<li>Response</li>
+<li>Query String</li>
 </ul>
-<blockquote>
-<p>返回字段说明</p>
-</blockquote>
 <table>
 <thead>
 <tr>
@@ -5362,53 +6378,71 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个</td>
+</tr>
 </tbody>
 </table>
+<ul>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<blockquote>
+<p>返回字段说明</p>
+</blockquote>
+<p>见1021</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481614252371,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;lat&quot;:180.1,
-            &quot;lng&quot;:180.1,
-            &quot;cover&quot; : {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;id&quot;: &quot;584fa3998edd1f2740896e8a&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;rank&quot;:3,
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.98,
-            &quot;zhName&quot;:&quot;八一广场&quot;,
-            &quot;enName&quot;:&quot;&quot;,
-            &quot;url&quot;:&quot;http://XXX&quot;,
-            &quot;marketPrice&quot;:280.6,
-            &quot;price&quot;:180.3,
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-            &quot;saleVolume&quot;:100,
-            &quot;discount&quot;:0.65
+            &quot;contact&quot;: {
+                &quot;phoneList&quot;: [
+                    &quot;010-62737359&quot;
+                ],
+                &quot;cellphoneList&quot;: [
+                    &quot;13811111111&quot;
+                ],
+                &quot;qq&quot;: &quot;1234213123&quot;,
+                &quot;weixin&quot;: &quot;mofashi&quot;,
+                &quot;sina&quot;: &quot;312413123&quot;,
+                &quot;fax&quot;: &quot;010-62737358&quot;,
+                &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+                &quot;website&quot;: &quot;www.bjlx.com&quot;
+            },
+            &quot;zhName&quot;: &quot;庐山&quot;,
+            &quot;enName&quot;: &quot;Lu Shan&quot;,
+            &quot;url&quot;: &quot;http://xxx&quot;,
+            &quot;marketPrice&quot;: 180,
+            &quot;price&quot;: 160,
+            &quot;saleVolume&quot;: 0,
+            &quot;discount&quot;: 0.8799999952316284
         }
     ]
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <h3>取得景点详情1026</h3>
 <ul>
 <li>Path:/app/viewspots/{viewspotId}</li>
@@ -5421,96 +6455,119 @@ Query strings
 <blockquote>
 <p>返回字段说明</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p>见1022</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;lat&quot;:180.1,
-        &quot;lng&quot;:180.1,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+    &quot;timestamp&quot;: 1481614334614,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584fa3998edd1f2740896e8a&quot;,
+        &quot;lat&quot;: 160,
+        &quot;lng&quot;: 170,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
+        &quot;images&quot;: [
             {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            }
-        ],
-        &quot;rank&quot;:3,
-        &quot;hotness&quot;:0.97,
-        &quot;rating&quot;:0.98,
-        &quot;zhName&quot;:&quot;八一广场&quot;,
-        &quot;enName&quot;:&quot;&quot;,
-        &quot;url&quot;:&quot;http://XXX&quot;,
-        &quot;marketPrice&quot;:280.6,
-        &quot;price&quot;:180.3,
-        &quot;priceDesc&quot;:&quot;&quot;,
-        &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;openTime&quot;:&quot;9:00~21:00&quot;,
-        &quot;description&quot;:{
-            &quot;desc&quot;:&quot;XXX&quot;,
-            &quot;details&quot;:&quot;XXX&quot;,
-            &quot;tips&quot;:&quot;XXX&quot;,
-            &quot;traffic&quot;:&quot;XXX&quot;
-        },
-        &quot;alias&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;targets&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;locList&quot;:[
-            {
-                &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;zhName&quot;:&quot;南昌&quot;,
-                &quot;enName&quot;:&quot;NanChang&quot;,
-                &quot;alias&quot;:[],
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.97,
-                &quot;tags&quot;:[&quot;红色摇篮&quot;],
-                &quot;desc&quot;:&quot;&quot;,
-                &quot;cover&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;lat&quot;:115.27,
-                &quot;lng&quot;:28.09
-            }
-        ],
-        &quot;locality&quot;:{
-            &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;zhName&quot;:&quot;南昌&quot;,
-            &quot;enName&quot;:&quot;NanChang&quot;,
-            &quot;alias&quot;:[],
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.97,
-            &quot;tags&quot;:[&quot;红色摇篮&quot;],
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;lat&quot;:115.27,
-            &quot;lng&quot;:28.09
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        ],
+        &quot;rank&quot;: 1,
+        &quot;rating&quot;: 0.99,
+        &quot;hotness&quot;: 0.98,
+        &quot;favorCnt&quot;: 0,
+        &quot;contact&quot;: {
+            &quot;phoneList&quot;: [
+                &quot;010-62737359&quot;
+            ],
+            &quot;cellphoneList&quot;: [
+                &quot;13811111111&quot;
+            ],
+            &quot;qq&quot;: &quot;1234213123&quot;,
+            &quot;weixin&quot;: &quot;mofashi&quot;,
+            &quot;sina&quot;: &quot;312413123&quot;,
+            &quot;fax&quot;: &quot;010-62737358&quot;,
+            &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+            &quot;website&quot;: &quot;www.bjlx.com&quot;
+        },
+        &quot;zhName&quot;: &quot;庐山&quot;,
+        &quot;enName&quot;: &quot;Lu Shan&quot;,
+        &quot;url&quot;: &quot;http://xxx&quot;,
+        &quot;marketPrice&quot;: 180,
+        &quot;price&quot;: 160,
+        &quot;priceDesc&quot;: &quot;双十二特惠&quot;,
+        &quot;openTime&quot;: &quot;9:00~21:00&quot;,
+        &quot;description&quot;: {
+            &quot;desc&quot;: &quot;景点描述&quot;,
+            &quot;details&quot;: &quot;景点详情&quot;,
+            &quot;tips&quot;: &quot;景点提示&quot;,
+            &quot;traffic&quot;: &quot;到达景点交通方式&quot;
+        },
+        &quot;tags&quot;: [
+            &quot;不羁&quot;,
+            &quot;客栈&quot;
+        ],
+        &quot;targets&quot;: [
+            &quot;不羁家&quot;
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;guideUrl&quot;: &quot;http://xxx&quot;,
+        &quot;address&quot;: {
+            &quot;province&quot;: &quot;江西省&quot;,
+            &quot;city&quot;: &quot;九江市&quot;,
+            &quot;district&quot;: &quot;庐山区&quot;,
+            &quot;detail&quot;: &quot;牯岭镇16号&quot;,
+            &quot;zipCode&quot;: &quot;333133&quot;
+        },
+        &quot;locList&quot;: [
+            {
+                &quot;id&quot;: &quot;584fa3998edd1f2740896e88&quot;,
+                &quot;zhName&quot;: &quot;九江市&quot;,
+                &quot;enName&quot;: &quot;JiuJiang&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;visitCnt&quot;: 0,
+                &quot;commentCnt&quot;: 0,
+                &quot;favorCnt&quot;: 0,
+                &quot;hotness&quot;: 0,
+                &quot;rating&quot;: 0
+            }
+        ],
+        &quot;saleVolume&quot;: 0,
+        &quot;discount&quot;: 0.8799999952316284,
+        &quot;locality&quot;: {
+            &quot;id&quot;: &quot;584fa3998edd1f2740896e88&quot;,
+            &quot;zhName&quot;: &quot;九江市&quot;,
+            &quot;enName&quot;: &quot;JiuJiang&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;visitCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;favorCnt&quot;: 0,
+            &quot;hotness&quot;: 0,
+            &quot;rating&quot;: 0
         }
     }
 }
@@ -5525,6 +6582,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>102601</td>
+	<td>景点不存在</td>
+	<td>参数输入有误或者景点被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <h3>取得餐厅列表1027</h3>
@@ -5532,13 +6594,8 @@ Query strings
 <li>Path:/app/restaurants</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=1&amp;limit=100</li>
-<li>Request Body:无</li>
-<li>Response</li>
+<li>Query String</li>
 </ul>
-<blockquote>
-<p>返回字段说明</p>
-</blockquote>
 <table>
 <thead>
 <tr>
@@ -5550,53 +6607,71 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个</td>
+</tr>
 </tbody>
 </table>
+<ul>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<blockquote>
+<p>返回字段说明</p>
+</blockquote>
+<p>见1021</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481615608587,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;lat&quot;:180.1,
-            &quot;lng&quot;:180.1,
-            &quot;cover&quot; : {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;id&quot;: &quot;584fa8cf8edd1f122cd8df34&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;rank&quot;:3,
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.98,
-            &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-            &quot;enName&quot;:&quot;&quot;,
-            &quot;url&quot;:&quot;http://XXX&quot;,
-            &quot;marketPrice&quot;:280.6,
-            &quot;price&quot;:180.3,
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;openTime&quot;:&quot;9:00~21:00&quot;
-            &quot;saleVolume&quot;:100,
-            &quot;discount&quot;:0.65
+            &quot;contact&quot;: {
+                &quot;phoneList&quot;: [
+                    &quot;010-62737359&quot;
+                ],
+                &quot;cellphoneList&quot;: [
+                    &quot;13811111111&quot;
+                ],
+                &quot;qq&quot;: &quot;1234213123&quot;,
+                &quot;weixin&quot;: &quot;mofashi&quot;,
+                &quot;sina&quot;: &quot;312413123&quot;,
+                &quot;fax&quot;: &quot;010-62737358&quot;,
+                &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+                &quot;website&quot;: &quot;www.bjlx.com&quot;
+            },
+            &quot;favorCnt&quot;: 0,
+            &quot;zhName&quot;: &quot;季季红&quot;,
+            &quot;enName&quot;: &quot;JiJiHong&quot;,
+            &quot;url&quot;: &quot;http://xxx&quot;,
+            &quot;marketPrice&quot;: 50,
+            &quot;price&quot;: 34,
+            &quot;saleVolume&quot;: 0
         }
     ]
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <h3>取得餐厅详情1028</h3>
 <ul>
 <li>Path:/app/restaurants/{restaurantId}</li>
@@ -5609,105 +6684,118 @@ Query strings
 <blockquote>
 <p>返回字段说明</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p>见1022</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;lat&quot;:180.1,
-        &quot;lng&quot;:180.1,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+    &quot;timestamp&quot;: 1481615683218,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584fa8cf8edd1f122cd8df34&quot;,
+        &quot;lat&quot;: 160,
+        &quot;lng&quot;: 170,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        ],
-        &quot;rank&quot;:3,
-        &quot;hotness&quot;:0.97,
-        &quot;rating&quot;:0.98,
-        &quot;contact&quot;:{
-            &quot;phoneList&quot;:[&quot;010-86752341&quot;,&quot;010-86752342&quot;],
-            &quot;cellphoneList&quot;:[&quot;13811111111&quot;, &quot;13811111112&quot;],
-            &quot;qq&quot;:&quot;13231235432&quot;,
-            &quot;weixin&quot;:&quot;pisa&quot;,
-            &quot;sina&quot;:&quot;a123123&quot;,
-            &quot;fax&quot;:&quot;010-23131231&quot;,
-            &quot;email&quot;:&quot;bujilvxing@163.com&quot;,
-            &quot;website&quot;:&quot;www.baidu.com&quot;
-        },
-        &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-        &quot;enName&quot;:&quot;&quot;,
-        &quot;url&quot;:&quot;http://XXX&quot;,
-        &quot;priceDesc&quot;:&quot;&quot;,
-        &quot;price&quot;:180.3,
-        &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;description&quot;:{
-            &quot;desc&quot;:&quot;XXX&quot;,
-            &quot;details&quot;:&quot;XXX&quot;,
-            &quot;tips&quot;:&quot;XXX&quot;,
-            &quot;traffic&quot;:&quot;XXX&quot;
-        },
-        &quot;alias&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;targets&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;locList&quot;:[
+        &quot;images&quot;: [
             {
-                &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;zhName&quot;:&quot;南昌&quot;,
-                &quot;enName&quot;:&quot;NanChang&quot;,
-                &quot;alias&quot;:[],
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.97,
-                &quot;tags&quot;:[&quot;红色摇篮&quot;],
-                &quot;desc&quot;:&quot;&quot;,
-                &quot;cover&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;lat&quot;:115.27,
-                &quot;lng&quot;:28.09
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             }
         ],
-        &quot;locality&quot;:{
-            &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;zhName&quot;:&quot;南昌&quot;,
-            &quot;enName&quot;:&quot;NanChang&quot;,
-            &quot;alias&quot;:[],
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.97,
-            &quot;tags&quot;:[&quot;红色摇篮&quot;],
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            },
-            &quot;lat&quot;:115.27,
-            &quot;lng&quot;:28.09
+        &quot;rank&quot;: 1,
+        &quot;rating&quot;: 0.99,
+        &quot;hotness&quot;: 0.98,
+        &quot;contact&quot;: {
+            &quot;phoneList&quot;: [
+                &quot;010-62737359&quot;
+            ],
+            &quot;cellphoneList&quot;: [
+                &quot;13811111111&quot;
+            ],
+            &quot;qq&quot;: &quot;1234213123&quot;,
+            &quot;weixin&quot;: &quot;mofashi&quot;,
+            &quot;sina&quot;: &quot;312413123&quot;,
+            &quot;fax&quot;: &quot;010-62737358&quot;,
+            &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+            &quot;website&quot;: &quot;www.bjlx.com&quot;
         },
-        &quot;openTime&quot;:&quot;9:00~21:00&quot;
-        &quot;saleVolume&quot;:100
+        &quot;zhName&quot;: &quot;季季红&quot;,
+        &quot;enName&quot;: &quot;JiJiHong&quot;,
+        &quot;url&quot;: &quot;http://xxx&quot;,
+        &quot;marketPrice&quot;: 50,
+        &quot;price&quot;: 34,
+        &quot;priceDesc&quot;: &quot;双十二特惠&quot;,
+        &quot;openTime&quot;: &quot;9:00~21:00&quot;,
+        &quot;description&quot;: {
+            &quot;desc&quot;: &quot;美食描述&quot;,
+            &quot;details&quot;: &quot;美食详情&quot;,
+            &quot;tips&quot;: &quot;美食提示&quot;,
+            &quot;traffic&quot;: &quot;到达美食交通方式&quot;
+        },
+        &quot;tags&quot;: [
+            &quot;火锅&quot;,
+            &quot;季季红&quot;
+        ],
+        &quot;targets&quot;: [
+            &quot;季季红火锅&quot;
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;guideUrl&quot;: &quot;http://xxx&quot;,
+        &quot;address&quot;: {
+            &quot;province&quot;: &quot;江西省&quot;,
+            &quot;city&quot;: &quot;九江市&quot;,
+            &quot;district&quot;: &quot;庐山区&quot;,
+            &quot;detail&quot;: &quot;优衣库&quot;,
+            &quot;zipCode&quot;: &quot;333133&quot;
+        },
+        &quot;locList&quot;: [
+            {
+                &quot;id&quot;: &quot;584fa8cf8edd1f122cd8df32&quot;,
+                &quot;zhName&quot;: &quot;九江市&quot;,
+                &quot;enName&quot;: &quot;JiuJiang&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;visitCnt&quot;: 0,
+                &quot;commentCnt&quot;: 0,
+                &quot;favorCnt&quot;: 0,
+                &quot;hotness&quot;: 0,
+                &quot;rating&quot;: 0
+            }
+        ],
+        &quot;saleVolume&quot;: 0,
+        &quot;locality&quot;: {
+            &quot;id&quot;: &quot;584fa8cf8edd1f122cd8df32&quot;,
+            &quot;zhName&quot;: &quot;九江市&quot;,
+            &quot;enName&quot;: &quot;JiuJiang&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;visitCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;favorCnt&quot;: 0,
+            &quot;hotness&quot;: 0,
+            &quot;rating&quot;: 0
+        }
     }
 }
 </code></pre>
@@ -5721,6 +6809,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>102801</td>
+	<td>美食不存在</td>
+	<td>参数输入有误或者美食被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <h3>取得商场列表1029</h3>
@@ -5728,13 +6821,8 @@ Query strings
 <li>Path:/app/shoppings</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=1&amp;limit=100</li>
-<li>Request Body:无</li>
-<li>Response</li>
+<li>Query String</li>
 </ul>
-<blockquote>
-<p>返回字段说明</p>
-</blockquote>
 <table>
 <thead>
 <tr>
@@ -5746,51 +6834,71 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几个开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少个</td>
+</tr>
 </tbody>
 </table>
+<ul>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<blockquote>
+<p>返回字段说明</p>
+</blockquote>
+<p>见1021</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481614897912,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;lat&quot;:180.1,
-            &quot;lng&quot;:180.1,
-            &quot;cover&quot; : {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;id&quot;: &quot;584fa6268edd1f0abc14cd8b&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;rank&quot;:3,
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.98,
-            &quot;zhName&quot;:&quot;优衣库&quot;,
-            &quot;enName&quot;:&quot;Uniqlo&quot;,
-            &quot;url&quot;:&quot;http://XXX&quot;,
-            &quot;marketPrice&quot;:280.6,
-            &quot;price&quot;:180.3,
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;openTime&quot;:&quot;9:00~21:00&quot;
+            &quot;contact&quot;: {
+                &quot;phoneList&quot;: [
+                    &quot;010-62737359&quot;
+                ],
+                &quot;cellphoneList&quot;: [
+                    &quot;13811111111&quot;
+                ],
+                &quot;qq&quot;: &quot;1234213123&quot;,
+                &quot;weixin&quot;: &quot;mofashi&quot;,
+                &quot;sina&quot;: &quot;312413123&quot;,
+                &quot;fax&quot;: &quot;010-62737358&quot;,
+                &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+                &quot;website&quot;: &quot;www.bjlx.com&quot;
+            },
+            &quot;zhName&quot;: &quot;优衣库&quot;,
+            &quot;enName&quot;: &quot;UNIQLO&quot;,
+            &quot;url&quot;: &quot;http://xxx&quot;,
+            &quot;marketPrice&quot;: 180,
+            &quot;price&quot;: 160,
+            &quot;saleVolume&quot;: 0,
+            &quot;discount&quot;: 0.8799999952316284
         }
     ]
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <h3>取得商场详情1030</h3>
 <ul>
 <li>Path:/app/shoppings/{shoppingId}</li>
@@ -5803,104 +6911,120 @@ Query strings
 <blockquote>
 <p>返回字段说明</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p>见1022</p>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-        &quot;lat&quot;:180.1,
-        &quot;lng&quot;:180.1,
-        &quot;cover&quot; : {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+    &quot;timestamp&quot;: 1481614965842,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;584fa6268edd1f0abc14cd8b&quot;,
+        &quot;lat&quot;: 160,
+        &quot;lng&quot;: 170,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
-        ],
-        &quot;rank&quot;:3,
-        &quot;hotness&quot;:0.97,
-        &quot;rating&quot;:0.98,
-        &quot;contact&quot;:{
-            &quot;phoneList&quot;:[&quot;010-86752341&quot;,&quot;010-86752342&quot;],
-            &quot;cellphoneList&quot;:[&quot;13811111111&quot;, &quot;13811111112&quot;],
-            &quot;qq&quot;:&quot;13231235432&quot;,
-            &quot;weixin&quot;:&quot;pisa&quot;,
-            &quot;sina&quot;:&quot;a123123&quot;,
-            &quot;fax&quot;:&quot;010-23131231&quot;,
-            &quot;email&quot;:&quot;bujilvxing@163.com&quot;,
-            &quot;website&quot;:&quot;www.baidu.com&quot;
-        },
-        &quot;zhName&quot;:&quot;煌上煌烤鸭店&quot;,
-        &quot;enName&quot;:&quot;&quot;,
-        &quot;url&quot;:&quot;http://XXX&quot;,
-        &quot;priceDesc&quot;:&quot;&quot;,
-        &quot;price&quot;:180.3,
-        &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;description&quot;:{
-            &quot;desc&quot;:&quot;XXX&quot;,
-            &quot;details&quot;:&quot;XXX&quot;,
-            &quot;tips&quot;:&quot;XXX&quot;,
-            &quot;traffic&quot;:&quot;XXX&quot;
-        },
-        &quot;alias&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;targets&quot;:[&quot;&quot;,&quot;&quot;],
-        &quot;locList&quot;:[
+        &quot;images&quot;: [
             {
-                &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-                &quot;zhName&quot;:&quot;南昌&quot;,
-                &quot;enName&quot;:&quot;NanChang&quot;,
-                &quot;alias&quot;:[],
-                &quot;hotness&quot;:0.97,
-                &quot;rating&quot;:0.97,
-                &quot;tags&quot;:[&quot;红色摇篮&quot;],
-                &quot;desc&quot;:&quot;&quot;,
-                &quot;cover&quot;: {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                },
-                &quot;lat&quot;:115.27,
-                &quot;lng&quot;:28.09
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             }
         ],
-        &quot;locality&quot;:{
-            &quot;id&quot;: &quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;zhName&quot;:&quot;南昌&quot;,
-            &quot;enName&quot;:&quot;NanChang&quot;,
-            &quot;alias&quot;:[],
-            &quot;hotness&quot;:0.97,
-            &quot;rating&quot;:0.97,
-            &quot;tags&quot;:[&quot;红色摇篮&quot;],
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;cover&quot;: {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
-            },
-            &quot;lat&quot;:115.27,
-            &quot;lng&quot;:28.09
+        &quot;rank&quot;: 1,
+        &quot;rating&quot;: 0.99,
+        &quot;hotness&quot;: 0.98,
+        &quot;favorCnt&quot;: 0,
+        &quot;contact&quot;: {
+            &quot;phoneList&quot;: [
+                &quot;010-62737359&quot;
+            ],
+            &quot;cellphoneList&quot;: [
+                &quot;13811111111&quot;
+            ],
+            &quot;qq&quot;: &quot;1234213123&quot;,
+            &quot;weixin&quot;: &quot;mofashi&quot;,
+            &quot;sina&quot;: &quot;312413123&quot;,
+            &quot;fax&quot;: &quot;010-62737358&quot;,
+            &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+            &quot;website&quot;: &quot;www.bjlx.com&quot;
         },
-        &quot;openTime&quot;:&quot;9:00~21:00&quot;
+        &quot;zhName&quot;: &quot;优衣库&quot;,
+        &quot;enName&quot;: &quot;UNIQLO&quot;,
+        &quot;url&quot;: &quot;http://xxx&quot;,
+        &quot;marketPrice&quot;: 180,
+        &quot;price&quot;: 160,
+        &quot;priceDesc&quot;: &quot;双十二特惠&quot;,
+        &quot;openTime&quot;: &quot;9:00~21:00&quot;,
+        &quot;description&quot;: {
+            &quot;desc&quot;: &quot;购物描述&quot;,
+            &quot;details&quot;: &quot;购物详情&quot;,
+            &quot;tips&quot;: &quot;购物提示&quot;,
+            &quot;traffic&quot;: &quot;到达购物交通方式&quot;
+        },
+        &quot;tags&quot;: [
+            &quot;服装&quot;,
+            &quot;优衣库&quot;
+        ],
+        &quot;targets&quot;: [
+            &quot;优衣库&quot;
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;guideUrl&quot;: &quot;http://xxx&quot;,
+        &quot;address&quot;: {
+            &quot;province&quot;: &quot;江西省&quot;,
+            &quot;city&quot;: &quot;九江市&quot;,
+            &quot;district&quot;: &quot;庐山区&quot;,
+            &quot;detail&quot;: &quot;优衣库&quot;,
+            &quot;zipCode&quot;: &quot;333133&quot;
+        },
+        &quot;locList&quot;: [
+            {
+                &quot;id&quot;: &quot;584fa6268edd1f0abc14cd89&quot;,
+                &quot;zhName&quot;: &quot;九江市&quot;,
+                &quot;enName&quot;: &quot;JiuJiang&quot;,
+                &quot;cover&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                &quot;visitCnt&quot;: 0,
+                &quot;commentCnt&quot;: 0,
+                &quot;favorCnt&quot;: 0,
+                &quot;hotness&quot;: 0,
+                &quot;rating&quot;: 0
+            }
+        ],
+        &quot;saleVolume&quot;: 0,
+        &quot;discount&quot;: 0.8799999952316284,
+        &quot;locality&quot;: {
+            &quot;id&quot;: &quot;584fa6268edd1f0abc14cd89&quot;,
+            &quot;zhName&quot;: &quot;九江市&quot;,
+            &quot;enName&quot;: &quot;JiuJiang&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;visitCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;favorCnt&quot;: 0,
+            &quot;hotness&quot;: 0,
+            &quot;rating&quot;: 0
+        }
     }
 }
 </code></pre>
@@ -5914,6 +7038,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>103001</td>
+	<td>购物不存在</td>
+	<td>参数输入有误或者购物被非法删除了</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -5924,9 +7053,14 @@ Query strings
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers:</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -5940,43 +7074,277 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动标题</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动最大允许人数</td>
+</tr>
+<tr>
+	<td>startTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动开始时间</td>
+</tr>
+<tr>
+	<td>endTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动结束时间</td>
+</tr>
+<tr>
+	<td>address</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>活动地址</td>
+</tr>
+<tr>
+	<td>province</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>省</td>
+</tr>
+<tr>
+	<td>city</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>市</td>
+</tr>
+<tr>
+	<td>district</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>区</td>
+</tr>
+<tr>
+	<td>detail</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>详细地址</td>
+</tr>
+<tr>
+	<td>zipCode</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>邮编</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>posters</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>海报</td>
+</tr>
+<tr>
+	<td>theme</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动主题</td>
+</tr>
+<tr>
+	<td>category</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动分类</td>
+</tr>
+<tr>
+	<td>tags</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动标签</td>
+</tr>
+<tr>
+	<td>visiable</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>活动是否可见，1表示不可见，2表示可见</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>活动描述</td>
+</tr>
+<tr>
+	<td>ticketIds</td>
+	<td>ArrayString</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票的id列表</td>
+</tr>
+<tr>
+	<td>isFree</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>isPhoneList</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写电话号</td>
+</tr>
+<tr>
+	<td>isCellphoneList</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写手机号</td>
+</tr>
+<tr>
+	<td>isQq</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写qq号</td>
+</tr>
+<tr>
+	<td>isWeixin</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写微信号</td>
+</tr>
+<tr>
+	<td>isSina</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写新浪微博号</td>
+</tr>
+<tr>
+	<td>isFax</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写传真号</td>
+</tr>
+<tr>
+	<td>isEmail</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写邮箱号</td>
+</tr>
+<tr>
+	<td>isWebsite</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>报名者是否需要填写个人网址</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
     &quot;title&quot;:&quot;北京冰雪嘉年华&quot;,
     &quot;maxNum&quot;:200,
-    &quot;joinNum&quot;:100,
-    &quot;startTime&quot;:14500000000,
-    &quot;endTime&quot;:14500000000,
-    &quot;address&quot;:{
-        &quot;province&quot;:&quot;江西省&quot;,
-        &quot;city&quot;:&quot;南昌市&quot;,
-        &quot;district&quot;:&quot;东湖区&quot;,
-        &quot;detail&quot;:&quot;XXX&quot;,
-        &quot;zipCode&quot;:&quot;100071&quot;
+    &quot;startTime&quot;:1481704641779,
+    &quot;endTime&quot;:1481704641779,
+    &quot;address&quot;: {
+        &quot;province&quot;: &quot;江西省&quot;,
+        &quot;city&quot;: &quot;南昌市&quot;,
+        &quot;district&quot;: &quot;昌北区&quot;,
+        &quot;detail&quot;: &quot;机场路16号&quot;,
+        &quot;zipCode&quot;: &quot;333133&quot;
+    },
+    &quot;cover&quot;: {
+        &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+        &quot;width&quot;: 100,
+        &quot;height&quot;: 100,
+        &quot;fmt&quot;: &quot;jpg&quot;
     },
     &quot;posters&quot;:[
         {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
+        },
+        {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
         }
     ],
     &quot;theme&quot;:&quot;音乐&quot;,
     &quot;category&quot;:&quot;摇滚&quot;,
-    &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-    &quot;visiable&quot;:1,
+    &quot;tags&quot;: [
+        &quot;摇滚&quot;,
+        &quot;崔健&quot;
+    ],
+    &quot;visiable&quot;:2,
     &quot;desc&quot;:&quot;&quot;,
-    &quot;tickets&quot;:[
-        {
-            &quot;price&quot;:100.1,
-            &quot;free&quot;:false;
-            &quot;refundWay&quot;:1,
-            &quot;refundDesc&quot;:&quot;&quot;,
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;maxNum&quot;:100
-        }
-    ]
+    &quot;ticketIds&quot;:[
+        &quot;58510fb08edd1f21907f440c&quot;
+    ],
+    &quot;isFree&quot;:true,
+    &quot;isPhoneList&quot;: true,
+    &quot;isCellphoneList&quot;:&quot;true&quot;,
+    &quot;isQq&quot;: true,
+    &quot;isWeixin&quot;: true,
+    &quot;isSina&quot;: true,
+    &quot;isFax&quot;: true,
+    &quot;isEmail&quot;: true,
+    &quot;isWebsite&quot;: true
 }
 </code></pre>
 
@@ -5997,9 +7365,80 @@ Query strings
 </tbody>
 </table>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
+    &quot;timestamp&quot;: 1481709140409,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;585116548edd1f2514778e74&quot;,
+        &quot;title&quot;: &quot;北京冰雪嘉年华&quot;,
+        &quot;maxNum&quot;: 200,
+        &quot;joinNum&quot;: 0,
+        &quot;startTime&quot;: 1481704641779,
+        &quot;endTime&quot;: 1481704641779,
+        &quot;address&quot;: {
+            &quot;province&quot;: &quot;江西省&quot;,
+            &quot;city&quot;: &quot;南昌市&quot;,
+            &quot;district&quot;: &quot;昌北区&quot;,
+            &quot;detail&quot;: &quot;机场路16号&quot;,
+            &quot;zipCode&quot;: &quot;333133&quot;
+        },
+        &quot;favorCnt&quot;: 0,
+        &quot;commentCnt&quot;: 0,
+        &quot;viewCnt&quot;: 0,
+        &quot;shareCnt&quot;: 0,
+        &quot;voteCnt&quot;: 0,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+            &quot;width&quot;: 100,
+            &quot;height&quot;: 100,
+            &quot;fmt&quot;: &quot;jpg&quot;
+        },
+        &quot;posters&quot;: [
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        ],
+        &quot;theme&quot;: &quot;音乐&quot;,
+        &quot;category&quot;: &quot;摇滚&quot;,
+        &quot;tags&quot;: [
+            &quot;摇滚&quot;,
+            &quot;崔健&quot;
+        ],
+        &quot;visiable&quot;: 2,
+        &quot;desc&quot;: &quot;&quot;,
+        &quot;creator&quot;: {
+            &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+            &quot;userId&quot;: 100001,
+            &quot;nickName&quot;: &quot;逍遥&quot;,
+            &quot;avatar&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 0,
+                &quot;height&quot;: 0,
+                &quot;fmt&quot;: &quot;&quot;
+            }
+        },
+        &quot;ticketIds&quot;: [
+            &quot;58510fb08edd1f21907f440c&quot;
+        ],
+        &quot;isFree&quot;: true,
+        &quot;publishTime&quot;: 1481709140365,
+        &quot;isPhoneList&quot;: true,
+        &quot;isCellphoneList&quot;: true,
+        &quot;isQq&quot;: true,
+        &quot;isWeixin&quot;: true,
+        &quot;isSina&quot;: true,
+        &quot;isFax&quot;: true,
+        &quot;isEmail&quot;: true,
+        &quot;isWebsite&quot;: true
+    }
 }
 </code></pre>
 
@@ -6012,6 +7451,16 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>103101</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>103102</td>
+	<td>用户不存在</td>
+	<td>用户被非法删除</td>
+</tr>
 </tbody>
 </table>
 <h3>取得活动列表1032</h3>
@@ -6019,10 +7468,11 @@ Query strings
 <li>Path:/app/activities</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=1&amp;limit=100</li>
-<li>Request Body:无</li>
-<li>Response</li>
+<li>Query String</li>
 </ul>
+<p>offset=1&amp;limit=100
+- Request Body:无
+- Response</p>
 <blockquote>
 <p>返回字段说明</p>
 </blockquote>
@@ -6043,46 +7493,26 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:[
+    &quot;timestamp&quot;: 1481704645826,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
         {
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;title&quot;:&quot;北京冰雪嘉年华&quot;,
-            &quot;maxNum&quot;:200,
-            &quot;joinNum&quot;:100,
-            &quot;startTime&quot;:14500000000,
-            &quot;endTime&quot;:14500000000,
-            &quot;address&quot;:{
-                &quot;province&quot;:&quot;江西省&quot;,
-                &quot;city&quot;:&quot;南昌市&quot;,
-                &quot;district&quot;:&quot;东湖区&quot;,
-                &quot;detail&quot;:&quot;XXX&quot;,
-                &quot;zipCode&quot;:&quot;100071&quot;
+            &quot;id&quot;: &quot;585104c18edd1f20bc6c8638&quot;,
+            &quot;title&quot;: &quot;活动标题1&quot;,
+            &quot;maxNum&quot;: 100,
+            &quot;joinNum&quot;: 20,
+            &quot;favorCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;viewCnt&quot;: 0,
+            &quot;shareCnt&quot;: 0,
+            &quot;voteCnt&quot;: 0,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
             },
-            &quot;favorCnt&quot;:1000,
-            &quot;viewCnt&quot;:31231,
-            &quot;posters&quot;:[
-                {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
-                }
-            ],
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;tickets&quot;:[
-                {
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;price&quot;:100.1,
-                    &quot;free&quot;:false;
-                    &quot;refundWay&quot;:1,
-                    &quot;refundDesc&quot;:&quot;&quot;,
-                    &quot;desc&quot;:&quot;&quot;,
-                    &quot;maxNum&quot;:100
-
-                }
-            ]
+            &quot;isFree&quot;: false
         }
     ]
 }
@@ -6128,63 +7558,112 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-            &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-            &quot;title&quot;:&quot;北京冰雪嘉年华&quot;,
-            &quot;maxNum&quot;:200,
-            &quot;joinNum&quot;:100,
-            &quot;startTime&quot;:14500000000,
-            &quot;endTime&quot;:14500000000,
-            &quot;address&quot;:{
-                &quot;province&quot;:&quot;江西省&quot;,
-                &quot;city&quot;:&quot;南昌市&quot;,
-                &quot;district&quot;:&quot;东湖区&quot;,
-                &quot;detail&quot;:&quot;XXX&quot;,
-                &quot;zipCode&quot;:&quot;100071&quot;
+    &quot;timestamp&quot;: 1481707483849,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;activity&quot;: {
+            &quot;id&quot;: &quot;58510fb08edd1f21907f4410&quot;,
+            &quot;title&quot;: &quot;活动标题1&quot;,
+            &quot;maxNum&quot;: 100,
+            &quot;joinNum&quot;: 20,
+            &quot;startTime&quot;: 1481707440201,
+            &quot;endTime&quot;: 1481708880201,
+            &quot;address&quot;: {
+                &quot;province&quot;: &quot;江西省&quot;,
+                &quot;city&quot;: &quot;南昌市&quot;,
+                &quot;district&quot;: &quot;昌北区&quot;,
+                &quot;detail&quot;: &quot;机场路16号&quot;,
+                &quot;zipCode&quot;: &quot;333133&quot;
             },
-            &quot;favorCnt&quot;:1000,
-            &quot;commentCnt&quot;:3123,
-            &quot;viewCnt&quot;:31231,
-            &quot;shareCnt&quot;:312,
-            &quot;posters&quot;:[
+            &quot;favorCnt&quot;: 0,
+            &quot;commentCnt&quot;: 0,
+            &quot;viewCnt&quot;: 0,
+            &quot;shareCnt&quot;: 0,
+            &quot;voteCnt&quot;: 0,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;posters&quot;: [
                 {
-                    &quot;width&quot;:400,
-                    &quot;height&quot;:400,
-                    &quot;url&quot;:&quot;http://1.jpg&quot;
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                },
+                {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
                 }
             ],
-            &quot;theme&quot;:&quot;音乐&quot;,
-            &quot;category&quot;:&quot;摇滚&quot;,
-            &quot;tags&quot;:[&quot;&quot;,&quot;&quot;],
-            &quot;visiable&quot;:1,
-            &quot;desc&quot;:&quot;&quot;,
-            &quot;applicantInfos&quot;:[
+            &quot;theme&quot;: &quot;音乐&quot;,
+            &quot;category&quot;: &quot;摇滚&quot;,
+            &quot;tags&quot;: [
+                &quot;摇滚&quot;,
+                &quot;崔健&quot;
+            ],
+            &quot;visiable&quot;: 2,
+            &quot;desc&quot;: &quot;&quot;,
+            &quot;applicantInfos&quot;: [
                 {
-                    &quot;phoneList&quot;:[&quot;010-86752341&quot;,&quot;010-86752342&quot;],
-                    &quot;cellphoneList&quot;:[&quot;13811111111&quot;, &quot;13811111112&quot;],
-                    &quot;qq&quot;:&quot;13231235432&quot;,
-                    &quot;weixin&quot;:&quot;pisa&quot;,
-                    &quot;sina&quot;:&quot;a123123&quot;,
-                    &quot;fax&quot;:&quot;010-23131231&quot;,
-                    &quot;email&quot;:&quot;bujilvxing@163.com&quot;,
-                    &quot;website&quot;:&quot;www.baidu.com&quot;
+                    &quot;userId&quot;: 100001,
+                    &quot;phoneList&quot;: [
+                        &quot;010-62737359&quot;
+                    ],
+                    &quot;cellphoneList&quot;: [
+                        &quot;13811111111&quot;
+                    ],
+                    &quot;qq&quot;: &quot;1234213123&quot;,
+                    &quot;weixin&quot;: &quot;mofashi&quot;,
+                    &quot;sina&quot;: &quot;312413123&quot;,
+                    &quot;fax&quot;: &quot;010-62737358&quot;,
+                    &quot;email&quot;: &quot;3813231231@qq.com&quot;,
+                    &quot;website&quot;: &quot;www.bjlx.com&quot;
                 }
             ],
-            &quot;tickets&quot;:[
-                {
-                    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-                    &quot;price&quot;:100.1,
-                    &quot;free&quot;:false;
-                    &quot;refundWay&quot;:1,
-                    &quot;refundDesc&quot;:&quot;&quot;,
-                    &quot;desc&quot;:&quot;&quot;,
-                    &quot;maxNum&quot;:100
+            &quot;creator&quot;: {
+                &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+                &quot;userId&quot;: 100001,
+                &quot;nickName&quot;: &quot;逍遥&quot;,
+                &quot;avatar&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 0,
+                    &quot;height&quot;: 0,
+                    &quot;fmt&quot;: &quot;&quot;
                 }
-            ]
-        }
+            },
+            &quot;ticketIds&quot;: [
+                &quot;58510fb08edd1f21907f440c&quot;
+            ],
+            &quot;isFree&quot;: false,
+            &quot;publishTime&quot;: 1481707440317,
+            &quot;isPhoneList&quot;: false,
+            &quot;isCellphoneList&quot;: false,
+            &quot;isQq&quot;: false,
+            &quot;isWeixin&quot;: false,
+            &quot;isSina&quot;: false,
+            &quot;isFax&quot;: false,
+            &quot;isEmail&quot;: false,
+            &quot;isWebsite&quot;: false
+        },
+        &quot;tickets&quot;: [
+            {
+                &quot;id&quot;: &quot;58510fb08edd1f21907f440c&quot;,
+                &quot;price&quot;: 160.1,
+                &quot;marketPrice&quot;: 150.1,
+                &quot;free&quot;: false,
+                &quot;refundWay&quot;: 1,
+                &quot;refundDesc&quot;: &quot;退款到平台公共账号&quot;,
+                &quot;desc&quot;: &quot;票种说明&quot;,
+                &quot;maxNum&quot;: 100,
+                &quot;title&quot;: &quot;门票1&quot;,
+                &quot;creatorId&quot;: 100001
+            }
+        ]
     }
 }
 </code></pre>
@@ -6292,7 +7771,45 @@ Query strings
 <h3>删除门票1039</h3>
 <h3>修改门票1040</h3>
 <h3>取得门票详情1041</h3>
+<pre><code>{
+    &quot;timestamp&quot;: 1481705859808,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;585109158edd1f24e08e9001&quot;,
+        &quot;price&quot;: 160.1,
+        &quot;marketPrice&quot;: 150.1,
+        &quot;free&quot;: false,
+        &quot;refundWay&quot;: 1,
+        &quot;refundDesc&quot;: &quot;退款到平台公共账号&quot;,
+        &quot;desc&quot;: &quot;票种说明&quot;,
+        &quot;maxNum&quot;: 100,
+        &quot;title&quot;: &quot;门票1&quot;,
+        &quot;creatorId&quot;: 100001
+    }
+}
+</code></pre>
+
 <h3>取得用户门票列表1042</h3>
+<pre><code>{
+    &quot;timestamp&quot;: 1481705754094,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
+        {
+            &quot;id&quot;: &quot;585109158edd1f24e08e9001&quot;,
+            &quot;price&quot;: 160.1,
+            &quot;marketPrice&quot;: 150.1,
+            &quot;free&quot;: false,
+            &quot;refundWay&quot;: 1,
+            &quot;refundDesc&quot;: &quot;退款到平台公共账号&quot;,
+            &quot;desc&quot;: &quot;票种说明&quot;,
+            &quot;maxNum&quot;: 100,
+            &quot;title&quot;: &quot;门票1&quot;,
+            &quot;creatorId&quot;: 100001
+        }
+    ]
+}
+</code></pre>
+
 <hr />
 <h1>游记模块</h1>
 <h3>取得游记列表1043</h3>

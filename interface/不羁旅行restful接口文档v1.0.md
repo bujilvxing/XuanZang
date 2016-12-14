@@ -1968,6 +1968,46 @@ lng|Double|否|无|纬度
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|目的地id
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|目的地图集
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+remoteTraffic|ArrayObject|否|无|其他城市到目的地的交通方式
+title|String|是|无|标题
+desc|String|是|无|描述
+localTraffic|ArrayObject|否|无|目的地本地的交通方式
+shoppingIntro|String|否|无|购物简介
+diningIntro|String|否|无|美食简介
+cuisines|ArrayObject|否|无|特色菜系
+activities|ArrayObject|否|无|特色活动列表
+maxNum|Integer|是|无|活动最大允许人数
+joinNum|Integer|是|无|已经报名活动人数
+favorCnt|Integer|是|无|活动收藏人数
+viewCnt|Integer|是|无|活动浏览人数
+poster|Object|是|无|活动海报
+tips|ArrayObject|否|无|小贴士
+geoHistory|ArrayObject|否|无|历史文化
+specials|ArrayObject|否|无|目的地亮点
+alias|Array String|否|无|别名
+visitCnt|Integer|是|无|去过目的地的人数
+commentCnt|Integer|是|无|目的地的评论数
+favorCnt|Integer|是|无|目的地的收藏数
+rating|Double|是|无|客栈得分
+hotness|Double|是|无|客栈热度
+superAdm|Object|否|无|父行政区
+tags|ArrayString|否|无|标签列表
+desc|String|是|无|描述
+travelMonth|String|是|无|适合旅行的月份
+timeCostDesc||String|是|无|适合旅行的月份
+timeCost|Integer|是|无|建议游玩时间
 
 > 示例
 
@@ -2717,48 +2757,98 @@ limit|Integer|否|10|取多少个
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+startTime|Long|是|无|活动开始时间
+endTime|Long|是|无|活动结束时间
+address|Object|是|无|活动地址
+province|String|是|无|省
+city|String|是|无|市
+district|String|是|无|区
+detail|String|是|无|详细地址
+zipCode|String|是|无|邮编
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+posters|Object|是|无|海报
+theme|String|否|无|活动主题
+category|String|否|无|活动分类
+tags|ArrayString|否|无|活动标签
+visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
+desc|String|否|无|活动描述
+ticketIds|ArrayString|否|无|门票的id列表
+isFree|Boolean|是|无|是否免费
+isPhoneList|Boolean|是|无|报名者是否需要填写电话号
+isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
+isQq|Boolean|是|无|报名者是否需要填写qq号
+isWeixin|Boolean|是|无|报名者是否需要填写微信号
+isSina|Boolean|是|无|报名者是否需要填写新浪微博号
+isFax|Boolean|是|无|报名者是否需要填写传真号
+isEmail|Boolean|是|无|报名者是否需要填写邮箱号
+isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 
 	{
 		"title":"北京冰雪嘉年华",
 		"maxNum":200,
-		"joinNum":100,
-		"startTime":14500000000,
-		"endTime":14500000000,
-		"address":{
-			"province":"江西省",
-			"city":"南昌市",
-			"district":"东湖区",
-			"detail":"XXX",
-			"zipCode":"100071"
-		},
+		"startTime":1481704641779,
+		"endTime":1481704641779,
+		"address": {
+            "province": "江西省",
+            "city": "南昌市",
+            "district": "昌北区",
+            "detail": "机场路16号",
+            "zipCode": "333133"
+        },
+		"cover": {
+            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+            "width": 100,
+            "height": 100,
+            "fmt": "jpg"
+        },
 		"posters":[
 			{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			}
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            },
+            {
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            }
 		],
 		"theme":"音乐",
 		"category":"摇滚",
-		"tags":["",""],
-		"visiable":1,
+		"tags": [
+            "摇滚",
+            "崔健"
+        ],
+		"visiable":2,
 		"desc":"",
-		"tickets":[
-			{
-				"price":100.1,
-				"free":false;
-				"refundWay":1,
-				"refundDesc":"",
-				"desc":"",
-				"maxNum":100
-			}
-		]
+		"ticketIds":[
+			"58510fb08edd1f21907f440c"
+		],
+		"isFree":true,
+		"isPhoneList": true,
+		"isCellphoneList":"true",
+	    "isQq": true,
+	    "isWeixin": true,
+	    "isSina": true,
+	    "isFax": true,
+	    "isEmail": true,
+	    "isWebsite": true
 	}
 
 - Response
@@ -2767,19 +2857,94 @@ limit|Integer|否|10|取多少个
 --|--|--|--|--
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000
+	    "timestamp": 1481709140409,
+	    "code": 0,
+	    "result": {
+	        "id": "585116548edd1f2514778e74",
+	        "title": "北京冰雪嘉年华",
+	        "maxNum": 200,
+	        "joinNum": 0,
+	        "startTime": 1481704641779,
+	        "endTime": 1481704641779,
+	        "address": {
+	            "province": "江西省",
+	            "city": "南昌市",
+	            "district": "昌北区",
+	            "detail": "机场路16号",
+	            "zipCode": "333133"
+	        },
+	        "favorCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "voteCnt": 0,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "posters": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "theme": "音乐",
+	        "category": "摇滚",
+	        "tags": [
+	            "摇滚",
+	            "崔健"
+	        ],
+	        "visiable": 2,
+	        "desc": "",
+	        "creator": {
+	            "id": "584e09778edd1f157cb87451",
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 0,
+	                "height": 0,
+	                "fmt": ""
+	            }
+	        },
+	        "ticketIds": [
+	            "58510fb08edd1f21907f440c"
+	        ],
+	        "isFree": true,
+	        "publishTime": 1481709140365,
+	        "isPhoneList": true,
+	        "isCellphoneList": true,
+	        "isQq": true,
+	        "isWeixin": true,
+	        "isSina": true,
+	        "isFax": true,
+	        "isEmail": true,
+	        "isWebsite": true
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+103101|用户未登录|用户未登录
+103102|用户不存在|用户被非法删除
 
 ###取得活动列表1032
 - Path:/app/activities
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=1&limit=100
+- Query String
+
+offset=1&limit=100
 - Request Body:无
 - Response
 > 返回字段说明
@@ -2790,48 +2955,28 @@ limit|Integer|否|10|取多少个
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"北京冰雪嘉年华",
-				"maxNum":200,
-				"joinNum":100,
-				"startTime":14500000000,
-				"endTime":14500000000,
-				"address":{
-					"province":"江西省",
-					"city":"南昌市",
-					"district":"东湖区",
-					"detail":"XXX",
-					"zipCode":"100071"
-				},
-				"favorCnt":1000,
-				"viewCnt":31231,
-				"posters":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"tags":["",""],
-				"tickets":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"price":100.1,
-						"free":false;
-						"refundWay":1,
-						"refundDesc":"",
-						"desc":"",
-						"maxNum":100
-			
-					}
-				]
-			}
-		]
+	    "timestamp": 1481704645826,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "585104c18edd1f20bc6c8638",
+	            "title": "活动标题1",
+	            "maxNum": 100,
+	            "joinNum": 20,
+	            "favorCnt": 0,
+	            "commentCnt": 0,
+	            "viewCnt": 0,
+	            "shareCnt": 0,
+	            "voteCnt": 0,
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "isFree": false
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -2852,64 +2997,113 @@ limit|Integer|否|10|取多少个
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"北京冰雪嘉年华",
-				"maxNum":200,
-				"joinNum":100,
-				"startTime":14500000000,
-				"endTime":14500000000,
-				"address":{
-					"province":"江西省",
-					"city":"南昌市",
-					"district":"东湖区",
-					"detail":"XXX",
-					"zipCode":"100071"
-				},
-				"favorCnt":1000,
-				"commentCnt":3123,
-				"viewCnt":31231,
-				"shareCnt":312,
-				"posters":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"theme":"音乐",
-				"category":"摇滚",
-				"tags":["",""],
-				"visiable":1,
-				"desc":"",
-				"applicantInfos":[
-					{
-						"phoneList":["010-86752341","010-86752342"],
-						"cellphoneList":["13811111111", "13811111112"],
-						"qq":"13231235432",
-						"weixin":"pisa",
-						"sina":"a123123",
-						"fax":"010-23131231",
-						"email":"bujilvxing@163.com",
-						"website":"www.baidu.com"
-					}
-				],
-				"tickets":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"price":100.1,
-						"free":false;
-						"refundWay":1,
-						"refundDesc":"",
-						"desc":"",
-						"maxNum":100
-					}
-				]
-			}
-		}
+	    "timestamp": 1481707483849,
+	    "code": 0,
+	    "result": {
+	        "activity": {
+	            "id": "58510fb08edd1f21907f4410",
+	            "title": "活动标题1",
+	            "maxNum": 100,
+	            "joinNum": 20,
+	            "startTime": 1481707440201,
+	            "endTime": 1481708880201,
+	            "address": {
+	                "province": "江西省",
+	                "city": "南昌市",
+	                "district": "昌北区",
+	                "detail": "机场路16号",
+	                "zipCode": "333133"
+	            },
+	            "favorCnt": 0,
+	            "commentCnt": 0,
+	            "viewCnt": 0,
+	            "shareCnt": 0,
+	            "voteCnt": 0,
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "posters": [
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                }
+	            ],
+	            "theme": "音乐",
+	            "category": "摇滚",
+	            "tags": [
+	                "摇滚",
+	                "崔健"
+	            ],
+	            "visiable": 2,
+	            "desc": "",
+	            "applicantInfos": [
+	                {
+	                    "userId": 100001,
+	                    "phoneList": [
+	                        "010-62737359"
+	                    ],
+	                    "cellphoneList": [
+	                        "13811111111"
+	                    ],
+	                    "qq": "1234213123",
+	                    "weixin": "mofashi",
+	                    "sina": "312413123",
+	                    "fax": "010-62737358",
+	                    "email": "3813231231@qq.com",
+	                    "website": "www.bjlx.com"
+	                }
+	            ],
+	            "creator": {
+	                "id": "584e09778edd1f157cb87451",
+	                "userId": 100001,
+	                "nickName": "逍遥",
+	                "avatar": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 0,
+	                    "height": 0,
+	                    "fmt": ""
+	                }
+	            },
+	            "ticketIds": [
+	                "58510fb08edd1f21907f440c"
+	            ],
+	            "isFree": false,
+	            "publishTime": 1481707440317,
+	            "isPhoneList": false,
+	            "isCellphoneList": false,
+	            "isQq": false,
+	            "isWeixin": false,
+	            "isSina": false,
+	            "isFax": false,
+	            "isEmail": false,
+	            "isWebsite": false
+	        },
+	        "tickets": [
+	            {
+	                "id": "58510fb08edd1f21907f440c",
+	                "price": 160.1,
+	                "marketPrice": 150.1,
+	                "free": false,
+	                "refundWay": 1,
+	                "refundDesc": "退款到平台公共账号",
+	                "desc": "票种说明",
+	                "maxNum": 100,
+	                "title": "门票1",
+	                "creatorId": 100001
+	            }
+	        ]
+	    }
 	}
 
 错误码|描述|原因
@@ -2984,7 +3178,44 @@ limit|Integer|否|10|取多少个
 ###删除门票1039
 ###修改门票1040
 ###取得门票详情1041
+
+	{
+	    "timestamp": 1481705859808,
+	    "code": 0,
+	    "result": {
+	        "id": "585109158edd1f24e08e9001",
+	        "price": 160.1,
+	        "marketPrice": 150.1,
+	        "free": false,
+	        "refundWay": 1,
+	        "refundDesc": "退款到平台公共账号",
+	        "desc": "票种说明",
+	        "maxNum": 100,
+	        "title": "门票1",
+	        "creatorId": 100001
+	    }
+	}
+
 ###取得用户门票列表1042
+
+	{
+	    "timestamp": 1481705754094,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "585109158edd1f24e08e9001",
+	            "price": 160.1,
+	            "marketPrice": 150.1,
+	            "free": false,
+	            "refundWay": 1,
+	            "refundDesc": "退款到平台公共账号",
+	            "desc": "票种说明",
+	            "maxNum": 100,
+	            "title": "门票1",
+	            "creatorId": 100001
+	        }
+	    ]
+	}
 
 ***
 #游记模块
