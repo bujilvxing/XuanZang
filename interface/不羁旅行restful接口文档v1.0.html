@@ -3996,9 +3996,7 @@ Query strings
 	<td>String</td>
 	<td>是</td>
 	<td>无</td>
-	<td>库存状态。empty</td>
-	<td>nonempty</td>
-	<td>plenty</td>
+	<td>库存状态。empty,nonempty,plenty</td>
 </tr>
 <tr>
 	<td>quantity</td>
@@ -6146,7 +6144,6 @@ Query strings
 </tr>
 <tr>
 	<td>timeCostDesc</td>
-	<td></td>
 	<td>String</td>
 	<td>是</td>
 	<td>无</td>
@@ -9416,221 +9413,60 @@ Query strings
 </thead>
 <tbody>
 <tr>
-	<td>title</td>
-	<td>String</td>
+	<td>price</td>
+	<td>Double</td>
 	<td>是</td>
 	<td>无</td>
-	<td>活动标题</td>
+	<td>门票价格</td>
 </tr>
 <tr>
-	<td>maxNum</td>
-	<td>Integer</td>
-	<td>是</td>
-	<td>无</td>
-	<td>活动最大允许人数</td>
-</tr>
-<tr>
-	<td>startTime</td>
-	<td>Long</td>
-	<td>是</td>
-	<td>无</td>
-	<td>活动开始时间</td>
-</tr>
-<tr>
-	<td>endTime</td>
-	<td>Long</td>
-	<td>是</td>
-	<td>无</td>
-	<td>活动结束时间</td>
-</tr>
-<tr>
-	<td>address</td>
-	<td>Object</td>
-	<td>是</td>
-	<td>无</td>
-	<td>活动地址</td>
-</tr>
-<tr>
-	<td>province</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>省</td>
-</tr>
-<tr>
-	<td>city</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>市</td>
-</tr>
-<tr>
-	<td>district</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>区</td>
-</tr>
-<tr>
-	<td>detail</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>详细地址</td>
-</tr>
-<tr>
-	<td>zipCode</td>
-	<td>String</td>
-	<td>是</td>
-	<td>无</td>
-	<td>邮编</td>
-</tr>
-<tr>
-	<td>cover</td>
-	<td>Object</td>
-	<td>是</td>
-	<td>无</td>
-	<td>封面图</td>
-</tr>
-<tr>
-	<td>url</td>
-	<td>String</td>
-	<td>是</td>
-	<td>&quot;&quot;</td>
-	<td>图片链接</td>
-</tr>
-<tr>
-	<td>width</td>
-	<td>Integer</td>
-	<td>是</td>
-	<td>0</td>
-	<td>图片宽度</td>
-</tr>
-<tr>
-	<td>height</td>
-	<td>Integer</td>
-	<td>是</td>
-	<td>0</td>
-	<td>图片高度</td>
-</tr>
-<tr>
-	<td>fmt</td>
-	<td>String</td>
+	<td>marketPrice</td>
+	<td>Double</td>
 	<td>否</td>
 	<td>无</td>
-	<td>图片格式</td>
+	<td>门票市场价格</td>
 </tr>
 <tr>
-	<td>posters</td>
-	<td>Object</td>
-	<td>是</td>
-	<td>无</td>
-	<td>海报</td>
-</tr>
-<tr>
-	<td>theme</td>
-	<td>String</td>
-	<td>否</td>
-	<td>无</td>
-	<td>活动主题</td>
-</tr>
-<tr>
-	<td>category</td>
-	<td>String</td>
-	<td>否</td>
-	<td>无</td>
-	<td>活动分类</td>
-</tr>
-<tr>
-	<td>tags</td>
-	<td>ArrayString</td>
-	<td>否</td>
-	<td>无</td>
-	<td>活动标签</td>
-</tr>
-<tr>
-	<td>visiable</td>
-	<td>Integer</td>
-	<td>是</td>
-	<td>0</td>
-	<td>活动是否可见，1表示不可见，2表示可见</td>
-</tr>
-<tr>
-	<td>desc</td>
-	<td>String</td>
-	<td>否</td>
-	<td>无</td>
-	<td>活动描述</td>
-</tr>
-<tr>
-	<td>ticketIds</td>
-	<td>ArrayString</td>
-	<td>否</td>
-	<td>无</td>
-	<td>门票的id列表</td>
-</tr>
-<tr>
-	<td>isFree</td>
+	<td>free</td>
 	<td>Boolean</td>
 	<td>是</td>
 	<td>无</td>
 	<td>是否免费</td>
 </tr>
 <tr>
-	<td>isPhoneList</td>
-	<td>Boolean</td>
-	<td>是</td>
+	<td>refundWay</td>
+	<td>Integer</td>
+	<td>否</td>
 	<td>无</td>
-	<td>报名者是否需要填写电话号</td>
+	<td>退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款</td>
 </tr>
 <tr>
-	<td>isCellphoneList</td>
-	<td>Boolean</td>
-	<td>是</td>
+	<td>refundDesc</td>
+	<td>String</td>
+	<td>否</td>
 	<td>无</td>
-	<td>报名者是否需要填写手机号</td>
+	<td>委托平台说明</td>
 </tr>
 <tr>
-	<td>isQq</td>
-	<td>Boolean</td>
-	<td>是</td>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
 	<td>无</td>
-	<td>报名者是否需要填写qq号</td>
+	<td>票种说明</td>
 </tr>
 <tr>
-	<td>isWeixin</td>
-	<td>Boolean</td>
+	<td>maxNum</td>
+	<td>Integer</td>
 	<td>是</td>
 	<td>无</td>
-	<td>报名者是否需要填写微信号</td>
+	<td>门票最大张数</td>
 </tr>
 <tr>
-	<td>isSina</td>
-	<td>Boolean</td>
+	<td>title</td>
+	<td>String</td>
 	<td>是</td>
 	<td>无</td>
-	<td>报名者是否需要填写新浪微博号</td>
-</tr>
-<tr>
-	<td>isFax</td>
-	<td>Boolean</td>
-	<td>是</td>
-	<td>无</td>
-	<td>报名者是否需要填写传真号</td>
-</tr>
-<tr>
-	<td>isEmail</td>
-	<td>Boolean</td>
-	<td>是</td>
-	<td>无</td>
-	<td>报名者是否需要填写邮箱号</td>
-</tr>
-<tr>
-	<td>isWebsite</td>
-	<td>Boolean</td>
-	<td>是</td>
-	<td>无</td>
-	<td>报名者是否需要填写个人网址</td>
+	<td>门票标题</td>
 </tr>
 </tbody>
 </table>
@@ -9638,57 +9474,282 @@ Query strings
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;title&quot;:&quot;北京冰雪嘉年华&quot;,
-    &quot;maxNum&quot;:200,
-    &quot;startTime&quot;:1481704641779,
-    &quot;endTime&quot;:1481704641779,
-    &quot;address&quot;: {
-        &quot;province&quot;: &quot;江西省&quot;,
-        &quot;city&quot;: &quot;南昌市&quot;,
-        &quot;district&quot;: &quot;昌北区&quot;,
-        &quot;detail&quot;: &quot;机场路16号&quot;,
-        &quot;zipCode&quot;: &quot;333133&quot;
-    },
-    &quot;cover&quot;: {
-        &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
-        &quot;width&quot;: 100,
-        &quot;height&quot;: 100,
-        &quot;fmt&quot;: &quot;jpg&quot;
-    },
-    &quot;posters&quot;:[
-        {
-            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
-            &quot;width&quot;: 100,
-            &quot;height&quot;: 100,
-            &quot;fmt&quot;: &quot;jpg&quot;
-        },
-        {
-            &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg&quot;,
-            &quot;width&quot;: 100,
-            &quot;height&quot;: 100,
-            &quot;fmt&quot;: &quot;jpg&quot;
-        }
-    ],
-    &quot;theme&quot;:&quot;音乐&quot;,
-    &quot;category&quot;:&quot;摇滚&quot;,
-    &quot;tags&quot;: [
-        &quot;摇滚&quot;,
-        &quot;崔健&quot;
-    ],
-    &quot;visiable&quot;:2,
-    &quot;desc&quot;:&quot;&quot;,
-    &quot;ticketIds&quot;:[
-        &quot;58510fb08edd1f21907f440c&quot;
-    ],
-    &quot;isFree&quot;:true,
-    &quot;isPhoneList&quot;: true,
-    &quot;isCellphoneList&quot;:&quot;true&quot;,
-    &quot;isQq&quot;: true,
-    &quot;isWeixin&quot;: true,
-    &quot;isSina&quot;: true,
-    &quot;isFax&quot;: true,
-    &quot;isEmail&quot;: true,
-    &quot;isWebsite&quot;: true
+    &quot;title&quot;:&quot;门票标题4&quot;,
+    &quot;price&quot;:121,
+    &quot;marketPrice&quot;:171,
+    &quot;free&quot;:&quot;false&quot;,
+    &quot;refundWay&quot;:2,
+    &quot;refundDesc&quot;:&quot;委托说明4&quot;,
+    &quot;desc&quot;:&quot;票种说明4&quot;,
+    &quot;maxNum&quot;:190
+}   
+</code></pre>
+
+<ul>
+<li>Response</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票市场价格</td>
+</tr>
+<tr>
+	<td>free</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>refundWay</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款</td>
+</tr>
+<tr>
+	<td>refundDesc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>委托平台说明</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>票种说明</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票最大张数</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票标题</td>
+</tr>
+<tr>
+	<td>creatorId</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票创建者用户id</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;timestamp&quot;: 1481803456267,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;585286c06f31a4194492a137&quot;,
+        &quot;price&quot;: 121,
+        &quot;marketPrice&quot;: 171,
+        &quot;free&quot;: false,
+        &quot;refundWay&quot;: 2,
+        &quot;refundDesc&quot;: &quot;委托说明4&quot;,
+        &quot;desc&quot;: &quot;票种说明4&quot;,
+        &quot;maxNum&quot;: 190,
+        &quot;title&quot;: &quot;门票标题4&quot;,
+        &quot;creatorId&quot;: 100001
+    }
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>103801</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>103802</td>
+	<td>收费门票价格不可为空</td>
+	<td>不是免费的门票时，门票的价格参数缺失</td>
+</tr>
+</tbody>
+</table>
+<h3>删除门票1039</h3>
+<ul>
+<li>Path:/app/tickets/{ticketId}</li>
+<li>Request Method:DELETE</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body:无</li>
+<li>
+<p>Response</p>
+<pre><code>{
+    &quot;timestamp&quot;: 1481803456267,
+    &quot;code&quot;: 0
+}
+</code></pre>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>103901</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>103902</td>
+	<td>门票被使用，删除失败</td>
+	<td>此门票被某个活动使用，无法删除</td>
+</tr>
+</tbody>
+</table>
+<h3>修改门票1040</h3>
+<ul>
+<li>Path:/app/tickets/{ticketId}</li>
+<li>Request Method:DELETE</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票市场价格</td>
+</tr>
+<tr>
+	<td>free</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>refundWay</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款</td>
+</tr>
+<tr>
+	<td>refundDesc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>委托平台说明</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>票种说明</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票最大张数</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票标题</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;title&quot;:&quot;门票标题4&quot;,
+    &quot;price&quot;:121,
+    &quot;marketPrice&quot;:171,
+    &quot;free&quot;:&quot;false&quot;,
+    &quot;refundWay&quot;:2,
+    &quot;refundDesc&quot;:&quot;委托说明4&quot;,
+    &quot;desc&quot;:&quot;票种说明4&quot;,
+    &quot;maxNum&quot;:190
 }
 </code></pre>
 
@@ -9696,18 +9757,126 @@ Query strings
 <li>
 <p>Response</p>
 <pre><code>{
-    &quot;timestamp&quot;: 1481784295718,
+    &quot;timestamp&quot;: 1481803456267,
     &quot;code&quot;: 0
 }
 </code></pre>
 
 </li>
 </ul>
-<p>UNLOGIN_1038(103801, &quot;用户未登录&quot;),
-	PRICE_NULL_1038(103802, &quot;收费门票价格不可为空&quot;),</p>
-<h3>删除门票1039</h3>
-<h3>修改门票1040</h3>
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>104001</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>104002</td>
+	<td>门票不存在</td>
+	<td>门票被非法删除</td>
+</tr>
+</tbody>
+</table>
 <h3>取得门票详情1041</h3>
+<ul>
+<li>Path:/app/tickets/{ticketId}</li>
+<li>Request Method:DELETE</li>
+<li>Request Headers</li>
+<li>Query String:无</li>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票市场价格</td>
+</tr>
+<tr>
+	<td>free</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>refundWay</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款</td>
+</tr>
+<tr>
+	<td>refundDesc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>委托平台说明</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>票种说明</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票最大张数</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票标题</td>
+</tr>
+<tr>
+	<td>creatorId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票创建者id</td>
+</tr>
+</tbody>
+</table>
 <pre><code>{
     &quot;timestamp&quot;: 1481705859808,
     &quot;code&quot;: 0,
@@ -9726,27 +9895,169 @@ Query strings
 }
 </code></pre>
 
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>104101</td>
+	<td>门票不存在</td>
+	<td>门票被非法删除</td>
+</tr>
+</tbody>
+</table>
 <h3>取得用户门票列表1042</h3>
+<ul>
+<li>Path:/app/users/{userId}/tickets</li>
+<li>Request Method:GET</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>price</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票价格</td>
+</tr>
+<tr>
+	<td>marketPrice</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>门票市场价格</td>
+</tr>
+<tr>
+	<td>free</td>
+	<td>Boolean</td>
+	<td>是</td>
+	<td>无</td>
+	<td>是否免费</td>
+</tr>
+<tr>
+	<td>refundWay</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>无</td>
+	<td>退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款</td>
+</tr>
+<tr>
+	<td>refundDesc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>委托平台说明</td>
+</tr>
+<tr>
+	<td>desc</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>票种说明</td>
+</tr>
+<tr>
+	<td>maxNum</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票最大张数</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票标题</td>
+</tr>
+<tr>
+	<td>creatorId</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>门票创建者id</td>
+</tr>
+</tbody>
+</table>
 <pre><code>{
-    &quot;timestamp&quot;: 1481705754094,
+    &quot;timestamp&quot;: 1481804185133,
     &quot;code&quot;: 0,
     &quot;result&quot;: [
         {
-            &quot;id&quot;: &quot;585109158edd1f24e08e9001&quot;,
-            &quot;price&quot;: 160.1,
-            &quot;marketPrice&quot;: 150.1,
+            &quot;id&quot;: &quot;5852865c6f31a40db49aa773&quot;,
+            &quot;price&quot;: 160,
+            &quot;marketPrice&quot;: 180,
             &quot;free&quot;: false,
-            &quot;refundWay&quot;: 1,
-            &quot;refundDesc&quot;: &quot;退款到平台公共账号&quot;,
+            &quot;refundWay&quot;: 2,
+            &quot;refundDesc&quot;: &quot;委托说明&quot;,
             &quot;desc&quot;: &quot;票种说明&quot;,
             &quot;maxNum&quot;: 100,
-            &quot;title&quot;: &quot;门票1&quot;,
+            &quot;title&quot;: &quot;门票标题2&quot;,
+            &quot;creatorId&quot;: 100001
+        },
+        {
+            &quot;id&quot;: &quot;5852869a6f31a40db49aa774&quot;,
+            &quot;price&quot;: 161,
+            &quot;marketPrice&quot;: 181,
+            &quot;free&quot;: false,
+            &quot;refundWay&quot;: 2,
+            &quot;refundDesc&quot;: &quot;委托说明3&quot;,
+            &quot;desc&quot;: &quot;票种说明3&quot;,
+            &quot;maxNum&quot;: 120,
+            &quot;title&quot;: &quot;门票标题3&quot;,
             &quot;creatorId&quot;: 100001
         }
     ]
 }
 </code></pre>
 
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>104201</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h1>游记模块</h1>
 <h3>取得游记列表1043</h3>

@@ -1239,7 +1239,7 @@ timeRange|ArrayLong|否|无|价格的时间区间
 marketPrice|Integer|是|无|套餐市场价格
 price|Integer|是|无|套餐价格
 stockInfos|ArrayObject|否|无|套餐库存列表
-status|String|是|无|库存状态。empty|nonempty|plenty
+status|String|是|无|库存状态。empty,nonempty,plenty
 quantity|Integer|是|无|库存量
 timeRange|ArrayLong|否|无|库存的有效时间区间
 timeRequired|Boolean|是|false|是否有失效性
@@ -2006,7 +2006,7 @@ superAdm|Object|否|无|父行政区
 tags|ArrayString|否|无|标签列表
 desc|String|是|无|描述
 travelMonth|String|是|无|适合旅行的月份
-timeCostDesc||String|是|无|适合旅行的月份
+timeCostDesc|String|是|无|适合旅行的月份
 timeCost|Integer|是|无|建议游玩时间
 
 > 示例
@@ -3546,107 +3546,153 @@ isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
-title|String|是|无|活动标题
-maxNum|Integer|是|无|活动最大允许人数
-startTime|Long|是|无|活动开始时间
-endTime|Long|是|无|活动结束时间
-address|Object|是|无|活动地址
-province|String|是|无|省
-city|String|是|无|市
-district|String|是|无|区
-detail|String|是|无|详细地址
-zipCode|String|是|无|邮编
-cover|Object|是|无|封面图
-url|String|是|""|图片链接
-width|Integer|是|0|图片宽度
-height|Integer|是|0|图片高度
-fmt|String|否|无|图片格式
-posters|Object|是|无|海报
-theme|String|否|无|活动主题
-category|String|否|无|活动分类
-tags|ArrayString|否|无|活动标签
-visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
-desc|String|否|无|活动描述
-ticketIds|ArrayString|否|无|门票的id列表
-isFree|Boolean|是|无|是否免费
-isPhoneList|Boolean|是|无|报名者是否需要填写电话号
-isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
-isQq|Boolean|是|无|报名者是否需要填写qq号
-isWeixin|Boolean|是|无|报名者是否需要填写微信号
-isSina|Boolean|是|无|报名者是否需要填写新浪微博号
-isFax|Boolean|是|无|报名者是否需要填写传真号
-isEmail|Boolean|是|无|报名者是否需要填写邮箱号
-isWebsite|Boolean|是|无|报名者是否需要填写个人网址
+price|Double|是|无|门票价格
+marketPrice|Double|否|无|门票市场价格
+free|Boolean|是|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|是|无|门票最大张数
+title|String|是|无|门票标题
 
 > 示例
 
 	{
-		"title":"北京冰雪嘉年华",
-		"maxNum":200,
-		"startTime":1481704641779,
-		"endTime":1481704641779,
-		"address": {
-            "province": "江西省",
-            "city": "南昌市",
-            "district": "昌北区",
-            "detail": "机场路16号",
-            "zipCode": "333133"
-        },
-		"cover": {
-            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
-            "width": 100,
-            "height": 100,
-            "fmt": "jpg"
-        },
-		"posters":[
-			{
-                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
-                "width": 100,
-                "height": 100,
-                "fmt": "jpg"
-            },
-            {
-                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
-                "width": 100,
-                "height": 100,
-                "fmt": "jpg"
-            }
-		],
-		"theme":"音乐",
-		"category":"摇滚",
-		"tags": [
-            "摇滚",
-            "崔健"
-        ],
-		"visiable":2,
-		"desc":"",
-		"ticketIds":[
-			"58510fb08edd1f21907f440c"
-		],
-		"isFree":true,
-		"isPhoneList": true,
-		"isCellphoneList":"true",
-	    "isQq": true,
-	    "isWeixin": true,
-	    "isSina": true,
-	    "isFax": true,
-	    "isEmail": true,
-	    "isWebsite": true
+		"title":"门票标题4",
+		"price":121,
+		"marketPrice":171,
+		"free":"false",
+		"refundWay":2,
+		"refundDesc":"委托说明4",
+		"desc":"票种说明4",
+		"maxNum":190
+	}	
+
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|主键
+price|Double|是|无|门票价格
+marketPrice|Double|否|无|门票市场价格
+free|Boolean|是|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|是|无|门票最大张数
+title|String|是|无|门票标题
+creatorId|Integer|是|无|门票创建者用户id
+
+	{
+	    "timestamp": 1481803456267,
+	    "code": 0,
+	    "result": {
+	        "id": "585286c06f31a4194492a137",
+	        "price": 121,
+	        "marketPrice": 171,
+	        "free": false,
+	        "refundWay": 2,
+	        "refundDesc": "委托说明4",
+	        "desc": "票种说明4",
+	        "maxNum": 190,
+	        "title": "门票标题4",
+	        "creatorId": 100001
+	    }
+	}
+
+错误码|描述|原因
+--|--|--
+103801|用户未登录|用户未登录
+103802|收费门票价格不可为空|不是免费的门票时，门票的价格参数缺失
+
+###删除门票1039
+- Path:/app/tickets/{ticketId}
+- Request Method:DELETE
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body:无
+- Response
+
+		{
+		    "timestamp": 1481803456267,
+		    "code": 0
+		}
+
+错误码|描述|原因
+--|--|--
+103901|用户未登录|用户未登录
+103902|门票被使用，删除失败|此门票被某个活动使用，无法删除
+
+###修改门票1040
+- Path:/app/tickets/{ticketId}
+- Request Method:DELETE
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+price|Double|否|无|门票价格
+marketPrice|Double|否|无|门票市场价格
+free|Boolean|否|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|否|无|门票最大张数
+title|String|否|无|门票标题
+
+	{
+		"title":"门票标题4",
+		"price":121,
+		"marketPrice":171,
+		"free":"false",
+		"refundWay":2,
+		"refundDesc":"委托说明4",
+		"desc":"票种说明4",
+		"maxNum":190
 	}
 
 - Response
 
 		{
-		    "timestamp": 1481784295718,
+		    "timestamp": 1481803456267,
 		    "code": 0
 		}
 
-UNLOGIN_1038(103801, "用户未登录"),
-	PRICE_NULL_1038(103802, "收费门票价格不可为空"),
+错误码|描述|原因
+--|--|--
+104001|用户未登录|用户未登录
+104002|门票不存在|门票被非法删除
 
-###删除门票1039
-###修改门票1040
+
 ###取得门票详情1041
+- Path:/app/tickets/{ticketId}
+- Request Method:DELETE
+- Request Headers
+- Query String:无
+- Request Body:无
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|主键
+price|Double|否|无|门票价格
+marketPrice|Double|否|无|门票市场价格
+free|Boolean|是|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|是|无|门票最大张数
+title|String|是|无|门票标题
+creatorId|Long|是|无|门票创建者id
 
 	{
 	    "timestamp": 1481705859808,
@@ -3665,26 +3711,69 @@ UNLOGIN_1038(103801, "用户未登录"),
 	    }
 	}
 
+错误码|描述|原因
+--|--|--
+104101|门票不存在|门票被非法删除
+
+
 ###取得用户门票列表1042
+- Path:/app/users/{userId}/tickets
+- Request Method:GET
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+
+- Query String:无
+- Request Body:无
+- Response
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|主键
+price|Double|否|无|门票价格
+marketPrice|Double|否|无|门票市场价格
+free|Boolean|是|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|是|无|门票最大张数
+title|String|是|无|门票标题
+creatorId|Long|是|无|门票创建者id
 
 	{
-	    "timestamp": 1481705754094,
+	    "timestamp": 1481804185133,
 	    "code": 0,
 	    "result": [
 	        {
-	            "id": "585109158edd1f24e08e9001",
-	            "price": 160.1,
-	            "marketPrice": 150.1,
+	            "id": "5852865c6f31a40db49aa773",
+	            "price": 160,
+	            "marketPrice": 180,
 	            "free": false,
-	            "refundWay": 1,
-	            "refundDesc": "退款到平台公共账号",
+	            "refundWay": 2,
+	            "refundDesc": "委托说明",
 	            "desc": "票种说明",
 	            "maxNum": 100,
-	            "title": "门票1",
+	            "title": "门票标题2",
+	            "creatorId": 100001
+	        },
+	        {
+	            "id": "5852869a6f31a40db49aa774",
+	            "price": 161,
+	            "marketPrice": 181,
+	            "free": false,
+	            "refundWay": 2,
+	            "refundDesc": "委托说明3",
+	            "desc": "票种说明3",
+	            "maxNum": 120,
+	            "title": "门票标题3",
 	            "creatorId": 100001
 	        }
 	    ]
 	}
+
+错误码|描述|原因
+--|--|--
+104201|用户未登录|用户未登录
 
 ***
 #游记模块
