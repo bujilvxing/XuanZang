@@ -2855,6 +2855,49 @@ isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|活动主键
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+joinNum|Integer|是|无|报名人数
+startTime|Long|是|无|活动开始时间
+endTime|Long|是|无|活动结束时间
+address|Object|是|无|活动地址
+province|String|是|无|省
+city|String|是|无|市
+district|String|是|无|区
+detail|String|是|无|详细地址
+zipCode|String|是|无|邮编
+favorCnt|Integer|否|无|收藏次数
+commentCnt|Integer|否|无|评论次数
+viewCnt|Integer|否|无|浏览次数
+shareCnt|Integer|否|无|转发次数
+voteCnt|Integer|否|无|点赞次数
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+posters|Object|是|无|海报
+theme|String|否|无|活动主题
+category|String|否|无|活动分类
+tags|ArrayString|否|无|活动标签
+visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
+desc|String|否|无|活动描述
+creator|Object|否|无|发布活动用户信息
+userId|Long|是|无|发布活动者用户id
+nickName|String|是|无|发布活动者用户昵称
+avatar|Object|否|无|发布活动用户头像
+ticketIds|ArrayString|否|无|门票的id列表
+isFree|Boolean|是|无|是否免费
+publishTime|Long|是|无|发布时间
+isPhoneList|Boolean|是|无|报名者是否需要填写电话号
+isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
+isQq|Boolean|是|无|报名者是否需要填写qq号
+isWeixin|Boolean|是|无|报名者是否需要填写微信号
+isSina|Boolean|是|无|报名者是否需要填写新浪微博号
+isFax|Boolean|是|无|报名者是否需要填写传真号
+isEmail|Boolean|是|无|报名者是否需要填写邮箱号
+isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 
 	{
 	    "timestamp": 1481709140409,
@@ -2944,13 +2987,32 @@ isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 - Request Headers:无
 - Query String
 
-offset=1&limit=100
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
+字段名|类型|必需|默认值|描述
 --|--|--|--|--
+id|String|是|无|活动主键
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+joinNum|Integer|是|无|报名人数
+favorCnt|Integer|否|无|收藏次数
+commentCnt|Integer|否|无|评论次数
+viewCnt|Integer|否|无|浏览次数
+shareCnt|Integer|否|无|转发次数
+voteCnt|Integer|否|无|点赞次数
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+isFree|Boolean|是|无|是否免费
 
 > 示例
 
@@ -2979,9 +3041,6 @@ offset=1&limit=100
 	    ]
 	}
 
-错误码|描述|原因
---|--|--
-
 ###取得活动详情1033
 - Path:/app/activities/{activityId}
 - Request Method:GET
@@ -2991,8 +3050,72 @@ offset=1&limit=100
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
+字段名|类型|必需|默认值|描述
 --|--|--|--|--
+activity|Object|是|无|活动信息
+id|String|是|无|活动主键
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+joinNum|Integer|是|无|报名人数
+startTime|Long|是|无|活动开始时间
+endTime|Long|是|无|活动结束时间
+address|Object|是|无|活动地址
+province|String|是|无|省
+city|String|是|无|市
+district|String|是|无|区
+detail|String|是|无|详细地址
+zipCode|String|是|无|邮编
+favorCnt|Integer|否|无|收藏次数
+commentCnt|Integer|否|无|评论次数
+viewCnt|Integer|否|无|浏览次数
+shareCnt|Integer|否|无|转发次数
+voteCnt|Integer|否|无|点赞次数
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+posters|Object|是|无|海报
+theme|String|否|无|活动主题
+category|String|否|无|活动分类
+tags|ArrayString|否|无|活动标签
+visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
+desc|String|否|无|活动描述
+applicantInfos|ArrayObject|否|无报名者信息列表
+userId|Long|是|无|报名活动者用户id
+phoneList|ArrayString|否|无|报名活动者座机列表
+cellphoneList|ArrayString|否|无|报名活动者手机列表
+qq|String|否|无|报名活动者qq号
+weixin|String|否|无|报名活动者微信号
+sina|String|否|无|报名活动者新浪微博号
+fax|String|否|无|报名活动者传真号
+email|String|否|无|报名活动者邮箱号
+website|String|否|无|报名活动者网址
+creator|Object|否|无|发布活动用户信息
+userId|Long|是|无|发布活动者用户id
+nickName|String|是|无|发布活动者用户昵称
+avatar|Object|否|无|发布活动用户头像
+ticketIds|ArrayString|否|无|门票的id列表
+isFree|Boolean|是|无|是否免费
+publishTime|Long|是|无|发布时间
+isPhoneList|Boolean|是|无|报名者是否需要填写电话号
+isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
+isQq|Boolean|是|无|报名者是否需要填写qq号
+isWeixin|Boolean|是|无|报名者是否需要填写微信号
+isSina|Boolean|是|无|报名者是否需要填写新浪微博号
+isFax|Boolean|是|无|报名者是否需要填写传真号
+isEmail|Boolean|是|无|报名者是否需要填写邮箱号
+isWebsite|Boolean|是|无|报名者是否需要填写个人网址
+tickets|ArrayObject|否|无|门票的信息列表
+price|Double|是|无|门票价格
+marketPrice|Double|否|无|门票价格
+free|Boolean|是|无|是否免费
+refundWay|Integer|否|无|退款方式，1表示退款到平台公共账号，2表示原路返回，3表示不接受退款
+refundDesc|String|否|无|委托平台说明
+desc|String|否|无|票种说明
+maxNum|Integer|是|无|门票最大张数
+title|String|是|无|门票标题
+creatorId|Integer|是|无|门票创建者用户id
 
 > 示例
 
@@ -3108,73 +3231,419 @@ offset=1&limit=100
 
 错误码|描述|原因
 --|--|--
+103301|活动不存在|参数输入有误或者活动被非法删除
 
 ###取得用户活动列表1034
 - Path:/app/users/{userId}/activities
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=1&limit=100
+- Query String
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几个开始取
+limit|Integer|否|10|取多少个
+
 - Request Body:无
 - Response
 > 返回字段说明
 
-字段名|类型|必含|默认值|描述
+字段名|类型|必需|默认值|描述
 --|--|--|--|--
+publishActivities|ArrayObject|否|无|用户发布的活动列表
+id|String|是|无|活动主键
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+joinNum|Integer|是|无|报名人数
+favorCnt|Integer|否|无|收藏次数
+commentCnt|Integer|否|无|评论次数
+viewCnt|Integer|否|无|浏览次数
+shareCnt|Integer|否|无|转发次数
+voteCnt|Integer|否|无|点赞次数
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+isFree|Boolean|是|无|是否免费
+joinActivities|ArrayObject|否|无|用户参与的活动列表
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"北京冰雪嘉年华",
-				"maxNum":200,
-				"joinNum":100,
-				"startTime":14500000000,
-				"endTime":14500000000,
-				"address":{
-					"province":"江西省",
-					"city":"南昌市",
-					"district":"东湖区",
-					"detail":"XXX",
-					"zipCode":"100071"
-				},
-				"favorCnt":1000,
-				"viewCnt":31231,
-				"posters":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"tags":["",""],
-				"tickets":[
-					{
-						"id":"646f2da8b8ce0440eddb287f",
-						"price":100.1,
-						"free":false;
-						"refundWay":1,
-						"refundDesc":"",
-						"desc":"",
-						"maxNum":100
-			
-					}
-				]
-			}
-		]
+	    "timestamp": 1481769419015,
+	    "code": 0,
+	    "result": {
+	        "publishActivities": [
+	            {
+	                "id": "58510fb08edd1f21907f4410",
+	                "title": "活动标题1",
+	                "maxNum": 100,
+	                "joinNum": 20,
+	                "favorCnt": 0,
+	                "commentCnt": 0,
+	                "viewCnt": 0,
+	                "shareCnt": 0,
+	                "voteCnt": 0,
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "isFree": false
+	            }
+	        ],
+	        "joinActivities": [
+	            {
+	                "id": "58510fb08edd1f21907f4411",
+	                "title": "活动标题2",
+	                "maxNum": 100,
+	                "joinNum": 20,
+	                "favorCnt": 0,
+	                "commentCnt": 0,
+	                "viewCnt": 0,
+	                "shareCnt": 0,
+	                "voteCnt": 0,
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "isFree": false
+	            }
+	        ]
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+103401|用户未登录|用户未登录
 
 ###报名活动1035
+- Path:/app/activities/{activityId}/join
+- Request Method:POST
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+phoneList|ArrayString|否|无|报名活动者座机列表
+cellphoneList|ArrayString|否|无|报名活动者手机列表
+qq|String|否|无|报名活动者qq号
+weixin|String|否|无|报名活动者微信号
+sina|String|否|无|报名活动者新浪微博号
+fax|String|否|无|报名活动者传真号
+email|String|否|无|报名活动者邮箱号
+website|String|否|无|报名活动者网址
+
+> 示例
+
+	{
+	    "phoneList": [
+	        "010-62737359"
+	    ],
+	    "cellphoneList": [
+	        "13811111111"
+	    ],
+	    "qq": "1234213123",
+	    "weixin": "mofashi",
+	    "sina": "312413123",
+	    "fax": "010-62737358",
+	    "email": "3813231231@qq.com",
+	    "website": "www.bjlx.com"
+	}
+
+- Response
+
+		{
+		    "timestamp": 1481784295718,
+		    "code": 0
+		}
+
+错误码|描述|原因
+--|--|--
+103501|用户未登录|用户未登录
+
 ###退出报名1036
+- Path:/app/activities/{activityId}/quit
+- Request Method:POST
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+phoneList|ArrayString|否|无|报名活动者座机列表
+cellphoneList|ArrayString|否|无|报名活动者手机列表
+qq|String|否|无|报名活动者qq号
+weixin|String|否|无|报名活动者微信号
+sina|String|否|无|报名活动者新浪微博号
+fax|String|否|无|报名活动者传真号
+email|String|否|无|报名活动者邮箱号
+website|String|否|无|报名活动者网址
+
+> 示例
+
+	{
+	    "phoneList": [
+	        "010-62737359"
+	    ],
+	    "cellphoneList": [
+	        "13811111111"
+	    ],
+	    "qq": "1234213123",
+	    "weixin": "mofashi",
+	    "sina": "312413123",
+	    "fax": "010-62737358",
+	    "email": "3813231231@qq.com",
+	    "website": "www.bjlx.com"
+	}
+
+- Response
+
+		{
+		    "timestamp": 1481784295718,
+		    "code": 0
+		}
+
+错误码|描述|原因
+--|--|--
+103601|用户未登录|用户未登录
+
 ###更新活动1037
+- Path:/app/activities/{activityId}
+- Request Method:PUT
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+startTime|Long|是|无|活动开始时间
+endTime|Long|是|无|活动结束时间
+address|Object|是|无|活动地址
+province|String|是|无|省
+city|String|是|无|市
+district|String|是|无|区
+detail|String|是|无|详细地址
+zipCode|String|是|无|邮编
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+posters|Object|是|无|海报
+theme|String|否|无|活动主题
+category|String|否|无|活动分类
+tags|ArrayString|否|无|活动标签
+visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
+desc|String|否|无|活动描述
+ticketIds|ArrayString|否|无|门票的id列表
+isFree|Boolean|是|无|是否免费
+isPhoneList|Boolean|是|无|报名者是否需要填写电话号
+isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
+isQq|Boolean|是|无|报名者是否需要填写qq号
+isWeixin|Boolean|是|无|报名者是否需要填写微信号
+isSina|Boolean|是|无|报名者是否需要填写新浪微博号
+isFax|Boolean|是|无|报名者是否需要填写传真号
+isEmail|Boolean|是|无|报名者是否需要填写邮箱号
+isWebsite|Boolean|是|无|报名者是否需要填写个人网址
+
+> 示例
+
+	{
+		"title":"北京冰雪嘉年华",
+		"maxNum":200,
+		"startTime":1481704641779,
+		"endTime":1481704641779,
+		"address": {
+            "province": "江西省",
+            "city": "南昌市",
+            "district": "昌北区",
+            "detail": "机场路16号",
+            "zipCode": "333133"
+        },
+		"cover": {
+            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+            "width": 100,
+            "height": 100,
+            "fmt": "jpg"
+        },
+		"posters":[
+			{
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            },
+            {
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            }
+		],
+		"theme":"音乐",
+		"category":"摇滚",
+		"tags": [
+            "摇滚",
+            "崔健"
+        ],
+		"visiable":2,
+		"desc":"",
+		"ticketIds":[
+			"58510fb08edd1f21907f440c"
+		],
+		"isFree":true,
+		"isPhoneList": true,
+		"isCellphoneList":"true",
+	    "isQq": true,
+	    "isWeixin": true,
+	    "isSina": true,
+	    "isFax": true,
+	    "isEmail": true,
+	    "isWebsite": true
+	}
+
+- Response
+
+		{
+		    "timestamp": 1481784295718,
+		    "code": 0
+		}
+
+错误码|描述|原因
+--|--|--
+103701|用户未登录|用户未登录
+
 ###添加门票1038
+- Path:/app/tickets
+- Request Method:POST
+- Request Headers
+
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"userId":100001
+
+- Query String:无
+- Request Body
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+title|String|是|无|活动标题
+maxNum|Integer|是|无|活动最大允许人数
+startTime|Long|是|无|活动开始时间
+endTime|Long|是|无|活动结束时间
+address|Object|是|无|活动地址
+province|String|是|无|省
+city|String|是|无|市
+district|String|是|无|区
+detail|String|是|无|详细地址
+zipCode|String|是|无|邮编
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+posters|Object|是|无|海报
+theme|String|否|无|活动主题
+category|String|否|无|活动分类
+tags|ArrayString|否|无|活动标签
+visiable|Integer|是|0|活动是否可见，1表示不可见，2表示可见
+desc|String|否|无|活动描述
+ticketIds|ArrayString|否|无|门票的id列表
+isFree|Boolean|是|无|是否免费
+isPhoneList|Boolean|是|无|报名者是否需要填写电话号
+isCellphoneList|Boolean|是|无|报名者是否需要填写手机号
+isQq|Boolean|是|无|报名者是否需要填写qq号
+isWeixin|Boolean|是|无|报名者是否需要填写微信号
+isSina|Boolean|是|无|报名者是否需要填写新浪微博号
+isFax|Boolean|是|无|报名者是否需要填写传真号
+isEmail|Boolean|是|无|报名者是否需要填写邮箱号
+isWebsite|Boolean|是|无|报名者是否需要填写个人网址
+
+> 示例
+
+	{
+		"title":"北京冰雪嘉年华",
+		"maxNum":200,
+		"startTime":1481704641779,
+		"endTime":1481704641779,
+		"address": {
+            "province": "江西省",
+            "city": "南昌市",
+            "district": "昌北区",
+            "detail": "机场路16号",
+            "zipCode": "333133"
+        },
+		"cover": {
+            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+            "width": 100,
+            "height": 100,
+            "fmt": "jpg"
+        },
+		"posters":[
+			{
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            },
+            {
+                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+                "width": 100,
+                "height": 100,
+                "fmt": "jpg"
+            }
+		],
+		"theme":"音乐",
+		"category":"摇滚",
+		"tags": [
+            "摇滚",
+            "崔健"
+        ],
+		"visiable":2,
+		"desc":"",
+		"ticketIds":[
+			"58510fb08edd1f21907f440c"
+		],
+		"isFree":true,
+		"isPhoneList": true,
+		"isCellphoneList":"true",
+	    "isQq": true,
+	    "isWeixin": true,
+	    "isSina": true,
+	    "isFax": true,
+	    "isEmail": true,
+	    "isWebsite": true
+	}
+
+- Response
+
+		{
+		    "timestamp": 1481784295718,
+		    "code": 0
+		}
+
+UNLOGIN_1038(103801, "用户未登录"),
+	PRICE_NULL_1038(103802, "收费门票价格不可为空"),
+
 ###删除门票1039
 ###修改门票1040
 ###取得门票详情1041
