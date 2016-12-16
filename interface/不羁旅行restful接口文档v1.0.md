@@ -3781,9 +3781,16 @@ creatorId|Long|是|无|门票创建者id
 - Path:/app/travelnotes
 - Request Method:GET
 - Request Headers:无
-- Query String:offset=1&limit=100
+- Query String
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几条开始取
+limit|Integer|否|10|取多少条
+
 - Request Body:无
 - Response
+
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
@@ -3820,36 +3827,51 @@ creatorId|Long|是|无|门票创建者id
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	    "userId":100001
+
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+title|String|是|无|游记标题
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
 
 	{
-		"id":"646f2da8b8ce0440eddb287f",
 		"cover": {
 			"width":400,
 			"height":400,
-			"url":"http://1.jpg"
+			"url":"http://1.jpg",
+			"fmt":"jpg"
 		},
 		"images":[
 			{
 				"width":400,
 				"height":400,
-				"url":"http://1.jpg"
+				"url":"http://1.jpg",
+				"fmt":"jpg"
 			}
 		],
-		"title":"",
+		"title":"游记标题",
 		"travelTime":14500000000,
 		"contents":[
 			{
-				"day1":"XXX",
-				"day2":"XXX"
+				"day1":"游记内容1"
+			},
+			{
+				"day2":"游记内容2"
 			}
 		],
-		"summary":""
+		"summary":"游记摘要"
 	}
 
 - Response
@@ -3861,6 +3883,8 @@ creatorId|Long|是|无|门票创建者id
 
 错误码|描述|原因
 --|--|--
+104401|用户未登录|用户未登录
+104402|用户不存在|用户被非法删除
 
 ###修改游记1045
 - Path:/app/travelnotes/{travelnoteId}
