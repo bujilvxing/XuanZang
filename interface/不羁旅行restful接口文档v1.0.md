@@ -4654,30 +4654,98 @@ detailUrl|String|是|无|卡片的链接
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+traceTime|Long|否|当前时间|足迹时间
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|足迹图集
+audio|Object|否|无|语音
+length|Integer|是|0|语音时长
+fileName":"123as3212c",
+url|String|是|""|语音链接
+key|String|否|""|语音键值
+desc|String|是|无|足迹描述
+"restaurant":{
+"id":"646f2da8b8ce0440eddb287f",
+"lat":180.1,
+"lng":180.1,
+"cover" : {
+	"width":400,
+	"height":400,
+	"url":"http://1.jpg"
+},
+"rank":3,
+"hotness":0.97,
+"rating":0.98,
+"zhName":"煌上煌烤鸭店",
+"enName":"",
+"url":"http://XXX",
+"marketPrice":280.6,
+"price":180.3,
+"tags":["",""],
+"openTime":"9:00~21:00"
+"saleVolume":100,
+"discount":0.65
+},
+"hotel":{
+viewspot
+"activity": {
+"id":"646f2da8b8ce0440eddb287f",
+"title":"亲子游活动",
+"maxNum":200,
+"joinNum" : 106,
+"favorCnt":100001,
+"viewCnt":88888,
+"poster":{
+	"width":400,
+	"height":400,
+	"url":"http://1.jpg"
+}
+},
+shopping
+"originId":"646f2da8b8ce0440eddb287f",
+"originUserId":1001,
+"originNickName":"魔法师",
+"originAvatar":{
+"url":"http://1.jpg",
+"width":800,
+"height":600
+},
+"lat":78.23,
+"lng":97.42
 
 > 示例
 
 	{
-		"traceTime":1425225600000,
-		"cover":{
-			"width":400,
-			"height":400,
-			"url":"http://1.jpg"
-		},
-		"images":[
-			{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			}
-		],
+		"traceTime":1481881092200,
+		"cover": {
+	        "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	        "width": 100,
+	        "height": 100,
+	        "fmt": "jpg"
+	    },
+	    "images": [
+	        {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        }
+	    ],
 		"audio":{
 			"length":15,
 			"fileName":"123as3212c",
 			"url":"http://a.mp3",
 			"key":"sa2313dasdq1"
 		},
-		"status":1,
 		"desc":"XXX",
 		"restaurant":{
 			"id":"646f2da8b8ce0440eddb287f",
@@ -4799,152 +4867,52 @@ detailUrl|String|是|无|卡片的链接
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result": {
-			"id":"646f2da8b8ce0440eddb287f",
-			"userId":1002,
-			"nickName":"魔法师的小黑屋",
-			"avatar":"htpp://2.jpg",
-			"createTime":1425225600000,
-			"updateTime":1425225600000,
-			"traceTime":1425225600000,
-			"shareCnt":100,
-			"favorCnt":1000,
-			"commentCnt":200,
-			"viewCnt":100000,
-			"cover":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"desc":"XXX",
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"audio":{
-				"length":15,
-				"fileName":"123as3212c",
-				"url":"http://a.mp3",
-				"key":"sa2313dasdq1"
-			},
-			"status":1,
-			"restaurant":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"hotel":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"如家快捷酒店",
-				"enName":"RuJia",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"viewspot":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"八一广场",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"activity": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"亲子游活动",
-				"maxNum":200,
-				"joinNum" : 106,
-				"favorCnt":100001,
-				"viewCnt":88888,
-				"poster":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			},
-			"shopping": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"优衣库",
-				"enName":"Uniqlo",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"originId":"646f2da8b8ce0440eddb287f",
-			"originUserId":1001,
-			"originNickName":"魔法师",
-			"originAvatar":{
-				"url":"http://1.jpg",
-				"width":800,
-				"height":600
-			},
-			"lat":78.23,
-			"lng":97.42
-		}
+	    "timestamp": 1481881092200,
+	    "code": 0,
+	    "result": {
+	        "id": "5853b5fe8edd1f3b8476daa5",
+	        "userId": 100001,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 1481881086221,
+	        "traceTime": 1481864952672,
+	        "updateTime": 1481881086221,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "title": "庐山足迹",
+	        "desc": "雾好大",
+	        "status": 1,
+	        "favorCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "lat": 160.1,
+	        "lng": 171.2,
+	        "voteCnt": 0
+	    }
 	}
 
 错误码|描述|原因
