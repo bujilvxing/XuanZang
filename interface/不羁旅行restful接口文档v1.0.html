@@ -10065,7 +10065,36 @@ Query strings
 <li>Path:/app/travelnotes</li>
 <li>Request Method:GET</li>
 <li>Request Headers:无</li>
-<li>Query String:offset=1&amp;limit=100</li>
+<li>Query String</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几条开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少条</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
@@ -10127,9 +10156,14 @@ Query strings
 <li>Request Method:POST</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body</li>
 </ul>
 <table>
@@ -10143,106 +10177,104 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
 </tbody>
 </table>
 <pre><code>{
-    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
     &quot;cover&quot;: {
         &quot;width&quot;:400,
         &quot;height&quot;:400,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
+        &quot;url&quot;:&quot;http://1.jpg&quot;,
+        &quot;fmt&quot;:&quot;jpg&quot;
     },
     &quot;images&quot;:[
         {
             &quot;width&quot;:400,
             &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;url&quot;:&quot;http://1.jpg&quot;,
+            &quot;fmt&quot;:&quot;jpg&quot;
         }
     ],
-    &quot;title&quot;:&quot;&quot;,
-    &quot;travelTime&quot;:14500000000,
+    &quot;title&quot;:&quot;游记标题&quot;,
+    &quot;travelTime&quot;:1481704641779,
     &quot;contents&quot;:[
         {
-            &quot;day1&quot;:&quot;XXX&quot;,
-            &quot;day2&quot;:&quot;XXX&quot;
-        }
-    ],
-    &quot;summary&quot;:&quot;&quot;
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Response</p>
-<pre><code>{
-    &quot;code&quot;:0,
-    &quot;timestamp&quot;:1425225600000
-}
-</code></pre>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>错误码</th>
-	<th>描述</th>
-	<th>原因</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3>修改游记1045</h3>
-<ul>
-<li>Path:/app/travelnotes/{travelnoteId}</li>
-<li>Request Method:PUT</li>
-<li>
-<p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
-</li>
-<li>Query String:无</li>
-<li>Request Body</li>
-</ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必需</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<blockquote>
-<p>示例</p>
-</blockquote>
-<pre><code>{
-    &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
-    &quot;cover&quot;: {
-        &quot;width&quot;:400,
-        &quot;height&quot;:400,
-        &quot;url&quot;:&quot;http://1.jpg&quot;
-    },
-    &quot;images&quot;:[
+            &quot;day1&quot;:&quot;游记内容1&quot;
+        },
         {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;day2&quot;:&quot;游记内容2&quot;
         }
     ],
-    &quot;title&quot;:&quot;&quot;,
-    &quot;travelTime&quot;:14500000000,
-    &quot;contents&quot;:[
-        {
-            &quot;day1&quot;:&quot;XXX&quot;,
-            &quot;day2&quot;:&quot;XXX&quot;
-        }
-    ],
-    &quot;summary&quot;:&quot;&quot;
+    &quot;summary&quot;:&quot;游记摘要&quot;
 }
 </code></pre>
 
@@ -10260,15 +10292,207 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>热度</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>点赞数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>评论数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>转发数</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记来源</td>
+</tr>
+<tr>
+	<td>essence</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记是否精华</td>
+</tr>
 </tbody>
 </table>
-<blockquote>
-<p>示例</p>
-</blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000
+    &quot;timestamp&quot;: 1481858532336,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;58535de28edd1f39cc53d2b3&quot;,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://1.jpg&quot;,
+            &quot;width&quot;: 400,
+            &quot;height&quot;: 400,
+            &quot;fmt&quot;: &quot;jpg&quot;
+        },
+        &quot;author&quot;: {
+            &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+            &quot;userId&quot;: 100001,
+            &quot;nickName&quot;: &quot;逍遥&quot;,
+            &quot;avatar&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        },
+        &quot;images&quot;: [
+            {
+                &quot;url&quot;: &quot;http://1.jpg&quot;,
+                &quot;width&quot;: 400,
+                &quot;height&quot;: 400,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        ],
+        &quot;rating&quot;: 0,
+        &quot;hotness&quot;: 0,
+        &quot;title&quot;: &quot;游记标题&quot;,
+        &quot;publishTime&quot;: 1481858530121,
+        &quot;favorCnt&quot;: 0,
+        &quot;voteCnt&quot;: 0,
+        &quot;commentCnt&quot;: 0,
+        &quot;viewCnt&quot;: 0,
+        &quot;shareCnt&quot;: 0,
+        &quot;travelTime&quot;: 1481704641779,
+        &quot;summary&quot;: &quot;游记标题&quot;,
+        &quot;contents&quot;: [
+            {
+                &quot;day1&quot;: &quot;游记内容1&quot;
+            },
+            {
+                &quot;day2&quot;: &quot;游记内容2&quot;
+            }
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;essence&quot;: false
+    }
 }
 </code></pre>
 
@@ -10281,6 +10505,387 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104401</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>104402</td>
+	<td>用户不存在</td>
+	<td>用户被非法删除</td>
+</tr>
+</tbody>
+</table>
+<h3>修改游记1045</h3>
+<ul>
+<li>Path:/app/travelnotes/{travelnoteId}</li>
+<li>Request Method:PUT</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;e38f80ccd586bf82155c13bdc5fb78f641a893790f9c0ceae5419b9a2c6d00d8&quot;
+&quot;userId&quot;：100001
+</code></pre>
+
+</li>
+<li>
+<p>Query String:无</p>
+</li>
+<li>Request Body</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例
+	{
+		&quot;cover&quot;: {
+			&quot;width&quot;:400,
+			&quot;height&quot;:400,
+			&quot;url&quot;:&quot;http://1.jpg&quot;,
+			&quot;fmt&quot;:&quot;jpg&quot;
+		},
+		&quot;images&quot;:[
+			{
+				&quot;width&quot;:400,
+				&quot;height&quot;:400,
+				&quot;url&quot;:&quot;http://1.jpg&quot;,
+				&quot;fmt&quot;:&quot;jpg&quot;
+			}
+		],
+		&quot;title&quot;:&quot;游记标题1&quot;,
+		&quot;travelTime&quot;:1481858530121,
+		&quot;contents&quot;:[
+			{
+				&quot;day1&quot;:&quot;游记内容1&quot;
+			},
+			{
+				&quot;day2&quot;:&quot;游记内容2&quot;
+			}
+		],
+		&quot;summary&quot;:&quot;游记摘要&quot;
+	}</p>
+</blockquote>
+<ul>
+<li>Response</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>热度</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>点赞数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>评论数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>转发数</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记来源</td>
+</tr>
+<tr>
+	<td>essence</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记是否精华</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code>{
+    &quot;timestamp&quot;: 1481859504070,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;58535de28edd1f39cc53d2b3&quot;,
+        &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://1.jpg&quot;,
+            &quot;width&quot;: 400,
+            &quot;height&quot;: 400,
+            &quot;fmt&quot;: &quot;jpg&quot;
+        },
+        &quot;author&quot;: {
+            &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+            &quot;userId&quot;: 100001,
+            &quot;nickName&quot;: &quot;逍遥&quot;,
+            &quot;avatar&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        },
+        &quot;images&quot;: [
+            {
+                &quot;url&quot;: &quot;http://1.jpg&quot;,
+                &quot;width&quot;: 400,
+                &quot;height&quot;: 400,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        ],
+        &quot;rating&quot;: 0,
+        &quot;hotness&quot;: 0,
+        &quot;title&quot;: &quot;游记标题1&quot;,
+        &quot;publishTime&quot;: 1481858530121,
+        &quot;favorCnt&quot;: 0,
+        &quot;voteCnt&quot;: 0,
+        &quot;commentCnt&quot;: 0,
+        &quot;viewCnt&quot;: 0,
+        &quot;shareCnt&quot;: 0,
+        &quot;travelTime&quot;: 1481858530121,
+        &quot;summary&quot;: &quot;游记标题&quot;,
+        &quot;contents&quot;: [
+            {
+                &quot;day1&quot;: &quot;游记内容1&quot;
+            },
+            {
+                &quot;day2&quot;: &quot;游记内容2&quot;
+            }
+        ],
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;essence&quot;: false
+    }
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>104501</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+<tr>
+	<td>104502</td>
+	<td>游记不存在</td>
+	<td>游记被非法删除；更新者不是游记的作者，没有权限</td>
+</tr>
 </tbody>
 </table>
 <h3>取得游记详情1046</h3>
@@ -10306,47 +10911,209 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>热度</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>点赞数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>评论数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>转发数</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记来源</td>
+</tr>
+<tr>
+	<td>essence</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记是否精华</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p>示例</p>
 </blockquote>
 <pre><code>{
-    &quot;code&quot;:0,
-    &quot;msg&quot;:&quot;success&quot;,
-    &quot;timestamp&quot;:1425225600000,
-    &quot;result&quot;:{
-        &quot;id&quot;:&quot;646f2da8b8ce0440eddb287f&quot;,
+    &quot;timestamp&quot;: 1481859979650,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: {
+        &quot;id&quot;: &quot;58535de28edd1f39cc53d2b3&quot;,
         &quot;cover&quot;: {
-            &quot;width&quot;:400,
-            &quot;height&quot;:400,
-            &quot;url&quot;:&quot;http://1.jpg&quot;
+            &quot;url&quot;: &quot;http://1.jpg&quot;,
+            &quot;width&quot;: 400,
+            &quot;height&quot;: 400,
+            &quot;fmt&quot;: &quot;jpg&quot;
         },
-        &quot;images&quot;:[
+        &quot;author&quot;: {
+            &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+            &quot;userId&quot;: 100001,
+            &quot;nickName&quot;: &quot;逍遥&quot;,
+            &quot;avatar&quot;: {
+                &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                &quot;width&quot;: 100,
+                &quot;height&quot;: 100,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            }
+        },
+        &quot;images&quot;: [
             {
-                &quot;width&quot;:400,
-                &quot;height&quot;:400,
-                &quot;url&quot;:&quot;http://1.jpg&quot;
+                &quot;url&quot;: &quot;http://1.jpg&quot;,
+                &quot;width&quot;: 400,
+                &quot;height&quot;: 400,
+                &quot;fmt&quot;: &quot;jpg&quot;
             }
         ],
-        &quot;rating&quot;:0.98,
-        &quot;hotness&quot;:0.98,
-        &quot;title&quot;:&quot;&quot;,
-        &quot;publishTime&quot;:14500000000,
-        &quot;favorCnt&quot;:100,
-        &quot;commentCnt&quot;:10002,
-        &quot;viewCnt&quot;:1231,
-        &quot;shareCnt&quot;:123,
-        &quot;travelTime&quot;:14500000000,
-        &quot;contents&quot;:[
+        &quot;rating&quot;: 0,
+        &quot;hotness&quot;: 0,
+        &quot;title&quot;: &quot;游记标题1&quot;,
+        &quot;publishTime&quot;: 1481858530121,
+        &quot;favorCnt&quot;: 0,
+        &quot;voteCnt&quot;: 0,
+        &quot;commentCnt&quot;: 0,
+        &quot;viewCnt&quot;: 0,
+        &quot;shareCnt&quot;: 0,
+        &quot;travelTime&quot;: 1481858530121,
+        &quot;summary&quot;: &quot;游记标题&quot;,
+        &quot;contents&quot;: [
             {
-                &quot;day1&quot;:&quot;XXX&quot;,
-                &quot;day2&quot;:&quot;XXX&quot;
+                &quot;day1&quot;: &quot;游记内容1&quot;
+            },
+            {
+                &quot;day2&quot;: &quot;游记内容2&quot;
             }
         ],
-        &quot;summary&quot;:&quot;&quot;,
-        &quot;source&quot;:&quot;baidu&quot;,
-        &quot;essence&quot;:true
+        &quot;source&quot;: &quot;bjlx&quot;,
+        &quot;essence&quot;: false
     }
 }
 </code></pre>
@@ -10360,6 +11127,11 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104601</td>
+	<td>游记不存在</td>
+	<td>游记被非法删除</td>
+</tr>
 </tbody>
 </table>
 <h3>删除游记1047</h3>
@@ -10368,25 +11140,17 @@ Query strings
 <li>Request Method:DELETE</li>
 <li>
 <p>Request Headers</p>
-<p>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;</p>
+<pre><code>&quot;key&quot;:&quot;9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e&quot;
+&quot;userId&quot;:100001
+</code></pre>
+
 </li>
-<li>Query String:无</li>
+<li>
+<p>Query String:无</p>
+</li>
 <li>Request Body:无</li>
 <li>Response</li>
 </ul>
-<table>
-<thead>
-<tr>
-	<th>字段名</th>
-	<th>类型</th>
-	<th>必含</th>
-	<th>默认值</th>
-	<th>描述</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 <blockquote>
 <p>示例</p>
 </blockquote>
@@ -10405,9 +11169,272 @@ Query strings
 </tr>
 </thead>
 <tbody>
+<tr>
+	<td>104701</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
 </tbody>
 </table>
 <h3>取得用户游记列表1048</h3>
+<ul>
+<li>Path:/app/users/{userId}/travelnotes</li>
+<li>Request Method:GET</li>
+<li>
+<p>Request Headers</p>
+<pre><code>&quot;key&quot;:&quot;e38f80ccd586bf82155c13bdc5fb78f641a893790f9c0ceae5419b9a2c6d00d8&quot;
+&quot;userId&quot;：100001
+</code></pre>
+
+</li>
+<li>
+<p>Query String</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必需</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>offset</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>从第几条开始取</td>
+</tr>
+<tr>
+	<td>limit</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>10</td>
+	<td>取多少条</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Request Body:无</li>
+<li>Response</li>
+</ul>
+<blockquote>
+<p>返回字段说明</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>字段名</th>
+	<th>类型</th>
+	<th>必含</th>
+	<th>默认值</th>
+	<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>id</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记id</td>
+</tr>
+<tr>
+	<td>cover</td>
+	<td>Object</td>
+	<td>是</td>
+	<td>无</td>
+	<td>封面图</td>
+</tr>
+<tr>
+	<td>url</td>
+	<td>String</td>
+	<td>是</td>
+	<td>&quot;&quot;</td>
+	<td>图片链接</td>
+</tr>
+<tr>
+	<td>width</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片宽度</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>Integer</td>
+	<td>是</td>
+	<td>0</td>
+	<td>图片高度</td>
+</tr>
+<tr>
+	<td>fmt</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>图片格式</td>
+</tr>
+<tr>
+	<td>images</td>
+	<td>Object</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记图集</td>
+</tr>
+<tr>
+	<td>rating</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>评分</td>
+</tr>
+<tr>
+	<td>hotness</td>
+	<td>Double</td>
+	<td>否</td>
+	<td>无</td>
+	<td>热度</td>
+</tr>
+<tr>
+	<td>title</td>
+	<td>String</td>
+	<td>是</td>
+	<td>无</td>
+	<td>游记标题</td>
+</tr>
+<tr>
+	<td>publishTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>favorCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>收藏数</td>
+</tr>
+<tr>
+	<td>voteCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>点赞数</td>
+</tr>
+<tr>
+	<td>commentCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>评论数</td>
+</tr>
+<tr>
+	<td>viewCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>阅读数</td>
+</tr>
+<tr>
+	<td>shareCnt</td>
+	<td>Integer</td>
+	<td>否</td>
+	<td>0</td>
+	<td>转发数</td>
+</tr>
+<tr>
+	<td>travelTime</td>
+	<td>Long</td>
+	<td>是</td>
+	<td>无</td>
+	<td>旅行时间</td>
+</tr>
+<tr>
+	<td>contents</td>
+	<td>ArrayObject</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记内容</td>
+</tr>
+<tr>
+	<td>summary</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记摘要</td>
+</tr>
+<tr>
+	<td>source</td>
+	<td>String</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记来源</td>
+</tr>
+<tr>
+	<td>essence</td>
+	<td>Boolean</td>
+	<td>否</td>
+	<td>无</td>
+	<td>游记是否精华</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code>{
+    &quot;timestamp&quot;: 1481860337156,
+    &quot;code&quot;: 0,
+    &quot;result&quot;: [
+        {
+            &quot;id&quot;: &quot;58535de28edd1f39cc53d2b3&quot;,
+            &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://1.jpg&quot;,
+                &quot;width&quot;: 400,
+                &quot;height&quot;: 400,
+                &quot;fmt&quot;: &quot;jpg&quot;
+            },
+            &quot;author&quot;: {
+                &quot;id&quot;: &quot;584e09778edd1f157cb87451&quot;,
+                &quot;userId&quot;: 100001,
+                &quot;nickName&quot;: &quot;逍遥&quot;,
+                &quot;avatar&quot;: {
+                    &quot;url&quot;: &quot;http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg&quot;,
+                    &quot;width&quot;: 100,
+                    &quot;height&quot;: 100,
+                    &quot;fmt&quot;: &quot;jpg&quot;
+                }
+            },
+            &quot;title&quot;: &quot;游记标题1&quot;,
+            &quot;summary&quot;: &quot;游记标题&quot;,
+            &quot;essence&quot;: false
+        }
+    ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>错误码</th>
+	<th>描述</th>
+	<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>104801</td>
+	<td>用户未登录</td>
+	<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h1>时间线模块</h1>
 <h3>查看朋友圈1049</h3>

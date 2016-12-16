@@ -3862,7 +3862,7 @@ summary|String|否|无|游记摘要
 			}
 		],
 		"title":"游记标题",
-		"travelTime":14500000000,
+		"travelTime":1481704641779,
 		"contents":[
 			{
 				"day1":"游记内容1"
@@ -3876,10 +3876,83 @@ summary|String|否|无|游记摘要
 
 - Response
 
-		{
-			"code":0,
-			"timestamp":1425225600000
-		}
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|游记id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+rating|Double|否|无|评分
+hotness|Double|否|无|热度
+title|String|是|无|游记标题
+publishTime|Long|是|无|创建时间
+favorCnt|Integer|否|0|收藏数
+voteCnt|Integer|否|0|点赞数
+commentCnt|Integer|否|0|评论数
+viewCnt|Integer|否|0|阅读数
+shareCnt|Integer|否|0|转发数
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
+source|String|否|无|游记来源
+essence|Boolean|否|无|游记是否精华
+
+	{
+	    "timestamp": 1481858532336,
+	    "code": 0,
+	    "result": {
+	        "id": "58535de28edd1f39cc53d2b3",
+	        "cover": {
+	            "url": "http://1.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "author": {
+	            "id": "584e09778edd1f157cb87451",
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        },
+	        "images": [
+	            {
+	                "url": "http://1.jpg",
+	                "width": 400,
+	                "height": 400,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rating": 0,
+	        "hotness": 0,
+	        "title": "游记标题",
+	        "publishTime": 1481858530121,
+	        "favorCnt": 0,
+	        "voteCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "travelTime": 1481704641779,
+	        "summary": "游记标题",
+	        "contents": [
+	            {
+	                "day1": "游记内容1"
+	            },
+	            {
+	                "day2": "游记内容2"
+	            }
+	        ],
+	        "source": "bjlx",
+	        "essence": false
+	    }
+	}
 
 错误码|描述|原因
 --|--|--
@@ -3891,55 +3964,140 @@ summary|String|否|无|游记摘要
 - Request Method:PUT
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"e38f80ccd586bf82155c13bdc5fb78f641a893790f9c0ceae5419b9a2c6d00d8"
+	    "userId"：100001
+
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+title|String|是|无|游记标题
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
 
 > 示例
-
 	{
-		"id":"646f2da8b8ce0440eddb287f",
 		"cover": {
 			"width":400,
 			"height":400,
-			"url":"http://1.jpg"
+			"url":"http://1.jpg",
+			"fmt":"jpg"
 		},
 		"images":[
 			{
 				"width":400,
 				"height":400,
-				"url":"http://1.jpg"
+				"url":"http://1.jpg",
+				"fmt":"jpg"
 			}
 		],
-		"title":"",
-		"travelTime":14500000000,
+		"title":"游记标题1",
+		"travelTime":1481858530121,
 		"contents":[
 			{
-				"day1":"XXX",
-				"day2":"XXX"
+				"day1":"游记内容1"
+			},
+			{
+				"day2":"游记内容2"
 			}
 		],
-		"summary":""
+		"summary":"游记摘要"
 	}
 
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|游记id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+rating|Double|否|无|评分
+hotness|Double|否|无|热度
+title|String|是|无|游记标题
+publishTime|Long|是|无|创建时间
+favorCnt|Integer|否|0|收藏数
+voteCnt|Integer|否|0|点赞数
+commentCnt|Integer|否|0|评论数
+viewCnt|Integer|否|0|阅读数
+shareCnt|Integer|否|0|转发数
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
+source|String|否|无|游记来源
+essence|Boolean|否|无|游记是否精华
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000
+	    "timestamp": 1481859504070,
+	    "code": 0,
+	    "result": {
+	        "id": "58535de28edd1f39cc53d2b3",
+	        "cover": {
+	            "url": "http://1.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "author": {
+	            "id": "584e09778edd1f157cb87451",
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        },
+	        "images": [
+	            {
+	                "url": "http://1.jpg",
+	                "width": 400,
+	                "height": 400,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rating": 0,
+	        "hotness": 0,
+	        "title": "游记标题1",
+	        "publishTime": 1481858530121,
+	        "favorCnt": 0,
+	        "voteCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "travelTime": 1481858530121,
+	        "summary": "游记标题",
+	        "contents": [
+	            {
+	                "day1": "游记内容1"
+	            },
+	            {
+	                "day2": "游记内容2"
+	            }
+	        ],
+	        "source": "bjlx",
+	        "essence": false
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+104501|用户未登录|用户未登录
+104502|游记不存在|游记被非法删除；更新者不是游记的作者，没有权限
 
 ###取得游记详情1046
 - Path:/app/travelnotes/{travelnoteId}
@@ -3952,63 +4110,99 @@ summary|String|否|无|游记摘要
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|String|是|无|游记id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+rating|Double|否|无|评分
+hotness|Double|否|无|热度
+title|String|是|无|游记标题
+publishTime|Long|是|无|创建时间
+favorCnt|Integer|否|0|收藏数
+voteCnt|Integer|否|0|点赞数
+commentCnt|Integer|否|0|评论数
+viewCnt|Integer|否|0|阅读数
+shareCnt|Integer|否|0|转发数
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
+source|String|否|无|游记来源
+essence|Boolean|否|无|游记是否精华
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":{
-			"id":"646f2da8b8ce0440eddb287f",
-			"cover": {
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"rating":0.98,
-			"hotness":0.98,
-			"title":"",
-			"publishTime":14500000000,
-			"favorCnt":100,
-			"commentCnt":10002,
-			"viewCnt":1231,
-			"shareCnt":123,
-			"travelTime":14500000000,
-			"contents":[
-				{
-					"day1":"XXX",
-					"day2":"XXX"
-				}
-			],
-			"summary":"",
-			"source":"baidu",
-			"essence":true
-		}
+	    "timestamp": 1481859979650,
+	    "code": 0,
+	    "result": {
+	        "id": "58535de28edd1f39cc53d2b3",
+	        "cover": {
+	            "url": "http://1.jpg",
+	            "width": 400,
+	            "height": 400,
+	            "fmt": "jpg"
+	        },
+	        "author": {
+	            "id": "584e09778edd1f157cb87451",
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        },
+	        "images": [
+	            {
+	                "url": "http://1.jpg",
+	                "width": 400,
+	                "height": 400,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "rating": 0,
+	        "hotness": 0,
+	        "title": "游记标题1",
+	        "publishTime": 1481858530121,
+	        "favorCnt": 0,
+	        "voteCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "travelTime": 1481858530121,
+	        "summary": "游记标题",
+	        "contents": [
+	            {
+	                "day1": "游记内容1"
+	            },
+	            {
+	                "day2": "游记内容2"
+	            }
+	        ],
+	        "source": "bjlx",
+	        "essence": false
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+104601|游记不存在|游记被非法删除
 
 ###删除游记1047
 - Path:/app/travelnotes/{travelnoteId}
 - Request Method:DELETE
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	    "userId":100001
+
 - Query String:无
 - Request Body:无
 - Response
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
 
 > 示例
 
@@ -4019,8 +4213,86 @@ summary|String|否|无|游记摘要
 
 错误码|描述|原因
 --|--|--
+104701|用户未登录|用户未登录
 
 ###取得用户游记列表1048
+- Path:/app/users/{userId}/travelnotes
+- Request Method:GET
+- Request Headers
+
+		"key":"e38f80ccd586bf82155c13bdc5fb78f641a893790f9c0ceae5419b9a2c6d00d8"
+	    "userId"：100001
+
+- Query String
+
+字段名|类型|必需|默认值|描述
+--|--|--|--|--
+offset|Integer|否|0|从第几条开始取
+limit|Integer|否|10|取多少条
+
+- Request Body:无
+- Response
+> 返回字段说明
+
+字段名|类型|必含|默认值|描述
+--|--|--|--|--
+id|String|是|无|游记id
+cover|Object|是|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|Object|否|无|游记图集
+rating|Double|否|无|评分
+hotness|Double|否|无|热度
+title|String|是|无|游记标题
+publishTime|Long|是|无|创建时间
+favorCnt|Integer|否|0|收藏数
+voteCnt|Integer|否|0|点赞数
+commentCnt|Integer|否|0|评论数
+viewCnt|Integer|否|0|阅读数
+shareCnt|Integer|否|0|转发数
+travelTime|Long|是|无|旅行时间
+contents|ArrayObject|否|无|游记内容
+summary|String|否|无|游记摘要
+source|String|否|无|游记来源
+essence|Boolean|否|无|游记是否精华
+
+> 示例
+
+	{
+	    "timestamp": 1481860337156,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "58535de28edd1f39cc53d2b3",
+	            "cover": {
+	                "url": "http://1.jpg",
+	                "width": 400,
+	                "height": 400,
+	                "fmt": "jpg"
+	            },
+	            "author": {
+	                "id": "584e09778edd1f157cb87451",
+	                "userId": 100001,
+	                "nickName": "逍遥",
+	                "avatar": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                }
+	            },
+	            "title": "游记标题1",
+	            "summary": "游记标题",
+	            "essence": false
+	        }
+	    ]
+	}
+
+错误码|描述|原因
+--|--|--
+104801|用户未登录|用户未登录
 
 ***
 #时间线模块
