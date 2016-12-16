@@ -1,3 +1,4 @@
+[toc]
 #不羁旅行restful接口文档v1.0
 少量的接口(查询接口)，无需登录，游客用户即可操作。大部分接口(比如：与用户相关的接口)需要登录才能操作。
 ###header
@@ -4347,52 +4348,52 @@ voteCnt|Integer|是|0|点赞次数
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"publishTime":14500000000,
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":10002,
-				"originNickName":"魔法屋",
-				"originAvatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"text":"南昌如此之美",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"comment":"自己评论",
-				"card":	{
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"",
-					"summary":"",
-					"cover":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"detailUrl":"http://xxx.html"
-				},
-				"favorCnt":1001,
-				"voteCnt":100
-			}
-		]
+	    "timestamp": 1481866277404,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "585376f88edd1f35384eda23",
+	            "publishTime": 1481864952672,
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "images": [
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                }
+	            ],
+	            "comment": "庐山真美",
+	            "card": {
+	                "id": "58535de28edd1f39cc53d2b3",
+	                "title": "游记标题1",
+	                "summary": "游记摘要1",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "thumb": {},
+	                "detailUrl": "http://xxx.html"
+	            },
+	            "favorCnt": 0,
+	            "voteCnt": 0
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -4450,52 +4451,52 @@ voteCnt|Integer|是|0|点赞次数
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"publishTime":14500000000,
-				"userId":10001,
-				"nickName":"魔法师",
-				"avatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":10002,
-				"originNickName":"魔法屋",
-				"originAvatar":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"text":"南昌如此之美",
-				"images":[
-					{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					}
-				],
-				"comment":"自己评论",
-				"card":	{
-					"id":"646f2da8b8ce0440eddb287f",
-					"title":"",
-					"summary":"",
-					"cover":{
-						"width":400,
-						"height":400,
-						"url":"http://1.jpg"
-					},
-					"detailUrl":"http://xxx.html"
-				},
-				"favorCnt":100,
-				"voteCnt":10
-			}
-		]
+	    "timestamp": 1481867419894,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "585376f88edd1f35384eda23",
+	            "publishTime": 1481864952672,
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "images": [
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                }
+	            ],
+	            "comment": "庐山真美",
+	            "card": {
+	                "id": "58535de28edd1f39cc53d2b3",
+	                "title": "游记标题1",
+	                "summary": "游记摘要1",
+	                "cover": {
+	                    "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                    "width": 100,
+	                    "height": 100,
+	                    "fmt": "jpg"
+	                },
+	                "thumb": {},
+	                "detailUrl": "http://xxx.html"
+	            },
+	            "favorCnt": 0,
+	            "voteCnt": 0
+	        }
+	    ]
 	}
 
 错误码|描述|原因
@@ -4546,22 +4547,36 @@ detailUrl|String|是|无|卡片的链接
 			"url":"http://1.jpg"
 		},
 		"text":"南昌如此之美",
-		"images":[
+		"images" : [
 			{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
+				"key" : "default_user_avatar.jpg",
+				"bucket" : "qiniu-bujilvxing",
+				"url" : "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+				"width" : 100,
+				"height" : 100,
+				"fmt" : "jpg"
+			},
+			{
+				"key" : "default_group_avatar.jpg",
+				"bucket" : "qiniu-bujilvxing",
+				"url" : "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+				"width" : 100,
+				"height" : 100,
+				"fmt" : "jpg"
 			}
 		],
-		"comment":"自己评论",
+		"comment":"庐山真美",
 		"card":	{
-			"id":"646f2da8b8ce0440eddb287f",
-			"title":"",
-			"summary":"",
+			"id":"58535de28edd1f39cc53d2b3",
+			"title":"游记标题1",
+			"summary":"游记摘要1",
 			"cover":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
+				"key" : "default_user_avatar.jpg",
+				"bucket" : "qiniu-bujilvxing",
+				"url" : "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+				"width" : 100,
+				"height" : 100,
+				"fmt" : "jpg"
 			},
 			"detailUrl":"http://xxx.html"
 		}
@@ -4571,9 +4586,59 @@ detailUrl|String|是|无|卡片的链接
 > 返回字段说明
 
 	{
-		"code":0,
-		"timestamp":1425225600000
+	    "timestamp": 1481864953711,
+	    "code": 0,
+	    "result": {
+	        "id": "585376f88edd1f35384eda23",
+	        "publishTime": 1481864952672,
+	        "userId": 100001,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "comment": "庐山真美",
+	        "card": {
+	            "id": "58535de28edd1f39cc53d2b3",
+	            "title": "游记标题1",
+	            "summary": "游记摘要1",
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "thumb": {},
+	            "detailUrl": "http://xxx.html"
+	        },
+	        "favorCnt": 0,
+	        "voteCnt": 0
+	    }
 	}
+
+错误码|描述|原因
+--|--|--
+105101|originUserId不可为空|originId不为空时，没有传originUserId字段
+105102|originNickName不可为空|originId不为空时，没有传originNickName字段
+105103|originAvatar不可为空|originId不为空时，没有传originAvatar字段
+105104|用户未登录|用户未登录
+105105|用户不存在|用户被非法删除
 
 ***
 #足迹模块
@@ -4582,7 +4647,9 @@ detailUrl|String|是|无|卡片的链接
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	    "userId":100001
+
 - Query String:无
 - Request Body
 
