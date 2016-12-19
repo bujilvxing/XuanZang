@@ -888,7 +888,8 @@ updateTime|Long|是|0|用户更新时间
 - Request Method:PUT
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
+
 - Query String:无
 - Request Body
 
@@ -960,7 +961,7 @@ token|Object|是|无|令牌
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -991,7 +992,7 @@ tel|String|是|无|手机号
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -2757,7 +2758,7 @@ limit|Integer|否|10|取多少个
 - Request Method:POST
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3326,7 +3327,7 @@ joinActivities|ArrayObject|否|无|用户参与的活动列表
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3376,7 +3377,7 @@ website|String|否|无|报名活动者网址
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3426,7 +3427,7 @@ website|String|否|无|报名活动者网址
 - Request Method:PUT
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3538,7 +3539,7 @@ isWebsite|Boolean|是|无|报名者是否需要填写个人网址
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3610,7 +3611,7 @@ creatorId|Integer|是|无|门票创建者用户id
 - Request Method:DELETE
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3632,7 +3633,7 @@ creatorId|Integer|是|无|门票创建者用户id
 - Request Method:DELETE
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":100001
 
 - Query String:无
@@ -3721,7 +3722,7 @@ creatorId|Long|是|无|门票创建者id
 - Request Method:GET
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -3827,7 +3828,7 @@ limit|Integer|否|10|取多少条
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 	    "userId":100001
 
 - Query String:无
@@ -4197,7 +4198,7 @@ essence|Boolean|否|无|游记是否精华
 - Request Method:DELETE
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 	    "userId":100001
 
 - Query String:无
@@ -4301,7 +4302,7 @@ essence|Boolean|否|无|游记是否精华
 - Request Method:GET
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String
@@ -4405,7 +4406,7 @@ voteCnt|Integer|是|0|点赞次数
 - Request Method:GET
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String
@@ -4508,7 +4509,7 @@ voteCnt|Integer|是|0|点赞次数
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -4646,7 +4647,7 @@ detailUrl|String|是|无|卡片的链接
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 	    "userId":100001
 
 - Query String:无
@@ -4663,58 +4664,39 @@ fmt|String|否|无|图片格式
 images|ArrayObject|否|无|足迹图集
 audio|Object|否|无|语音
 length|Integer|是|0|语音时长
-fileName":"123as3212c",
+fileName|String|是|无|语音文件名
 url|String|是|""|语音链接
 key|String|否|""|语音键值
 desc|String|是|无|足迹描述
-"restaurant":{
-"id":"646f2da8b8ce0440eddb287f",
-"lat":180.1,
-"lng":180.1,
-"cover" : {
-	"width":400,
-	"height":400,
-	"url":"http://1.jpg"
-},
-"rank":3,
-"hotness":0.97,
-"rating":0.98,
-"zhName":"煌上煌烤鸭店",
-"enName":"",
-"url":"http://XXX",
-"marketPrice":280.6,
-"price":180.3,
-"tags":["",""],
-"openTime":"9:00~21:00"
-"saleVolume":100,
-"discount":0.65
-},
-"hotel":{
-viewspot
-"activity": {
-"id":"646f2da8b8ce0440eddb287f",
-"title":"亲子游活动",
-"maxNum":200,
-"joinNum" : 106,
-"favorCnt":100001,
-"viewCnt":88888,
-"poster":{
-	"width":400,
-	"height":400,
-	"url":"http://1.jpg"
-}
-},
-shopping
-"originId":"646f2da8b8ce0440eddb287f",
-"originUserId":1001,
-"originNickName":"魔法师",
-"originAvatar":{
-"url":"http://1.jpg",
-"width":800,
-"height":600
-},
-"lat":78.23,
-"lng":97.42
+restaurant|Object|否|无|美食信息
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+hotness|Double|否|无|热度
+rating|Double|否|无|评分
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|美食链接
+marketPrice|Double|否|无|市场价
+price|Double|是|无|价格
+tags|ArrayString|否|无|标签
+openTime|String|否|无|开放时间
+saleVolume|Integer|否|无|销量
+discount|Double|否|无|折扣
+hotel|Object|否|无|旅馆
+viewspot|Object|否|无|景点
+activity|Object|否|无|活动
+title|String|是|无|标题
+maxNum|Integer|否|无|活动最大允许人数
+joinNum|Integer|否|无|活动报名人数
+favorCnt|Integer|否|无|活动收藏数
+viewCnt|Integer|否|无|活动阅读数
+poster|ArrayObject|否|无|活动海报
+shopping|Object|否|无|购物
+originId|String|否|无|源足迹id
+originUserId|Long|否|无|源足迹发布者用户id
+originNickName|String|否|无|源足迹发布者用户昵称
+originAvatar|Object|否|无|源足迹发布者用户头像
 
 > 示例
 
@@ -4863,6 +4845,50 @@ shopping
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+traceTime|Long|否|当前时间|足迹时间
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+createTime|Long|是|无|足迹创建时间
+updateTime|Long|是|无|足迹更新时间
+images|ArrayObject|否|无|足迹图集
+audio|Object|否|无|语音
+length|Integer|是|0|语音时长
+fileName|String|是|无|语音文件名
+url|String|是|""|语音链接
+key|String|否|""|语音键值
+desc|String|是|无|足迹描述
+restaurant|Object|否|无|美食信息
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+hotness|Double|否|无|热度
+rating|Double|否|无|评分
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|美食链接
+marketPrice|Double|否|无|市场价
+price|Double|是|无|价格
+tags|ArrayString|否|无|标签
+openTime|String|否|无|开放时间
+saleVolume|Integer|否|无|销量
+discount|Double|否|无|折扣
+hotel|Object|否|无|旅馆
+viewspot|Object|否|无|景点
+activity|Object|否|无|活动
+title|String|是|无|标题
+maxNum|Integer|否|无|活动最大允许人数
+joinNum|Integer|否|无|活动报名人数
+favorCnt|Integer|否|无|活动收藏数
+viewCnt|Integer|否|无|活动阅读数
+poster|ArrayObject|否|无|活动海报
+shopping|Object|否|无|购物
+originId|String|否|无|源足迹id
+originUserId|Long|否|无|源足迹发布者用户id
+originNickName|String|否|无|源足迹发布者用户昵称
+originAvatar|Object|否|无|源足迹发布者用户头像
 
 > 示例
 
@@ -4917,42 +4943,98 @@ shopping
 
 错误码|描述|原因
 --|--|--
+105201|用户未登录|用户未登录
+105202|用户不存在|用户被非法删除
+105203|源用户id不可为空|originId不为空时，没有传originUserId字段
+105304|源用户昵称不可为空|originId不为空时，没有传originNickName字段
+105405|源用户头像不可为空|originId不为空时，没有传originAvatar字段
 
 ###修改足迹1053
 - Path:/app/traces/{traceId}
 - Request Method:PUT
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
+		"userId":100001
+
 - Query String:无
 - Request Body
 
 字段名|类型|必需|默认值|描述
 --|--|--|--|--
+traceTime|Long|否|当前时间|足迹时间
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|足迹图集
+audio|Object|否|无|语音
+length|Integer|是|0|语音时长
+fileName|String|是|无|语音文件名
+url|String|是|""|语音链接
+key|String|否|""|语音键值
+desc|String|是|无|足迹描述
+restaurant|Object|否|无|美食信息
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+hotness|Double|否|无|热度
+rating|Double|否|无|评分
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|美食链接
+marketPrice|Double|否|无|市场价
+price|Double|是|无|价格
+tags|ArrayString|否|无|标签
+openTime|String|否|无|开放时间
+saleVolume|Integer|否|无|销量
+discount|Double|否|无|折扣
+hotel|Object|否|无|旅馆
+viewspot|Object|否|无|景点
+activity|Object|否|无|活动
+title|String|是|无|标题
+maxNum|Integer|否|无|活动最大允许人数
+joinNum|Integer|否|无|活动报名人数
+favorCnt|Integer|否|无|活动收藏数
+viewCnt|Integer|否|无|活动阅读数
+poster|ArrayObject|否|无|活动海报
+shopping|Object|否|无|购物
+originId|String|否|无|源足迹id
+originUserId|Long|否|无|源足迹发布者用户id
+originNickName|String|否|无|源足迹发布者用户昵称
+originAvatar|Object|否|无|源足迹发布者用户头像
 
 > 示例
 
 	{
-		"traceTime":1425225600000,
-		"cover":{
-			"width":400,
-			"height":400,
-			"url":"http://1.jpg"
-		},
-		"images":[
-			{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			}
-		],
+		"traceTime":1481881092200,
+		"cover": {
+	        "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	        "width": 100,
+	        "height": 100,
+	        "fmt": "jpg"
+	    },
+	    "images": [
+	        {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        }
+	    ],
 		"audio":{
 			"length":15,
 			"fileName":"123as3212c",
 			"url":"http://a.mp3",
 			"key":"sa2313dasdq1"
 		},
-		"status":1,
 		"desc":"XXX",
 		"restaurant":{
 			"id":"646f2da8b8ce0440eddb287f",
@@ -5065,11 +5147,54 @@ shopping
 		"lat":78.23,
 		"lng":97.42
 	}
+
 - Response
 > 返回字段说明
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+traceTime|Long|否|当前时间|足迹时间
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|足迹图集
+audio|Object|否|无|语音
+length|Integer|是|0|语音时长
+fileName|String|是|无|语音文件名
+url|String|是|""|语音链接
+key|String|否|""|语音键值
+desc|String|是|无|足迹描述
+restaurant|Object|否|无|美食信息
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+hotness|Double|否|无|热度
+rating|Double|否|无|评分
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|美食链接
+marketPrice|Double|否|无|市场价
+price|Double|是|无|价格
+tags|ArrayString|否|无|标签
+openTime|String|否|无|开放时间
+saleVolume|Integer|否|无|销量
+discount|Double|否|无|折扣
+hotel|Object|否|无|旅馆
+viewspot|Object|否|无|景点
+activity|Object|否|无|活动
+title|String|是|无|标题
+maxNum|Integer|否|无|活动最大允许人数
+joinNum|Integer|否|无|活动报名人数
+favorCnt|Integer|否|无|活动收藏数
+viewCnt|Integer|否|无|活动阅读数
+poster|ArrayObject|否|无|活动海报
+shopping|Object|否|无|购物
+originId|String|否|无|源足迹id
+originUserId|Long|否|无|源足迹发布者用户id
+originNickName|String|否|无|源足迹发布者用户昵称
+originAvatar|Object|否|无|源足迹发布者用户头像
 
 > 示例
 
@@ -5224,13 +5349,17 @@ shopping
 
 错误码|描述|原因
 --|--|--
+105301|用户未登录|用户未登录
+105302|足迹不存在|参数输入有误或者足迹被非法删除
 
 ###删除用户足迹1054
 - Path:/app/traces/{traceId}
 - Request Method:DELETE
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
+		"userId":100001
+
 - Query String:无
 - Request Body:无
 - Response
@@ -5239,166 +5368,24 @@ shopping
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
 
+
 > 示例
 
 	{
 		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result": {
-			"id":"646f2da8b8ce0440eddb287f",
-			"userId":1002,
-			"nickName":"魔法师的小黑屋",
-			"avatar":"htpp://2.jpg",
-			"createTime":1425225600000,
-			"updateTime":1425225600000,
-			"traceTime":1425225600000,
-			"shareCnt":100,
-			"favorCnt":1000,
-			"commentCnt":200,
-			"viewCnt":100000,
-			"cover":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"desc":"XXX",
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"audio":{
-				"length":15,
-				"fileName":"123as3212c",
-				"url":"http://a.mp3",
-				"key":"sa2313dasdq1"
-			},
-			"status":1,
-			"restaurant":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"hotel":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"如家快捷酒店",
-				"enName":"RuJia",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"viewspot":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"八一广场",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"activity": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"亲子游活动",
-				"maxNum":200,
-				"joinNum" : 106,
-				"favorCnt":100001,
-				"viewCnt":88888,
-				"poster":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			},
-			"shopping": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"优衣库",
-				"enName":"Uniqlo",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"originId":"646f2da8b8ce0440eddb287f",
-			"originUserId":1001,
-			"originNickName":"魔法师",
-			"originAvatar":{
-				"url":"http://1.jpg",
-				"width":800,
-				"height":600
-			},
-			"lat":78.23,
-			"lng":97.42
-		}
+		"timestamp":1425225600000
 	}
 
 错误码|描述|原因
 --|--|--
+105401|用户未登录|用户未登录
 
 ###取得足迹列表1055
 - Path:/app/users/{userId}/traces
 - Request Method:GET
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 - Query String
 
 
@@ -5619,7 +5606,7 @@ shopping
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":10001
 
 - Query String:无
@@ -5906,7 +5893,7 @@ shopping|Object|否|无|购物信息
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6063,7 +6050,7 @@ shopping|Object|否|无|购物信息
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -6115,7 +6102,7 @@ shopping|Object|否|无|购物信息
 - Request Method:PUT
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":10001
 
 - Query String:无
@@ -6384,7 +6371,7 @@ shopping|Object|否|无|购物信息
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -6541,7 +6528,7 @@ shopping|Object|否|无|购物信息
 - Request Method:DELETE
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6566,7 +6553,7 @@ shopping|Object|否|无|购物信息
 - Request Method:POST
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":10001
 
 - Query String:无
@@ -6710,7 +6697,7 @@ questionId|String|是|无|问题主键
 - Request Method:GET
 - Request Headers
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":10001
 
 - Query String
@@ -6842,7 +6829,7 @@ fmt|String|否|无|图片格式
 - Request Method:POST
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6912,7 +6899,7 @@ questionId|String|是|无|问题主键
 - Request Method:DELETE
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6934,7 +6921,7 @@ questionId|String|是|无|问题主键
 - Request Method:DELETE
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6956,7 +6943,7 @@ questionId|String|是|无|问题主键
 - Request Method:PUT
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -6996,7 +6983,7 @@ contents|String|是|无|具体描述
 - Request Method:PUT
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -7032,7 +7019,7 @@ contents|String|是|无|具体描述
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7063,7 +7050,7 @@ followingId|Long|是|无|待关注用户id
 - Request Method:DELETE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7093,7 +7080,7 @@ followingId|Long|是|无|待取消关注用户id
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:?offset=0&limit=100
 
@@ -7145,7 +7132,7 @@ memo|String|否|无|备注
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -7229,7 +7216,7 @@ memo|String|否|无|备注
 - Request Method:PUT
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7323,7 +7310,7 @@ memo|String|否|无|备注
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7354,7 +7341,7 @@ blockId|Long|是|无|待屏蔽用户id
 - Request Method:DELETE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -7375,7 +7362,7 @@ blockId|Long|是|无|待屏蔽用户id
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String
 
@@ -7429,7 +7416,7 @@ memo|String|否|无|备注
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String
 
@@ -7483,7 +7470,7 @@ memo|String|否|无|备注
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7693,7 +7680,7 @@ convId|String|否|无|会话id
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7826,7 +7813,7 @@ convId|String|否|无|会话id
 - Request Method:PATCH
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7857,7 +7844,7 @@ mute|Boolean|是|无|消息免打扰，true添加，false表示移除
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -7900,7 +7887,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:POST
 - Request Headers
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -7958,7 +7945,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:PUT
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -8014,7 +8001,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8053,7 +8040,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8087,7 +8074,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -8114,7 +8101,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:DETELE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8134,7 +8121,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8175,7 +8162,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -8261,7 +8248,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8315,7 +8302,7 @@ pinned|Boolean|是|无|是否会话置顶
 - Request Method:POST
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -8374,7 +8361,7 @@ title|String|是|无|标题
 - Request Method:DELETE
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -8397,7 +8384,7 @@ title|String|是|无|标题
 - Request Method:GET
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -8460,7 +8447,7 @@ favoriteTime|Long|是|无|收藏时间
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 	"userId":1001
 
 - Query String:无
@@ -8496,7 +8483,7 @@ itemId|String|是|无|点赞对象id
 - Request Method:DELETE
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -8519,7 +8506,7 @@ itemId|String|是|无|点赞对象id
 - Request Method:GET
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:无
@@ -8553,12 +8540,14 @@ voteTime|Long|是|无|点赞时间
 --|--|--
 110301|用户未登录|用户未登录
 
+---
+#评论
 ###添加新评论1104
 - Path:/app/comments
 - Request Method:POST
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body
@@ -8621,7 +8610,7 @@ voteTime|Long|是|无|点赞时间
 - Request Method:DELETE
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:无
 - Request Body:无
@@ -8641,7 +8630,7 @@ voteTime|Long|是|无|点赞时间
 - Request Method:GET
 - Request Headers:
 
-	"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 
 - Query String:
 
@@ -8699,7 +8688,7 @@ voteTime|Long|是|无|点赞时间
 - Request Method:GET
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:?query=13811111111
@@ -8745,7 +8734,7 @@ fmt|String|否|无|图片格式
 - Request Method:GET
 - Request Headers:
 
-		"key":"9c91a6de-ec8f-42c9-acfb-0d1bd89dee9e"
+		"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
 		"userId":1001
 
 - Query String:?query=10001
