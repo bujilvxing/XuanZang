@@ -4845,14 +4845,22 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|Long|是|无|作者用户主键
+userId|Long|是|无|作者用户id
+nickName|String|是|无|作者用户昵称
+avatar|Object|是|无|作者头像
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+title|String|是|无|标题
 traceTime|Long|否|当前时间|足迹时间
 cover|Object|否|无|封面图
 url|String|是|""|图片链接
 width|Integer|是|0|图片宽度
 height|Integer|是|0|图片高度
 fmt|String|否|无|图片格式
-createTime|Long|是|无|足迹创建时间
-updateTime|Long|是|无|足迹更新时间
 images|ArrayObject|否|无|足迹图集
 audio|Object|否|无|语音
 length|Integer|是|0|语音时长
@@ -4946,8 +4954,8 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 105201|用户未登录|用户未登录
 105202|用户不存在|用户被非法删除
 105203|源用户id不可为空|originId不为空时，没有传originUserId字段
-105304|源用户昵称不可为空|originId不为空时，没有传originNickName字段
-105405|源用户头像不可为空|originId不为空时，没有传originAvatar字段
+105204|源用户昵称不可为空|originId不为空时，没有传originNickName字段
+105205|源用户头像不可为空|originId不为空时，没有传originAvatar字段
 
 ###修改足迹1053
 - Path:/app/traces/{traceId}
@@ -5153,6 +5161,16 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|Long|是|无|作者用户主键
+userId|Long|是|无|作者用户id
+nickName|String|是|无|作者用户昵称
+avatar|Object|是|无|作者头像
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+title|String|是|无|标题
 traceTime|Long|否|当前时间|足迹时间
 cover|Object|否|无|封面图
 url|String|是|""|图片链接
@@ -5199,152 +5217,52 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result": {
-			"id":"646f2da8b8ce0440eddb287f",
-			"userId":1002,
-			"nickName":"魔法师的小黑屋",
-			"avatar":"htpp://2.jpg",
-			"createTime":1425225600000,
-			"updateTime":1425225600000,
-			"traceTime":1425225600000,
-			"shareCnt":100,
-			"favorCnt":1000,
-			"commentCnt":200,
-			"viewCnt":100000,
-			"cover":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"desc":"XXX",
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"audio":{
-				"length":15,
-				"fileName":"123as3212c",
-				"url":"http://a.mp3",
-				"key":"sa2313dasdq1"
-			},
-			"status":1,
-			"restaurant":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"煌上煌烤鸭店",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"hotel":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"如家快捷酒店",
-				"enName":"RuJia",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"viewspot":{
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"八一广场",
-				"enName":"",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"activity": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"title":"亲子游活动",
-				"maxNum":200,
-				"joinNum" : 106,
-				"favorCnt":100001,
-				"viewCnt":88888,
-				"poster":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			},
-			"shopping": {
-				"id":"646f2da8b8ce0440eddb287f",
-				"lat":180.1,
-				"lng":180.1,
-				"cover" : {
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"rank":3,
-				"hotness":0.97,
-				"rating":0.98,
-				"zhName":"优衣库",
-				"enName":"Uniqlo",
-				"url":"http://XXX",
-				"marketPrice":280.6,
-				"price":180.3,
-				"tags":["",""],
-				"openTime":"9:00~21:00"
-				"saleVolume":100,
-				"discount":0.65
-			},
-			"originId":"646f2da8b8ce0440eddb287f",
-			"originUserId":1001,
-			"originNickName":"魔法师",
-			"originAvatar":{
-				"url":"http://1.jpg",
-				"width":800,
-				"height":600
-			},
-			"lat":78.23,
-			"lng":97.42
-		}
+	    "timestamp": 1482463137287,
+	    "code": 0,
+	    "result": {
+	        "id": "5853b5fe8edd1f3b8476daa5",
+	        "userId": 100001,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 1481881086221,
+	        "traceTime": 1481864962672,
+	        "updateTime": 1481881086221,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
+	        "title": "庐山足迹1",
+	        "desc": "雾好大",
+	        "status": 1,
+	        "favorCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "lat": 160.1,
+	        "lng": 171.2,
+	        "voteCnt": 0
+	    }
 	}
 
 错误码|描述|原因
@@ -5363,76 +5281,113 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 - Query String:无
 - Request Body:无
 - Response
-> 返回字段说明
-
-字段名|类型|必含|默认值|描述
---|--|--|--|--
-
 
 > 示例
 
 	{
-		"code":0,
-		"timestamp":1425225600000
+	    "timestamp": 1482463205852,
+	    "code": 0
 	}
 
 错误码|描述|原因
 --|--|--
 105401|用户未登录|用户未登录
 
-###取得足迹列表1055
+###取得用户足迹列表1055
 - Path:/app/users/{userId}/traces
 - Request Method:GET
 - Request Headers
 
 	"key":"dbdf3891fcdabd41d2da10169312e3fa5dcfbcde132df142cff41c1261e115e3"
-- Query String
-
-
-- Request Body
+- Query String：无
+- Request Body：无
 - Response
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|Long|是|无|作者用户主键
+userId|Long|是|无|作者用户id
+nickName|String|是|无|作者用户昵称
+avatar|Object|是|无|作者头像
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+title|String|是|无|标题
+traceTime|Long|否|当前时间|足迹时间
+cover|Object|否|无|封面图
+url|String|是|""|图片链接
+width|Integer|是|0|图片宽度
+height|Integer|是|0|图片高度
+fmt|String|否|无|图片格式
+images|ArrayObject|否|无|足迹图集
+audio|Object|否|无|语音
+length|Integer|是|0|语音时长
+fileName|String|是|无|语音文件名
+url|String|是|""|语音链接
+key|String|否|""|语音键值
+desc|String|是|无|足迹描述
+restaurant|Object|否|无|美食信息
+lat|Double|否|无|经度
+lng|Double|否|无|纬度
+rank|Integer|否|无|排名
+hotness|Double|否|无|热度
+rating|Double|否|无|评分
+zhName|String|是|无|中文名
+enName|String|否|无|英文名
+url|String|是|无|美食链接
+marketPrice|Double|否|无|市场价
+price|Double|是|无|价格
+tags|ArrayString|否|无|标签
+openTime|String|否|无|开放时间
+saleVolume|Integer|否|无|销量
+discount|Double|否|无|折扣
+hotel|Object|否|无|旅馆
+viewspot|Object|否|无|景点
+activity|Object|否|无|活动
+title|String|是|无|标题
+maxNum|Integer|否|无|活动最大允许人数
+joinNum|Integer|否|无|活动报名人数
+favorCnt|Integer|否|无|活动收藏数
+viewCnt|Integer|否|无|活动阅读数
+poster|ArrayObject|否|无|活动海报
+shopping|Object|否|无|购物
+originId|String|否|无|源足迹id
+originUserId|Long|否|无|源足迹发布者用户id
+originNickName|String|否|无|源足迹发布者用户昵称
+originAvatar|Object|否|无|源足迹发布者用户头像
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result":[
-			{
-				"id":"646f2da8b8ce0440eddb287f",
-				"userId":1002,
-				"nickName":"魔法师的小黑屋",
-				"avatar":"htpp://2.jpg",
-				"createTime":1425225600000,
-				"updateTime":1425225600000,
-				"traceTime":1425225600000,
-				"cover":{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				},
-				"desc":"XXX",
-				"status":1,
-				"originId":"646f2da8b8ce0440eddb287f",
-				"originUserId":1001,
-				"originNickName":"魔法师",
-				"originAvatar":{
-					"url":"http://1.jpg",
-					"width":800,
-					"height":600
-				},
-				"lat":78.23,
-				"lng":97.42
-			}
-		]
+	    "timestamp": 1482463517605,
+	    "code": 0,
+	    "result": [
+	        {
+	            "id": "5853b4ec8edd1f2d0c2b0a97",
+	            "userId": 100001,
+	            "nickName": "逍遥",
+	            "avatar": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "cover": {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            "title": "庐山足迹"
+	        }
+	    ]
 	}
 
 错误码|描述|原因
 --|--|--
+105501|用户未登录|用户未登录
 
 ###取得足迹详情1056
 - Path:/app/traces/{traceId}
@@ -5444,45 +5399,49 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 
 字段名|类型|必含|默认值|描述
 --|--|--|--|--
+id|Long|是|无|作者用户主键
+userId|Long|是|无|作者用户id
+nickName|String|是|无|作者用户昵称
+avatar|Object|是|无|作者头像
 
 > 示例
 
 	{
-		"code":0,
-		"msg":"success",
-		"timestamp":1425225600000,
-		"result": {
-			"id":"646f2da8b8ce0440eddb287f",
-			"userId":1002,
-			"nickName":"魔法师的小黑屋",
-			"avatar":"htpp://2.jpg",
-			"createTime":1425225600000,
-			"updateTime":1425225600000,
-			"traceTime":1425225600000,
-			"shareCnt":100,
-			"favorCnt":1000,
-			"commentCnt":200,
-			"viewCnt":100000,
-			"cover":{
-				"width":400,
-				"height":400,
-				"url":"http://1.jpg"
-			},
-			"desc":"XXX",
-			"images":[
-				{
-					"width":400,
-					"height":400,
-					"url":"http://1.jpg"
-				}
-			],
-			"audio":{
-				"length":15,
-				"fileName":"123as3212c",
-				"url":"http://a.mp3",
-				"key":"sa2313dasdq1"
-			},
-			"status":1,
+	    "timestamp": 1482463849541,
+	    "code": 0,
+	    "result": {
+	        "id": "5853b4ec8edd1f2d0c2b0a97",
+	        "userId": 100001,
+	        "nickName": "逍遥",
+	        "avatar": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "createTime": 1481880812409,
+	        "traceTime": 1481864952672,
+	        "updateTime": 1481880812409,
+	        "cover": {
+	            "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	            "width": 100,
+	            "height": 100,
+	            "fmt": "jpg"
+	        },
+	        "images": [
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_user_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            },
+	            {
+	                "url": "http://oe7hx2tam.bkt.clouddn.com/default_group_avatar.jpg",
+	                "width": 100,
+	                "height": 100,
+	                "fmt": "jpg"
+	            }
+	        ],
 			"restaurant":{
 				"id":"646f2da8b8ce0440eddb287f",
 				"lat":180.1,
@@ -5583,21 +5542,28 @@ originAvatar|Object|否|无|源足迹发布者用户头像
 				"saleVolume":100,
 				"discount":0.65
 			},
-			"originId":"646f2da8b8ce0440eddb287f",
-			"originUserId":1001,
-			"originNickName":"魔法师",
-			"originAvatar":{
-				"url":"http://1.jpg",
-				"width":800,
-				"height":600
+			"audio":{
+				"length":15,
+				"fileName":"123as3212c",
+				"url":"http://a.mp3",
+				"key":"sa2313dasdq1"
 			},
-			"lat":78.23,
-			"lng":97.42
-		}
+	        "title": "庐山足迹",
+	        "desc": "雾好大",
+	        "status": 1,
+	        "favorCnt": 0,
+	        "commentCnt": 0,
+	        "viewCnt": 0,
+	        "shareCnt": 0,
+	        "lat": 160.1,
+	        "lng": 171.2,
+	        "voteCnt": 0
+	    }
 	}
 
 错误码|描述|原因
 --|--|--
+105601|足迹不存在|参数输入有误或者足迹被非法删除
 
 ***
 #行程规划模块
